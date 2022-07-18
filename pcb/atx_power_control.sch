@@ -7344,6 +7344,249 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Retired">
+<description>&lt;h3&gt;SparkFun Electronics' Retired foot prints&lt;/h3&gt;
+In this library you'll find all manner of retired footprints for resistors, capacitors, board names, ICs, etc., that are &lt;b&gt; no longer used&lt;/b&gt; in our catalog.
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="TRIMPOT_TC33">
+<wire x1="-1.55" y1="-1.65" x2="1.55" y2="-1.65" width="0.127" layer="51"/>
+<wire x1="1.55" y1="-1.65" x2="1.55" y2="1.45" width="0.127" layer="51"/>
+<wire x1="1.55" y1="1.45" x2="-1.55" y2="1.45" width="0.127" layer="51"/>
+<wire x1="-1.55" y1="1.45" x2="-1.55" y2="-1.65" width="0.127" layer="51"/>
+<wire x1="-0.75" y1="1.45" x2="-1.55" y2="1.45" width="0.127" layer="21"/>
+<wire x1="-1.55" y1="1.45" x2="-1.55" y2="-1.65" width="0.127" layer="21"/>
+<wire x1="-1.55" y1="-1.65" x2="-1.5" y2="-1.65" width="0.127" layer="21"/>
+<wire x1="-0.3" y1="-1.65" x2="0.3" y2="-1.65" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-1.65" x2="1.55" y2="-1.65" width="0.127" layer="21"/>
+<wire x1="1.55" y1="-1.65" x2="1.55" y2="1.45" width="0.127" layer="21"/>
+<wire x1="1.55" y1="1.45" x2="0.75" y2="1.45" width="0.127" layer="21"/>
+<smd name="1" x="-0.91" y="-1.45" dx="1.1" dy="0.9" layer="1"/>
+<smd name="2" x="0" y="1.45" dx="1.1" dy="0.9" layer="1"/>
+<smd name="3" x="0.91" y="-1.45" dx="1.1" dy="0.9" layer="1"/>
+<text x="2" y="1" size="1.016" layer="27">&gt;Value</text>
+<text x="2" y="-2" size="1.016" layer="25">&gt;Name</text>
+</package>
+<package name="3362U-2">
+<circle x="0" y="0" radius="1.397" width="0.127" layer="51"/>
+<circle x="3.1496" y="2.5908" radius="0.1481" width="0.127" layer="51"/>
+<wire x1="-3.81" y1="-3.556" x2="3.81" y2="-3.556" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="-3.556" x2="3.81" y2="3.1496" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="3.1496" x2="-3.81" y2="3.1496" width="0.2032" layer="21"/>
+<wire x1="-3.81" y1="3.1496" x2="-3.81" y2="-3.556" width="0.2032" layer="21"/>
+<wire x1="-3.81" y1="-3.81" x2="3.81" y2="-3.81" width="0.2032" layer="51"/>
+<wire x1="0" y1="1.397" x2="0" y2="-1.397" width="0.127" layer="51"/>
+<wire x1="1.397" y1="0" x2="-1.397" y2="0" width="0.127" layer="51"/>
+<pad name="1" x="-2.54" y="-0.3048" drill="1.016" diameter="1.8796" shape="square"/>
+<pad name="2" x="0" y="-0.3048" drill="1.016" diameter="1.8796"/>
+<pad name="3" x="2.54" y="-0.3048" drill="1.016" diameter="1.8796"/>
+</package>
+<package name="TRIM_POT_PTH">
+<circle x="0" y="0" radius="2.008" width="0.127" layer="21"/>
+<wire x1="2.54" y1="2.54" x2="-2.54" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.127" layer="21"/>
+<wire x1="0" y1="-1.27" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="1.27" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="1.27" y2="0" width="0.127" layer="21"/>
+<pad name="1" x="-2.54" y="-2.54" drill="1" diameter="1.8796" rot="R180"/>
+<pad name="2" x="0" y="2.54" drill="1" diameter="1.8796" rot="R180"/>
+<pad name="3" x="2.54" y="-2.54" drill="1" diameter="1.8796" rot="R180"/>
+<text x="3.175" y="1.27" size="0.6096" layer="25">&gt;Name</text>
+<text x="3.175" y="0" size="0.6096" layer="27">&gt;Value</text>
+</package>
+<package name="TRIMPOT-3MM">
+<wire x1="-1" y1="1.6" x2="-1.6" y2="1.6" width="0.2032" layer="21"/>
+<wire x1="-1.6" y1="1.6" x2="-1.6" y2="-1.6" width="0.2032" layer="21"/>
+<wire x1="1" y1="1.6" x2="1.6" y2="1.6" width="0.2032" layer="21"/>
+<wire x1="1.6" y1="1.6" x2="1.6" y2="-1.6" width="0.2032" layer="21"/>
+<smd name="1" x="-0.85" y="-1.65" dx="1" dy="0.9" layer="1"/>
+<smd name="2" x="0" y="1.65" dx="1.1" dy="0.9" layer="1"/>
+<smd name="3" x="0.85" y="-1.65" dx="1" dy="0.9" layer="1"/>
+<text x="-0.762" y="0.508" size="0.3048" layer="25">&gt;NAME</text>
+<text x="-0.762" y="0" size="0.3048" layer="27">&gt;VALUE</text>
+</package>
+<package name="TRIMPOT-5MM">
+<wire x1="0" y1="-2.14" x2="-2.5" y2="-2.14" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="-2.14" x2="-2.5" y2="2.86" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="2.86" x2="2.5" y2="2.86" width="0.127" layer="51"/>
+<wire x1="2.5" y1="2.86" x2="2.5" y2="-2.14" width="0.127" layer="51"/>
+<wire x1="2.5" y1="-2.14" x2="0" y2="-2.14" width="0.127" layer="51"/>
+<wire x1="-1.4" y1="2.96" x2="-2.6" y2="2.96" width="0.127" layer="21"/>
+<wire x1="-2.6" y1="2.96" x2="-2.6" y2="1.56" width="0.127" layer="21"/>
+<wire x1="1.3" y1="2.96" x2="2.6" y2="2.96" width="0.127" layer="21"/>
+<wire x1="2.6" y1="2.96" x2="2.6" y2="1.56" width="0.127" layer="21"/>
+<wire x1="-2" y1="-2.24" x2="-2.6" y2="-2.24" width="0.127" layer="21"/>
+<wire x1="-2.6" y1="-2.24" x2="-2.6" y2="-1.54" width="0.127" layer="21"/>
+<wire x1="2.1" y1="-2.24" x2="2.6" y2="-2.24" width="0.127" layer="21"/>
+<wire x1="2.6" y1="-2.24" x2="2.6" y2="-1.54" width="0.127" layer="21"/>
+<smd name="A" x="1.15" y="-2.54" dx="1.3" dy="1.3" layer="1"/>
+<smd name="B" x="0" y="2.96" dx="2" dy="1.3" layer="1" rot="R180"/>
+<smd name="C" x="-1.15" y="-2.54" dx="1.3" dy="1.3" layer="1"/>
+<text x="-2.159" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-2.159" y="0" size="0.4064" layer="27">&gt;VALUE</text>
+</package>
+<package name="TRIMPOT_PTH_S3_LOCK">
+<circle x="0" y="0" radius="1.397" width="0.127" layer="51"/>
+<circle x="3.1496" y="2.5908" radius="0.1481" width="0.127" layer="21"/>
+<circle x="-2.54" y="-0.2794" radius="0.2286" width="0.0254" layer="51"/>
+<circle x="0" y="-0.2794" radius="0.2286" width="0.0254" layer="51"/>
+<circle x="2.54" y="-0.2794" radius="0.2286" width="0.0254" layer="51"/>
+<wire x1="-3.81" y1="-3.556" x2="3.81" y2="-3.556" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="-3.556" x2="3.81" y2="3.1496" width="0.2032" layer="21"/>
+<wire x1="3.81" y1="3.1496" x2="-3.81" y2="3.1496" width="0.2032" layer="21"/>
+<wire x1="-3.81" y1="3.1496" x2="-3.81" y2="-3.556" width="0.2032" layer="21"/>
+<wire x1="-3.81" y1="-3.81" x2="3.81" y2="-3.81" width="0.2032" layer="51"/>
+<wire x1="0" y1="1.397" x2="0" y2="-1.397" width="0.127" layer="51"/>
+<wire x1="1.397" y1="0" x2="-1.397" y2="0" width="0.127" layer="51"/>
+<pad name="1" x="-2.6924" y="-0.3048" drill="0.7366" diameter="1.6764" shape="square"/>
+<pad name="2" x="0" y="-0.3048" drill="0.7366" diameter="1.6764"/>
+<pad name="3" x="2.6924" y="-0.3048" drill="0.7366" diameter="1.6764"/>
+</package>
+<package name="TRIMPOT-5MM-V2">
+<wire x1="-2.5" y1="-2.14" x2="-2.5" y2="2.86" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="2.86" x2="2.5" y2="2.86" width="0.127" layer="51"/>
+<wire x1="2.5" y1="2.86" x2="2.5" y2="-2.14" width="0.127" layer="51"/>
+<wire x1="2.5" y1="-2.14" x2="-2.5" y2="-2.14" width="0.127" layer="51"/>
+<wire x1="-1.4" y1="2.96" x2="-2.6" y2="2.96" width="0.2032" layer="21"/>
+<wire x1="-2.6" y1="2.96" x2="-2.6" y2="1.56" width="0.2032" layer="21"/>
+<wire x1="1.409221875" y1="2.96" x2="2.6" y2="2.96" width="0.2032" layer="21"/>
+<wire x1="2.6" y1="2.96" x2="2.6" y2="1.56" width="0.2032" layer="21"/>
+<wire x1="-2.09398125" y1="-2.24" x2="-2.6" y2="-2.24" width="0.2032" layer="21"/>
+<wire x1="-2.6" y1="-2.24" x2="-2.6" y2="-1.54" width="0.2032" layer="21"/>
+<wire x1="2.1" y1="-2.24" x2="2.6" y2="-2.24" width="0.2032" layer="21"/>
+<wire x1="2.6" y1="-2.24" x2="2.6" y2="-1.54" width="0.2032" layer="21"/>
+<smd name="A" x="1.15" y="-2.54" dx="1.3" dy="1.3" layer="1"/>
+<smd name="B" x="0" y="3.2385" dx="2" dy="1.4016" layer="1" rot="R270"/>
+<smd name="C" x="-1.15" y="-2.54" dx="1.3" dy="1.3" layer="1"/>
+<text x="-2.159" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-2.159" y="0" size="0.4064" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="TRIMPOT-1">
+<wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-1.524" y1="-1.016" x2="-0.889" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="-0.889" y1="1.016" x2="-0.254" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="-0.254" y1="-1.016" x2="0.381" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="1.016" x2="1.016" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-1.016" x2="1.651" y2="1.016" width="0.1524" layer="94"/>
+<wire x1="1.651" y1="1.016" x2="2.286" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="2.286" y1="-1.016" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="0" y1="1.524" x2="0.635" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-0.635" y1="2.54" x2="0" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="1.524" width="0.1524" layer="94"/>
+<pin name="CCW" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="CW" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="WIPER" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<text x="-11.43" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TRIMPOT" prefix="R" uservalue="yes">
+<description>Various small potentiometers for "set-and-forget" applications</description>
+<gates>
+<gate name="R?" symbol="TRIMPOT-1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-2" package="TRIMPOT_TC33">
+<connects>
+<connect gate="R?" pin="CCW" pad="1"/>
+<connect gate="R?" pin="CW" pad="3"/>
+<connect gate="R?" pin="WIPER" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="3362U-2" package="3362U-2">
+<connects>
+<connect gate="R?" pin="CCW" pad="1"/>
+<connect gate="R?" pin="CW" pad="3"/>
+<connect gate="R?" pin="WIPER" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-08876"/>
+</technology>
+</technologies>
+</device>
+<device name="PTH" package="TRIM_POT_PTH">
+<connects>
+<connect gate="R?" pin="CCW" pad="1"/>
+<connect gate="R?" pin="CW" pad="3"/>
+<connect gate="R?" pin="WIPER" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-08445"/>
+</technology>
+</technologies>
+</device>
+<device name="-SMD" package="TRIMPOT-3MM">
+<connects>
+<connect gate="R?" pin="CCW" pad="1"/>
+<connect gate="R?" pin="CW" pad="3"/>
+<connect gate="R?" pin="WIPER" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-08048"/>
+<attribute name="VALUE" value="10k"/>
+</technology>
+</technologies>
+</device>
+<device name="TRIMPOT-5MM" package="TRIMPOT-5MM">
+<connects>
+<connect gate="R?" pin="CCW" pad="A"/>
+<connect gate="R?" pin="CW" pad="C"/>
+<connect gate="R?" pin="WIPER" pad="B"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-11156"/>
+<attribute name="VALUE" value="5k"/>
+</technology>
+</technologies>
+</device>
+<device name="TRIMPOT_PTH_S3_LOCK" package="TRIMPOT_PTH_S3_LOCK">
+<connects>
+<connect gate="R?" pin="CCW" pad="1"/>
+<connect gate="R?" pin="CW" pad="3"/>
+<connect gate="R?" pin="WIPER" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="TRIMPOT-5MM-V2">
+<connects>
+<connect gate="R?" pin="CCW" pad="A"/>
+<connect gate="R?" pin="CW" pad="C"/>
+<connect gate="R?" pin="WIPER" pad="B"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -7453,6 +7696,9 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <part name="JP9" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
 <part name="R11" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="GND34" library="backplane" deviceset="GND" device=""/>
+<part name="R13" library="SparkFun-Retired" deviceset="TRIMPOT" device="PTH"/>
+<part name="+3V4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="GND35" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7796,6 +8042,16 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <instance part="GND34" gate="1" x="317.5" y="76.2" smashed="yes" rot="R180">
 <attribute name="VALUE" x="320.04" y="78.74" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="R13" gate="R?" x="-88.9" y="25.4" smashed="yes">
+<attribute name="NAME" x="-90.17" y="21.8186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-92.71" y="22.098" size="1.778" layer="96"/>
+</instance>
+<instance part="+3V4" gate="G$1" x="-99.06" y="27.94" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="-96.52" y="22.86" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="GND35" gate="1" x="-81.28" y="22.86" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="-78.74" y="20.32" size="1.778" layer="96" rot="MR0"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -8017,6 +8273,11 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <pinref part="R11" gate="G$1" pin="1"/>
 <pinref part="GND34" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="R13" gate="R?" pin="CW"/>
+<pinref part="GND35" gate="1" pin="GND"/>
+<wire x1="-83.82" y1="25.4" x2="-81.28" y2="25.4" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -8056,6 +8317,11 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
+</segment>
+<segment>
+<pinref part="+3V4" gate="G$1" pin="+3V3"/>
+<pinref part="R13" gate="R?" pin="CCW"/>
+<wire x1="-99.06" y1="25.4" x2="-93.98" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="USB_DP" class="0">
@@ -8539,6 +8805,10 @@ Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&
 <pinref part="IC3" gate="G$1" pin="PA0"/>
 <pinref part="JP8" gate="A" pin="4"/>
 <wire x1="-17.78" y1="40.64" x2="-60.96" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="R13" gate="R?" pin="WIPER"/>
+<wire x1="-88.9" y1="30.48" x2="-88.9" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="40.64" x2="-60.96" y2="40.64" width="0.1524" layer="91"/>
+<junction x="-60.96" y="40.64"/>
 </segment>
 </net>
 <net name="N$30" class="0">
