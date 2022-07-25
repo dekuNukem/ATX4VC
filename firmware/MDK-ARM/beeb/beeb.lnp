@@ -1,0 +1,26 @@
+--cpu Cortex-M0
+"beeb\startup_stm32f042x6.o"
+"beeb\main.o"
+"beeb\stm32f0xx_it.o"
+"beeb\stm32f0xx_hal_msp.o"
+"beeb\stm32f0xx_hal_tim.o"
+"beeb\stm32f0xx_hal_tim_ex.o"
+"beeb\stm32f0xx_hal_uart.o"
+"beeb\stm32f0xx_hal_uart_ex.o"
+"beeb\stm32f0xx_hal_rcc.o"
+"beeb\stm32f0xx_hal_rcc_ex.o"
+"beeb\stm32f0xx_hal.o"
+"beeb\stm32f0xx_hal_i2c.o"
+"beeb\stm32f0xx_hal_i2c_ex.o"
+"beeb\stm32f0xx_hal_gpio.o"
+"beeb\stm32f0xx_hal_dma.o"
+"beeb\stm32f0xx_hal_cortex.o"
+"beeb\stm32f0xx_hal_pwr.o"
+"beeb\stm32f0xx_hal_pwr_ex.o"
+"beeb\stm32f0xx_hal_flash.o"
+"beeb\stm32f0xx_hal_flash_ex.o"
+"beeb\system_stm32f0xx.o"
+--library_type=microlib --strict --scatter "beeb\beeb.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "beeb.map" -o beeb\beeb.axf
