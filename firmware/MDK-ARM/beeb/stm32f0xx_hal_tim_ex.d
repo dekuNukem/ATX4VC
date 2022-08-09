@@ -26,5 +26,7 @@ beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i
 beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h
 beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h
 beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h
+beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h
+beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi_ex.h
 beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 beeb\stm32f0xx_hal_tim_ex.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
