@@ -263,8 +263,8 @@ PT2</text>
 LED</text>
 <text x="64.516" y="22.733" size="3.81" layer="25" rot="R180" align="center">+</text>
 <text x="31.2712" y="48.0014" size="1.143" layer="25" align="center">PG</text>
-<text x="34.798" y="11.811" size="1.4224" layer="25" rot="R270" align="center">COLOR</text>
-<text x="34.798" y="22.733" size="1.4224" layer="25" rot="R270" align="center">BRIGHT</text>
+<text x="34.798" y="14.097" size="1.4224" layer="25" rot="R270" align="center">COLOR/SPD</text>
+<text x="34.798" y="25.908" size="1.4224" layer="25" rot="R270" align="center">BRIGHT</text>
 <text x="57.404" y="17.907" size="1.4224" layer="25" rot="R270" align="center">FAN SPD</text>
 <text x="56.642" y="11.557" size="1.016" layer="25" align="center">RGB
 MODE</text>

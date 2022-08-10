@@ -9,3 +9,6 @@ added labels on debug header
 cleaned up power OK and power on header
 
 PT2
+reduced footprint while keeping the screw holes location, so it will still fit into a 2.5 inch bay with openings for cables
+changed to having one fan header and one ARGB header
+added pots for changing fan speed, rgb brightness and rgb colour/speed
