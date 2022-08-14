@@ -12,3 +12,8 @@ PT2
 reduced footprint while keeping the screw holes location, so it will still fit into a 2.5 inch bay with openings for cables
 changed to having one fan header and one ARGB header
 added pots for changing fan speed, rgb brightness and rgb colour/speed
+
+PT3
+added terminal blocks for power LED and power button
+moved on-board power button
+adjusted silkscreen

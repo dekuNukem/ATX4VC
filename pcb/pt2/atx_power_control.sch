@@ -3775,13 +3775,13 @@ TS-003</description>
 &lt;ul&gt;&lt;li&gt;CONN_02&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;</description>
 <circle x="2" y="3" radius="0.2828" width="0.127" layer="51"/>
-<wire x1="-1.75" y1="3.4" x2="5.25" y2="3.4" width="0.2032" layer="51"/>
-<wire x1="5.25" y1="3.4" x2="5.25" y2="-2.8" width="0.2032" layer="51"/>
-<wire x1="5.25" y1="-2.8" x2="5.25" y2="-3.6" width="0.2032" layer="51"/>
-<wire x1="5.25" y1="-3.6" x2="-1.75" y2="-3.6" width="0.2032" layer="51"/>
-<wire x1="-1.75" y1="-3.6" x2="-1.75" y2="-2.8" width="0.2032" layer="51"/>
-<wire x1="-1.75" y1="-2.8" x2="-1.75" y2="3.4" width="0.2032" layer="51"/>
-<wire x1="5.25" y1="-2.8" x2="-1.75" y2="-2.8" width="0.2032" layer="51"/>
+<wire x1="-1.75" y1="3.4" x2="5.25" y2="3.4" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="3.4" x2="5.25" y2="-2.8" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="-2.8" x2="5.25" y2="-3.6" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="-3.6" x2="-1.75" y2="-3.6" width="0.2032" layer="21"/>
+<wire x1="-1.75" y1="-3.6" x2="-1.75" y2="-2.8" width="0.2032" layer="21"/>
+<wire x1="-1.75" y1="-2.8" x2="-1.75" y2="3.4" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="-2.8" x2="-1.75" y2="-2.8" width="0.2032" layer="21"/>
 <wire x1="-1.75" y1="-1.35" x2="-2.25" y2="-1.35" width="0.2032" layer="51"/>
 <wire x1="-2.25" y1="-1.35" x2="-2.25" y2="-2.35" width="0.2032" layer="51"/>
 <wire x1="-2.25" y1="-2.35" x2="-1.75" y2="-2.35" width="0.2032" layer="51"/>
@@ -4790,7 +4790,7 @@ by exp-lbrs.ulp</description>
 <part name="U$3" library="a" deviceset="M3_MOUNTING_HOLE" device=""/>
 <part name="J1" library="SparkFun-Connectors" deviceset="ATX24" device="RH"/>
 <part name="J6" library="atx_power_control" deviceset="CONN_02" device="3.5MM"/>
-<part name="J7" library="atx_power_control" deviceset="CONN_02" device="3.5MM-NO_SILK"/>
+<part name="J7" library="atx_power_control" deviceset="CONN_02" device="3.5MM"/>
 <part name="J2" library="atx_power_control" deviceset="CONN_02" device="3.5MM"/>
 <part name="J3" library="atx_power_control" deviceset="CONN_02" device="3.5MM"/>
 <part name="J4" library="atx_power_control" deviceset="CONN_02" device="3.5MM"/>
@@ -4852,8 +4852,6 @@ by exp-lbrs.ulp</description>
 <part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="R12" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="300"/>
 <part name="GND35" library="backplane" deviceset="GND" device=""/>
-<part name="J5" library="atx_power_control" deviceset="CONN_02" device="3.5MM"/>
-<part name="J8" library="atx_power_control" deviceset="CONN_02" device="3.5MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -5182,14 +5180,6 @@ by exp-lbrs.ulp</description>
 <instance part="GND35" gate="1" x="-139.7" y="-5.08" smashed="yes">
 <attribute name="VALUE" x="-142.24" y="-7.62" size="1.778" layer="96"/>
 </instance>
-<instance part="J5" gate="G$1" x="55.88" y="-7.62" smashed="yes" rot="R180">
-<attribute name="VALUE" x="58.42" y="-2.794" size="1.778" layer="96" font="vector" rot="R180"/>
-<attribute name="NAME" x="58.42" y="-13.208" size="1.778" layer="95" font="vector" rot="R180"/>
-</instance>
-<instance part="J8" gate="G$1" x="330.2" y="50.8" smashed="yes" rot="R180">
-<attribute name="VALUE" x="332.74" y="55.626" size="1.778" layer="96" font="vector" rot="R180"/>
-<attribute name="NAME" x="332.74" y="45.212" size="1.778" layer="95" font="vector" rot="R180"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -5337,9 +5327,6 @@ by exp-lbrs.ulp</description>
 <wire x1="17.78" y1="-45.72" x2="17.78" y2="-48.26" width="0.1524" layer="91"/>
 <pinref part="JP6" gate="G$1" pin="1"/>
 <wire x1="17.78" y1="-10.16" x2="33.02" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="2"/>
-<wire x1="48.26" y1="-10.16" x2="33.02" y2="-10.16" width="0.1524" layer="91"/>
-<junction x="33.02" y="-10.16"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -5745,16 +5732,13 @@ by exp-lbrs.ulp</description>
 <wire x1="368.3" y1="25.4" x2="373.38" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="J2" gate="G$1" pin="2"/>
 <wire x1="292.1" y1="22.86" x2="314.96" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="314.96" y1="22.86" x2="347.98" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="317.5" y1="22.86" x2="347.98" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="347.98" y1="22.86" x2="368.3" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="368.3" y1="22.86" x2="368.3" y2="25.4" width="0.1524" layer="91"/>
 <junction x="347.98" y="22.86"/>
 <pinref part="JP1" gate="G$1" pin="1"/>
-<wire x1="314.96" y1="55.88" x2="314.96" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="314.96" y1="48.26" x2="314.96" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="J8" gate="G$1" pin="2"/>
-<wire x1="322.58" y1="48.26" x2="314.96" y2="48.26" width="0.1524" layer="91"/>
-<junction x="314.96" y="48.26"/>
+<wire x1="314.96" y1="55.88" x2="314.96" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="314.96" y1="22.86" x2="317.5" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -5793,9 +5777,6 @@ by exp-lbrs.ulp</description>
 <pinref part="JP6" gate="G$1" pin="2"/>
 <wire x1="33.02" y1="-7.62" x2="10.16" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="10.16" y="-7.62"/>
-<pinref part="J5" gate="G$1" pin="1"/>
-<wire x1="33.02" y1="-7.62" x2="48.26" y2="-7.62" width="0.1524" layer="91"/>
-<junction x="33.02" y="-7.62"/>
 </segment>
 </net>
 <net name="N$28" class="0">
@@ -5847,10 +5828,6 @@ by exp-lbrs.ulp</description>
 <pinref part="R11" gate="G$1" pin="2"/>
 <pinref part="JP1" gate="G$1" pin="2"/>
 <wire x1="317.5" y1="63.5" x2="317.5" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="J8" gate="G$1" pin="1"/>
-<wire x1="317.5" y1="55.88" x2="317.5" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="317.5" y1="50.8" x2="322.58" y2="50.8" width="0.1524" layer="91"/>
-<junction x="317.5" y="55.88"/>
 </segment>
 </net>
 <net name="N$21" class="0">
