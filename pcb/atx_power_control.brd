@@ -704,35 +704,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="-1.7" y="-6"/>
 </polygon>
 </package>
-<package name="SCREWTERMINAL-3.5MM-2">
-<description>&lt;h3&gt;Screw Terminal  3.5mm Pitch - 2 Pin PTH&lt;/h3&gt;
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count: 2&lt;/li&gt;
-&lt;li&gt;Pin pitch: 3.5mm/138mil&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-3.5mm.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;CONN_02&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<circle x="2" y="3" radius="0.2828" width="0.127" layer="51"/>
-<wire x1="-1.75" y1="3.4" x2="5.25" y2="3.4" width="0.2032" layer="21"/>
-<wire x1="5.25" y1="3.4" x2="5.25" y2="-2.8" width="0.2032" layer="21"/>
-<wire x1="5.25" y1="-2.8" x2="5.25" y2="-3.6" width="0.2032" layer="21"/>
-<wire x1="5.25" y1="-3.6" x2="-1.75" y2="-3.6" width="0.2032" layer="21"/>
-<wire x1="-1.75" y1="-3.6" x2="-1.75" y2="-2.8" width="0.2032" layer="21"/>
-<wire x1="-1.75" y1="-2.8" x2="-1.75" y2="3.4" width="0.2032" layer="21"/>
-<wire x1="5.25" y1="-2.8" x2="-1.75" y2="-2.8" width="0.2032" layer="21"/>
-<wire x1="-1.75" y1="-1.35" x2="-2.25" y2="-1.35" width="0.2032" layer="51"/>
-<wire x1="-2.25" y1="-1.35" x2="-2.25" y2="-2.35" width="0.2032" layer="51"/>
-<wire x1="-2.25" y1="-2.35" x2="-1.75" y2="-2.35" width="0.2032" layer="51"/>
-<wire x1="5.25" y1="3.15" x2="5.75" y2="3.15" width="0.2032" layer="51"/>
-<wire x1="5.75" y1="3.15" x2="5.75" y2="2.15" width="0.2032" layer="51"/>
-<wire x1="5.75" y1="2.15" x2="5.25" y2="2.15" width="0.2032" layer="51"/>
-<pad name="1" x="0" y="0" drill="1.2" diameter="2.032" shape="square"/>
-<pad name="2" x="3.5" y="0" drill="1.2" diameter="2.032"/>
-<text x="-1.27" y="2.54" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-1.27" y="1.27" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-</package>
 </packages>
 </library>
 <library name="atx_power_control">
@@ -792,6 +763,35 @@ TS-003</description>
 <pad name="2" x="0" y="-6.0325" drill="1.778"/>
 <pad name="3" x="0" y="6.0325" drill="1.778" rot="R180"/>
 <pad name="4" x="0" y="11.1125" drill="1.778" rot="R180"/>
+</package>
+<package name="SCREWTERMINAL-3.5MM-2">
+<description>&lt;h3&gt;Screw Terminal  3.5mm Pitch - 2 Pin PTH&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 2&lt;/li&gt;
+&lt;li&gt;Pin pitch: 3.5mm/138mil&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-3.5mm.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;CONN_02&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<circle x="2" y="3" radius="0.2828" width="0.127" layer="51"/>
+<wire x1="-1.75" y1="3.4" x2="5.25" y2="3.4" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="3.4" x2="5.25" y2="-2.8" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="-2.8" x2="5.25" y2="-3.6" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="-3.6" x2="-1.75" y2="-3.6" width="0.2032" layer="21"/>
+<wire x1="-1.75" y1="-3.6" x2="-1.75" y2="-2.8" width="0.2032" layer="21"/>
+<wire x1="-1.75" y1="-2.8" x2="-1.75" y2="3.4" width="0.2032" layer="21"/>
+<wire x1="5.25" y1="-2.8" x2="-1.75" y2="-2.8" width="0.2032" layer="21"/>
+<wire x1="-1.75" y1="-1.35" x2="-2.25" y2="-1.35" width="0.2032" layer="51"/>
+<wire x1="-2.25" y1="-1.35" x2="-2.25" y2="-2.35" width="0.2032" layer="51"/>
+<wire x1="-2.25" y1="-2.35" x2="-1.75" y2="-2.35" width="0.2032" layer="51"/>
+<wire x1="5.25" y1="3.15" x2="5.75" y2="3.15" width="0.2032" layer="51"/>
+<wire x1="5.75" y1="3.15" x2="5.75" y2="2.15" width="0.2032" layer="51"/>
+<wire x1="5.75" y1="2.15" x2="5.25" y2="2.15" width="0.2032" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.2" diameter="2.032" shape="square" thermals="no"/>
+<pad name="2" x="3.5" y="0" drill="1.2" diameter="2.032" thermals="no"/>
+<text x="-1.27" y="2.54" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.27" y="1.27" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -1053,23 +1053,23 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="U$2" library="a" package="M3_MOUNTING_HOLE_PACK" value="M3_MOUNTING_HOLE" x="4.348" y="65.855" smashed="yes"/>
 <element name="U$3" library="a" package="M3_MOUNTING_HOLE_PACK" value="M3_MOUNTING_HOLE" x="81.148" y="65.855" smashed="yes"/>
 <element name="J1" library="SparkFun-Connectors" package="ATX24_RIGHT_ANGLE" value="ATX24RH" x="9.254" y="35" smashed="yes" rot="R270"/>
-<element name="J6" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="57.658" smashed="yes" rot="R270">
+<element name="J6" library="atx_power_control" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="57.658" smashed="yes" rot="R270">
 <attribute name="PROD_ID" value="CONN-08399" x="82.804" y="57.658" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="84.074" y="58.928" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="J7" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="47.498" smashed="yes" rot="R270">
+<element name="J7" library="atx_power_control" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="47.498" smashed="yes" rot="R270">
 <attribute name="PROD_ID" value="CONN-08399" x="82.804" y="47.498" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="84.074" y="48.768" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="J2" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="37.338" smashed="yes" rot="R270">
+<element name="J2" library="atx_power_control" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="37.338" smashed="yes" rot="R270">
 <attribute name="PROD_ID" value="CONN-08399" x="82.804" y="37.338" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="84.074" y="38.608" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="J3" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="17.018" smashed="yes" rot="R270">
+<element name="J3" library="atx_power_control" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="17.018" smashed="yes" rot="R270">
 <attribute name="PROD_ID" value="CONN-08399" x="82.804" y="17.018" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="84.074" y="18.288" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
-<element name="J4" library="SparkFun-Connectors" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="27.178" smashed="yes" rot="R270">
+<element name="J4" library="atx_power_control" package="SCREWTERMINAL-3.5MM-2" value="" x="82.804" y="27.178" smashed="yes" rot="R270">
 <attribute name="PROD_ID" value="CONN-08399" x="82.804" y="27.178" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="84.074" y="28.448" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
 </element>
