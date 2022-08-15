@@ -17,3 +17,4 @@ PT3
 added terminal blocks for power LED and power button
 moved on-board power button
 adjusted silkscreen
+removed pots and added buttons and headers instead
