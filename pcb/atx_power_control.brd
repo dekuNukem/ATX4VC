@@ -222,7 +222,7 @@ SW</text>
 <text x="77.978" y="18.1318" size="1.9304" layer="25" rot="R270" align="center">G</text>
 <text x="33.655" y="41.9562" size="1.143" layer="25" rot="R180" align="center">5V
 SB</text>
-<text x="6.096" y="35.052" size="2.54" layer="26" rot="MR90" align="center">ATX CONTROL BOARD
+<text x="6.096" y="35.052" size="2.54" layer="26" rot="MR90" align="center">ATX4VC.COM
 dekuNukem AUG 2022
 PT3</text>
 <text x="43.9712" y="42.7944" size="1.1684" layer="25" align="center">GND</text>
@@ -274,6 +274,7 @@ LED</text>
 <text x="37.592" y="9.525" size="1.27" layer="25" align="center">COLOR</text>
 <text x="54.864" y="9.525" size="1.27" layer="25" rot="R180" align="center">BRIGHT</text>
 <text x="57.404" y="20.574" size="1.27" layer="25" rot="R90" align="center">FAN SPD</text>
+<rectangle x1="66.04" y1="8.763" x2="74.549" y2="18.923" layer="41"/>
 </plain>
 <libraries>
 <library name="clock">
@@ -1175,11 +1176,11 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="C5" library="clock" package="0805@1" value="1uF" x="65.786" y="18.542" smashed="yes" rot="R90">
 <attribute name="NAME" x="64.7065" y="17.399" size="0.8128" layer="25" rot="R90"/>
 </element>
-<element name="LED4" library="adafruit" package="CHIP-LED0805" value="" x="76.2" y="16.637" smashed="yes" rot="R90">
-<attribute name="VALUE" x="77.47" y="19.177" size="1.27" layer="27" rot="R180"/>
+<element name="LED4" library="adafruit" package="CHIP-LED0805" value="" x="76.454" y="16.637" smashed="yes" rot="R90">
+<attribute name="VALUE" x="77.724" y="19.177" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R7" library="SparkFun-Passives" package="0805" value="5K" x="75.946" y="14.478" smashed="yes" rot="R180">
-<attribute name="NAME" x="76.454" y="13.1445" size="0.8128" layer="25" rot="R180"/>
+<element name="R7" library="SparkFun-Passives" package="0805" value="5K" x="76.327" y="14.351" smashed="yes" rot="R180">
+<attribute name="NAME" x="76.835" y="13.0175" size="0.8128" layer="25" rot="R180"/>
 </element>
 <element name="LED5" library="adafruit" package="CHIP-LED0805" value="" x="74.549" y="54.991" smashed="yes" rot="R90">
 <attribute name="VALUE" x="75.819" y="57.531" size="1.27" layer="27" rot="R180"/>
@@ -1322,6 +1323,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="JP9" pad="3"/>
 <contactref element="JP9" pad="5"/>
 <contactref element="JP9" pad="7"/>
+<wire x1="80.3662" y1="19.4558" x2="72.8158" y2="19.4558" width="1.016" layer="1"/>
+<wire x1="72.638" y1="19.278" x2="72.8158" y2="19.4558" width="1.016" layer="1"/>
+<wire x1="80.3662" y1="19.4558" x2="82.804" y2="17.018" width="1.016" layer="1"/>
 </signal>
 <signal name="+3V3">
 <polygon width="0.1524" layer="16" isolate="0.508">
@@ -1515,22 +1519,22 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="16.764" y1="13.35" x2="16.764" y2="10.541" width="0.508" layer="1"/>
 <wire x1="16.764" y1="10.541" x2="18.161" y2="9.144" width="0.508" layer="1"/>
 <wire x1="18.161" y1="9.144" x2="67.524" y2="9.144" width="0.508" layer="1"/>
-<wire x1="70.358" y1="11.978" x2="76.835" y2="11.978" width="0.508" layer="1"/>
-<wire x1="76.835" y1="11.978" x2="81.264" y2="11.978" width="0.508" layer="1"/>
+<wire x1="70.358" y1="11.978" x2="77.089" y2="11.978" width="0.508" layer="1"/>
+<wire x1="77.089" y1="11.978" x2="81.264" y2="11.978" width="0.508" layer="1"/>
 <wire x1="81.264" y1="11.978" x2="82.804" y2="13.518" width="0.508" layer="1"/>
-<wire x1="76.846" y1="14.478" x2="76.846" y2="11.989" width="0.508" layer="1"/>
-<wire x1="76.846" y1="11.989" x2="76.835" y2="11.978" width="0.508" layer="1"/>
+<wire x1="77.227" y1="14.351" x2="77.227" y2="12.116" width="0.508" layer="1"/>
+<wire x1="77.227" y1="12.116" x2="77.089" y2="11.978" width="0.508" layer="1"/>
 </signal>
 <signal name="N$11">
 <contactref element="IC4" pad="2"/>
 <contactref element="C5" pad="2"/>
 <contactref element="R4" pad="1"/>
 <contactref element="J4" pad="2"/>
-<wire x1="68.078" y1="19.278" x2="68.078" y2="20.834" width="0.508" layer="1"/>
-<wire x1="68.078" y1="20.834" x2="69.596" y2="22.352" width="0.508" layer="1"/>
+<wire x1="68.078" y1="19.278" x2="68.078" y2="20.961" width="0.508" layer="1"/>
+<wire x1="68.078" y1="20.961" x2="69.469" y2="22.352" width="0.508" layer="1"/>
 <wire x1="82.804" y1="23.678" x2="81.478" y2="22.352" width="0.508" layer="1"/>
 <wire x1="81.478" y1="22.352" x2="75.449" y2="22.352" width="0.508" layer="1"/>
-<wire x1="75.449" y1="22.352" x2="69.596" y2="22.352" width="0.508" layer="1"/>
+<wire x1="75.449" y1="22.352" x2="69.469" y2="22.352" width="0.508" layer="1"/>
 <wire x1="75.449" y1="24.384" x2="75.449" y2="22.352" width="0.508" layer="1"/>
 <wire x1="68.078" y1="19.278" x2="67.824" y2="19.532" width="0.508" layer="1"/>
 <wire x1="67.824" y1="19.532" x2="65.876" y2="19.532" width="0.508" layer="1"/>
@@ -1562,8 +1566,8 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <signal name="N$8">
 <contactref element="LED4" pad="C"/>
 <contactref element="R7" pad="2"/>
-<wire x1="75.15" y1="16.637" x2="75.15" y2="14.582" width="0.508" layer="1"/>
-<wire x1="75.046" y1="14.478" x2="75.15" y2="14.582" width="0.508" layer="1"/>
+<wire x1="75.404" y1="16.637" x2="75.404" y2="14.374" width="0.508" layer="1"/>
+<wire x1="75.427" y1="14.351" x2="75.404" y2="14.374" width="0.508" layer="1"/>
 </signal>
 <signal name="N$9">
 <contactref element="LED5" pad="C"/>
