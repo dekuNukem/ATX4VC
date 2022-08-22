@@ -141,14 +141,14 @@ int main(void)
   memset(green_buf, 255, NEOPIXEL_COUNT);
   memset(blue_buf, 255, NEOPIXEL_COUNT);
 
-  neopixel_show(red_buf, green_buf, blue_buf);
-
   while (1)
   {
 
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+    neopixel_show(red_buf, green_buf, blue_buf);
+    HAL_Delay(20);
 
     current_btn_status = HAL_GPIO_ReadPin(PWR_BTN_GPIO_Port, PWR_BTN_Pin);
     if(current_btn_status == 0 && prev_btn_status == 1)
