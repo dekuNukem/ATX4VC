@@ -19,3 +19,4 @@ moved on-board power button
 adjusted silkscreen
 removed pots and added buttons and headers instead
 added restrict over 7905
+added USB-C connecter for ARGB
