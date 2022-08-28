@@ -51,8 +51,16 @@
 
 #define PWR_ON_Pin GPIO_PIN_0
 #define PWR_ON_GPIO_Port GPIOF
-#define PWR_BTN_Pin GPIO_PIN_1
-#define PWR_BTN_GPIO_Port GPIOF
+#define BTN_POWER_Pin GPIO_PIN_1
+#define BTN_POWER_GPIO_Port GPIOF
+#define BTN_COLOR_Pin GPIO_PIN_0
+#define BTN_COLOR_GPIO_Port GPIOA
+#define BTN_RGB_MODE_Pin GPIO_PIN_1
+#define BTN_RGB_MODE_GPIO_Port GPIOA
+#define BTN_BRIGHTNESS_Pin GPIO_PIN_3
+#define BTN_BRIGHTNESS_GPIO_Port GPIOA
+#define BTN_FANSPEED_Pin GPIO_PIN_4
+#define BTN_FANSPEED_GPIO_Port GPIOA
 
 /* ########################## Assert Selection ############################## */
 /**

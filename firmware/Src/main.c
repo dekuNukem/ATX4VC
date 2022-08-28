@@ -42,11 +42,15 @@
 
 /* USER CODE BEGIN Includes */
 #include "neopixel.h"
+#include "buttons.h"
+#include <string.h>
 
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 SPI_HandleTypeDef hspi1;
+
+TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart2;
 
@@ -60,6 +64,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_SPI1_Init(void);
+static void MX_TIM17_Init(void);
+static void MX_NVIC_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -74,24 +80,15 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
-#define BUTTON_STABLE 0
-#define BUTTON_BOUNCING 1
-uint8_t debounce_button(uint8_t initial_state, uint32_t duration_ms)
-{
-  uint32_t start = HAL_GetTick();
-  while(1)
-  {
-    if(HAL_GetTick() - start > duration_ms)
-      return BUTTON_STABLE;
-    if(HAL_GPIO_ReadPin(PWR_BTN_GPIO_Port, PWR_BTN_Pin) != initial_state)
-      return BUTTON_BOUNCING;
-  }
-  return BUTTON_STABLE;
-}
-
 uint8_t red_buf[NEOPIXEL_COUNT];
 uint8_t green_buf[NEOPIXEL_COUNT];
 uint8_t blue_buf[NEOPIXEL_COUNT];
+
+// happens every 16ms
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+}
 
 /* USER CODE END 0 */
 
@@ -126,17 +123,18 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_SPI1_Init();
+  MX_TIM17_Init();
+
+  /* Initialize interrupts */
+  MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  HAL_TIM_Base_Start_IT(&htim17);
 
-  uint8_t current_btn_status = 1;
-  uint8_t prev_btn_status = 1;
-  uint8_t button_press_count = 1;
-  
   memset(red_buf, 255, NEOPIXEL_COUNT);
   memset(green_buf, 255, NEOPIXEL_COUNT);
   memset(blue_buf, 255, NEOPIXEL_COUNT);
@@ -147,22 +145,7 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-    neopixel_show(red_buf, green_buf, blue_buf);
-    HAL_Delay(20);
 
-    current_btn_status = HAL_GPIO_ReadPin(PWR_BTN_GPIO_Port, PWR_BTN_Pin);
-    if(current_btn_status == 0 && prev_btn_status == 1)
-    {
-      uint8_t debounce_result = debounce_button(current_btn_status, 33);
-      if(debounce_result == BUTTON_STABLE)
-      {
-        button_press_count = (button_press_count + 1) % 2;
-        HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, button_press_count);
-        printf("%d button pressed! %d\n", HAL_GetTick(), button_press_count);
-        HAL_Delay(50);
-      }
-    }
-    prev_btn_status = current_btn_status;
   }
   /* USER CODE END 3 */
 
@@ -185,7 +168,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSICalibrationValue = 16;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL4;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL5;
   RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -217,6 +200,17 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
+/**
+  * @brief NVIC Configuration.
+  * @retval None
+  */
+static void MX_NVIC_Init(void)
+{
+  /* TIM17_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(TIM17_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(TIM17_IRQn);
+}
+
 /* SPI1 init function */
 static void MX_SPI1_Init(void)
 {
@@ -243,6 +237,24 @@ static void MX_SPI1_Init(void)
 
 }
 
+/* TIM17 init function */
+static void MX_TIM17_Init(void)
+{
+
+  htim17.Instance = TIM17;
+  htim17.Init.Prescaler = 39;
+  htim17.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim17.Init.Period = 16666;
+  htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim17.Init.RepetitionCounter = 0;
+  htim17.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim17) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
 /* USART2 init function */
 static void MX_USART2_UART_Init(void)
 {
@@ -257,7 +269,7 @@ static void MX_USART2_UART_Init(void)
   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
   huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
+  if (HAL_HalfDuplex_Init(&huart2) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
@@ -283,6 +295,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, GPIO_PIN_SET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : PWR_ON_Pin */
   GPIO_InitStruct.Pin = PWR_ON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
@@ -290,11 +305,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(PWR_ON_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PWR_BTN_Pin */
-  GPIO_InitStruct.Pin = PWR_BTN_Pin;
+  /*Configure GPIO pin : BTN_POWER_Pin */
+  GPIO_InitStruct.Pin = BTN_POWER_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(PWR_BTN_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(BTN_POWER_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : BTN_COLOR_Pin BTN_RGB_MODE_Pin BTN_BRIGHTNESS_Pin BTN_FANSPEED_Pin */
+  GPIO_InitStruct.Pin = BTN_COLOR_Pin|BTN_RGB_MODE_Pin|BTN_BRIGHTNESS_Pin|BTN_FANSPEED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA6 */
+  GPIO_InitStruct.Pin = GPIO_PIN_6;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 
