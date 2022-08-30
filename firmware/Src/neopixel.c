@@ -37,4 +37,5 @@ void neopixel_show(uint8_t* red, uint8_t* green, uint8_t* blue)
     }
   }
   HAL_SPI_Transmit(&hspi1, ws_spi_buf, WS_SPI_BUF_SIZE, 5);
+  HAL_SPI_Transmit(&hspi1, ws_reset_buf, NEOPIXEL_RESET_BUF_SIZE, 5);
 }
