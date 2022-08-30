@@ -24,3 +24,5 @@ added USB-C connecter for ARGB
 PT4
 removed copper pour near terminals
 power sense now uses PG signal
+brightness button is shared with DFU button
+added UART TX and RX header
