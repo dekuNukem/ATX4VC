@@ -23,3 +23,4 @@ added USB-C connecter for ARGB
 
 PT4
 removed copper pour near terminals
+power sense now uses PG signal

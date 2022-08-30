@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -222,11 +222,11 @@ by exp-lbrs.ulp</description>
 <text x="-4.2" y="-0.75" size="1.27" layer="22" rot="R180" align="center">i</text>
 <text x="-4.708" y="0.877" size="1.27" layer="22" rot="R180" align="center">-</text>
 <rectangle x1="-1.8" y1="-1.6" x2="1.8" y2="1.6" layer="42"/>
-<wire x1="-5.715" y1="1.27" x2="-4.064" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-4.064" y1="1.27" x2="-4.064" y2="0.381" width="0.1524" layer="21"/>
-<wire x1="-4.064" y1="0.381" x2="-5.207" y2="0.381" width="0.1524" layer="21"/>
-<wire x1="-5.207" y1="0.381" x2="-5.715" y2="0.889" width="0.1524" layer="21"/>
-<wire x1="-5.715" y1="0.889" x2="-5.715" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-5.715" y1="1.27" x2="-4.064" y2="1.27" width="0.1524" layer="22"/>
+<wire x1="-4.064" y1="1.27" x2="-4.064" y2="0.381" width="0.1524" layer="22"/>
+<wire x1="-4.064" y1="0.381" x2="-5.207" y2="0.381" width="0.1524" layer="22"/>
+<wire x1="-5.207" y1="0.381" x2="-5.715" y2="0.889" width="0.1524" layer="22"/>
+<wire x1="-5.715" y1="0.889" x2="-5.715" y2="1.27" width="0.1524" layer="22"/>
 <text x="-2.54" y="-3.048" size="1.016" layer="25">&gt;NAME</text>
 </package>
 <package name="USBC_16P_FOOT">
