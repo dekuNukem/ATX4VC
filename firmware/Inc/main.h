@@ -49,6 +49,8 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define BTN_BRIGHTNESS_Pin GPIO_PIN_8
+#define BTN_BRIGHTNESS_GPIO_Port GPIOB
 #define PWR_ON_Pin GPIO_PIN_0
 #define PWR_ON_GPIO_Port GPIOF
 #define BTN_POWER_Pin GPIO_PIN_1
@@ -57,10 +59,12 @@
 #define BTN_COLOR_GPIO_Port GPIOA
 #define BTN_RGB_MODE_Pin GPIO_PIN_1
 #define BTN_RGB_MODE_GPIO_Port GPIOA
-#define BTN_BRIGHTNESS_Pin GPIO_PIN_3
-#define BTN_BRIGHTNESS_GPIO_Port GPIOA
+#define DEBUG_Pin GPIO_PIN_3
+#define DEBUG_GPIO_Port GPIOA
 #define BTN_FANSPEED_Pin GPIO_PIN_4
 #define BTN_FANSPEED_GPIO_Port GPIOA
+#define ATX_PG_Pin GPIO_PIN_9
+#define ATX_PG_GPIO_Port GPIOA
 
 /* ########################## Assert Selection ############################## */
 /**

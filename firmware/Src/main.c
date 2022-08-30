@@ -50,6 +50,7 @@
 /* Private variables ---------------------------------------------------------*/
 SPI_HandleTypeDef hspi1;
 
+TIM_HandleTypeDef htim14;
 TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart2;
@@ -65,7 +66,11 @@ static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_TIM17_Init(void);
+static void MX_TIM14_Init(void);
 static void MX_NVIC_Init(void);
+                                    
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+                                
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -87,8 +92,17 @@ uint8_t blue_buf[NEOPIXEL_COUNT];
 // happens every 16ms
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
 }
+
+// void change_fan_speed(uint32_t amount)
+// {
+//   // 0 stopped 400 full speed
+//   htim14.Instance->CCR1 = 100;
+//   HAL_Delay(50);
+//   htim14.Instance->CCR1 = 300;
+//   HAL_Delay(50);
+// }
 
 /* USER CODE END 0 */
 
@@ -124,6 +138,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SPI1_Init();
   MX_TIM17_Init();
+  MX_TIM14_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
@@ -134,6 +149,10 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   HAL_TIM_Base_Start_IT(&htim17);
+
+  HAL_TIM_Base_Start(&htim14);
+  HAL_TIM_PWM_Init(&htim14);
+  HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
 
   memset(red_buf, 255, NEOPIXEL_COUNT);
   memset(green_buf, 255, NEOPIXEL_COUNT);
@@ -237,6 +256,41 @@ static void MX_SPI1_Init(void)
 
 }
 
+/* TIM14 init function */
+static void MX_TIM14_Init(void)
+{
+
+  TIM_OC_InitTypeDef sConfigOC;
+
+  htim14.Instance = TIM14;
+  htim14.Init.Prescaler = 3;
+  htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim14.Init.Period = 400;
+  htim14.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim14.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim14) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  if (HAL_TIM_PWM_Init(&htim14) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 200;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim14, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  HAL_TIM_MspPostInit(&htim14);
+
+}
+
 /* TIM17 init function */
 static void MX_TIM17_Init(void)
 {
@@ -289,6 +343,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct;
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
@@ -296,7 +351,13 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(DEBUG_GPIO_Port, DEBUG_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : BTN_BRIGHTNESS_Pin */
+  GPIO_InitStruct.Pin = BTN_BRIGHTNESS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(BTN_BRIGHTNESS_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PWR_ON_Pin */
   GPIO_InitStruct.Pin = PWR_ON_Pin;
@@ -311,18 +372,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(BTN_POWER_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : BTN_COLOR_Pin BTN_RGB_MODE_Pin BTN_BRIGHTNESS_Pin BTN_FANSPEED_Pin */
-  GPIO_InitStruct.Pin = BTN_COLOR_Pin|BTN_RGB_MODE_Pin|BTN_BRIGHTNESS_Pin|BTN_FANSPEED_Pin;
+  /*Configure GPIO pins : BTN_COLOR_Pin BTN_RGB_MODE_Pin BTN_FANSPEED_Pin */
+  GPIO_InitStruct.Pin = BTN_COLOR_Pin|BTN_RGB_MODE_Pin|BTN_FANSPEED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PA6 */
-  GPIO_InitStruct.Pin = GPIO_PIN_6;
+  /*Configure GPIO pin : DEBUG_Pin */
+  GPIO_InitStruct.Pin = DEBUG_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(DEBUG_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : ATX_PG_Pin */
+  GPIO_InitStruct.Pin = ATX_PG_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(ATX_PG_GPIO_Port, &GPIO_InitStruct);
 
 }
 

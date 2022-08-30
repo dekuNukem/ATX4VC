@@ -7,7 +7,17 @@
         service_press(i);
       }
     
-
+uint8_t count;
+// happens every 16ms
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+  count = (count+1)%2;
+  if(count)
+    htim14.Instance->CCR1 = 100;
+  else
+    htim14.Instance->CCR1 = 300;
+}
 
 HAL_Delay(50);
     printf("%d", HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3));
