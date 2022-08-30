@@ -224,7 +224,7 @@ SW</text>
 SB</text>
 <text x="6.096" y="35.052" size="2.54" layer="26" rot="MR90" align="center">ATX4VC.COM
 dekuNukem SEPT 2022
-PT3</text>
+PT4</text>
 <text x="43.9712" y="42.7944" size="1.1684" layer="25" align="center">GND</text>
 <text x="41.3042" y="48.0014" size="1.143" layer="25" align="center">3V3</text>
 <text x="44.4792" y="36.1904" size="1.143" layer="25" align="center">TX</text>
@@ -274,7 +274,9 @@ MODE</text>
 <text x="37.592" y="9.525" size="1.27" layer="25" align="center">COLOR</text>
 <text x="54.864" y="9.525" size="1.27" layer="25" rot="R180" align="center">BRIGHT</text>
 <text x="57.404" y="20.574" size="1.27" layer="25" rot="R90" align="center">FAN SPD</text>
-<rectangle x1="66.04" y1="8.763" x2="74.549" y2="18.923" layer="41"/>
+<rectangle x1="66.167" y1="6.477" x2="74.676" y2="16.637" layer="41"/>
+<rectangle x1="79.883" y1="0.127" x2="87.63" y2="63.627" layer="41"/>
+<rectangle x1="79.883" y1="0.127" x2="87.63" y2="63.627" layer="42"/>
 </plain>
 <libraries>
 <library name="clock">
@@ -1342,6 +1344,14 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="U1" pad="A1B12"/>
 <contactref element="U1" pad="B11A12"/>
 <contactref element="U1" pad="P$13"/>
+<wire x1="82.804" y1="27.178" x2="76.234" y2="27.178" width="1.27" layer="1"/>
+<wire x1="76.234" y1="27.178" x2="75.599" y2="26.543" width="1.27" layer="1"/>
+<wire x1="82.804" y1="37.338" x2="76.084" y2="37.338" width="1.27" layer="1"/>
+<wire x1="76.084" y1="37.338" x2="75.449" y2="36.703" width="1.27" layer="1"/>
+<wire x1="82.804" y1="47.498" x2="75.957" y2="47.498" width="1.27" layer="1"/>
+<wire x1="75.957" y1="47.498" x2="75.449" y2="46.99" width="1.27" layer="1"/>
+<wire x1="82.804" y1="57.658" x2="75.957" y2="57.658" width="1.27" layer="1"/>
+<wire x1="75.957" y1="57.658" x2="75.449" y2="57.15" width="1.27" layer="1"/>
 </signal>
 <signal name="+3V3">
 <polygon width="0.1524" layer="16" isolate="0.508">
@@ -1935,6 +1945,50 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
+<errors>
+<approved hash="4,1,6497e36d3664475e"/>
+<approved hash="4,1,7194e2d3159f03b6"/>
+<approved hash="6,1,9b3090e751275af0"/>
+<approved hash="6,1,9bc8e3cf220f5a08"/>
+<approved hash="6,1,4f25a531a5274f33"/>
+<approved hash="6,1,cc7309ca5a106eb9"/>
+<approved hash="6,1,ce27e9266fd552d1"/>
+<approved hash="6,1,5af1b889b0ba1731"/>
+<approved hash="6,1,f78fff48b7e6651d"/>
+<approved hash="6,1,4b7f35422379c98e"/>
+<approved hash="6,1,45f7075e1945c476"/>
+<approved hash="6,1,428f50aa4051cc0e"/>
+<approved hash="6,1,4fd6ae47bdbdcf86"/>
+<approved hash="6,1,b2870cc2530010a5"/>
+<approved hash="6,1,2ff1bc33e92b884e"/>
+<approved hash="6,1,df2c0dd39c89bc96"/>
+<approved hash="6,1,456544145ae0ae98"/>
+<approved hash="6,1,6ecb038a5381c310"/>
+<approved hash="6,1,df92dc072b6cacab"/>
+<approved hash="6,1,98465164a2db9919"/>
+<approved hash="6,1,7255f693f6bd727b"/>
+<approved hash="6,1,97336224fea1f81d"/>
+<approved hash="6,1,9b58909f515f5a98"/>
+<approved hash="6,1,94308d874c4755f0"/>
+<approved hash="6,1,d8f0ce1cce0ad8e6"/>
+<approved hash="6,1,9b88940f55cf5a48"/>
+<approved hash="6,1,2a6d3879386f2a7b"/>
+<approved hash="6,1,7dc96bd56bc37ddf"/>
+<approved hash="6,1,9e8194ad94bb9e97"/>
+<approved hash="6,16,9b3090e751275af0"/>
+<approved hash="6,16,9b58909f515f5a98"/>
+<approved hash="6,16,94308d874c4755f0"/>
+<approved hash="6,16,d8f0ce1cce0ad8e6"/>
+<approved hash="6,16,9b88940f55cf5a48"/>
+<approved hash="6,16,2a6d3879386f2a7b"/>
+<approved hash="6,16,7dc96bd56bc37ddf"/>
+<approved hash="6,16,9e8194ad94bb9e97"/>
+<approved hash="6,16,9bc8e3cf220f5a08"/>
+<approved hash="6,16,4f25a531a5274f33"/>
+<approved hash="6,16,1b20cea0a02971e5"/>
+<approved hash="6,16,c09526f94dd0a960"/>
+<approved hash="6,16,618cefe881e10ae9"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
