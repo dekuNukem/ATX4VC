@@ -144,3 +144,17 @@ printf("sp=%d\n", is_soft_power_turned_on);
   my_hsv.v = 127;
   rgbcolor my_rgb = hsv2rgb(my_hsv);
   printf("rgb=%d %d %d\n", my_rgb.r, my_rgb.g, my_rgb.b);
+
+220 to 40 finer 75 inbetween 12 steps
+40 to 220 corsor 180 inbetween 8 steps
+
+
+const uint8_t hsv_angle_lookup[RGB_COLOR_STEP_COUNT] = {4,10,17,23,30,36,43,63,83,103,123,143,163,183,203,226,233,239,246,252};
+  // if(global_hsv.h <= 50 || global_hsv.h >= 220)
+  //   global_hsv.s = 255;
+  // else
+  //   global_hsv.s = 240;
+
+
+  // printf("%d: %d %d %d\n", global_hsv.h, my_rgb.r, my_rgb.g, my_rgb.b);
+  printf("b %d %d\n", button_status, global_hsv.v);

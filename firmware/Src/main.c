@@ -67,9 +67,12 @@ const char boot_message[] = "ATX4VC\ndekuNukem 2022";
 const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
-hsvcolor my_hsv;
-rgbcolor my_rgb;
 uint8_t is_soft_power_turned_on;
+
+
+hsvcolor global_hsv;
+rgbcolor my_rgb;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -117,10 +120,48 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 20*4, 40*4, 55*4, 65*4, 80*4, 90*4, FAN_PWM_FULL_POWER};
 
+#define LED_COLOR_STEP_COUNT 27
+void set_led_color(uint8_t button_status)
+{
+  uint8_t color_index = button_status % LED_COLOR_STEP_COUNT;
+  if(color_index == LED_COLOR_STEP_COUNT-1) // color_index 26 = white
+  {
+    global_hsv.h = 0;
+    global_hsv.s = 0;
+  }
+  else
+  {
+    global_hsv.h = color_index * 10; // 0, 10, 20, ..., 250
+    global_hsv.s = 255;
+  }
+  my_rgb = hsv2rgb(global_hsv);
+  memset(red_buf, my_rgb.r, NEOPIXEL_COUNT);
+  memset(green_buf, my_rgb.g, NEOPIXEL_COUNT);
+  memset(blue_buf, my_rgb.b, NEOPIXEL_COUNT);
+}
+
+#define LED_BRIGHTNESS_STEP_COUNT 8
+const uint8_t led_brightness_lookup[LED_BRIGHTNESS_STEP_COUNT] = {0, 1, 2, 4, 5, 6, 8, 10};
+void set_led_brightness(uint8_t button_status)
+{
+  uint8_t brightness_lookup_result = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT];
+  global_hsv.v = brightness_lookup_result * 10; // change it to 25 for full scale
+  my_rgb = hsv2rgb(global_hsv);
+  memset(red_buf, my_rgb.r, NEOPIXEL_COUNT);
+  memset(green_buf, my_rgb.g, NEOPIXEL_COUNT);
+  memset(blue_buf, my_rgb.b, NEOPIXEL_COUNT);
+}
+
 void restore_button_settings(void)
 {
   uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_STEP_COUNT;
   htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
+
+  // default value
+  global_hsv.h = 127;
+  global_hsv.s = 255;
+  global_hsv.v = 8;
+  set_led_color(eeprom_buf[BUTTON_COLOR]);
 }
 
 void handle_button_press(uint8_t button_index)
@@ -132,7 +173,15 @@ void handle_button_press(uint8_t button_index)
     uint8_t fan_index = eeprom_buf[button_index] % FAN_SPEED_STEP_COUNT;
     htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
   }
-  if(button_index == BUTTON_POWER)
+  else if(button_index == BUTTON_COLOR)
+  {
+    set_led_color(eeprom_buf[button_index]);
+  }
+  else if(button_index == BUTTON_BRIGHTNESS)
+  {
+    set_led_brightness(eeprom_buf[button_index]);
+  }
+  else if(button_index == BUTTON_POWER)
   {
     is_soft_power_turned_on = (is_soft_power_turned_on + 1) % 2;
     HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
@@ -209,10 +258,6 @@ int main(void)
   HAL_TIM_Base_Start(&htim14);
   HAL_TIM_PWM_Init(&htim14);
   HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
-
-  memset(red_buf, 5, NEOPIXEL_COUNT);
-  memset(green_buf, 5, NEOPIXEL_COUNT);
-  memset(blue_buf, 0, NEOPIXEL_COUNT);
 
   while (1)
   {
