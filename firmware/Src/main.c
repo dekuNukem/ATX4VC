@@ -44,6 +44,7 @@
 #include "neopixel.h"
 #include "buttons.h"
 #include <string.h>
+#include "ee.h"
 
 /* USER CODE END Includes */
 
@@ -54,6 +55,16 @@ TIM_HandleTypeDef htim14;
 TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart2;
+
+#define EEPROM_BUF_SIZE 8
+uint8_t eeprom_buf[EEPROM_BUF_SIZE];
+
+const char boot_message[] = "ATX4VC\ndekuNukem 2022";
+const uint8_t version_major = 0;
+const uint8_t version_minor = 0;
+const uint8_t version_patch = 1;
+
+uint8_t button_current_selected_option[BUTTON_COUNT];
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
@@ -109,7 +120,22 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //   HAL_Delay(50);
 // }
 
-uint8_t button_current_selected_option[BUTTON_COUNT];
+void handle_button_press(uint8_t button_index)
+{
+  printf("%d pressed!\n", button_index);
+  button_current_selected_option[button_index]++;
+  
+  memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
+  memcpy(eeprom_buf, button_current_selected_option, BUTTON_COUNT);
+
+  for (int i = 0; i < EEPROM_BUF_SIZE; ++i)
+    printf("b%d %d\n", i, eeprom_buf[i]);
+
+  printf("f%d\n", ee_format());
+  HAL_Delay(10);
+  printf("w%d\n", ee_write(0, EEPROM_BUF_SIZE, eeprom_buf));
+  HAL_Delay(10);
+}
 
 /* USER CODE END 0 */
 
@@ -155,6 +181,20 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  printf("%s\nv%d.%d.%d\n", boot_message, version_major, version_minor, version_patch);
+  HAL_Delay(500); // ATX PWR_OK max delay
+
+  if(HAL_GPIO_ReadPin(BTN_COLOR_GPIO_Port, BTN_COLOR_Pin) == GPIO_PIN_RESET)
+    printf("Resetting EEPROM... %d\n", ee_format());
+
+  memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
+  printf("eeread %d\n", ee_read(0, EEPROM_BUF_SIZE, eeprom_buf));
+
+  for (int i = 0; i < EEPROM_BUF_SIZE; ++i)
+    printf("ee%d %d\n", i, eeprom_buf[i]);
+  printf("\n");
+
   HAL_TIM_Base_Start_IT(&htim17);
 
   HAL_TIM_Base_Start(&htim14);
@@ -174,14 +214,14 @@ int main(void)
     for (int i = 0; i < BUTTON_COUNT; ++i)
       if(is_pressed(i))
       {
-        button_current_selected_option[i]++;
+        handle_button_press(i);
         service_press(i);
       }
 
-    for (int i = 0; i < BUTTON_COUNT; ++i)
-      printf("%d ", button_current_selected_option[i]);
-    printf("\n");
-    
+    // for (int i = 0; i < BUTTON_COUNT; ++i)
+    //   printf("%d ", button_current_selected_option[i]);
+    // printf("\n");
+
     HAL_Delay(50);
   /* USER CODE END WHILE */
 

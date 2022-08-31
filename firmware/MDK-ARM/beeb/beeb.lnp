@@ -5,6 +5,7 @@
 "beeb\main.o"
 "beeb\stm32f0xx_it.o"
 "beeb\stm32f0xx_hal_msp.o"
+"beeb\ee.o"
 "beeb\stm32f0xx_hal_spi.o"
 "beeb\stm32f0xx_hal_spi_ex.o"
 "beeb\stm32f0xx_hal_tim.o"

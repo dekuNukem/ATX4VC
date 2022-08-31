@@ -432,6 +432,16 @@
               <FileType>1</FileType>
               <FilePath>../Src/stm32f0xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>ee.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\ee.c</FilePath>
+            </File>
+            <File>
+              <FileName>ee.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\ee.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

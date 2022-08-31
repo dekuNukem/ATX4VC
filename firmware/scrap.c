@@ -80,3 +80,14 @@ while(count--)
     *((__IO uint8_t *)hspi1.Instance->DR) = *pData;
     pData++;
   }
+
+for (int i = 0; i < BUTTON_COUNT; ++i)
+      if(is_pressed(i))
+      {
+        button_current_selected_option[i]++;
+        service_press(i);
+      }
+
+    for (int i = 0; i < BUTTON_COUNT; ++i)
+      printf("%d ", button_current_selected_option[i]);
+    printf("\n");
