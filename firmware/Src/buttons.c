@@ -32,7 +32,7 @@ void service_press(uint8_t button_number)
   button_status[button_number].service_status = BUTTON_SERVICE_SERVICED;
 }
 
-void keyboard_update(void)
+void scan_buttons(void)
 {
   button_status[BUTTON_POWER].button_state = 1 - HAL_GPIO_ReadPin(BTN_POWER_GPIO_Port, BTN_POWER_Pin);
   button_status[BUTTON_RGB_MODE].button_state = 1 - HAL_GPIO_ReadPin(BTN_RGB_MODE_GPIO_Port, BTN_RGB_MODE_Pin);

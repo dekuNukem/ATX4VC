@@ -31,7 +31,8 @@ extern but_status button_status[BUTTON_COUNT];
 
 uint8_t is_pressed(uint8_t button_number);
 void service_press(uint8_t button_number);
-void keyboard_update(void);
+void scan_buttons(void);
+void mark_as_released(but_status* butt);
 
 #ifdef __cplusplus
 }

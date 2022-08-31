@@ -108,7 +108,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
   // scan buttons every 64ms
   if(frame_interrupt_count % 4 == 0)
-    keyboard_update();
+    scan_buttons();
 }
 
 // void change_fan_speed(uint32_t amount)
@@ -120,6 +120,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //   HAL_Delay(50);
 // }
 
+
+// 0, 10, 25, 50, 75, 100
+#define FAN_SPEED_STEP_COUNT 6
+const uint32_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 10*4, 25*4, 50*4, 75*4, 100*4};
+
 void handle_button_press(uint8_t button_index)
 {
   printf("%d pressed!\n", button_index);
@@ -127,14 +132,8 @@ void handle_button_press(uint8_t button_index)
   
   memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
   memcpy(eeprom_buf, button_current_selected_option, BUTTON_COUNT);
-
-  for (int i = 0; i < EEPROM_BUF_SIZE; ++i)
-    printf("b%d %d\n", i, eeprom_buf[i]);
-
-  printf("f%d\n", ee_format());
-  HAL_Delay(10);
-  printf("w%d\n", ee_write(0, EEPROM_BUF_SIZE, eeprom_buf));
-  HAL_Delay(10);
+  ee_format();
+  ee_write(0, EEPROM_BUF_SIZE, eeprom_buf);
 }
 
 /* USER CODE END 0 */
@@ -186,13 +185,13 @@ int main(void)
   HAL_Delay(500); // ATX PWR_OK max delay
 
   if(HAL_GPIO_ReadPin(BTN_COLOR_GPIO_Port, BTN_COLOR_Pin) == GPIO_PIN_RESET)
-    printf("Resetting EEPROM... %d\n", ee_format());
+    printf("ee_format: %d\n", ee_format());
 
   memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
-  printf("eeread %d\n", ee_read(0, EEPROM_BUF_SIZE, eeprom_buf));
+  ee_read(0, EEPROM_BUF_SIZE, eeprom_buf);
 
   for (int i = 0; i < EEPROM_BUF_SIZE; ++i)
-    printf("ee%d %d\n", i, eeprom_buf[i]);
+    printf("ee%d=%d\n", i, eeprom_buf[i]);
   printf("\n");
 
   HAL_TIM_Base_Start_IT(&htim17);

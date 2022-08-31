@@ -91,3 +91,24 @@ for (int i = 0; i < BUTTON_COUNT; ++i)
     for (int i = 0; i < BUTTON_COUNT; ++i)
       printf("%d ", button_current_selected_option[i]);
     printf("\n");
+
+void handle_button_press(uint8_t button_index)
+{
+  printf("%d pressed!\n", button_index);
+  button_current_selected_option[button_index]++;
+  
+  memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
+  memcpy(eeprom_buf, button_current_selected_option, BUTTON_COUNT);
+
+  for (int i = 0; i < EEPROM_BUF_SIZE; ++i)
+    printf("b%d %d\n", i, eeprom_buf[i]);
+
+  printf("f%d\n", ee_format());
+  HAL_Delay(10);
+  printf("w%d\n", ee_write(0, EEPROM_BUF_SIZE, eeprom_buf));
+  HAL_Delay(10);
+}
+
+scan_buttons();
+  for (int i = 0; i < BUTTON_COUNT; ++i)
+    button_status[i].button_state = BUTTON_PRESSED;
