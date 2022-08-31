@@ -112,3 +112,15 @@ void handle_button_press(uint8_t button_index)
 scan_buttons();
   for (int i = 0; i < BUTTON_COUNT; ++i)
     button_status[i].button_state = BUTTON_PRESSED;
+
+
+void change_fan_speed(uint32_t amount)
+{
+  // 0 stopped 400 full speed
+  htim14.Instance->CCR1 = 100;
+  HAL_Delay(50);
+  htim14.Instance->CCR1 = 300;
+  HAL_Delay(50);
+}
+
+    printf("fan %d %d\n", fan_index, fan_speend_lookup[fan_index]);

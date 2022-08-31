@@ -26,3 +26,6 @@ removed copper pour near terminals
 power sense now uses PG signal
 brightness button is shared with DFU button
 added UART TX and RX header
+added restrict under the fuse holder
+rerouted signals around fuse holder
+increased space between fuses

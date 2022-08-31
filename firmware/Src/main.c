@@ -64,8 +64,6 @@ const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
 
-uint8_t button_current_selected_option[BUTTON_COUNT];
-
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 
@@ -111,27 +109,27 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     scan_buttons();
 }
 
-// void change_fan_speed(uint32_t amount)
-// {
-//   // 0 stopped 400 full speed
-//   htim14.Instance->CCR1 = 100;
-//   HAL_Delay(50);
-//   htim14.Instance->CCR1 = 300;
-//   HAL_Delay(50);
-// }
-
+#define FAN_PWM_FULL_POWER 401
+#define FAN_SPEED_STEP_COUNT 6
 
 // 0, 10, 25, 50, 75, 100
-#define FAN_SPEED_STEP_COUNT 6
-const uint32_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 10*4, 25*4, 50*4, 75*4, 100*4};
+const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 10*4, 25*4, 50*4, 75*4, FAN_PWM_FULL_POWER};
+
+void restore_button_settings(void)
+{
+  uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_STEP_COUNT;
+  htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
+}
 
 void handle_button_press(uint8_t button_index)
 {
   printf("%d pressed!\n", button_index);
-  button_current_selected_option[button_index]++;
-  
-  memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
-  memcpy(eeprom_buf, button_current_selected_option, BUTTON_COUNT);
+  eeprom_buf[button_index]++;
+  if(button_index == BUTTON_FANSPEED)
+  {
+    uint8_t fan_index = eeprom_buf[button_index] % FAN_SPEED_STEP_COUNT;
+    htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
+  }
   ee_format();
   ee_write(0, EEPROM_BUF_SIZE, eeprom_buf);
 }
@@ -194,6 +192,8 @@ int main(void)
     printf("ee%d=%d\n", i, eeprom_buf[i]);
   printf("\n");
 
+  restore_button_settings();
+
   HAL_TIM_Base_Start_IT(&htim17);
 
   HAL_TIM_Base_Start(&htim14);
@@ -216,10 +216,6 @@ int main(void)
         handle_button_press(i);
         service_press(i);
       }
-
-    // for (int i = 0; i < BUTTON_COUNT; ++i)
-    //   printf("%d ", button_current_selected_option[i]);
-    // printf("\n");
 
     HAL_Delay(50);
   /* USER CODE END WHILE */
