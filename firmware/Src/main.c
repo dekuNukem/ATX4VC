@@ -109,6 +109,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //   HAL_Delay(50);
 // }
 
+uint8_t button_current_selected_option[BUTTON_COUNT];
+
 /* USER CODE END 0 */
 
 /**
@@ -168,6 +170,18 @@ int main(void)
     __disable_irq();
     neopixel_show(red_buf, green_buf, blue_buf);
     __enable_irq();
+
+    for (int i = 0; i < BUTTON_COUNT; ++i)
+      if(is_pressed(i))
+      {
+        button_current_selected_option[i]++;
+        service_press(i);
+      }
+
+    for (int i = 0; i < BUTTON_COUNT; ++i)
+      printf("%d ", button_current_selected_option[i]);
+    printf("\n");
+    
     HAL_Delay(50);
   /* USER CODE END WHILE */
 
