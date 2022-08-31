@@ -56,6 +56,9 @@ TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart2;
 
+/* USER CODE BEGIN PV */
+/* Private variables ---------------------------------------------------------*/
+
 #define EEPROM_BUF_SIZE 8
 uint8_t eeprom_buf[EEPROM_BUF_SIZE];
 
@@ -63,9 +66,6 @@ const char boot_message[] = "ATX4VC\ndekuNukem 2022";
 const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
-
-/* USER CODE BEGIN PV */
-/* Private variables ---------------------------------------------------------*/
 
 /* USER CODE END PV */
 
@@ -110,10 +110,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 
 #define FAN_PWM_FULL_POWER 401
-#define FAN_SPEED_STEP_COUNT 6
+#define FAN_SPEED_STEP_COUNT 8
 
-// 0, 10, 25, 50, 75, 100
-const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 10*4, 25*4, 50*4, 75*4, FAN_PWM_FULL_POWER};
+const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 20*4, 40*4, 55*4, 65*4, 80*4, 90*4, FAN_PWM_FULL_POWER};
 
 void restore_button_settings(void)
 {
