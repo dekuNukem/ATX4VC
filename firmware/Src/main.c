@@ -67,6 +67,7 @@ const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
 
+uint8_t is_soft_power_turned_on;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -129,6 +130,13 @@ void handle_button_press(uint8_t button_index)
     uint8_t fan_index = eeprom_buf[button_index] % FAN_SPEED_STEP_COUNT;
     htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
   }
+  if(button_index == BUTTON_POWER)
+  {
+    is_soft_power_turned_on = (is_soft_power_turned_on + 1) % 2;
+    printf("sp=%d\n", is_soft_power_turned_on);
+    HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
+    return; // no need to save power button status
+  }
   ee_format();
   ee_write(0, EEPROM_BUF_SIZE, eeprom_buf);
 }
@@ -173,23 +181,23 @@ int main(void)
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 
+  // either using hard power or just had a reset
+  if(HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin) == GPIO_PIN_SET)
+    is_soft_power_turned_on = 1;
+  HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
+  printf("sp=%d\n", is_soft_power_turned_on);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
   printf("%s\nv%d.%d.%d\n", boot_message, version_major, version_minor, version_patch);
-  HAL_Delay(500); // ATX PWR_OK max delay
 
   if(HAL_GPIO_ReadPin(BTN_COLOR_GPIO_Port, BTN_COLOR_Pin) == GPIO_PIN_RESET)
     printf("ee_format: %d\n", ee_format());
 
   memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
   ee_read(0, EEPROM_BUF_SIZE, eeprom_buf);
-
-  for (int i = 0; i < EEPROM_BUF_SIZE; ++i)
-    printf("ee%d=%d\n", i, eeprom_buf[i]);
-  printf("\n");
 
   restore_button_settings();
 

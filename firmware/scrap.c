@@ -124,3 +124,10 @@ void change_fan_speed(uint32_t amount)
 }
 
     printf("fan %d %d\n", fan_index, fan_speend_lookup[fan_index]);
+  printf("hard power: %d\n", is_hard_power);
+  for (int i = 0; i < EEPROM_BUF_SIZE; ++i)
+    printf("ee%d=%d\n", i, eeprom_buf[i]);
+  printf("\n");
+
+
+    printf("sp=%d\n", is_soft_power_turned_on);
