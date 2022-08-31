@@ -19,6 +19,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     htim14.Instance->CCR1 = 300;
 }
 
+
+__disable_irq();
+    neopixel_show(red_buf, green_buf, blue_buf);
+    __enable_irq();
+
 HAL_Delay(50);
     printf("%d", HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3));
 #define BUTTON_STABLE 0

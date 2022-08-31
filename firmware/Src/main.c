@@ -89,10 +89,15 @@ uint8_t red_buf[NEOPIXEL_COUNT];
 uint8_t green_buf[NEOPIXEL_COUNT];
 uint8_t blue_buf[NEOPIXEL_COUNT];
 
+uint32_t frame_interrupt_count;
 // happens every 16ms
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
+  frame_interrupt_count++;
   HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+  // scan buttons every 64ms
+  if(frame_interrupt_count % 4 == 0)
+    keyboard_update();
 }
 
 // void change_fan_speed(uint32_t amount)
@@ -154,15 +159,20 @@ int main(void)
   HAL_TIM_PWM_Init(&htim14);
   HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
 
-  memset(red_buf, 33, NEOPIXEL_COUNT);
-  memset(green_buf, 0, NEOPIXEL_COUNT);
-  memset(blue_buf, 0, NEOPIXEL_COUNT);
+  memset(red_buf, 64, NEOPIXEL_COUNT);
+  memset(green_buf, 64, NEOPIXEL_COUNT);
+  memset(blue_buf, 64, NEOPIXEL_COUNT);
   
   while (1)
   {
-    __disable_irq();
-    neopixel_show(red_buf, green_buf, blue_buf);
-    __enable_irq();
+
+    for (int i = 0; i < BUTTON_COUNT; ++i)
+      if(is_pressed(i))
+      {
+        printf("pressed: %d!\n", i);
+        service_press(i);
+      }
+
     HAL_Delay(50);
   /* USER CODE END WHILE */
 

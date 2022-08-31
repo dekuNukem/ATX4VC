@@ -8,7 +8,7 @@
 #include "stm32f0xx_hal.h"
 
 #define NEOPIXEL_RESET_BUF_SIZE 16
-#define NEOPIXEL_COUNT 60
+#define NEOPIXEL_COUNT 162
 #define WS_SPI_BUF_SIZE (24*NEOPIXEL_COUNT)
 #define WS_BIT_0 0xc0
 #define WS_BIT_1 0xf8

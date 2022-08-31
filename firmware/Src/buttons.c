@@ -37,7 +37,8 @@ void keyboard_update(void)
   button_status[BUTTON_POWER].button_state = 1 - HAL_GPIO_ReadPin(BTN_POWER_GPIO_Port, BTN_POWER_Pin);
   button_status[BUTTON_RGB_MODE].button_state = 1 - HAL_GPIO_ReadPin(BTN_RGB_MODE_GPIO_Port, BTN_RGB_MODE_Pin);
   button_status[BUTTON_COLOR].button_state = 1 - HAL_GPIO_ReadPin(BTN_COLOR_GPIO_Port, BTN_COLOR_Pin);
-  button_status[BUTTON_BRIGHTNESS].button_state = 1 - HAL_GPIO_ReadPin(BTN_BRIGHTNESS_GPIO_Port, BTN_BRIGHTNESS_Pin);
+  // brightness button is DFU button which is pulled down, all other buttons are pulled up
+  button_status[BUTTON_BRIGHTNESS].button_state = HAL_GPIO_ReadPin(BTN_BRIGHTNESS_GPIO_Port, BTN_BRIGHTNESS_Pin);
   button_status[BUTTON_FANSPEED].button_state = 1 - HAL_GPIO_ReadPin(BTN_FANSPEED_GPIO_Port, BTN_FANSPEED_Pin);
 
   for (int i = 0; i < BUTTON_COUNT; ++i)
