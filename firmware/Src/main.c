@@ -104,7 +104,7 @@ uint32_t frame_interrupt_count;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   frame_interrupt_count++;
-  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+  HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
   // scan buttons every 64ms
   if(frame_interrupt_count % 4 == 0)
     scan_buttons();
@@ -133,7 +133,6 @@ void handle_button_press(uint8_t button_index)
   if(button_index == BUTTON_POWER)
   {
     is_soft_power_turned_on = (is_soft_power_turned_on + 1) % 2;
-    printf("sp=%d\n", is_soft_power_turned_on);
     HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
     return; // no need to save power button status
   }
@@ -201,7 +200,6 @@ int main(void)
 
   memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
   ee_read(0, EEPROM_BUF_SIZE, eeprom_buf);
-
   restore_button_settings();
 
   HAL_TIM_Base_Start_IT(&htim17);

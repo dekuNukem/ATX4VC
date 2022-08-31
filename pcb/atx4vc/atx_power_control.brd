@@ -1915,10 +1915,10 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="IC3" pad="9"/>
 <contactref element="JP10" pad="2"/>
 <wire x1="40.471" y1="31.3862" x2="40.471" y2="32.216" width="0.2032" layer="1"/>
-<wire x1="40.471" y1="32.216" x2="40.64" y2="32.385" width="0.2032" layer="1"/>
-<wire x1="40.64" y1="32.385" x2="43.561" y2="32.385" width="0.2032" layer="1"/>
+<wire x1="40.471" y1="32.216" x2="40.767" y2="32.512" width="0.2032" layer="1"/>
+<wire x1="40.767" y1="32.512" x2="43.434" y2="32.512" width="0.2032" layer="1"/>
 <wire x1="43.942" y1="32.004" x2="43.942" y2="31.242" width="0.2032" layer="1"/>
-<wire x1="43.561" y1="32.385" x2="43.942" y2="32.004" width="0.2032" layer="1"/>
+<wire x1="43.434" y1="32.512" x2="43.942" y2="32.004" width="0.2032" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

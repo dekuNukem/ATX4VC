@@ -130,4 +130,7 @@ void change_fan_speed(uint32_t amount)
   printf("\n");
 
 
+printf("sp=%d\n", is_soft_power_turned_on);
+
+// POWER GOOD signal lasts about 34ms after turning off POWER_ON on corsair VS450
     printf("sp=%d\n", is_soft_power_turned_on);
