@@ -181,11 +181,14 @@ int main(void)
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 
-  // either using hard power or just had a reset
+  /*
+    check POWER_GOOD signal immediately after boot
+    if high, STM32 most likely just had a reset by IWDG
+    in which case, active PS_ON to keep it going
+  */
   if(HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin) == GPIO_PIN_SET)
     is_soft_power_turned_on = 1;
   HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
-  printf("sp=%d\n", is_soft_power_turned_on);
 
   /* USER CODE END 2 */
 
