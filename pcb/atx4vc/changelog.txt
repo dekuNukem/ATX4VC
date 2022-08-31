@@ -30,3 +30,4 @@ added restrict under the fuse holder
 rerouted signals around fuse holder
 increased space between fuses
 moved fan and ARGB header closer to edge
+

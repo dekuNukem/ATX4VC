@@ -36,3 +36,4 @@ beeb\main.o: ../Inc/neopixel.h
 beeb\main.o: ../Inc/buttons.h
 beeb\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 beeb\main.o: ../Inc/ee.h
+beeb\main.o: ../Inc/animations.h

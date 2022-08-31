@@ -134,3 +134,13 @@ printf("sp=%d\n", is_soft_power_turned_on);
 
 // POWER GOOD signal lasts about 34ms after turning off POWER_ON on corsair VS450
     printf("sp=%d\n", is_soft_power_turned_on);
+
+
+
+
+  hsvcolor my_hsv;
+  my_hsv.h = 30;
+  my_hsv.s = 127;
+  my_hsv.v = 127;
+  rgbcolor my_rgb = hsv2rgb(my_hsv);
+  printf("rgb=%d %d %d\n", my_rgb.r, my_rgb.g, my_rgb.b);

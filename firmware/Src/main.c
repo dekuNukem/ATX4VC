@@ -45,6 +45,7 @@
 #include "buttons.h"
 #include <string.h>
 #include "ee.h"
+#include "animations.h"
 
 /* USER CODE END Includes */
 
@@ -66,7 +67,8 @@ const char boot_message[] = "ATX4VC\ndekuNukem 2022";
 const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
-
+hsvcolor my_hsv;
+rgbcolor my_rgb;
 uint8_t is_soft_power_turned_on;
 /* USER CODE END PV */
 
@@ -211,7 +213,7 @@ int main(void)
   memset(red_buf, 5, NEOPIXEL_COUNT);
   memset(green_buf, 5, NEOPIXEL_COUNT);
   memset(blue_buf, 0, NEOPIXEL_COUNT);
-  
+
   while (1)
   {
     __disable_irq();
