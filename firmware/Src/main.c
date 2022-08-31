@@ -159,20 +159,15 @@ int main(void)
   HAL_TIM_PWM_Init(&htim14);
   HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
 
-  memset(red_buf, 64, NEOPIXEL_COUNT);
-  memset(green_buf, 64, NEOPIXEL_COUNT);
-  memset(blue_buf, 64, NEOPIXEL_COUNT);
+  memset(red_buf, 5, NEOPIXEL_COUNT);
+  memset(green_buf, 5, NEOPIXEL_COUNT);
+  memset(blue_buf, 0, NEOPIXEL_COUNT);
   
   while (1)
   {
-
-    for (int i = 0; i < BUTTON_COUNT; ++i)
-      if(is_pressed(i))
-      {
-        printf("pressed: %d!\n", i);
-        service_press(i);
-      }
-
+    __disable_irq();
+    neopixel_show(red_buf, green_buf, blue_buf);
+    __enable_irq();
     HAL_Delay(50);
   /* USER CODE END WHILE */
 

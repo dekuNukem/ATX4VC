@@ -6,7 +6,15 @@
         printf("%d!", i);
         service_press(i);
       }
-    
+
+
+    for (int i = 0; i < BUTTON_COUNT; ++i)
+      if(is_pressed(i))
+      {
+        printf("pressed: %d!\n", i);
+        service_press(i);
+      }
+
 uint8_t count;
 // happens every 16ms
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -60,3 +68,15 @@ uint8_t button_press_count = 1;
       }
     }
     prev_btn_status = current_btn_status;
+
+
+while(count--)
+  {
+    while(!__HAL_SPI_GET_FLAG(&hspi1, SPI_FLAG_TXE))
+      ;
+    // *(volatile uint8_t *)&SPIx->DR = *pData++;
+    // &hspi1->Instance->DR = *((uint16_t *)pData);
+    // hspi1.Instance->DR = *((uint16_t *)pData);
+    *((__IO uint8_t *)hspi1.Instance->DR) = *pData;
+    pData++;
+  }
