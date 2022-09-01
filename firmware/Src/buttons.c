@@ -55,6 +55,9 @@ void scan_buttons(void)
       mark_as_pressed(&button_status[i]);
     else if(button_status[i].prev_state == BUTTON_PRESSED && button_status[i].button_state == BUTTON_RELEASED)
       mark_as_released(&button_status[i]);
+    // autorepeat, only on color and brightness button
+    else if((i == BUTTON_COLOR || i == BUTTON_BRIGHTNESS) && button_status[i].prev_state == BUTTON_PRESSED && button_status[i].button_state == BUTTON_PRESSED && HAL_GetTick() - button_status[i].last_press_ts > 250)
+      mark_as_pressed(&button_status[i]);
     button_status[i].prev_state = button_status[i].button_state;
   }
 }

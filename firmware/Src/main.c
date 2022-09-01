@@ -105,7 +105,6 @@ int fputc(int ch, FILE *f)
 
 #define BREATHING_FRAME_COUNT 300
 
-// cross fading is just a very slow rainbow update? actually without positioning
 void animation_update(void)
 {
   uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
@@ -230,7 +229,6 @@ void restore_button_settings(void)
 
 void handle_button_press(uint8_t button_index)
 {
-  // printf("%d pressed!\n", button_index);
   eeprom_buf[button_index]++;
   if(button_index == BUTTON_FANSPEED)
   {
@@ -241,10 +239,6 @@ void handle_button_press(uint8_t button_index)
   {
     set_led_color(eeprom_buf[button_index]);
   }
-  // else if(button_index == BUTTON_RGB_MODE)
-  // {
-  //   printf("rgbm: %d\n", eeprom_buf[button_index] % ANIMATION_TYPE_COUNT);
-  // }
   else if(button_index == BUTTON_BRIGHTNESS)
   {
     set_led_brightness(eeprom_buf[button_index]);

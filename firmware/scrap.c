@@ -173,3 +173,17 @@ if(current_breathing_frame > BREATHING_FRAME_COUNT / 2)
 printf("%d\n", HAL_GetTick() - button_status[i].last_press_ts);
 
           printf("long release!\n");
+
+
+  // printf("%d pressed!\n", button_index);
+
+  // else if(button_index == BUTTON_RGB_MODE)
+  // {
+  //   printf("rgbm: %d\n", eeprom_buf[button_index] % ANIMATION_TYPE_COUNT);
+  // }
+
+void mark_as_autorepeat(but_status* butt)
+{
+  butt->button_state = BUTTON_AUTOREPEAT;
+  butt->service_status = BUTTON_SERVICE_UNSERVICED;
+}
