@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F042x6</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                 ../Drivers/STM32F0xx_HAL_Driver/Inc;                 ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy;                 ../Drivers/CMSIS/Device/ST/STM32F0xx/Include;                 ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;                  ../Drivers/STM32F0xx_HAL_Driver/Inc;                  ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy;                  ../Drivers/CMSIS/Device/ST/STM32F0xx/Include;                  ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -428,6 +428,16 @@
               <FilePath>..\Inc\ee.h</FilePath>
             </File>
             <File>
+              <FileName>animations.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\animations.h</FilePath>
+            </File>
+            <File>
+              <FileName>animations.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\animations.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
@@ -442,21 +452,16 @@
               <FileType>1</FileType>
               <FilePath>../Src/stm32f0xx_hal_msp.c</FilePath>
             </File>
-            <File>
-              <FileName>animations.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Inc\animations.h</FilePath>
-            </File>
-            <File>
-              <FileName>animations.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\animations.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Drivers/STM32F0xx_HAL_Driver</GroupName>
           <Files>
+            <File>
+              <FileName>stm32f0xx_hal_iwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_iwdg.c</FilePath>
+            </File>
             <File>
               <FileName>stm32f0xx_hal_spi.c</FileName>
               <FileType>1</FileType>
