@@ -7,11 +7,12 @@
 
 #include "stm32f0xx_hal.h"
 
-#define ANIMATION_TYPE_COUNT 3
+#define ANIMATION_TYPE_COUNT 4
 #define THREE 3
 #define ANIMATION_SOLID_COLOR 0
 #define ANIMATION_FLOWING_RAINBOW 1
 #define ANIMATION_CROSSFADE 2
+#define ANIMATION_BREATHING 3
 
 typedef struct rgbcolor
 {

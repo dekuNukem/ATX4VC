@@ -46,7 +46,7 @@
 #include <string.h>
 #include "ee.h"
 #include "animations.h"
-
+#include <math.h>
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -103,11 +103,13 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
+#define BREATHING_FRAME_COUNT 120
+
 // cross fading is just a very slow rainbow update? actually without positioning
 void animation_update(void)
 {
   uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
-
+  static float current_breathing_brightness;
   if(current_animation == ANIMATION_SOLID_COLOR)
   {
     my_rgb = hsv2rgb(global_hsv);
@@ -142,6 +144,23 @@ void animation_update(void)
       green_buf[i] = my_rgb.g;
       blue_buf[i] = my_rgb.b;
     }
+  }
+  else if(current_animation == ANIMATION_BREATHING)
+  {
+    uint8_t max_dim_amount = global_hsv.v;
+    float stepping = (float)max_dim_amount / BREATHING_FRAME_COUNT; // 1 second = 60 frames
+    for (int i = 0; i < NEOPIXEL_COUNT; ++i)
+    {
+      hsvcolor this_hsv;
+      this_hsv.h = global_hsv.h;
+      this_hsv.s = 255;
+      this_hsv.v = lround(global_hsv.v - stepping * (frame_interrupt_count % BREATHING_FRAME_COUNT));
+      my_rgb = hsv2rgb(this_hsv);
+      red_buf[i] = my_rgb.r;
+      green_buf[i] = my_rgb.g;
+      blue_buf[i] = my_rgb.b;
+    }
+    // printf("%d\n", lround(global_hsv.v - stepping * (frame_interrupt_count % BREATHING_FRAME_COUNT)));
   }
   __disable_irq();
   neopixel_show(red_buf, green_buf, blue_buf);
