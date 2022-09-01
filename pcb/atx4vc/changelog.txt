@@ -32,4 +32,5 @@ increased space between fuses
 moved fan and ARGB header closer to edge
 increased ARGB trace width
 removed pullups on ARGB USB port
+added selector for power detect
 
