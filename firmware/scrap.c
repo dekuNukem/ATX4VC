@@ -160,3 +160,5 @@ const uint8_t hsv_angle_lookup[RGB_COLOR_STEP_COUNT] = {4,10,17,23,30,36,43,63,8
   printf("b %d %d\n", button_status, global_hsv.v);
 
 HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
+
+      // printf("%d %d %d\n", my_rgb.r, my_rgb.g, my_rgb.b);

@@ -9,6 +9,7 @@
 
 #define NEOPIXEL_PADDING_BUF_SIZE 4
 #define NEOPIXEL_COUNT 162
+// 162
 #define WS_SPI_BUF_SIZE 24
 #define WS_BIT_0 0xc0
 #define WS_BIT_1 0xf8

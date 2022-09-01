@@ -68,7 +68,7 @@ const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
 uint8_t is_soft_power_turned_on;
-uint32_t frame_interrupt_count;
+volatile uint32_t frame_interrupt_count;
 uint8_t red_buf[NEOPIXEL_COUNT];
 uint8_t green_buf[NEOPIXEL_COUNT];
 uint8_t blue_buf[NEOPIXEL_COUNT];
@@ -103,6 +103,7 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
+// cross fading is just a very slow rainbow update? actually without positioning
 void animation_update(void)
 {
   uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
@@ -119,7 +120,7 @@ void animation_update(void)
     for (int i = 0; i < NEOPIXEL_COUNT; ++i)
     {
       hsvcolor this_hsv;
-      this_hsv.h = i;
+      this_hsv.h = i*12 + frame_interrupt_count;
       this_hsv.s = 255;
       this_hsv.v = global_hsv.v;
       my_rgb = hsv2rgb(this_hsv);
@@ -128,7 +129,20 @@ void animation_update(void)
       blue_buf[i] = my_rgb.b;
     }
   }
-
+  else if(current_animation == ANIMATION_CROSSFADE)
+  {
+    for (int i = 0; i < NEOPIXEL_COUNT; ++i)
+    {
+      hsvcolor this_hsv;
+      this_hsv.h = frame_interrupt_count/2;
+      this_hsv.s = 255;
+      this_hsv.v = global_hsv.v;
+      my_rgb = hsv2rgb(this_hsv);
+      red_buf[i] = my_rgb.r;
+      green_buf[i] = my_rgb.g;
+      blue_buf[i] = my_rgb.b;
+    }
+  }
   __disable_irq();
   neopixel_show(red_buf, green_buf, blue_buf);
   __enable_irq();
@@ -182,6 +196,7 @@ void restore_button_settings(void)
   global_hsv.s = 255;
   global_hsv.v = 8;
   set_led_color(eeprom_buf[BUTTON_COLOR]);
+  set_led_brightness(eeprom_buf[BUTTON_BRIGHTNESS]);
 }
 
 void handle_button_press(uint8_t button_index)
