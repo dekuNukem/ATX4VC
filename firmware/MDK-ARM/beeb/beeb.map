@@ -94,8 +94,8 @@ Section Cross References
     main.o(i.main) refers to stm32f0xx_hal_iwdg.o(i.HAL_IWDG_Init) for HAL_IWDG_Init
     main.o(i.main) refers to stm32f0xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
     main.o(i.main) refers to stm32f0xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ) for HAL_NVIC_EnableIRQ
-    main.o(i.main) refers to stm32f0xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     main.o(i.main) refers to stm32f0xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+    main.o(i.main) refers to stm32f0xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     main.o(i.main) refers to printf3.o(i.__0printf$3) for __2printf
     main.o(i.main) refers to ee.o(i.ee_format) for ee_format
     main.o(i.main) refers to ee.o(i.ee_read) for ee_read
@@ -1801,18 +1801,18 @@ Image Symbol Table
     i.is_released_but_not_serviced           0x08002a88   Section        0  buttons.o(i.is_released_but_not_serviced)
     i.lround                                 0x08002aac   Section        0  lround.o(i.lround)
     i.main                                   0x08002b70   Section        0  main.o(i.main)
-    i.mark_as_pressed                        0x08002d04   Section        0  buttons.o(i.mark_as_pressed)
-    i.mark_as_released                       0x08002d18   Section        0  buttons.o(i.mark_as_released)
-    i.neopixel_show                          0x08002d20   Section        0  neopixel.o(i.neopixel_show)
-    i.restore_button_settings                0x08002da4   Section        0  main.o(i.restore_button_settings)
-    i.scan_buttons                           0x08002de4   Section        0  buttons.o(i.scan_buttons)
-    i.service_press                          0x08002e98   Section        0  buttons.o(i.service_press)
-    i.set_led_brightness                     0x08002eac   Section        0  main.o(i.set_led_brightness)
-    i.set_led_color                          0x08002ecc   Section        0  main.o(i.set_led_color)
-    i.spi_fastwrite_buf_size_even            0x08002ef0   Section        0  neopixel.o(i.spi_fastwrite_buf_size_even)
-    .constdata                               0x08002f10   Section       49  main.o(.constdata)
-    .constdata                               0x08002f41   Section       16  system_stm32f0xx.o(.constdata)
-    .constdata                               0x08002f51   Section        8  system_stm32f0xx.o(.constdata)
+    i.mark_as_pressed                        0x08002d10   Section        0  buttons.o(i.mark_as_pressed)
+    i.mark_as_released                       0x08002d24   Section        0  buttons.o(i.mark_as_released)
+    i.neopixel_show                          0x08002d2c   Section        0  neopixel.o(i.neopixel_show)
+    i.restore_button_settings                0x08002db0   Section        0  main.o(i.restore_button_settings)
+    i.scan_buttons                           0x08002df0   Section        0  buttons.o(i.scan_buttons)
+    i.service_press                          0x08002ea4   Section        0  buttons.o(i.service_press)
+    i.set_led_brightness                     0x08002eb8   Section        0  main.o(i.set_led_brightness)
+    i.set_led_color                          0x08002ed8   Section        0  main.o(i.set_led_color)
+    i.spi_fastwrite_buf_size_even            0x08002efc   Section        0  neopixel.o(i.spi_fastwrite_buf_size_even)
+    .constdata                               0x08002f1c   Section       49  main.o(.constdata)
+    .constdata                               0x08002f4d   Section       16  system_stm32f0xx.o(.constdata)
+    .constdata                               0x08002f5d   Section        8  system_stm32f0xx.o(.constdata)
     .data                                    0x20000000   Section        4  neopixel.o(.data)
     .data                                    0x20000004   Section       20  main.o(.data)
     .data                                    0x20000018   Section        4  stm32f0xx_hal.o(.data)
@@ -2042,23 +2042,23 @@ Image Symbol Table
     is_pressed                               0x08002a65   Thumb Code    30  buttons.o(i.is_pressed)
     is_released_but_not_serviced             0x08002a89   Thumb Code    30  buttons.o(i.is_released_but_not_serviced)
     lround                                   0x08002aad   Thumb Code   170  lround.o(i.lround)
-    main                                     0x08002b71   Thumb Code   332  main.o(i.main)
-    mark_as_pressed                          0x08002d05   Thumb Code    20  buttons.o(i.mark_as_pressed)
-    mark_as_released                         0x08002d19   Thumb Code     8  buttons.o(i.mark_as_released)
-    neopixel_show                            0x08002d21   Thumb Code   120  neopixel.o(i.neopixel_show)
-    restore_button_settings                  0x08002da5   Thumb Code    50  main.o(i.restore_button_settings)
-    scan_buttons                             0x08002de5   Thumb Code   168  buttons.o(i.scan_buttons)
-    service_press                            0x08002e99   Thumb Code    16  buttons.o(i.service_press)
-    set_led_brightness                       0x08002ead   Thumb Code    22  main.o(i.set_led_brightness)
-    set_led_color                            0x08002ecd   Thumb Code    32  main.o(i.set_led_color)
-    spi_fastwrite_buf_size_even              0x08002ef1   Thumb Code    28  neopixel.o(i.spi_fastwrite_buf_size_even)
-    boot_message                             0x08002f10   Data          22  main.o(.constdata)
-    fan_speend_lookup                        0x08002f26   Data          16  main.o(.constdata)
-    led_brightness_lookup                    0x08002f36   Data          11  main.o(.constdata)
-    AHBPrescTable                            0x08002f41   Data          16  system_stm32f0xx.o(.constdata)
-    APBPrescTable                            0x08002f51   Data           8  system_stm32f0xx.o(.constdata)
-    Region$$Table$$Base                      0x08002f5c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002f7c   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08002b71   Thumb Code   342  main.o(i.main)
+    mark_as_pressed                          0x08002d11   Thumb Code    20  buttons.o(i.mark_as_pressed)
+    mark_as_released                         0x08002d25   Thumb Code     8  buttons.o(i.mark_as_released)
+    neopixel_show                            0x08002d2d   Thumb Code   120  neopixel.o(i.neopixel_show)
+    restore_button_settings                  0x08002db1   Thumb Code    50  main.o(i.restore_button_settings)
+    scan_buttons                             0x08002df1   Thumb Code   168  buttons.o(i.scan_buttons)
+    service_press                            0x08002ea5   Thumb Code    16  buttons.o(i.service_press)
+    set_led_brightness                       0x08002eb9   Thumb Code    22  main.o(i.set_led_brightness)
+    set_led_color                            0x08002ed9   Thumb Code    32  main.o(i.set_led_color)
+    spi_fastwrite_buf_size_even              0x08002efd   Thumb Code    28  neopixel.o(i.spi_fastwrite_buf_size_even)
+    boot_message                             0x08002f1c   Data          22  main.o(.constdata)
+    fan_speend_lookup                        0x08002f32   Data          16  main.o(.constdata)
+    led_brightness_lookup                    0x08002f42   Data          11  main.o(.constdata)
+    AHBPrescTable                            0x08002f4d   Data          16  system_stm32f0xx.o(.constdata)
+    APBPrescTable                            0x08002f5d   Data           8  system_stm32f0xx.o(.constdata)
+    Region$$Table$$Base                      0x08002f68   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002f88   Number         0  anon$$obj.o(Region$$Table)
     ws_padding_buf                           0x20000000   Data           4  neopixel.o(.data)
     is_soft_power_turned_on                  0x20000004   Data           1  main.o(.data)
     global_hsv                               0x20000005   Data           3  main.o(.data)
@@ -2089,9 +2089,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002fa4, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002fb0, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002f7c, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002f88, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2238,37 +2238,37 @@ Memory Map of the image
     0x08002a64   0x08002a64   0x00000024   Code   RO          157    i.is_pressed        buttons.o
     0x08002a88   0x08002a88   0x00000024   Code   RO          158    i.is_released_but_not_serviced  buttons.o
     0x08002aac   0x08002aac   0x000000c4   Code   RO         3550    i.lround            m_ps.l(lround.o)
-    0x08002b70   0x08002b70   0x00000194   Code   RO          295    i.main              main.o
-    0x08002d04   0x08002d04   0x00000014   Code   RO          159    i.mark_as_pressed   buttons.o
-    0x08002d18   0x08002d18   0x00000008   Code   RO          160    i.mark_as_released  buttons.o
-    0x08002d20   0x08002d20   0x00000084   Code   RO           12    i.neopixel_show     neopixel.o
-    0x08002da4   0x08002da4   0x00000040   Code   RO          296    i.restore_button_settings  main.o
-    0x08002de4   0x08002de4   0x000000b4   Code   RO          161    i.scan_buttons      buttons.o
-    0x08002e98   0x08002e98   0x00000014   Code   RO          162    i.service_press     buttons.o
-    0x08002eac   0x08002eac   0x00000020   Code   RO          297    i.set_led_brightness  main.o
-    0x08002ecc   0x08002ecc   0x00000024   Code   RO          298    i.set_led_color     main.o
-    0x08002ef0   0x08002ef0   0x00000020   Code   RO           13    i.spi_fastwrite_buf_size_even  neopixel.o
-    0x08002f10   0x08002f10   0x00000031   Data   RO          300    .constdata          main.o
-    0x08002f41   0x08002f41   0x00000010   Data   RO         3520    .constdata          system_stm32f0xx.o
-    0x08002f51   0x08002f51   0x00000008   Data   RO         3521    .constdata          system_stm32f0xx.o
-    0x08002f59   0x08002f59   0x00000003   PAD
-    0x08002f5c   0x08002f5c   0x00000020   Data   RO         3893    Region$$Table       anon$$obj.o
+    0x08002b70   0x08002b70   0x000001a0   Code   RO          295    i.main              main.o
+    0x08002d10   0x08002d10   0x00000014   Code   RO          159    i.mark_as_pressed   buttons.o
+    0x08002d24   0x08002d24   0x00000008   Code   RO          160    i.mark_as_released  buttons.o
+    0x08002d2c   0x08002d2c   0x00000084   Code   RO           12    i.neopixel_show     neopixel.o
+    0x08002db0   0x08002db0   0x00000040   Code   RO          296    i.restore_button_settings  main.o
+    0x08002df0   0x08002df0   0x000000b4   Code   RO          161    i.scan_buttons      buttons.o
+    0x08002ea4   0x08002ea4   0x00000014   Code   RO          162    i.service_press     buttons.o
+    0x08002eb8   0x08002eb8   0x00000020   Code   RO          297    i.set_led_brightness  main.o
+    0x08002ed8   0x08002ed8   0x00000024   Code   RO          298    i.set_led_color     main.o
+    0x08002efc   0x08002efc   0x00000020   Code   RO           13    i.spi_fastwrite_buf_size_even  neopixel.o
+    0x08002f1c   0x08002f1c   0x00000031   Data   RO          300    .constdata          main.o
+    0x08002f4d   0x08002f4d   0x00000010   Data   RO         3520    .constdata          system_stm32f0xx.o
+    0x08002f5d   0x08002f5d   0x00000008   Data   RO         3521    .constdata          system_stm32f0xx.o
+    0x08002f65   0x08002f65   0x00000003   PAD
+    0x08002f68   0x08002f68   0x00000020   Data   RO         3893    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002f7c, Size: 0x000007d8, Max: 0x00001800, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002f88, Size: 0x000007d8, Max: 0x00001800, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08002f7c   0x00000004   Data   RW           15    .data               neopixel.o
-    0x20000004   0x08002f80   0x00000014   Data   RW          304    .data               main.o
-    0x20000018   0x08002f94   0x00000004   Data   RW         2351    .data               stm32f0xx_hal.o
-    0x2000001c   0x08002f98   0x00000004   Data   RW         3522    .data               system_stm32f0xx.o
-    0x20000020   0x08002f9c   0x00000004   Data   RW         3854    .data               mc_p.l(stdout.o)
-    0x20000024   0x08002fa0   0x00000004   Data   RW         3860    .data               mc_p.l(errno.o)
+    0x20000000   0x08002f88   0x00000004   Data   RW           15    .data               neopixel.o
+    0x20000004   0x08002f8c   0x00000014   Data   RW          304    .data               main.o
+    0x20000018   0x08002fa0   0x00000004   Data   RW         2351    .data               stm32f0xx_hal.o
+    0x2000001c   0x08002fa4   0x00000004   Data   RW         3522    .data               system_stm32f0xx.o
+    0x20000020   0x08002fa8   0x00000004   Data   RW         3854    .data               mc_p.l(stdout.o)
+    0x20000024   0x08002fac   0x00000004   Data   RW         3860    .data               mc_p.l(errno.o)
     0x20000028        -       0x00000018   Zero   RW           14    .bss                neopixel.o
     0x20000040        -       0x00000028   Zero   RW          163    .bss                buttons.o
     0x20000068        -       0x0000034a   Zero   RW          299    .bss                main.o
-    0x200003b2   0x08002fa4   0x00000006   PAD
+    0x200003b2   0x08002fb0   0x00000006   PAD
     0x200003b8        -       0x00000020   Zero   RW         3362    .bss                stm32f0xx_hal_flash.o
     0x200003d8        -       0x00000400   Zero   RW            1    STACK               startup_stm32f042x6.o
 
@@ -2283,7 +2283,7 @@ Image component sizes
        186          8          0          0          0       1606   animations.o
        300         28          0          0         40       4302   buttons.o
        196         12          0          0          0       2449   ee.o
-      1688        190         49         20        842       9803   main.o
+      1700        192         49         20        842       9815   main.o
        164         16          0          4         24     456734   neopixel.o
         88         38        192          0       1024        644   startup_stm32f042x6.o
         94         18          0          4          0       3035   stm32f0xx_hal.o
@@ -2302,7 +2302,7 @@ Image component sizes
         92         14         24          4          0       1131   system_stm32f0xx.o
 
     ----------------------------------------------------------------------
-      9246        744        300         32       1968     538915   Object Totals
+      9258        746        300         32       1968     538927   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         26          0          3          0          6          0   (incl. Padding)
 
@@ -2367,15 +2367,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     11856        830        300         40       1968     535867   Grand Totals
-     11856        830        300         40       1968     535867   ELF Image Totals
-     11856        830        300         40          0          0   ROM Totals
+     11868        832        300         40       1968     535879   Grand Totals
+     11868        832        300         40       1968     535879   ELF Image Totals
+     11868        832        300         40          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                12156 (  11.87kB)
+    Total RO  Size (Code + RO Data)                12168 (  11.88kB)
     Total RW  Size (RW Data + ZI Data)              2008 (   1.96kB)
-    Total ROM Size (Code + RO Data + RW Data)      12196 (  11.91kB)
+    Total ROM Size (Code + RO Data + RW Data)      12208 (  11.92kB)
 
 ==============================================================================
 

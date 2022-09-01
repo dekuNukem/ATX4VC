@@ -32,5 +32,6 @@ increased space between fuses
 moved fan and ARGB header closer to edge
 increased ARGB trace width
 removed pullups on ARGB USB port
-added selector for power detect
-
+moved reset button slightly
+power LED now runs on 5V
+adjusted power LED and 3V3 LED resistance
