@@ -207,11 +207,11 @@ void set_led_color(uint8_t button_status)
   }
 }
 
-#define LED_BRIGHTNESS_STEP_COUNT 8
-const uint8_t led_brightness_lookup[LED_BRIGHTNESS_STEP_COUNT] = {0, 1, 2, 4, 5, 6, 8, 10};
+#define LED_BRIGHTNESS_STEP_COUNT 11
+const uint8_t led_brightness_lookup[LED_BRIGHTNESS_STEP_COUNT] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 void set_led_brightness(uint8_t button_status)
 {
-  global_hsv.v = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT] * 10; // change to 25 for full scale
+  global_hsv.v = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT] * 25; // change to 25 for full scale
 }
 
 void restore_button_settings(void)
