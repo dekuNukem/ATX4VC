@@ -10,6 +10,7 @@ void mark_as_pressed(but_status* butt)
 {
   butt->button_state = BUTTON_PRESSED;
   butt->service_status = BUTTON_SERVICE_UNSERVICED;
+  butt->last_press_ts = HAL_GetTick();
 }
 
 void mark_as_released(but_status* butt)
@@ -23,6 +24,13 @@ uint8_t is_pressed(uint8_t button_number)
   if(button_number >= BUTTON_COUNT)
     return 0;
   return button_status[button_number].button_state == BUTTON_PRESSED && button_status[button_number].service_status == BUTTON_SERVICE_UNSERVICED;
+}
+
+uint8_t is_released_but_not_serviced(uint8_t button_number)
+{
+  if(button_number >= BUTTON_COUNT)
+    return 0;
+  return button_status[button_number].button_state == BUTTON_RELEASED && button_status[button_number].service_status == BUTTON_SERVICE_UNSERVICED;
 }
 
 void service_press(uint8_t button_number)

@@ -230,7 +230,7 @@ void restore_button_settings(void)
 
 void handle_button_press(uint8_t button_index)
 {
-  printf("%d pressed!\n", button_index);
+  // printf("%d pressed!\n", button_index);
   eeprom_buf[button_index]++;
   if(button_index == BUTTON_FANSPEED)
   {
@@ -241,10 +241,10 @@ void handle_button_press(uint8_t button_index)
   {
     set_led_color(eeprom_buf[button_index]);
   }
-  else if(button_index == BUTTON_RGB_MODE)
-  {
-    printf("rgbm: %d\n", eeprom_buf[button_index] % ANIMATION_TYPE_COUNT);
-  }
+  // else if(button_index == BUTTON_RGB_MODE)
+  // {
+  //   printf("rgbm: %d\n", eeprom_buf[button_index] % ANIMATION_TYPE_COUNT);
+  // }
   else if(button_index == BUTTON_BRIGHTNESS)
   {
     set_led_brightness(eeprom_buf[button_index]);
@@ -319,6 +319,7 @@ int main(void)
 
   memset(eeprom_buf, 0, EEPROM_BUF_SIZE);
   ee_read(0, EEPROM_BUF_SIZE, eeprom_buf);
+  eeprom_buf[BUTTON_POWER] = 0;
   restore_button_settings();
 
   HAL_TIM_Base_Start_IT(&htim17);
@@ -330,11 +331,24 @@ int main(void)
   while (1)
   {
     for (int i = 0; i < BUTTON_COUNT; ++i)
+    {
       if(is_pressed(i))
       {
         handle_button_press(i);
         service_press(i);
       }
+      // for compatibility with a flip switch
+      if(i == BUTTON_POWER && is_released_but_not_serviced(i))
+      {
+        service_press(i);
+        if(HAL_GetTick() - button_status[i].last_press_ts > 750 && is_soft_power_turned_on)
+        {
+          is_soft_power_turned_on = 0;
+          HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, GPIO_PIN_SET);
+        }
+      }
+    }
+      
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */

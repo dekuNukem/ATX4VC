@@ -170,3 +170,6 @@ if(current_breathing_frame > BREATHING_FRAME_COUNT / 2)
       // current_breathing_brightness = lround(global_hsv.v - stepping * (current_breathing_frame - (current_breathing_frame - halfway) * 2 + 1));
     // printf("%d %d %f\n", global_hsv.v, dim_to, stepping);
     // printf("%f %d\n", stepping, current_breathing_brightness);
+printf("%d\n", HAL_GetTick() - button_status[i].last_press_ts);
+
+          printf("long release!\n");

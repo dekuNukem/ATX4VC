@@ -24,12 +24,14 @@ typedef struct
 {
   uint8_t prev_state;
   uint8_t button_state;
-  uint8_t service_status; 
+  uint8_t service_status;
+  uint32_t last_press_ts;
 } but_status;
 
 extern but_status button_status[BUTTON_COUNT];
 
 uint8_t is_pressed(uint8_t button_number);
+uint8_t is_released_but_not_serviced(uint8_t button_number);
 void service_press(uint8_t button_number);
 void scan_buttons(void);
 void mark_as_released(but_status* butt);
