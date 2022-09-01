@@ -114,7 +114,7 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x630F75CA)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x630F75CA)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x630F75CA)
 F (..\Inc\ee.h)(0x630EE703)()
-F (../Src/main.c)(0x630FDAEC)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_beeb-IC:\Users\allen\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\allen\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F042x6 -DUSE_HAL_DRIVER -DSTM32F042x6-o beeb\main.o --omf_browse beeb\main.crf --depend beeb\main.d)
+F (../Src/main.c)(0x63106239)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_beeb-IC:\Users\allen\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\allen\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F042x6 -DUSE_HAL_DRIVER -DSTM32F042x6-o beeb\main.o --omf_browse beeb\main.crf --depend beeb\main.d)
 I (../Inc/main.h)(0x630F75CA)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x630F75CA)
 I (../Inc/stm32f0xx_hal_conf.h)(0x630F75CA)
@@ -151,7 +151,7 @@ I (../Inc/neopixel.h)(0x630ED7F6)
 I (../Inc/buttons.h)(0x630FD6AF)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B4298)
 I (../Inc/ee.h)(0x630EE703)
-I (../Inc/animations.h)(0x630FD3BC)
+I (../Inc/animations.h)(0x63105CF7)
 F (../Src/stm32f0xx_it.c)(0x630F75CA)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_beeb-IC:\Users\allen\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\allen\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F042x6 -DUSE_HAL_DRIVER -DSTM32F042x6-o beeb\stm32f0xx_it.o --omf_browse beeb\stm32f0xx_it.crf --depend beeb\stm32f0xx_it.d)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x630F75CA)
 I (../Inc/stm32f0xx_hal_conf.h)(0x630F75CA)
@@ -219,10 +219,10 @@ I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h)(0x630F75CA)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h)(0x630F75CA)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h)(0x630F75CA)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h)(0x630F75CA)
-F (..\Inc\animations.h)(0x630FD3BC)()
+F (..\Inc\animations.h)(0x63105CF7)()
 F (..\Src\animations.c)(0x630FD3BD)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc -I ../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_beeb-IC:\Users\allen\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\allen\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F042x6 -DUSE_HAL_DRIVER -DSTM32F042x6-o beeb\animations.o --omf_browse beeb\animations.crf --depend beeb\animations.d)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B4298)
-I (../Inc/animations.h)(0x630FD3BC)
+I (../Inc/animations.h)(0x63105CF7)
 I (../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h)(0x630F75CA)
 I (../Inc/stm32f0xx_hal_conf.h)(0x630F75CA)
 I (../Inc/main.h)(0x630F75CA)

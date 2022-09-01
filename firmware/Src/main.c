@@ -68,7 +68,10 @@ const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
 uint8_t is_soft_power_turned_on;
-
+uint32_t frame_interrupt_count;
+uint8_t red_buf[NEOPIXEL_COUNT];
+uint8_t green_buf[NEOPIXEL_COUNT];
+uint8_t blue_buf[NEOPIXEL_COUNT];
 
 hsvcolor global_hsv;
 rgbcolor my_rgb;
@@ -100,16 +103,42 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
-uint8_t red_buf[NEOPIXEL_COUNT];
-uint8_t green_buf[NEOPIXEL_COUNT];
-uint8_t blue_buf[NEOPIXEL_COUNT];
+void animation_update(void)
+{
+  uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
 
-uint32_t frame_interrupt_count;
+  if(current_animation == ANIMATION_SOLID_COLOR)
+  {
+    my_rgb = hsv2rgb(global_hsv);
+    memset(red_buf, my_rgb.r, NEOPIXEL_COUNT);
+    memset(green_buf, my_rgb.g, NEOPIXEL_COUNT);
+    memset(blue_buf, my_rgb.b, NEOPIXEL_COUNT);
+  }
+  else if(current_animation == ANIMATION_FLOWING_RAINBOW)
+  {
+    for (int i = 0; i < NEOPIXEL_COUNT; ++i)
+    {
+      hsvcolor this_hsv;
+      this_hsv.h = i;
+      this_hsv.s = 255;
+      this_hsv.v = global_hsv.v;
+      my_rgb = hsv2rgb(this_hsv);
+      red_buf[i] = my_rgb.r;
+      green_buf[i] = my_rgb.g;
+      blue_buf[i] = my_rgb.b;
+    }
+  }
+
+  __disable_irq();
+  neopixel_show(red_buf, green_buf, blue_buf);
+  __enable_irq();
+}
+
 // happens every 16ms
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   frame_interrupt_count++;
-  HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
+  animation_update();
   // scan buttons every 64ms
   if(frame_interrupt_count % 4 == 0)
     scan_buttons();
@@ -134,22 +163,13 @@ void set_led_color(uint8_t button_status)
     global_hsv.h = color_index * 10; // 0, 10, 20, ..., 250
     global_hsv.s = 255;
   }
-  my_rgb = hsv2rgb(global_hsv);
-  memset(red_buf, my_rgb.r, NEOPIXEL_COUNT);
-  memset(green_buf, my_rgb.g, NEOPIXEL_COUNT);
-  memset(blue_buf, my_rgb.b, NEOPIXEL_COUNT);
 }
 
 #define LED_BRIGHTNESS_STEP_COUNT 8
 const uint8_t led_brightness_lookup[LED_BRIGHTNESS_STEP_COUNT] = {0, 1, 2, 4, 5, 6, 8, 10};
 void set_led_brightness(uint8_t button_status)
 {
-  uint8_t brightness_lookup_result = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT];
-  global_hsv.v = brightness_lookup_result * 10; // change it to 25 for full scale
-  my_rgb = hsv2rgb(global_hsv);
-  memset(red_buf, my_rgb.r, NEOPIXEL_COUNT);
-  memset(green_buf, my_rgb.g, NEOPIXEL_COUNT);
-  memset(blue_buf, my_rgb.b, NEOPIXEL_COUNT);
+  global_hsv.v = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT] * 10; // change to 25 for full scale
 }
 
 void restore_button_settings(void)
@@ -176,6 +196,10 @@ void handle_button_press(uint8_t button_index)
   else if(button_index == BUTTON_COLOR)
   {
     set_led_color(eeprom_buf[button_index]);
+  }
+  else if(button_index == BUTTON_RGB_MODE)
+  {
+    printf("rgbm: %d\n", eeprom_buf[button_index] % ANIMATION_TYPE_COUNT);
   }
   else if(button_index == BUTTON_BRIGHTNESS)
   {
@@ -261,18 +285,12 @@ int main(void)
 
   while (1)
   {
-    __disable_irq();
-    neopixel_show(red_buf, green_buf, blue_buf);
-    __enable_irq();
-
     for (int i = 0; i < BUTTON_COUNT; ++i)
       if(is_pressed(i))
       {
         handle_button_press(i);
         service_press(i);
       }
-
-    HAL_Delay(50);
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
