@@ -103,13 +103,12 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
-#define BREATHING_FRAME_COUNT 120
+#define BREATHING_FRAME_COUNT 300
 
 // cross fading is just a very slow rainbow update? actually without positioning
 void animation_update(void)
 {
   uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
-  static float current_breathing_brightness;
   if(current_animation == ANIMATION_SOLID_COLOR)
   {
     my_rgb = hsv2rgb(global_hsv);
@@ -147,20 +146,31 @@ void animation_update(void)
   }
   else if(current_animation == ANIMATION_BREATHING)
   {
-    uint8_t max_dim_amount = global_hsv.v;
-    float stepping = (float)max_dim_amount / BREATHING_FRAME_COUNT; // 1 second = 60 frames
+    uint8_t dim_minimum = global_hsv.v / 10;
+    if(dim_minimum == 0)
+      dim_minimum = 1;
+    float stepping = (float)(global_hsv.v - dim_minimum) / (BREATHING_FRAME_COUNT / 2); // 1 second = 60 frames
+    uint32_t current_breathing_frame = frame_interrupt_count % BREATHING_FRAME_COUNT;
+    uint8_t current_breathing_brightness;
+
+    if(current_breathing_frame < BREATHING_FRAME_COUNT / 2) // down
+      current_breathing_brightness = lround(global_hsv.v - stepping * current_breathing_frame);
+    else // up
+      current_breathing_brightness = lround(global_hsv.v - stepping * (BREATHING_FRAME_COUNT - current_breathing_frame + 1));
     for (int i = 0; i < NEOPIXEL_COUNT; ++i)
     {
       hsvcolor this_hsv;
       this_hsv.h = global_hsv.h;
-      this_hsv.s = 255;
-      this_hsv.v = lround(global_hsv.v - stepping * (frame_interrupt_count % BREATHING_FRAME_COUNT));
+      this_hsv.s = global_hsv.s;
+      if(global_hsv.v == 0) // led off
+        this_hsv.v = 0;
+      else
+        this_hsv.v = current_breathing_brightness;
       my_rgb = hsv2rgb(this_hsv);
       red_buf[i] = my_rgb.r;
       green_buf[i] = my_rgb.g;
       blue_buf[i] = my_rgb.b;
     }
-    // printf("%d\n", lround(global_hsv.v - stepping * (frame_interrupt_count % BREATHING_FRAME_COUNT)));
   }
   __disable_irq();
   neopixel_show(red_buf, green_buf, blue_buf);

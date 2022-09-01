@@ -162,3 +162,11 @@ const uint8_t hsv_angle_lookup[RGB_COLOR_STEP_COUNT] = {4,10,17,23,30,36,43,63,8
 HAL_GPIO_TogglePin(DEBUG_GPIO_Port, DEBUG_Pin);
 
       // printf("%d %d %d\n", my_rgb.r, my_rgb.g, my_rgb.b);
+if(current_breathing_frame > BREATHING_FRAME_COUNT / 2)
+      printf("up! %d\n", current_breathing_frame);
+    else
+      printf("down! %d\n", current_breathing_frame);
+
+      // current_breathing_brightness = lround(global_hsv.v - stepping * (current_breathing_frame - (current_breathing_frame - halfway) * 2 + 1));
+    // printf("%d %d %f\n", global_hsv.v, dim_to, stepping);
+    // printf("%f %d\n", stepping, current_breathing_brightness);
