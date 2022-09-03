@@ -3912,6 +3912,30 @@ TS-003</description>
 <vertex x="2.5654" y="3.937"/>
 </polygon>
 </package>
+<package name="FUSE_5MM">
+<wire x1="-2.921" y1="11.717" x2="-2.921" y2="-11.524" width="0.2032" layer="51"/>
+<wire x1="-2.921" y1="-11.524" x2="2.794" y2="-11.524" width="0.2032" layer="51"/>
+<wire x1="2.794" y1="-11.524" x2="2.794" y2="11.717" width="0.2032" layer="51"/>
+<wire x1="2.794" y1="11.717" x2="-2.921" y2="11.717" width="0.2032" layer="51"/>
+<wire x1="-3.175" y1="11.43" x2="3.175" y2="11.43" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="11.43" x2="3.175" y2="10.795" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="10.795" x2="3.175" y2="5.715" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="5.715" x2="-3.175" y2="5.715" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="5.715" x2="-3.175" y2="10.795" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="10.795" x2="-3.175" y2="11.43" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="-11.43" x2="3.175" y2="-11.43" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-11.43" x2="3.175" y2="-10.795" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-10.795" x2="3.175" y2="-5.715" width="0.2032" layer="21"/>
+<wire x1="3.175" y1="-5.715" x2="-3.175" y2="-5.715" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="-5.715" x2="-3.175" y2="-10.795" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="-10.795" x2="-3.175" y2="-11.43" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="10.795" x2="3.175" y2="10.795" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="-10.795" x2="3.175" y2="-10.795" width="0.2032" layer="21"/>
+<pad name="1" x="0" y="-11.1125" drill="1.778"/>
+<pad name="2" x="0" y="-6.0325" drill="1.778"/>
+<pad name="3" x="0" y="6.0325" drill="1.778" rot="R180"/>
+<pad name="4" x="0" y="11.1125" drill="1.778" rot="R180"/>
+</package>
 <package name="SCREWTERMINAL-3.5MM-2">
 <description>&lt;h3&gt;Screw Terminal  3.5mm Pitch - 2 Pin PTH&lt;/h3&gt;
 &lt;p&gt;Specifications:
@@ -4492,26 +4516,6 @@ tDocu marks the spring arms
 <pad name="P$2" x="0" y="5.08" drill="1.1" diameter="1.9"/>
 <pad name="P$3" x="2.54" y="5.08" drill="1.1" diameter="1.9"/>
 </package>
-<package name="FUSE_HOLDER_MINI_ONLY">
-<pad name="A0" x="-5" y="1.75" drill="1.7"/>
-<pad name="B0" x="5" y="1.75" drill="1.7"/>
-<pad name="A1" x="-5" y="-1.75" drill="1.7"/>
-<pad name="B1" x="5" y="-1.75" drill="1.7"/>
-<wire x1="-8" y1="3.5" x2="8" y2="3.5" width="0.254" layer="21"/>
-<wire x1="-8" y1="3.5" x2="-8" y2="-3.5" width="0.254" layer="21"/>
-<wire x1="-8" y1="-3.5" x2="8" y2="-3.5" width="0.254" layer="21"/>
-<wire x1="8" y1="3.5" x2="8" y2="-3.5" width="0.254" layer="21"/>
-</package>
-<package name="FUSE_HOLDER_3IN1">
-<pad name="A0" x="-6.15" y="1.75" drill="1.7"/>
-<pad name="B0" x="6.15" y="1.75" drill="1.7"/>
-<pad name="A1" x="-6.15" y="-1.75" drill="1.7"/>
-<pad name="B1" x="6.15" y="-1.75" drill="1.7"/>
-<wire x1="-10" y1="-3.5" x2="10" y2="-3.5" width="0.254" layer="21"/>
-<wire x1="-10" y1="-3.5" x2="-10" y2="3.5" width="0.254" layer="21"/>
-<wire x1="-10" y1="3.5" x2="10" y2="3.5" width="0.254" layer="21"/>
-<wire x1="10" y1="-3.5" x2="10" y2="3.5" width="0.254" layer="21"/>
-</package>
 </packages>
 <symbols>
 <symbol name="ADAFRUIT_78XX">
@@ -4526,6 +4530,14 @@ tDocu marks the spring arms
 <text x="-7.62" y="3.175" size="1.778" layer="96">&gt;VALUE</text>
 <text x="-2.032" y="-4.318" size="1.524" layer="95">GND</text>
 </symbol>
+<symbol name="FUSE">
+<wire x1="0" y1="0" x2="-5.08" y2="0" width="0.254" layer="94" curve="-180"/>
+<wire x1="0" y1="0" x2="5.08" y2="0" width="0.254" layer="94" curve="-180"/>
+<pin name="1" x="-10.16" y="0" length="middle"/>
+<pin name="2" x="10.16" y="0" length="middle" rot="R180"/>
+<text x="-10.16" y="2.54" size="1.27" layer="95">&gt;Name</text>
+<text x="5.08" y="2.54" size="1.27" layer="96">&gt;Value</text>
+</symbol>
 <symbol name="CONN_02">
 <description>&lt;h3&gt;2 Pin Connection&lt;/h3&gt;</description>
 <wire x1="3.81" y1="-2.54" x2="-2.54" y2="-2.54" width="0.4064" layer="94"/>
@@ -4538,16 +4550,6 @@ tDocu marks the spring arms
 <pin name="2" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <text x="-2.54" y="-4.826" size="1.778" layer="96" font="vector">&gt;VALUE</text>
 <text x="-2.54" y="5.588" size="1.778" layer="95" font="vector">&gt;NAME</text>
-</symbol>
-<symbol name="CAR_FUSE_HOLDER">
-<wire x1="-9.906" y1="3.81" x2="10.414" y2="3.81" width="0.254" layer="94"/>
-<wire x1="10.414" y1="3.81" x2="10.414" y2="-3.81" width="0.254" layer="94"/>
-<wire x1="10.414" y1="-3.81" x2="-9.906" y2="-3.81" width="0.254" layer="94"/>
-<wire x1="-9.906" y1="-3.81" x2="-9.906" y2="3.81" width="0.254" layer="94"/>
-<pin name="A0" x="-14.986" y="1.27" length="middle"/>
-<pin name="A1" x="-14.986" y="-1.27" length="middle"/>
-<pin name="B0" x="15.494" y="1.27" length="middle" rot="R180"/>
-<pin name="B1" x="15.494" y="-1.27" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -4574,6 +4576,22 @@ Added bigger pads to the TO-92 package</description>
 <technology name="15"/>
 <technology name="18"/>
 <technology name="24"/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FUSE" prefix="F">
+<gates>
+<gate name="G$1" symbol="FUSE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="X20MM" package="FUSE_5MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1 2"/>
+<connect gate="G$1" pin="2" pad="3 4"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -4850,53 +4868,6 @@ Added bigger pads to the TO-92 package</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="FUSE_HOLDER">
-<gates>
-<gate name="G$1" symbol="CAR_FUSE_HOLDER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="FUSE_HOLDER_MINI_ONLY">
-<connects>
-<connect gate="G$1" pin="A0" pad="A0"/>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B0" pad="B0"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="CAR_FUSE_HOLDER">
-<gates>
-<gate name="G$1" symbol="CAR_FUSE_HOLDER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="FUSE_HOLDER_MINI_ONLY">
-<connects>
-<connect gate="G$1" pin="A0" pad="A0"/>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B0" pad="B0"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="3IN1" package="FUSE_HOLDER_3IN1">
-<connects>
-<connect gate="G$1" pin="A0" pad="A0"/>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="B0" pad="B0"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -4953,6 +4924,9 @@ Added bigger pads to the TO-92 package</description>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
+<part name="F2" library="atx_power_control" deviceset="FUSE" device="X20MM"/>
+<part name="F1" library="atx_power_control" deviceset="FUSE" device="X20MM"/>
+<part name="F3" library="atx_power_control" deviceset="FUSE" device="X20MM"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="IC4" library="atx_power_control" deviceset="MY_7905" device="DT"/>
 <part name="C5" library="clock" deviceset="CAP" device="0805" value="1uF"/>
@@ -5006,12 +4980,6 @@ Added bigger pads to the TO-92 package</description>
 <part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
 <part name="GND33" library="backplane" deviceset="GND" device=""/>
 <part name="R13" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
-<part name="U$4" library="atx_power_control" deviceset="FUSE_HOLDER" device=""/>
-<part name="U$5" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
-<part name="U$6" library="atx_power_control" deviceset="FUSE_HOLDER" device=""/>
-<part name="U$7" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
-<part name="U$8" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
-<part name="U$9" library="atx_power_control" deviceset="FUSE_HOLDER" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5160,6 +5128,17 @@ Added bigger pads to the TO-92 package</description>
 </instance>
 <instance part="SUPPLY6" gate="G$1" x="205.74" y="10.16" smashed="yes">
 <attribute name="VALUE" x="203.835" y="13.335" size="1.778" layer="96"/>
+</instance>
+<instance part="F2" gate="G$1" x="289.56" y="5.08" smashed="yes" rot="R180">
+<attribute name="NAME" x="299.72" y="2.54" size="1.27" layer="95" rot="R180"/>
+</instance>
+<instance part="F1" gate="G$1" x="281.94" y="40.64" smashed="yes">
+<attribute name="NAME" x="271.78" y="43.18" size="1.27" layer="95"/>
+<attribute name="VALUE" x="287.02" y="43.18" size="1.27" layer="96"/>
+</instance>
+<instance part="F3" gate="G$1" x="281.94" y="22.86" smashed="yes">
+<attribute name="NAME" x="271.78" y="25.4" size="1.27" layer="95"/>
+<attribute name="VALUE" x="287.02" y="25.4" size="1.27" layer="96"/>
 </instance>
 <instance part="GND4" gate="1" x="317.5" y="-33.02" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="320.04" y="-35.56" size="1.778" layer="96" rot="MR0"/>
@@ -5334,12 +5313,6 @@ Added bigger pads to the TO-92 package</description>
 <attribute name="NAME" x="394.97" y="31.5214" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="394.97" y="36.322" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="U$4" gate="G$1" x="274.32" y="10.16" smashed="yes"/>
-<instance part="U$5" gate="G$1" x="274.32" y="2.54" smashed="yes"/>
-<instance part="U$6" gate="G$1" x="281.94" y="27.94" smashed="yes"/>
-<instance part="U$7" gate="G$1" x="281.94" y="20.32" smashed="yes"/>
-<instance part="U$8" gate="G$1" x="281.94" y="38.1" smashed="yes"/>
-<instance part="U$9" gate="G$1" x="281.94" y="45.72" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -5827,18 +5800,28 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="220.98" y1="15.24" x2="218.44" y2="15.24" width="0.1524" layer="91"/>
 <junction x="218.44" y="15.24"/>
 <wire x1="218.44" y1="22.86" x2="218.44" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="40.64" x2="271.78" y2="40.64" width="0.1524" layer="91"/>
 <junction x="218.44" y="22.86"/>
-<pinref part="U$8" gate="G$1" pin="A0"/>
-<wire x1="218.44" y1="40.64" x2="266.954" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="266.954" y1="40.64" x2="266.954" y2="39.37" width="0.1524" layer="91"/>
-<pinref part="U$8" gate="G$1" pin="A1"/>
-<wire x1="266.954" y1="39.37" x2="266.954" y2="36.83" width="0.1524" layer="91"/>
-<junction x="266.954" y="39.37"/>
-<pinref part="U$9" gate="G$1" pin="A1"/>
-<wire x1="266.954" y1="39.37" x2="266.954" y2="44.45" width="0.1524" layer="91"/>
-<pinref part="U$9" gate="G$1" pin="A0"/>
-<wire x1="266.954" y1="44.45" x2="266.954" y2="46.99" width="0.1524" layer="91"/>
-<junction x="266.954" y="44.45"/>
+<pinref part="F1" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="F2" gate="G$1" pin="1"/>
+<wire x1="299.72" y1="5.08" x2="304.8" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="LED5" gate="G$1" pin="A"/>
+<wire x1="304.8" y1="5.08" x2="342.9" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="368.3" y1="12.7" x2="373.38" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="J6" gate="G$1" pin="2"/>
+<wire x1="342.9" y1="10.16" x2="342.9" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="10.16" x2="347.98" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="347.98" y1="10.16" x2="368.3" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="368.3" y1="10.16" x2="368.3" y2="12.7" width="0.1524" layer="91"/>
+<junction x="347.98" y="10.16"/>
+<pinref part="JP2" gate="A" pin="3"/>
+<wire x1="304.8" y1="5.08" x2="304.8" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="-71.12" x2="182.88" y2="-71.12" width="0.1524" layer="91"/>
+<junction x="304.8" y="5.08"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -5856,6 +5839,18 @@ Added bigger pads to the TO-92 package</description>
 <pinref part="LED7" gate="G$1" pin="C"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="386.08" y1="43.18" x2="381" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="LED6" gate="G$1" pin="A"/>
+<pinref part="F3" gate="G$1" pin="2"/>
+<wire x1="368.3" y1="25.4" x2="373.38" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="J2" gate="G$1" pin="2"/>
+<wire x1="292.1" y1="22.86" x2="347.98" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="347.98" y1="22.86" x2="368.3" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="368.3" y1="22.86" x2="368.3" y2="25.4" width="0.1524" layer="91"/>
+<junction x="347.98" y="22.86"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -5933,23 +5928,14 @@ Added bigger pads to the TO-92 package</description>
 </net>
 <net name="N$21" class="0">
 <segment>
+<pinref part="F2" gate="G$1" pin="2"/>
 <pinref part="J1" gate="G$1" pin="12V@0"/>
 <wire x1="248.92" y1="5.08" x2="251.46" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="5.08" x2="279.4" y2="5.08" width="0.1524" layer="91"/>
+<junction x="251.46" y="5.08"/>
 <pinref part="J1" gate="G$1" pin="12V@1"/>
 <wire x1="248.92" y1="2.54" x2="251.46" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="251.46" y1="2.54" x2="251.46" y2="5.08" width="0.1524" layer="91"/>
-<pinref part="U$5" gate="G$1" pin="A0"/>
-<wire x1="251.46" y1="5.08" x2="259.334" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="259.334" y1="5.08" x2="259.334" y2="3.81" width="0.1524" layer="91"/>
-<junction x="251.46" y="5.08"/>
-<pinref part="U$5" gate="G$1" pin="A1"/>
-<wire x1="259.334" y1="3.81" x2="259.334" y2="1.27" width="0.1524" layer="91"/>
-<junction x="259.334" y="3.81"/>
-<pinref part="U$4" gate="G$1" pin="A1"/>
-<wire x1="259.334" y1="8.89" x2="259.334" y2="3.81" width="0.1524" layer="91"/>
-<pinref part="U$4" gate="G$1" pin="A0"/>
-<wire x1="259.334" y1="11.43" x2="259.334" y2="8.89" width="0.1524" layer="91"/>
-<junction x="259.334" y="8.89"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -6049,8 +6035,11 @@ Added bigger pads to the TO-92 package</description>
 <net name="N$14" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="3.3V@3"/>
+<pinref part="F3" gate="G$1" pin="1"/>
 <pinref part="J1" gate="G$1" pin="3.3V@0"/>
 <wire x1="248.92" y1="22.86" x2="251.46" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="22.86" x2="271.78" y2="22.86" width="0.1524" layer="91"/>
+<junction x="251.46" y="22.86"/>
 <wire x1="251.46" y1="22.86" x2="251.46" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="3.3V@1"/>
 <wire x1="248.92" y1="20.32" x2="251.46" y2="20.32" width="0.1524" layer="91"/>
@@ -6061,18 +6050,6 @@ Added bigger pads to the TO-92 package</description>
 <junction x="251.46" y="17.78"/>
 <wire x1="251.46" y1="17.78" x2="251.46" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="251.46" y1="15.24" x2="248.92" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="A0"/>
-<wire x1="251.46" y1="22.86" x2="266.954" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="266.954" y1="22.86" x2="266.954" y2="21.59" width="0.1524" layer="91"/>
-<junction x="251.46" y="22.86"/>
-<pinref part="U$7" gate="G$1" pin="A1"/>
-<wire x1="266.954" y1="21.59" x2="266.954" y2="19.05" width="0.1524" layer="91"/>
-<junction x="266.954" y="21.59"/>
-<pinref part="U$6" gate="G$1" pin="A1"/>
-<wire x1="266.954" y1="21.59" x2="266.954" y2="26.67" width="0.1524" layer="91"/>
-<pinref part="U$6" gate="G$1" pin="A0"/>
-<wire x1="266.954" y1="26.67" x2="266.954" y2="29.21" width="0.1524" layer="91"/>
-<junction x="266.954" y="26.67"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -6124,7 +6101,9 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="314.96" y1="55.88" x2="314.96" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="J8" gate="G$1" pin="2"/>
 <wire x1="322.58" y1="48.26" x2="314.96" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="F1" gate="G$1" pin="2"/>
 <pinref part="LED7" gate="G$1" pin="A"/>
+<wire x1="292.1" y1="40.64" x2="307.34" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="307.34" y1="40.64" x2="314.96" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="314.96" y1="40.64" x2="347.98" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="368.3" y1="43.18" x2="373.38" y2="43.18" width="0.1524" layer="91"/>
@@ -6135,6 +6114,7 @@ Added bigger pads to the TO-92 package</description>
 <pinref part="JP7" gate="A" pin="1"/>
 <wire x1="299.72" y1="68.58" x2="307.34" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="307.34" y1="68.58" x2="307.34" y2="40.64" width="0.1524" layer="91"/>
+<junction x="307.34" y="40.64"/>
 <pinref part="U1" gate="G$1" pin="VBUS"/>
 <wire x1="307.34" y1="68.58" x2="307.34" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="307.34" y1="132.08" x2="294.64" y2="132.08" width="0.1524" layer="91"/>
@@ -6142,67 +6122,6 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="314.96" y1="48.26" x2="314.96" y2="40.64" width="0.1524" layer="91"/>
 <junction x="314.96" y="48.26"/>
 <junction x="314.96" y="40.64"/>
-<pinref part="U$8" gate="G$1" pin="B0"/>
-<wire x1="307.34" y1="40.64" x2="297.434" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="297.434" y1="40.64" x2="297.434" y2="39.37" width="0.1524" layer="91"/>
-<junction x="307.34" y="40.64"/>
-<pinref part="U$8" gate="G$1" pin="B1"/>
-<wire x1="297.434" y1="39.37" x2="297.434" y2="36.83" width="0.1524" layer="91"/>
-<junction x="297.434" y="39.37"/>
-<pinref part="U$9" gate="G$1" pin="B1"/>
-<wire x1="297.434" y1="39.37" x2="297.434" y2="44.45" width="0.1524" layer="91"/>
-<pinref part="U$9" gate="G$1" pin="B0"/>
-<wire x1="297.434" y1="44.45" x2="297.434" y2="46.99" width="0.1524" layer="91"/>
-<junction x="297.434" y="44.45"/>
-</segment>
-</net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="U$4" gate="G$1" pin="B0"/>
-<pinref part="U$4" gate="G$1" pin="B1"/>
-<wire x1="289.814" y1="11.43" x2="289.814" y2="8.89" width="0.1524" layer="91"/>
-<pinref part="LED5" gate="G$1" pin="A"/>
-<wire x1="304.8" y1="5.08" x2="342.9" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="12.7" x2="373.38" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="J6" gate="G$1" pin="2"/>
-<wire x1="342.9" y1="10.16" x2="342.9" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="342.9" y1="10.16" x2="347.98" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="347.98" y1="10.16" x2="368.3" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="10.16" x2="368.3" y2="12.7" width="0.1524" layer="91"/>
-<junction x="347.98" y="10.16"/>
-<pinref part="JP2" gate="A" pin="3"/>
-<wire x1="304.8" y1="5.08" x2="304.8" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="304.8" y1="-71.12" x2="182.88" y2="-71.12" width="0.1524" layer="91"/>
-<junction x="304.8" y="5.08"/>
-<pinref part="U$5" gate="G$1" pin="B0"/>
-<pinref part="U$5" gate="G$1" pin="B1"/>
-<wire x1="289.814" y1="3.81" x2="289.814" y2="1.27" width="0.1524" layer="91"/>
-<wire x1="304.8" y1="5.08" x2="289.814" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="289.814" y1="5.08" x2="289.814" y2="3.81" width="0.1524" layer="91"/>
-<junction x="289.814" y="3.81"/>
-<wire x1="289.814" y1="8.89" x2="289.814" y2="3.81" width="0.1524" layer="91"/>
-<junction x="289.814" y="8.89"/>
-</segment>
-</net>
-<net name="N$16" class="0">
-<segment>
-<pinref part="U$6" gate="G$1" pin="B0"/>
-<pinref part="U$6" gate="G$1" pin="B1"/>
-<wire x1="297.434" y1="29.21" x2="297.434" y2="26.67" width="0.1524" layer="91"/>
-<pinref part="LED6" gate="G$1" pin="A"/>
-<wire x1="368.3" y1="25.4" x2="373.38" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="2"/>
-<wire x1="347.98" y1="22.86" x2="368.3" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="22.86" x2="368.3" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="B0"/>
-<wire x1="347.98" y1="22.86" x2="297.434" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="297.434" y1="22.86" x2="297.434" y2="21.59" width="0.1524" layer="91"/>
-<junction x="347.98" y="22.86"/>
-<pinref part="U$7" gate="G$1" pin="B1"/>
-<wire x1="297.434" y1="21.59" x2="297.434" y2="19.05" width="0.1524" layer="91"/>
-<junction x="297.434" y="21.59"/>
-<wire x1="297.434" y1="26.67" x2="297.434" y2="21.59" width="0.1524" layer="91"/>
-<junction x="297.434" y="26.67"/>
 </segment>
 </net>
 </nets>
