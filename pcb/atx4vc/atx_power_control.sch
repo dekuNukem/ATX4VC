@@ -5299,8 +5299,8 @@ Added bigger pads to the TO-92 package</description>
 <instance part="GND31" gate="1" x="241.3" y="104.14" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="243.84" y="101.6" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="+3V3" gate="G$1" x="-231.14" y="58.42" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="-228.6" y="53.34" size="1.778" layer="96" rot="MR90"/>
+<instance part="+3V3" gate="G$1" x="-185.42" y="55.88" smashed="yes" rot="MR90">
+<attribute name="VALUE" x="-190.5" y="53.34" size="1.778" layer="96" rot="MR180"/>
 </instance>
 <instance part="R12" gate="G$1" x="327.66" y="71.12" smashed="yes" rot="R270">
 <attribute name="NAME" x="329.1586" y="74.93" size="1.778" layer="95" rot="R270"/>
@@ -5594,9 +5594,9 @@ Added bigger pads to the TO-92 package</description>
 <pinref part="JP8" gate="A" pin="3"/>
 </segment>
 <segment>
-<pinref part="JP9" gate="A" pin="3"/>
+<pinref part="JP9" gate="A" pin="4"/>
 <pinref part="+3V3" gate="G$1" pin="+3V3"/>
-<wire x1="-210.82" y1="55.88" x2="-231.14" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-203.2" y1="55.88" x2="-187.96" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$31" class="0">
@@ -5664,9 +5664,11 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="86.36" y1="-12.7" x2="86.36" y2="-60.96" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="-60.96" x2="-185.42" y2="-60.96" width="0.1524" layer="91"/>
 <junction x="86.36" y="-12.7"/>
-<wire x1="-185.42" y1="55.88" x2="-203.2" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="JP9" gate="A" pin="4"/>
-<wire x1="-185.42" y1="-60.96" x2="-185.42" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-185.42" y1="-60.96" x2="-185.42" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="JP9" gate="A" pin="3"/>
+<wire x1="-210.82" y1="55.88" x2="-218.44" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-218.44" y1="55.88" x2="-218.44" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="-218.44" y1="45.72" x2="-185.42" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -6059,7 +6061,7 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="-63.5" y1="55.88" x2="-71.12" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="USB_DP" class="0">
+<net name="PG" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="DP2"/>
 <wire x1="40.64" y1="114.3" x2="38.1" y2="114.3" width="0.1524" layer="91"/>
