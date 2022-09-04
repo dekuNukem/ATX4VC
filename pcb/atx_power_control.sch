@@ -4899,6 +4899,56 @@ Added bigger pads to the TO-92 package</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="adafruit_changed">
+<packages>
+<package name="1X06">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<pad name="1" x="-6.35" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="2" x="-3.81" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="3" x="-1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<pad name="4" x="1.27" y="0" drill="1.016" shape="octagon" rot="R90"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
+<rectangle x1="-6.604" y1="-0.254" x2="-6.096" y2="0.254" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="PINHD6">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="10.16" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="10.16" x2="-6.35" y2="10.16" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="10.16" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="10.795" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="7.62" visible="pad" length="short" direction="pas" function="dot"/>
+<pin name="2" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" function="dot"/>
+<pin name="3" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
+<pin name="4" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PINHD-1X6" prefix="JP" uservalue="yes">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="A" symbol="PINHD6" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="1X06">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+<connect gate="A" pin="3" pad="3"/>
+<connect gate="A" pin="4" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5012,6 +5062,8 @@ Added bigger pads to the TO-92 package</description>
 <part name="U$7" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
 <part name="U$8" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
 <part name="U$9" library="atx_power_control" deviceset="FUSE_HOLDER" device=""/>
+<part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
+<part name="JP12" library="adafruit_changed" deviceset="PINHD-1X6" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5340,6 +5392,14 @@ Added bigger pads to the TO-92 package</description>
 <instance part="U$7" gate="G$1" x="281.94" y="20.32" smashed="yes"/>
 <instance part="U$8" gate="G$1" x="281.94" y="38.1" smashed="yes"/>
 <instance part="U$9" gate="G$1" x="281.94" y="45.72" smashed="yes"/>
+<instance part="JP4" gate="A" x="200.66" y="-71.12" smashed="yes">
+<attribute name="NAME" x="194.31" y="-62.865" size="1.778" layer="95"/>
+<attribute name="VALUE" x="194.31" y="-78.74" size="1.778" layer="96"/>
+</instance>
+<instance part="JP12" gate="A" x="279.4" y="60.96" smashed="yes">
+<attribute name="NAME" x="273.05" y="71.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="273.05" y="50.8" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5528,11 +5588,17 @@ Added bigger pads to the TO-92 package</description>
 <pinref part="JP2" gate="A" pin="4"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 <wire x1="182.88" y1="-73.66" x2="172.72" y2="-73.66" width="0.1524" layer="91"/>
+<pinref part="JP4" gate="A" pin="4"/>
+<wire x1="182.88" y1="-73.66" x2="198.12" y2="-73.66" width="0.1524" layer="91"/>
+<junction x="182.88" y="-73.66"/>
 </segment>
 <segment>
 <pinref part="JP7" gate="A" pin="4"/>
 <pinref part="GND15" gate="1" pin="GND"/>
 <wire x1="299.72" y1="60.96" x2="289.56" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="JP12" gate="A" pin="4"/>
+<wire x1="289.56" y1="60.96" x2="276.86" y2="60.96" width="0.1524" layer="91"/>
+<junction x="289.56" y="60.96"/>
 </segment>
 <segment>
 <pinref part="SW2" gate="G$1" pin="3"/>
@@ -5915,6 +5981,9 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="-40.64" y1="7.62" x2="-40.64" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="JP2" gate="A" pin="1"/>
 <wire x1="-40.64" y1="-66.04" x2="182.88" y2="-66.04" width="0.1524" layer="91"/>
+<pinref part="JP4" gate="A" pin="1"/>
+<wire x1="182.88" y1="-66.04" x2="198.12" y2="-66.04" width="0.1524" layer="91"/>
+<junction x="182.88" y="-66.04"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -6021,7 +6090,8 @@ Added bigger pads to the TO-92 package</description>
 <junction x="294.64" y="127"/>
 <pinref part="JP7" gate="A" pin="2"/>
 <wire x1="299.72" y1="66.04" x2="292.1" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="292.1" y1="66.04" x2="111.76" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="292.1" y1="66.04" x2="276.86" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="66.04" x2="111.76" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="66.04" x2="111.76" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="76.2" x2="-53.34" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="-53.34" y1="76.2" x2="-53.34" y2="22.86" width="0.1524" layer="91"/>
@@ -6030,6 +6100,8 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="302.26" y1="83.82" x2="292.1" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="292.1" y1="83.82" x2="292.1" y2="66.04" width="0.1524" layer="91"/>
 <junction x="292.1" y="66.04"/>
+<pinref part="JP12" gate="A" pin="2"/>
+<junction x="276.86" y="66.04"/>
 </segment>
 </net>
 <net name="N$36" class="0">
@@ -6044,6 +6116,9 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="289.56" y1="86.36" x2="289.56" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="JP7" gate="A" pin="3"/>
 <wire x1="289.56" y1="63.5" x2="299.72" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="JP12" gate="A" pin="3"/>
+<wire x1="289.56" y1="63.5" x2="276.86" y2="63.5" width="0.1524" layer="91"/>
+<junction x="289.56" y="63.5"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -6154,6 +6229,9 @@ Added bigger pads to the TO-92 package</description>
 <pinref part="U$9" gate="G$1" pin="B0"/>
 <wire x1="297.434" y1="44.45" x2="297.434" y2="46.99" width="0.1524" layer="91"/>
 <junction x="297.434" y="44.45"/>
+<pinref part="JP12" gate="A" pin="1"/>
+<wire x1="276.86" y1="68.58" x2="299.72" y2="68.58" width="0.1524" layer="91"/>
+<junction x="299.72" y="68.58"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -6172,16 +6250,19 @@ Added bigger pads to the TO-92 package</description>
 <junction x="347.98" y="10.16"/>
 <pinref part="JP2" gate="A" pin="3"/>
 <wire x1="304.8" y1="5.08" x2="304.8" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="304.8" y1="-71.12" x2="182.88" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="304.8" y1="-71.12" x2="198.12" y2="-71.12" width="0.1524" layer="91"/>
 <junction x="304.8" y="5.08"/>
 <pinref part="U$5" gate="G$1" pin="B0"/>
 <pinref part="U$5" gate="G$1" pin="B1"/>
+<wire x1="198.12" y1="-71.12" x2="182.88" y2="-71.12" width="0.1524" layer="91"/>
 <wire x1="289.814" y1="3.81" x2="289.814" y2="1.27" width="0.1524" layer="91"/>
 <wire x1="304.8" y1="5.08" x2="289.814" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="289.814" y1="5.08" x2="289.814" y2="3.81" width="0.1524" layer="91"/>
 <junction x="289.814" y="3.81"/>
 <wire x1="289.814" y1="8.89" x2="289.814" y2="3.81" width="0.1524" layer="91"/>
 <junction x="289.814" y="8.89"/>
+<pinref part="JP4" gate="A" pin="3"/>
+<junction x="198.12" y="-71.12"/>
 </segment>
 </net>
 <net name="N$16" class="0">
