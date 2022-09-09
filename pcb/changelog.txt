@@ -37,3 +37,10 @@ power LED now runs on 5V
 adjusted power LED and 3V3 LED resistance
 big overhaul on current carrying trace, increased width, removed copper pour to improve isolation, added more restrict near fuses, rearranged top layer to allow max return current
 added dual headers for fan and ARGB
+switched fuse to car fuse, more modular and commonly available
+
+PT5
+
+fixed 3-in-1 fuse holder footprint
+removed mini fuse holder
+cleaned up PCB
