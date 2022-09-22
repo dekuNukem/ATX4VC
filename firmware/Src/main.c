@@ -47,6 +47,10 @@
 #include "ee.h"
 #include "animations.h"
 #include <math.h>
+#include "delay_us.h"
+#include "my_1wire.h"
+#include "ds18b20.h"
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -54,6 +58,7 @@ IWDG_HandleTypeDef hiwdg;
 
 SPI_HandleTypeDef hspi1;
 
+TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim14;
 TIM_HandleTypeDef htim17;
 
@@ -88,6 +93,7 @@ static void MX_SPI1_Init(void);
 static void MX_TIM17_Init(void);
 static void MX_TIM14_Init(void);
 static void MX_IWDG_Init(void);
+static void MX_TIM2_Init(void);
 static void MX_NVIC_Init(void);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
@@ -293,12 +299,13 @@ int main(void)
   MX_TIM17_Init();
   MX_TIM14_Init();
   MX_IWDG_Init();
+  MX_TIM2_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-  HAL_GPIO_WritePin(DEBUG_GPIO_Port, DEBUG_Pin, GPIO_PIN_SET);
-
+  delay_us_init(&htim2);
+  
   /*
     check POWER_GOOD signal immediately after boot
     if high, STM32 most likely just had a reset by IWDG
@@ -461,6 +468,39 @@ static void MX_SPI1_Init(void)
 
 }
 
+/* TIM2 init function */
+static void MX_TIM2_Init(void)
+{
+
+  TIM_ClockConfigTypeDef sClockSourceConfig;
+  TIM_MasterConfigTypeDef sMasterConfig;
+
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 36;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 4294967295;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
 /* TIM14 init function */
 static void MX_TIM14_Init(void)
 {
@@ -556,7 +596,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(DEBUG_GPIO_Port, DEBUG_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, DEBUG_Pin|ONEWIRE_DATA_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : BTN_BRIGHTNESS_Pin */
   GPIO_InitStruct.Pin = BTN_BRIGHTNESS_Pin;
@@ -583,12 +623,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : DEBUG_Pin */
-  GPIO_InitStruct.Pin = DEBUG_Pin;
+  /*Configure GPIO pins : DEBUG_Pin ONEWIRE_DATA_Pin */
+  GPIO_InitStruct.Pin = DEBUG_Pin|ONEWIRE_DATA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(DEBUG_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : ATX_PG_Pin */
   GPIO_InitStruct.Pin = ATX_PG_Pin;

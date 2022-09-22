@@ -1,4 +1,11 @@
-
+while(1)
+  {
+    ds18b20_start_conversion();
+    HAL_Delay(20);
+    printf("%d\n", ds18b20_get_temp() >> 4);
+    HAL_Delay(100);
+  }
+  
     keyboard_update();
     for (int i = 0; i < BUTTON_COUNT; ++i)
       if(is_pressed(i))
