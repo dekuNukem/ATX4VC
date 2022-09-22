@@ -174,7 +174,7 @@ void animation_update(void)
       blue_buf[i] = my_rgb.b;
     }
   }
-  printf("%d %d %d\n", red_buf[5], green_buf[5], blue_buf[5]);
+  // printf("%d %d %d\n", red_buf[5], green_buf[5], blue_buf[5]);
   __disable_irq();
   neopixel_show(red_buf, green_buf, blue_buf);
   __enable_irq();
@@ -190,10 +190,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     scan_buttons();
 }
 
-#define FAN_PWM_FULL_POWER 401
+#define FAN_PWM_FULL_POWER 501
 #define FAN_SPEED_STEP_COUNT 8
 
-const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 20*4, 40*4, 55*4, 65*4, 80*4, 90*4, FAN_PWM_FULL_POWER};
+const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 20*5, 40*5, 55*5, 65*5, 80*5, 90*5, FAN_PWM_FULL_POWER};
 
 #define LED_COLOR_STEP_COUNT 27
 void set_led_color(uint8_t button_status)
@@ -377,8 +377,8 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL5;
-  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL14;
+  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV3;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
@@ -468,9 +468,9 @@ static void MX_TIM14_Init(void)
   TIM_OC_InitTypeDef sConfigOC;
 
   htim14.Instance = TIM14;
-  htim14.Init.Prescaler = 3;
+  htim14.Init.Prescaler = 2;
   htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim14.Init.Period = 400;
+  htim14.Init.Period = 500;
   htim14.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim14.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim14) != HAL_OK)
@@ -484,7 +484,7 @@ static void MX_TIM14_Init(void)
   }
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 200;
+  sConfigOC.Pulse = 250;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim14, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -501,7 +501,7 @@ static void MX_TIM17_Init(void)
 {
 
   htim17.Instance = TIM17;
-  htim17.Init.Prescaler = 39;
+  htim17.Init.Prescaler = 37;
   htim17.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim17.Init.Period = 16666;
   htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
