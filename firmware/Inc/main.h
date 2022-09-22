@@ -63,7 +63,7 @@
 #define DEBUG_GPIO_Port GPIOA
 #define BTN_FANSPEED_Pin GPIO_PIN_4
 #define BTN_FANSPEED_GPIO_Port GPIOA
-#define ATX_PG_Pin GPIO_PIN_9
+#define ATX_PG_Pin GPIO_PIN_10
 #define ATX_PG_GPIO_Port GPIOA
 
 /* ########################## Assert Selection ############################## */

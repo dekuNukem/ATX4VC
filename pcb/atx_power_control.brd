@@ -259,10 +259,10 @@ PT5</text>
 LED</text>
 <text x="64.897" y="17.526" size="3.81" layer="25" rot="R180" align="center">+</text>
 <text x="31.2712" y="48.0014" size="1.143" layer="25" align="center">PG</text>
-<text x="44.704" y="13.843" size="1.4224" layer="25" rot="R90" align="center">COLOR</text>
-<text x="47.244" y="13.716" size="1.4224" layer="25" rot="R90" align="center">BRIGHT</text>
-<text x="49.784" y="13.716" size="1.4224" layer="25" rot="R270" align="center">FAN SPD</text>
-<text x="42.164" y="13.335" size="1.27" layer="25" rot="R270" align="center">RGB MODE</text>
+<text x="44.704" y="11.557" size="1.4224" layer="25" rot="R90" align="center">COLOR</text>
+<text x="47.244" y="12.192" size="1.4224" layer="25" rot="R90" align="center">BRIGHT</text>
+<text x="49.784" y="12.7" size="1.4224" layer="25" rot="R270" align="center">FAN SPD</text>
+<text x="42.164" y="12.954" size="1.27" layer="25" rot="R270" align="center">RGB MODE</text>
 <text x="25.8618" y="47.879" size="1.4224" layer="25" rot="R270" align="center">5VSB</text>
 <text x="22.2296" y="47.6542" size="1.4224" layer="25" rot="R90" align="center">PG</text>
 <text x="45.974" y="55.499" size="2.1844" layer="25" rot="R90" align="center">FAN</text>

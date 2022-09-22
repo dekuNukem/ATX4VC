@@ -174,6 +174,7 @@ void animation_update(void)
       blue_buf[i] = my_rgb.b;
     }
   }
+  printf("%d %d %d\n", red_buf[5], green_buf[5], blue_buf[5]);
   __disable_irq();
   neopixel_show(red_buf, green_buf, blue_buf);
   __enable_irq();
