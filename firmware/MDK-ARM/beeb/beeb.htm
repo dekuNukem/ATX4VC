@@ -3,7 +3,7 @@
 <title>Static Call Graph - [beeb\beeb.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image beeb\beeb.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Sep 22 15:25:58 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Sep 22 19:00:13 2022
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -177,6 +177,7 @@ Global Symbols
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_led_brightness
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;animation_update
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hsv2rgb
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
@@ -757,11 +758,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6a]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, main.o(i.HAL_TIM_PeriodElapsedCallback))
+<P><STRONG><a name="[6a]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, main.o(i.HAL_TIM_PeriodElapsedCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; animation_update &rArr; lround &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; __aeabi_llsr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;animation_update
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;scan_buttons
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>

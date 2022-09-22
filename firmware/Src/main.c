@@ -191,8 +191,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   frame_interrupt_count++;
   animation_update();
-  // scan buttons every 64ms
-  if(frame_interrupt_count % 4 == 0)
+  // scan buttons every 90ms
+  if(frame_interrupt_count % 5 == 0)
     scan_buttons();
 }
 

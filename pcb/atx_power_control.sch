@@ -5133,6 +5133,8 @@ Added bigger pads to the TO-92 package</description>
 <part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="5k1"/>
 <part name="LED8" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="GND36" library="supply1" deviceset="GND" device=""/>
+<part name="R16" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="5K"/>
+<part name="R17" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="5K"/>
 </parts>
 <sheets>
 <sheet>
@@ -5318,8 +5320,8 @@ Added bigger pads to the TO-92 package</description>
 <attribute name="NAME" x="394.97" y="11.2014" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="394.97" y="16.002" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="GND19" gate="1" x="401.32" y="10.16" smashed="yes">
-<attribute name="VALUE" x="398.78" y="7.62" size="1.778" layer="96"/>
+<instance part="GND19" gate="1" x="436.88" y="10.16" smashed="yes">
+<attribute name="VALUE" x="434.34" y="7.62" size="1.778" layer="96"/>
 </instance>
 <instance part="LED6" gate="G$1" x="375.92" y="25.4" smashed="yes" rot="R90">
 <attribute name="NAME" x="380.492" y="28.956" size="1.778" layer="95" rot="R180"/>
@@ -5494,6 +5496,14 @@ Added bigger pads to the TO-92 package</description>
 <instance part="GND36" gate="1" x="-83.82" y="-12.7" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="-81.28" y="-15.24" size="1.778" layer="96" rot="MR0"/>
 </instance>
+<instance part="R16" gate="G$1" x="365.76" y="0" smashed="yes">
+<attribute name="NAME" x="361.95" y="1.4986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="361.95" y="-3.302" size="1.778" layer="96"/>
+</instance>
+<instance part="R17" gate="G$1" x="411.48" y="12.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="415.29" y="11.2014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="415.29" y="16.002" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5612,9 +5622,9 @@ Added bigger pads to the TO-92 package</description>
 <wire x1="401.32" y1="0" x2="396.24" y2="0" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R8" gate="G$1" pin="1"/>
 <pinref part="GND19" gate="1" pin="GND"/>
-<wire x1="401.32" y1="12.7" x2="396.24" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="436.88" y1="12.7" x2="416.56" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="R17" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R9" gate="G$1" pin="1"/>
@@ -5951,12 +5961,11 @@ Added bigger pads to the TO-92 package</description>
 <pinref part="J1" gate="G$1" pin="-12V"/>
 <wire x1="248.92" y1="-2.54" x2="297.18" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="297.18" y="-2.54"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="365.76" y1="0" x2="373.38" y2="0" width="0.1524" layer="91"/>
 <pinref part="J3" gate="G$1" pin="2"/>
-<wire x1="347.98" y1="-2.54" x2="365.76" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="365.76" y1="-2.54" x2="365.76" y2="0" width="0.1524" layer="91"/>
+<wire x1="347.98" y1="-2.54" x2="360.68" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="360.68" y1="-2.54" x2="360.68" y2="0" width="0.1524" layer="91"/>
 <junction x="347.98" y="-2.54"/>
+<pinref part="R16" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -6380,6 +6389,20 @@ Added bigger pads to the TO-92 package</description>
 <segment>
 <pinref part="R15" gate="G$1" pin="2"/>
 <pinref part="LED8" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$28" class="0">
+<segment>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="370.84" y1="0" x2="373.38" y2="0" width="0.1524" layer="91"/>
+<pinref part="R16" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="406.4" y1="12.7" x2="396.24" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="R17" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>
