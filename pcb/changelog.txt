@@ -44,3 +44,8 @@ PT5
 fixed 3-in-1 fuse holder footprint
 removed mini fuse holder
 cleaned up PCB
+
+PD1
+
+Added header for DS18b21 1-wire temperature sensor 
+added a indicator LED

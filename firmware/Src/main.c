@@ -143,7 +143,7 @@ void animation_update(void)
     for (int i = 0; i < NEOPIXEL_COUNT; ++i)
     {
       hsvcolor this_hsv;
-      this_hsv.h = frame_interrupt_count/2;
+      this_hsv.h = frame_interrupt_count/3;
       this_hsv.s = 255;
       this_hsv.v = global_hsv.v;
       my_rgb = hsv2rgb(this_hsv);
