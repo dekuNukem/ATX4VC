@@ -49,3 +49,8 @@ PD1
 
 Added header for DS18b21 1-wire temperature sensor 
 added a indicator LED
+moved ARGB header outside USBC footprint
+removed thermals on GND
+adjusted trace width
+added jumper pad on 5V USBC data lines
+double checked component values
