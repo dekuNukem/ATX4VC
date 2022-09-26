@@ -54,3 +54,4 @@ removed thermals on GND
 adjusted trace width
 added jumper pad on 5V USBC data lines
 double checked component values
+wired to soft power by default, no need for header
