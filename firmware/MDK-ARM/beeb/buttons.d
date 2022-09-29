@@ -37,3 +37,4 @@ beeb\buttons.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h
 beeb\buttons.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h
 beeb\buttons.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h
 beeb\buttons.o: ../Inc/buttons.h
+beeb\buttons.o: ../Inc/delay_us.h

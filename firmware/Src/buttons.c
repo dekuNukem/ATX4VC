@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "shared.h"
 #include "buttons.h"
+#include "delay_us.h"
 
 but_status button_status[BUTTON_COUNT];
 
@@ -10,7 +11,7 @@ void mark_as_pressed(but_status* butt)
 {
   butt->button_state = BUTTON_PRESSED;
   butt->service_status = BUTTON_SERVICE_UNSERVICED;
-  butt->last_press_ts = HAL_GetTick();
+  butt->last_press_ts = micros();
 }
 
 void mark_as_released(but_status* butt)
@@ -56,7 +57,7 @@ void scan_buttons(void)
     else if(button_status[i].prev_state == BUTTON_PRESSED && button_status[i].button_state == BUTTON_RELEASED)
       mark_as_released(&button_status[i]);
     // autorepeat, only on color and brightness button
-    else if((i == BUTTON_COLOR || i == BUTTON_BRIGHTNESS) && button_status[i].prev_state == BUTTON_PRESSED && button_status[i].button_state == BUTTON_PRESSED && HAL_GetTick() - button_status[i].last_press_ts > 250)
+    else if((i == BUTTON_COLOR || i == BUTTON_BRIGHTNESS) && button_status[i].prev_state == BUTTON_PRESSED && button_status[i].button_state == BUTTON_PRESSED && micros() - button_status[i].last_press_ts > 250000)
       mark_as_pressed(&button_status[i]);
     button_status[i].prev_state = button_status[i].button_state;
   }

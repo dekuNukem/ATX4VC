@@ -1,3 +1,72 @@
+        // this_hsv.v = (sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE]) / (eeprom_buf[BUTTON_BRIGHTNESS] % LED_BRIGHTNESS_STEP_COUNT);
+      // this_hsv.v = (uint32_t)sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE] * 10 / (eeprom_buf[BUTTON_BRIGHTNESS] % LED_BRIGHTNESS_STEP_COUNT);
+      // this_hsv.v = (uint8_t)((double)global_hsv.v / 255 * sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE]);
+      // printf("%f\n", (double)global_hsv.v / 255);
+
+    // printf("took %d ms\n", (micros() - startstart)/1000);
+  else if(current_animation == ANIMATION_MATRIX)
+  {
+    for (int i = 0; i < NEOPIXEL_COUNT; ++i)
+    {
+      hsvcolor this_hsv;
+      this_hsv.h = frame_interrupt_count/2;
+      this_hsv.s = 255;
+      this_hsv.v = sin_lookup[((frame_interrupt_count + i*10)) % SIN_LOOKUP_SIZE];
+      my_rgb = hsv2rgb(this_hsv);
+      red_buf[i] = my_rgb.r;
+      green_buf[i] = my_rgb.g;
+      blue_buf[i] = my_rgb.b;
+    }
+  }
+else if(current_animation == ANIMATION_BREATHING)
+  {
+    uint8_t dim_minimum = global_hsv.v / 10;
+    if(dim_minimum == 0)
+      dim_minimum = 1;
+    float stepping = (float)(global_hsv.v - dim_minimum) / (BREATHING_FRAME_COUNT / 2); // 1 second = 60 frames
+    uint32_t current_breathing_frame = frame_interrupt_count % BREATHING_FRAME_COUNT;
+    uint8_t current_breathing_brightness;
+
+    if(current_breathing_frame < BREATHING_FRAME_COUNT / 2) // down
+      current_breathing_brightness = lround(global_hsv.v - stepping * current_breathing_frame);
+    else // up
+      current_breathing_brightness = lround(global_hsv.v - stepping * (BREATHING_FRAME_COUNT - current_breathing_frame + 1));
+    for (int i = 0; i < NEOPIXEL_COUNT; ++i)
+    {
+      hsvcolor this_hsv;
+      this_hsv.h = global_hsv.h;
+      this_hsv.s = global_hsv.s;
+      if(global_hsv.v == 0) // led off
+        this_hsv.v = 0;
+      else
+        this_hsv.v = current_breathing_brightness;
+      my_rgb = hsv2rgb(this_hsv);
+      red_buf[i] = my_rgb.r;
+      green_buf[i] = my_rgb.g;
+      blue_buf[i] = my_rgb.b;
+    }
+  }
+
+  else if(current_animation == ANIMATION_MATRIX)
+  {
+    for (int i = 0; i < NEOPIXEL_COUNT; ++i)
+    {
+      hsvcolor this_hsv;
+      this_hsv.h = global_hsv.h;
+      this_hsv.s = 255;
+      this_hsv.v = (i*6 + frame_interrupt_count) % global_hsv.v;
+      my_rgb = hsv2rgb(this_hsv);
+      red_buf[i] = my_rgb.r;
+      green_buf[i] = my_rgb.g;
+      blue_buf[i] = my_rgb.b;
+    }
+  }
+
+
+    // uint32_t startstart = micros();
+    // double degree_rad = (double)(frame_interrupt_count % 360) * ONE_DEG_IN_RAD;
+    // uint8_t this_v = (uint8_t)(sin(degree_rad) * 127 + 127);
+
 while(1)
   {
     ds18b20_start_conversion();
