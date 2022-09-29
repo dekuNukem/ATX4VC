@@ -2,7 +2,9 @@
       // this_hsv.v = (uint32_t)sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE] * 10 / (eeprom_buf[BUTTON_BRIGHTNESS] % LED_BRIGHTNESS_STEP_COUNT);
       // this_hsv.v = (uint8_t)((double)global_hsv.v / 255 * sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE]);
       // printf("%f\n", (double)global_hsv.v / 255);
-
+// delay_us(1000);
+    
+    // HAL_GPIO_TogglePin(GPIOA, DEBUG_Pin);
     // printf("took %d ms\n", (micros() - startstart)/1000);
   else if(current_animation == ANIMATION_MATRIX)
   {
