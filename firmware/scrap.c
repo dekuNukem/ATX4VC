@@ -1,3 +1,18 @@
+
+
+// happens every 18ms
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_SET);
+  frame_interrupt_count++;
+  animation_update();
+  // scan buttons every 108ms
+  if(frame_interrupt_count % 6 == 0)
+    scan_buttons();
+  HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_RESET);
+}
+
+
         this_hsv.v = (uint32_t)((double)this_hsv.v * current_brightness / 10 * current_startup_percent);
 if(frame_interrupt_count < STARTUP_FADEIN_DURATION_FRAMES)
     {

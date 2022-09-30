@@ -224,16 +224,15 @@ void animation_update(void)
   __enable_irq();
 }
 
-// happens every 18ms
+uint8_t animation_flag;
+// happens every 16ms
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_SET);
   frame_interrupt_count++;
-  animation_update();
-  // scan buttons every 108ms
+  animation_flag = 1;
+  // scan buttons every 100ms
   if(frame_interrupt_count % 6 == 0)
     scan_buttons();
-  HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_RESET);
 }
 
 #define FAN_PWM_FULL_POWER 501
@@ -337,7 +336,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM17_Init();
   MX_TIM14_Init();
-  // MX_IWDG_Init();
+  MX_IWDG_Init();
   MX_TIM2_Init();
 
   /* Initialize interrupts */
@@ -348,7 +347,7 @@ int main(void)
   /*
     check POWER_GOOD signal immediately after boot
     if high, STM32 most likely just had a reset by IWDG
-    in which case, active PS_ON to keep it going
+    in which case, activate PS_ON to keep it going
   */
   if(HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin) == GPIO_PIN_SET)
     is_soft_power_turned_on = 1;
@@ -376,7 +375,7 @@ int main(void)
 
   while (1)
   {
-    // HAL_IWDG_Refresh(&hiwdg);
+    HAL_IWDG_Refresh(&hiwdg);
     for (int i = 0; i < BUTTON_COUNT; ++i)
     {
       if(is_pressed(i))
@@ -400,6 +399,13 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 
+    if(animation_flag)
+    {
+      HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_SET);
+      animation_update();
+      animation_flag = 0;
+      HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_RESET);
+    }
   }
   /* USER CODE END 3 */
 
@@ -582,7 +588,7 @@ static void MX_TIM17_Init(void)
   htim17.Instance = TIM17;
   htim17.Init.Prescaler = 37;
   htim17.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim17.Init.Period = 18000;
+  htim17.Init.Period = 16666;
   htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim17.Init.RepetitionCounter = 0;
   htim17.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
