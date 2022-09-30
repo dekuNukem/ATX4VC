@@ -130,6 +130,10 @@ void animation_update(void)
   {
     temp_global_hsv.v = global_hsv.v;
   }
+  else if(frame_interrupt_count <= 5)
+  {
+    temp_global_hsv.v = 0;
+  }
   else
   {
     current_startup_percent = (double)frame_interrupt_count / STARTUP_FADEIN_DURATION_FRAMES;
@@ -165,7 +169,7 @@ void animation_update(void)
       hsvcolor this_hsv;
       this_hsv.h = frame_interrupt_count/2;
       this_hsv.s = 255;
-      if(current_brightness == 0)
+      if(current_brightness == 0 || temp_global_hsv.v == 0)
       {
         this_hsv.v = 0;
       }
@@ -204,7 +208,7 @@ void animation_update(void)
       hsvcolor this_hsv;
       this_hsv.h = temp_global_hsv.h;
       this_hsv.s = temp_global_hsv.s;
-      if(current_brightness == 0)
+      if(current_brightness == 0 || temp_global_hsv.v == 0)
         this_hsv.v = 0;
       else
       {
@@ -294,7 +298,8 @@ void handle_button_press(uint8_t button_index)
   else if(button_index == BUTTON_POWER)
   {
     is_soft_power_turned_on = (is_soft_power_turned_on + 1) % 2;
-    frame_interrupt_count = 1;
+    if(is_soft_power_turned_on)
+      frame_interrupt_count = 0;
     HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
     return; // no need to save power button status
   }
@@ -391,7 +396,6 @@ int main(void)
         if(micros() - button_status[i].last_press_ts > 750000 && is_soft_power_turned_on)
         {
           is_soft_power_turned_on = 0;
-          frame_interrupt_count = 1;
           HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, GPIO_PIN_SET);
         }
       }
@@ -401,7 +405,7 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 
-    if(animation_flag)
+    if(animation_flag && is_soft_power_turned_on)
     {
       HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_SET);
       animation_update();

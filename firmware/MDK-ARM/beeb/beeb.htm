@@ -3,7 +3,7 @@
 <title>Static Call Graph - [beeb\beeb.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image beeb\beeb.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Sep 30 11:10:48 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Sep 30 11:35:32 2022
 <BR><P>
 <H3>Maximum Stack Usage =        172 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -813,7 +813,7 @@ Global Symbols
 
 <P><STRONG><a name="[b0]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[80]"></a>animation_update</STRONG> (Thumb, 652 bytes, Stack size 32 bytes, main.o(i.animation_update))
+<P><STRONG><a name="[80]"></a>animation_update</STRONG> (Thumb, 686 bytes, Stack size 32 bytes, main.o(i.animation_update))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = animation_update &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; __aeabi_llsr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
@@ -871,7 +871,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printf3.o(i.__0printf$3)
 </UL>
-<P><STRONG><a name="[8a]"></a>handle_button_press</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, main.o(i.handle_button_press))
+<P><STRONG><a name="[8a]"></a>handle_button_press</STRONG> (Thumb, 108 bytes, Stack size 8 bytes, main.o(i.handle_button_press))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = handle_button_press &rArr; ee_write &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation &rArr; FLASH_SetErrorCode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
@@ -900,7 +900,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[21]"></a>main</STRONG> (Thumb, 384 bytes, Stack size 8 bytes, main.o(i.main))
+<P><STRONG><a name="[21]"></a>main</STRONG> (Thumb, 382 bytes, Stack size 8 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 172<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_RCC_GetSysClockFreq &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
