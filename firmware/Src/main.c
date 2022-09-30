@@ -81,6 +81,7 @@ uint8_t green_buf[NEOPIXEL_COUNT];
 uint8_t blue_buf[NEOPIXEL_COUNT];
 
 hsvcolor global_hsv;
+hsvcolor temp_global_hsv;
 rgbcolor my_rgb;
 
 /* USER CODE END PV */
@@ -121,9 +122,17 @@ const uint8_t sin_lookup[SIN_LOOKUP_SIZE] = {127, 129, 131, 134, 136, 138, 140, 
 void animation_update(void)
 {
   uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
+  temp_global_hsv.h = global_hsv.h;
+  temp_global_hsv.s = global_hsv.s;
+  if(frame_interrupt_count < 10)
+    temp_global_hsv.v = 0;
+  else if (frame_interrupt_count < 30) // from 10 to 29
+    temp_global_hsv.v = global_hsv.v / (20-(frame_interrupt_count-10)); // from 0 to 19
+  else
+    temp_global_hsv.v = global_hsv.v;
   if(current_animation == ANIMATION_SOLID_COLOR)
   {
-    my_rgb = hsv2rgb(global_hsv);
+    my_rgb = hsv2rgb(temp_global_hsv);
     memset(red_buf, my_rgb.r, NEOPIXEL_COUNT);
     memset(green_buf, my_rgb.g, NEOPIXEL_COUNT);
     memset(blue_buf, my_rgb.b, NEOPIXEL_COUNT);
@@ -135,7 +144,7 @@ void animation_update(void)
       hsvcolor this_hsv;
       this_hsv.h = i*12 + frame_interrupt_count;
       this_hsv.s = 255;
-      this_hsv.v = global_hsv.v;
+      this_hsv.v = temp_global_hsv.v;
       my_rgb = hsv2rgb(this_hsv);
       red_buf[i] = my_rgb.r;
       green_buf[i] = my_rgb.g;
@@ -172,7 +181,7 @@ void animation_update(void)
       hsvcolor this_hsv;
       this_hsv.h = frame_interrupt_count*2/5;
       this_hsv.s = 255;
-      this_hsv.v = global_hsv.v;
+      this_hsv.v = temp_global_hsv.v;
       my_rgb = hsv2rgb(this_hsv);
       red_buf[i] = my_rgb.r;
       green_buf[i] = my_rgb.g;
@@ -185,8 +194,8 @@ void animation_update(void)
     for (int i = 0; i < NEOPIXEL_COUNT; ++i)
     {
       hsvcolor this_hsv;
-      this_hsv.h = global_hsv.h;
-      this_hsv.s = global_hsv.s;
+      this_hsv.h = temp_global_hsv.h;
+      this_hsv.s = temp_global_hsv.s;
       if(current_brightness == 0)
       {
         this_hsv.v = 0;
