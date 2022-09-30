@@ -1,3 +1,24 @@
+        this_hsv.v = (uint32_t)((double)this_hsv.v * current_brightness / 10 * current_startup_percent);
+if(frame_interrupt_count < STARTUP_FADEIN_DURATION_FRAMES)
+    {
+      for (int i = 0; i < NEOPIXEL_COUNT; ++i)
+      {
+        red_buf[i] = (double)red_buf[i] * current_startup_percent;
+        green_buf[i] = (double)green_buf[i] * current_startup_percent;
+        blue_buf[i] = (double)blue_buf[i] * current_startup_percent;
+      }
+    }
+
+uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
+  temp_global_hsv.h = global_hsv.h;
+  temp_global_hsv.s = global_hsv.s;
+  if(frame_interrupt_count < 10)
+    temp_global_hsv.v = 0;
+  else if (frame_interrupt_count < 30) // from 10 to 29
+    temp_global_hsv.v = global_hsv.v / (20-(frame_interrupt_count-10)); // from 0 to 19
+  else
+    temp_global_hsv.v = global_hsv.v;
+
         // this_hsv.v = (sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE]) / (eeprom_buf[BUTTON_BRIGHTNESS] % LED_BRIGHTNESS_STEP_COUNT);
       // this_hsv.v = (uint32_t)sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE] * 10 / (eeprom_buf[BUTTON_BRIGHTNESS] % LED_BRIGHTNESS_STEP_COUNT);
       // this_hsv.v = (uint8_t)((double)global_hsv.v / 255 * sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE]);
