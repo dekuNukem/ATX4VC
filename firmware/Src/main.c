@@ -172,7 +172,7 @@ void animation_update(void)
       else
       {
         this_hsv.v = sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE];
-        this_hsv.v = (uint32_t)this_hsv.v * (current_brightness) / 10;
+        this_hsv.v = (uint32_t)this_hsv.v * current_brightness / 10;
       }
       my_rgb = hsv2rgb(this_hsv);
       red_buf[i] = my_rgb.r;
@@ -203,14 +203,11 @@ void animation_update(void)
       this_hsv.h = temp_global_hsv.h;
       this_hsv.s = temp_global_hsv.s;
       if(current_brightness == 0)
-      {
         this_hsv.v = 0;
-      }
       else
-      {
         this_hsv.v = sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE];
-        this_hsv.v = (uint32_t)this_hsv.v * (current_brightness) / 10;
-      }
+      if(current_brightness <= 8)
+        this_hsv.v = (uint32_t)this_hsv.v * current_brightness / 8;
       my_rgb = hsv2rgb(this_hsv);
       red_buf[i] = my_rgb.r;
       green_buf[i] = my_rgb.g;
