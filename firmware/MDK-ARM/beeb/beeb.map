@@ -118,7 +118,7 @@ Section Cross References
     main.o(i.main) refers to buttons.o(i.service_press) for service_press
     main.o(i.main) refers to main.o(i.animation_update) for animation_update
     main.o(i.main) refers to buttons.o(i.is_released_but_not_serviced) for is_released_but_not_serviced
-    main.o(i.main) refers to stm32f0xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    main.o(i.main) refers to delay_us.o(i.micros) for micros
     main.o(i.main) refers to main.o(.bss) for .bss
     main.o(i.main) refers to main.o(.data) for .data
     main.o(i.main) refers to main.o(.constdata) for .constdata

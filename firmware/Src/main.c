@@ -387,7 +387,7 @@ int main(void)
       if(i == BUTTON_POWER && is_released_but_not_serviced(i))
       {
         service_press(i);
-        if(HAL_GetTick() - button_status[i].last_press_ts > 750 && is_soft_power_turned_on)
+        if(micros() - button_status[i].last_press_ts > 750000 && is_soft_power_turned_on)
         {
           is_soft_power_turned_on = 0;
           HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, GPIO_PIN_SET);
