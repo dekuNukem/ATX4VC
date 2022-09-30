@@ -81,7 +81,6 @@ uint8_t green_buf[NEOPIXEL_COUNT];
 uint8_t blue_buf[NEOPIXEL_COUNT];
 
 hsvcolor global_hsv;
-hsvcolor temp_global_hsv;
 rgbcolor my_rgb;
 
 /* USER CODE END PV */
@@ -113,27 +112,28 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
-#define LED_BRIGHTNESS_STEP_COUNT 11
+#define LED_BRIGHTNESS_STEP_COUNT 9
 #define BREATHING_FRAME_COUNT 300
 #define SIN_LOOKUP_SIZE 360
+#define STARTUP_FADEIN_DURATION_FRAMES 30
 
 const uint8_t sin_lookup[SIN_LOOKUP_SIZE] = {127, 129, 131, 134, 136, 138, 140, 142, 145, 147, 149, 151, 153, 156, 158, 160, 162, 164, 166, 168, 170, 173, 175, 177, 179, 181, 183, 185, 187, 189, 190, 192, 194, 196, 198, 200, 202, 203, 205, 207, 209, 210, 212, 214, 215, 217, 218, 220, 221, 223, 224, 226, 227, 228, 230, 231, 232, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 246, 247, 248, 248, 249, 250, 250, 251, 251, 252, 252, 252, 253, 253, 253, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 254, 253, 253, 253, 252, 252, 252, 251, 251, 250, 250, 249, 248, 248, 247, 246, 246, 245, 244, 243, 242, 241, 240, 239, 238, 237, 236, 235, 234, 232, 231, 230, 228, 227, 226, 224, 223, 221, 220, 218, 217, 215, 214, 212, 210, 209, 207, 205, 203, 202, 200, 198, 196, 194, 192, 190, 189, 187, 185, 183, 181, 179, 177, 175, 173, 170, 168, 166, 164, 162, 160, 158, 156, 153, 151, 149, 147, 145, 142, 140, 138, 136, 134, 131, 129, 127, 125, 123, 120, 118, 116, 114, 112, 109, 107, 105, 103, 101, 98, 96, 94, 92, 90, 88, 86, 84, 81, 79, 77, 75, 73, 71, 69, 67, 65, 63, 62, 60, 58, 56, 54, 52, 51, 49, 47, 45, 44, 42, 40, 39, 37, 36, 34, 33, 31, 30, 28, 27, 26, 24, 23, 22, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 8, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 26, 27, 28, 30, 31, 33, 34, 36, 37, 39, 40, 42, 44, 45, 47, 49, 51, 52, 54, 56, 58, 60, 62, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 84, 86, 88, 90, 92, 94, 96, 98, 101, 103, 105, 107, 109, 112, 114, 116, 118, 120, 123, 125};
 
-#define STARTUP_FADEIN_DURATION_FRAMES 30
 void animation_update(void)
 {
   uint8_t current_animation = eeprom_buf[BUTTON_RGB_MODE] % ANIMATION_TYPE_COUNT;
+  static double current_startup_percent = 0;
+  static hsvcolor temp_global_hsv;
   temp_global_hsv.h = global_hsv.h;
   temp_global_hsv.s = global_hsv.s;
-  
   if(frame_interrupt_count > STARTUP_FADEIN_DURATION_FRAMES)
   {
     temp_global_hsv.v = global_hsv.v;
   }
   else
   {
-    double current_startup_percent = (double)frame_interrupt_count / STARTUP_FADEIN_DURATION_FRAMES;
-    temp_global_hsv.v = (uint8_t)((double)global_hsv.v * current_startup_percent);
+    current_startup_percent = (double)frame_interrupt_count / STARTUP_FADEIN_DURATION_FRAMES;
+    temp_global_hsv.v = (double)global_hsv.v * current_startup_percent;
   }
 
   if(current_animation == ANIMATION_SOLID_COLOR)
@@ -172,7 +172,9 @@ void animation_update(void)
       else
       {
         this_hsv.v = sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE];
-        this_hsv.v = (uint32_t)this_hsv.v * current_brightness / 10;
+        this_hsv.v = (uint32_t)this_hsv.v * current_brightness / 8;
+        if(frame_interrupt_count <= STARTUP_FADEIN_DURATION_FRAMES)
+          this_hsv.v = (double)this_hsv.v * current_startup_percent;
       }
       my_rgb = hsv2rgb(this_hsv);
       red_buf[i] = my_rgb.r;
@@ -205,9 +207,12 @@ void animation_update(void)
       if(current_brightness == 0)
         this_hsv.v = 0;
       else
+      {
         this_hsv.v = sin_lookup[((frame_interrupt_count*3/2 + i*10)) % SIN_LOOKUP_SIZE];
-      if(current_brightness <= 8)
         this_hsv.v = (uint32_t)this_hsv.v * current_brightness / 8;
+        if(frame_interrupt_count <= STARTUP_FADEIN_DURATION_FRAMES)
+          this_hsv.v = (double)this_hsv.v * current_startup_percent;
+      }
       my_rgb = hsv2rgb(this_hsv);
       red_buf[i] = my_rgb.r;
       green_buf[i] = my_rgb.g;
@@ -252,10 +257,10 @@ void set_led_color(uint8_t button_status)
   }
 }
 
-const uint8_t led_brightness_lookup[LED_BRIGHTNESS_STEP_COUNT] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+const uint8_t led_brightness_lookup[LED_BRIGHTNESS_STEP_COUNT] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
 void set_led_brightness(uint8_t button_status)
 {
-  global_hsv.v = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT] * 25; // change to 25 for full scale
+  global_hsv.v = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT] * 28; // change to 28 for full scale
 }
 
 void restore_button_settings(void)
@@ -577,7 +582,7 @@ static void MX_TIM17_Init(void)
   htim17.Instance = TIM17;
   htim17.Init.Prescaler = 37;
   htim17.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim17.Init.Period = 17777;
+  htim17.Init.Period = 18000;
   htim17.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim17.Init.RepetitionCounter = 0;
   htim17.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
