@@ -1,5 +1,7 @@
 # ATX4VC: ATX Power on Retro Computers!
 
+[Buy ATX4VC](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/) | [Discord](https://discord.gg/T9uuFudg7j) | [User Manual](#user-manual)
+
 ATX4VC is an all-in-one controller for **using ATX power supply on vintage computers**.
 
 ![Alt text](photos/title.jpeg)
@@ -8,7 +10,7 @@ ATX4VC combines many convenient features in one place:
 
 * All common voltages: +12V, +5V, +3.3V, -5V, -12V. Fused.
 
-* Headers for soft power button and power LED
+* Power button and power LED headers
 
 * **Two** 4-pin PWM fan headers. Manual fan speed or via temperature probe.
 
@@ -54,7 +56,7 @@ Here it powers a Macintosh Plus motherboard with +12V, +5V, and -12V.
 
 ## Why / Project Goals
 
-Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, runs hot, and (often) explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
+Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, runs hot, and sometimes explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
 
 ATX4VC is designed to replace them with much more reliable modern ATX power supplies, and as a tool to help test and diagnose vintage computers. 
 
@@ -98,14 +100,13 @@ Don't leave conductor exposed! Trim it to prevent shorts.
 
 ![Alt text](photos/terminal.jpeg)
 
-
 ### Current Limit
 
 ATX4VC has current limit as follows:
 
 * **`5 AMPS MAX`** OVER **ANY SINGLE RAIL**
 
-* **`7 AMPS MAX`** **TOTAL CURRENT** ACROSS ALL RAILS
+* **`7 AMPS MAX`** **TOTAL CURRENT** OVER ALL RAILS
 
 If more is needed, **tap the power directly** from a Molex connector.
 
@@ -121,7 +122,7 @@ See your PSU label or datasheet to see how much current it can provide:
 
 * **DO NOT BYPASS FUSES**
 
-ATX4VC uses commonly available car fuses. Regular, Mini, and low-profile Mini all work, just push it into the header.
+ATX4VC uses common car fuses. Regular, Mini, and low-profile Mini all will work. Simply push into the holder.
 
 ![Alt text](photos/fuses.png)
 
@@ -135,15 +136,15 @@ Press `FAN SPD` button to change speed manually.
 
 ![Alt text](photos/fan.jpeg)
 
-Speed control only available on 4-Pin PWM fans. 3-Pin fan will always run at full speed.
+Speed control only available on 4-Pin fans. 3-Pin fan will always run at full speed.
 
 ### Temperature Probe
 
-ATX4VC supports the DS18B20 digital temperature probes. They are inexpensive and very popular in Arduino projects.
+ATX4VC supports the DS18B20 temperature sensor. They are inexpensive and very popular in Arduino projects.
 
 Beware of fake counterfeits! Best to get them from a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050) or [Adafruit](https://www.adafruit.com/product/381).
 
-Connect to the headers, match the pinout.
+Connect the headers, match the pinout.
 
 ![Alt text](photos/probe.png)
 
@@ -161,11 +162,25 @@ Hold the button to cycle through faster.
 
 ![Alt text](photos/rgb.jpeg)
 
-## Mounting Options and Dimension
+## USB-C Power Output
 
-ATX4VC is compatible with **2.5 inch PC drive bay**, and is compact enough to fit in many vintage computers.
+Two USB-C connectors are available for powering external devices.
+
+The left port provides 5V Standby, which is active even when PSU is off. Although max current is limited (typically 1 to 2 Amps)
+
+The right port is on regular 5V rail. It can provide more current, but only available when PSU is on.
+
+Those ports are **output only**, don't try to backfeed them with another powered device.
+
+![Alt text](photos/usbc.jpeg)
+
+## Dimensions
+
+ATX4VC is compatible with **2.5 inch PC drive bay**, and is compact enough to fit in most vintage computers.
 
 Use M3 screws and nuts. Dimension drawing below:
+
+![Alt text](photos/unit.png)
 
 ## Additional Features
 
@@ -175,24 +190,37 @@ Move the jumper to the left for hard power.
 
 This shorts PS_ON pin to GND, and turns on PSU immediately when power is applied.
 
-### USB-C Power Output
-
-Two USB-C ports can be used for 5V power output.
-
-The one on the left is connected to **5V Standby**, available when PSU is off (but plugged in), can provide around 1A of current.
-
-One on the right gets **fused 5V**, only available when PSU is on, but can provide more current.
-
 ### RGBA over USB
 
-This is a remnant of my [RGBeeb project](https://github.com/dekuNukem/RGBeeb), which ARGB signal is transmitted over USB-C for a cleaner look.
+This is a remnant of my [RGBeeb project](https://github.com/dekuNukem/RGBeeb), in which ARGB signal is transmitted over USB-C for a cleaner look.
 
 5V and GND is the same, and ARGB signal is on D+ line. If you want to use it, short the jumper with some solder.
 
 ### Additional Headers
 
-There are also some headers for development purposes, no need to worry about them, but here are the details if you're curious.
+A few more signals are available on headers.
+
+![Alt text](photos/debugheader.png)
+
+|  Pin |    Function   | Note                                             |
+|:----:|:-------------:|--------------------------------------------------|
+|  PG  |   Power Good  | High (+5V) when output is correct and stable     |
+| 5VSB |   5V Standby  | Available when PSU is off, max current 2A usually|
+|  CLK |     SWCLK     | For microcontroller programming                  |
+|  DIO |     SWDIO     | For microcontroller programming                  |
+|  3V3 |   3.3V Power  |                                                  |
+|  GND |     Ground    |                                                  |
+|  TX  | UART Transmit | Print some debugging messages @ 115200bps        |
+|  RX  |     Unused    |                                                  |
 
 ## USB Firmware Update
 
 TURN OFF AND UNPLUG ATX PSU BEFORE STARTING.
+
+Under construction ...
+
+## Questions or Comments?
+
+Feel free to ask in official [Discord Chatroom](https://discord.gg/T9uuFudg7j), raise a [Github issue](https://github.com/dekuNukem/ATX4VC/issues), or email `dekunukem` `gmail.com`!
+
+
