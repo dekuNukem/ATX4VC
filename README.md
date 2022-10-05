@@ -1,86 +1,198 @@
-ATX4VC: ATX Power on retro computers!
+# ATX4VC: ATX Power on Retro Computers!
 
-ATX4VC is a controller for adapting ATX power supplies to vintage computers.
+ATX4VC is an all-in-one controller for **using ATX power supply on vintage computers**.
 
-Power supplies are a major failure point of retro computers today. Those early PSUs are often heavy, inefficient, runs hot, and after 40 odd years, many are not working, or worse might casuse damage with out-of-spec voltages.
+![Alt text](photos/title.jpeg)
 
-Oh and did i mention they often literally blow up?
+ATX4VC combines many convenient features in one place:
 
-ATX4VC is designed to replace them with much more reliable modern ATX power supplies, and as a tool to help test and diagnose vintage computers.
+* All common voltages: +12V, +5V, +3.3V, -5V, -12V. Fused.
 
-ATX4VC breaks out all the common voltages (12V, 5V, 3.3V, -5V, -12V), and include many convienct features such as power button and LED header, 4-
+* Headers for soft power button and power LED
 
-pin fan headers with PWM speed control, ARGB headers, temperature probe fan curve, and fused outputs.
+* **Two** 4-pin PWM fan headers. Manual fan speed or via temperature probe.
 
-# Quick start guide
+* **Two** Addressable RGB(ARGB) headers
 
-If your havent assembled your ATX4VC, head here.
+* **Two** USB-C ports for power output and firmware update
 
-Make sure the jumper is in "soft power" setting, and Plug the 20 or 24 pin ATX motherboard header. The "5VSB' LED should light up, showing the PSU is ready to go.
+ATX4VC can be used to:
 
-Press the power button, the PSU should turn on and LED on all voltage rails should light up. 
+* Replace retro computer power supplies
 
-that's the gist of it! but please do keep reading for the complete info.
+* Add cooling and lighting upgrades
 
-## Power connections
+* Test and diagnose vintage hardware
 
-## power button
+* As general-purpose multi-voltage bench PSU
 
-you can use the built-in power button, or connect an additional button to the header
+## Showcase
 
-## power LED
+ATX4VC supports **full-size ATX PSU**, seen here (lower right) in my RGBeeb project, powering a BBC Micro motherboard with +5V and -5V.
 
-make sure the plority
+It provides a clean interface for PSU control, RGB animation, and powering additional devices via USB-C ports.
 
-## Fan headers
+[Read more about the build here.](https://github.com/dekuNukem/RGBeeb)
 
-## ARGB control
+![Alt text](photos/rgbeeb.jpeg)
 
-## Additional connections
+But of course, a **pico ATX PSU** makes more sense due to its compact size. 
 
-your can attach an external power button and power LED using the headers shown below.
+Here it replaces the failed PSU in my Osborne 1, providing +12V and +5V.
 
-BOTH momentary buttons and flip-switchs are supported.
+![Alt text](photos/os1.jpeg)
 
-To connect power cable, Loosen the screw terminal. insert the cable, and tighten again to secure it. Don't leave exposed conductors to prevent shorts.
+I even took it to a coffee shop and wrote most of this very document! But that's the story for another day.
 
-Your can plug in two standard 12V PC fans and two ARGB light sources into the headers below.
+![Alt text](photos/coffee.jpeg)
 
-Your can adjust the RGB colour, animation, brightness, and fan speed using the buttons below. Your can also attach external buttons to the headers. 
+You can also just use it as a multi-voltage bench PSU for testing and diagnostics.
 
-HOLD down the button to cycle through RGB colour faster.
+Here it powers a Macintosh Plus motherboard with +12V, +5V, and -12V.
 
-The settings should be presistent.
+![Alt text](photos/mac.jpeg)
 
-### fuse and current rating
+## Why / Project Goals
 
-ATX4VC uses standard car fuses, medium, small, and low-profile all work, just push it into the header.
+Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, runs hot, and (often) explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
 
-Modern PSUs should have plenty currenty capaacity for retro systems. you should still check to make sure.
+ATX4VC is designed to replace them with much more reliable modern ATX power supplies, and as a tool to help test and diagnose vintage computers. 
 
-+12V, +5V, and +3.3V are fused, Make sure the TOTAL CURRENT ACROSS ALL RAILS THROUGH ATX4VC is less than 5 amps. If more is needed, tap the power seperately from a molex connector.
+## User Manual
 
-Negative rails are not fused because they are low-
+### Quick Start
 
-current (around 200mA), and built-in protection is adaquate.
+* Make sure the jumper is in "soft power" setting (right two pins)
 
-### recommended power0 supplies
+* Plug in ATX connector, and turn on the PSU.
 
-a regular ATX power supply always work, but i really like those Pico ATX PSUs as well, they are tiny and plugs directly into the connector, making the whole package very compact. 
+* Press the power button
 
-## mounting options and dimension
+![Alt text](photos/start.jpeg)
 
-ATX4VC is designed to fit into a 2.5inch PC drive bay, and is compact enough to fit in many vintage computers. use M3 screws and nuts. dimension drawing below. 
+The PSU should turn on and all voltage rail LEDs should light up. 
 
-## jumper settings and header pinouts
+That's the gist of it! But **please do keep reading** for the complete info.
 
-ATX4VC uses soft power by default, which uses a pushbutton to turn it on or off. you can switch to hard power by moving the jumper to the left, which turns on the PSU as soon as it is plugged in.
+### Power Button and Power LED
 
-## Safety precautions (again)
+You can use the built-in power button, or connect an additional button to the header.
 
-* Double check you're using the correct voltage rail!
+Any momentary button will do, such as the one in PC cases.
 
-* don't leave conducters exposed at the terminal block to prevent shorting out.
+![Alt text](photos/pwrheader.jpeg)
 
-* Don't bypass the fuse, and keep total current THROUGH ATX4VC below 5 amps.
+You can also add a power LED to indicate PSU is on. Be ware of polarity.
 
+The power LED is connected to fused 5V rail. **No need for external resistors**. A 2.5K resistor is built-in.
+
+### Power Connection
+
+Observe the voltage on each terminal block.
+
+![Alt text](photos/rails.jpeg)
+
+Loosen the screw, insert the cable into the hole, and tighten it again.
+
+Don't leave conductor exposed! Trim it to prevent shorts.
+
+![Alt text](photos/terminal.jpeg)
+
+
+### Current Limit
+
+ATX4VC has current limit as follows:
+
+* **`5 AMPS MAX`** OVER **ANY SINGLE RAIL**
+
+* **`7 AMPS MAX`** **TOTAL CURRENT** ACROSS ALL RAILS
+
+If more is needed, **tap the power directly** from a Molex connector.
+
+See your PSU label or datasheet to see how much current it can provide:
+
+![Alt text](photos/label.jpeg)
+
+### Fuses
+
++12V, +5V, and +3.3V are fused.
+
+* USE FUSES RATED **5A OR LESS**
+
+* **DO NOT BYPASS FUSES**
+
+ATX4VC uses commonly available car fuses. Regular, Mini, and low-profile Mini all work, just push it into the header.
+
+![Alt text](photos/fuses.png)
+
+Negative rails are not fused because they are low-current (around 200mA), and built-in protection is adequate.
+
+### Fan Headers
+
+Two PWM Fan headers are available. You can plug in standard 12V PC fans, both 3-Pin and 4-Pin.
+
+Press `FAN SPD` button to change speed manually.
+
+![Alt text](photos/fan.jpeg)
+
+Speed control only available on 4-Pin PWM fans. 3-Pin fan will always run at full speed.
+
+### Temperature Probe
+
+ATX4VC supports the DS18B20 digital temperature probes. They are inexpensive and very popular in Arduino projects.
+
+Beware of fake counterfeits! Best to get them from a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050) or [Adafruit](https://www.adafruit.com/product/381).
+
+Connect to the headers, match the pinout.
+
+![Alt text](photos/probe.png)
+
+Then **HOLD** FAN SPD button to activate fan curve. The user LED should stay on for 1 second then turn off.
+
+If Temperature proble is not detected, the user LED will flash 5 times.
+
+### Addressable RGB (ARGB)
+
+Two standard ARGB headers are available. Simply plug them in. Up to 100 ARGB LEDs are supported.
+
+Use **RGB MODE** button to change animation type, **BRIGHT** and **COLOUR** button to adjust brightness and colour.
+
+Hold the button to cycle through faster.
+
+![Alt text](photos/rgb.jpeg)
+
+## Mounting Options and Dimension
+
+ATX4VC is compatible with **2.5 inch PC drive bay**, and is compact enough to fit in many vintage computers.
+
+Use M3 screws and nuts. Dimension drawing below:
+
+## Additional Features
+
+### Hard Power
+
+Move the jumper to the left for hard power.
+
+This shorts PS_ON pin to GND, and turns on PSU immediately when power is applied.
+
+### USB-C Power Output
+
+Two USB-C ports can be used for 5V power output.
+
+The one on the left is connected to **5V Standby**, available when PSU is off (but plugged in), can provide around 1A of current.
+
+One on the right gets **fused 5V**, only available when PSU is on, but can provide more current.
+
+### RGBA over USB
+
+This is a remnant of my [RGBeeb project](https://github.com/dekuNukem/RGBeeb), which ARGB signal is transmitted over USB-C for a cleaner look.
+
+5V and GND is the same, and ARGB signal is on D+ line. If you want to use it, short the jumper with some solder.
+
+### Additional Headers
+
+There are also some headers for development purposes, no need to worry about them, but here are the details if you're curious.
+
+## USB Firmware Update
+
+TURN OFF AND UNPLUG ATX PSU BEFORE STARTING.
