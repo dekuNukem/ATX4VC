@@ -249,6 +249,36 @@ TURN OFF AND UNPLUG ATX PSU BEFORE STARTING.
 
 Under construction ...
 
+## Table of Contents (again)
+
+[Quick Start Guide](#Quick-Start)
+
+[Power Button and Power LED](#Power-Button-and-Power-LED)
+
+[Power Connection](#Power-Connection)
+
+[Current Limit](#Current-Limit)
+
+[Fuses](#Fuses)
+
+[Fan Headers](#Fan-Headers)
+
+[Temperature Probe](#Temperature-Probe)
+
+[Addressable RGB (ARGB)](#Addressable-RGB-ARGB)
+
+[USB-C Power Output](#USB-C-Power-Output)
+
+[Dimension Drawings](#Dimension-Drawings)
+
+[Hard Power](#Hard-Power)
+
+[RGBA over USB](#RGBA-over-USB)
+
+[Additional Headers](#Additional-Headers)
+
+[USB Firmware Update](#USB-Firmware-Update)
+
 ## Questions or Comments?
 
 Feel free to ask in official [Discord Chatroom](https://discord.gg/T9uuFudg7j), raise a [Github issue](https://github.com/dekuNukem/ATX4VC/issues), or email `dekunukem` `gmail.com`!
