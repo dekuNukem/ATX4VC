@@ -60,6 +60,36 @@ Power supplies are a major failure point of old computers today. Those early PSU
 
 ATX4VC is designed to replace them with much more reliable modern ATX power supplies, and as a tool to help test and diagnose vintage computers. 
 
+## Table of Contents
+
+[Quick Start Guide](#Quick-Start)
+
+[Power Button and Power LED](#Power-Button-and-Power-LED)
+
+[Power Connection](#Power-Connection)
+
+[Current Limit](#Current-Limit)
+
+[Fuses](#Fuses)
+
+[Fan Headers](#Fan-Headers)
+
+[Temperature Probe](#Temperature-Probe)
+
+[Addressable RGB (ARGB)](#Addressable-RGB-ARGB)
+
+[USB-C Power Output](#USB-C-Power-Output)
+
+[Dimensions](#Dimensions)
+
+[Hard Power](#Hard-Power)
+
+[RGBA over USB](#RGBA-over-USB)
+
+[Additional Headers](#Additional-Headers)
+
+[USB Firmware Update](#USB-Firmware-Update)
+
 ## User Manual
 
 ### Quick Start
@@ -162,7 +192,7 @@ Hold the button to cycle through faster.
 
 ![Alt text](photos/rgb.jpeg)
 
-## USB-C Power Output
+### USB-C Power Output
 
 Two USB-C connectors are available for powering external devices.
 
@@ -174,7 +204,7 @@ Those ports are **output only**, don't try to backfeed them with another powered
 
 ![Alt text](photos/usbc.jpeg)
 
-## Dimensions
+### Dimensions
 
 ATX4VC is compatible with **2.5 inch PC drive bay**, and is compact enough to fit in most vintage computers.
 
