@@ -1,6 +1,6 @@
 # ATX4VC: ATX Power on Retro Computers!
 
-[Buy ATX4VC](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/) | [Discord](https://discord.gg/T9uuFudg7j) | [User Manual](#user-manual)
+[Buy ATX4VC](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/) | [Discord](https://discord.gg/T9uuFudg7j) | [User Manual](#user-manual) | [Table of Contents](#Table-of-Contents)
 
 ATX4VC is an all-in-one controller for **using ATX power supply on vintage computers**.
 
@@ -80,7 +80,7 @@ ATX4VC is designed to replace them with much more reliable modern ATX power supp
 
 [USB-C Power Output](#USB-C-Power-Output)
 
-[Dimensions](#Dimensions)
+[Dimension Drawings](#Dimension-Drawings)
 
 [Hard Power](#Hard-Power)
 
@@ -204,7 +204,7 @@ Those ports are **output only**, don't try to backfeed them with another powered
 
 ![Alt text](photos/usbc.jpeg)
 
-### Dimensions
+### Dimension Drawings
 
 ATX4VC is compatible with **2.5 inch PC drive bay**, and is compact enough to fit in most vintage computers.
 
