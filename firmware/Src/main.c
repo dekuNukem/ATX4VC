@@ -74,7 +74,7 @@ const char boot_message[] = "ATX4VC\ndekuNukem 2022";
 const uint8_t version_major = 0;
 const uint8_t version_minor = 0;
 const uint8_t version_patch = 1;
-uint8_t is_soft_power_turned_on;
+uint8_t is_psu_on;
 volatile uint32_t frame_interrupt_count;
 uint8_t red_buf[NEOPIXEL_COUNT];
 uint8_t green_buf[NEOPIXEL_COUNT];
@@ -234,8 +234,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   frame_interrupt_count++;
   animation_flag = 1;
-  // scan buttons every 100ms
-  if(frame_interrupt_count % 6 == 0)
+  // scan buttons every 64ms
+  if(frame_interrupt_count % 4 == 0)
     scan_buttons();
 }
 
@@ -279,13 +279,34 @@ void restore_button_settings(void)
   set_led_brightness(eeprom_buf[BUTTON_BRIGHTNESS]);
 }
 
+void user_led_blink(uint8_t count)
+{
+  for (int i = 0; i < count; ++i)
+  {
+    HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+    HAL_Delay(66);
+    HAL_IWDG_Refresh(&hiwdg);
+    HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+    HAL_Delay(66);
+    HAL_IWDG_Refresh(&hiwdg);
+  }
+}
+
+uint32_t last_button_press;
 void handle_button_press(uint8_t button_index)
 {
+  // debounce 245ms
+  if(micros() - last_button_press <= 245000)
+    return;
+  last_button_press = micros();
+
   eeprom_buf[button_index]++;
   if(button_index == BUTTON_FANSPEED)
   {
     uint8_t fan_index = eeprom_buf[button_index] % FAN_SPEED_STEP_COUNT;
     htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
+    if(fan_index == FAN_SPEED_STEP_COUNT - 1)
+      user_led_blink(2);
   }
   else if(button_index == BUTTON_COLOR)
   {
@@ -294,17 +315,20 @@ void handle_button_press(uint8_t button_index)
   else if(button_index == BUTTON_BRIGHTNESS)
   {
     set_led_brightness(eeprom_buf[button_index]);
+    if(eeprom_buf[button_index] % LED_BRIGHTNESS_STEP_COUNT == LED_BRIGHTNESS_STEP_COUNT - 1)
+      user_led_blink(2);
   }
   else if(button_index == BUTTON_POWER)
   {
-    is_soft_power_turned_on = (is_soft_power_turned_on + 1) % 2;
-    if(is_soft_power_turned_on)
+    is_psu_on = (is_psu_on + 1) % 2;
+    if(is_psu_on)
       frame_interrupt_count = 0;
-    HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
+    HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_psu_on);
     return; // no need to save power button status
   }
   ee_format();
   ee_write(0, EEPROM_BUF_SIZE, eeprom_buf);
+  user_led_blink(1);
 }
 
 /* USER CODE END 0 */
@@ -356,8 +380,8 @@ int main(void)
     in which case, activate PS_ON to keep it going
   */
   if(HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin) == GPIO_PIN_SET)
-    is_soft_power_turned_on = 1;
-  HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_soft_power_turned_on);
+    is_psu_on = 1;
+  HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_psu_on);
 
   /* USER CODE END 2 */
 
@@ -393,9 +417,9 @@ int main(void)
       if(i == BUTTON_POWER && is_released_but_not_serviced(i))
       {
         service_press(i);
-        if(micros() - button_status[i].last_press_ts > 750000 && is_soft_power_turned_on)
+        if(micros() - button_status[i].last_press_ts > 750000 && is_psu_on)
         {
-          is_soft_power_turned_on = 0;
+          is_psu_on = 0;
           HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, GPIO_PIN_SET);
         }
       }
@@ -405,7 +429,7 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 
-    if(animation_flag && is_soft_power_turned_on)
+    if(animation_flag && is_psu_on)
     {
       HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_SET);
       animation_update();
@@ -649,6 +673,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, DEBUG_Pin|ONEWIRE_DATA_Pin, GPIO_PIN_SET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : BTN_BRIGHTNESS_Pin */
   GPIO_InitStruct.Pin = BTN_BRIGHTNESS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -680,6 +707,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : USER_LED_Pin */
+  GPIO_InitStruct.Pin = USER_LED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(USER_LED_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : ATX_PG_Pin */
   GPIO_InitStruct.Pin = ATX_PG_Pin;

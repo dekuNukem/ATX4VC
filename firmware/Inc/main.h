@@ -65,6 +65,8 @@
 #define BTN_FANSPEED_GPIO_Port GPIOA
 #define ONEWIRE_DATA_Pin GPIO_PIN_6
 #define ONEWIRE_DATA_GPIO_Port GPIOA
+#define USER_LED_Pin GPIO_PIN_9
+#define USER_LED_GPIO_Port GPIOA
 #define ATX_PG_Pin GPIO_PIN_10
 #define ATX_PG_GPIO_Port GPIOA
 
