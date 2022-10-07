@@ -222,9 +222,9 @@ This shorts PS_ON pin to GND, and turns on PSU immediately when plugged in.
 
 ### RGBA over USB
 
-This is a remnant of my [RGBeeb project](https://github.com/dekuNukem/RGBeeb), in which ARGB signal is transmitted over USB-C for a cleaner look.
+In [RGBeeb](https://github.com/dekuNukem/RGBeeb) the rightmost USB-C port is used to carry ARGB power and signal in one cable.
 
-5V and GND is the same, and ARGB signal is on D+ line. If you want to use it, short the jumper with some solder.
+5V and GND is the same, and ARGB data is on D+ line. To use it, short the jumper with some solder.
 
 ### Additional Headers
 
@@ -240,7 +240,7 @@ A few more signals are available on headers.
 |  DIO |     SWDIO     | For microcontroller programming                  |
 |  3V3 |   3.3V Power  |                                                  |
 |  GND |     Ground    |                                                  |
-|  TX  | UART Transmit | Print some debugging messages @ 115200bps        |
+|  TX  | UART Transmit | Prints some debugging messages @ 115200bps       |
 |  RX  |     Unused    |                                                  |
 
 ## USB Firmware Update
