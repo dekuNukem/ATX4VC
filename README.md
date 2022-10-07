@@ -32,7 +32,7 @@ ATX4VC can be used to:
 
 ATX4VC supports **full-size ATX PSU**, seen here (lower right) in my RGBeeb project, powering a BBC Micro motherboard with +5V and -5V.
 
-It provides a clean interface for PSU control, RGB animation, and powering additional devices via USB-C ports.
+It provides a clean interface for PSU control, RGB animation, and USB-C power outout.
 
 [Read more about the build here.](https://github.com/dekuNukem/RGBeeb)
 
@@ -96,13 +96,13 @@ ATX4VC is designed to replace them with much more reliable modern ATX power supp
 
 * Make sure the jumper is in "soft power" setting (right two pins)
 
-* Plug in ATX connector, and turn on the PSU.
+* Plug in ATX connector
 
 * Press the power button
 
 ![Alt text](photos/start.jpeg)
 
-The PSU should turn on and all voltage rail LEDs should light up. 
+The PSU should turn on, and all voltage rail LEDs should light up. 
 
 That's the gist of it! But **please do keep reading** for the complete info.
 
@@ -110,11 +110,11 @@ That's the gist of it! But **please do keep reading** for the complete info.
 
 You can use the built-in power button, or connect an additional button to the header.
 
-Any momentary button will do, such as the one in PC cases.
+Any momentary switch will do, such as the one in PC cases.
 
 ![Alt text](photos/pwrheader.jpeg)
 
-You can also add a power LED to indicate PSU is on. Be ware of polarity.
+You can also add an external power LED. Be ware of polarity.
 
 The power LED is connected to fused 5V rail. **No need for external resistors**. A 2.5K resistor is built-in.
 
@@ -218,7 +218,7 @@ Use M3 screws and nuts. Dimension drawing below:
 
 Move the jumper to the left for hard power.
 
-This shorts PS_ON pin to GND, and turns on PSU immediately when power is applied.
+This shorts PS_ON pin to GND, and turns on PSU immediately when plugged in.
 
 ### RGBA over USB
 
