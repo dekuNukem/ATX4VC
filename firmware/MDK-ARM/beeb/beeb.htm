@@ -3,7 +3,7 @@
 <title>Static Call Graph - [beeb\beeb.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image beeb\beeb.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Oct 07 20:44:08 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Oct 07 20:52:53 2022
 <BR><P>
 <H3>Maximum Stack Usage =        172 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -316,6 +316,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_led_blink
+<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[38]"></a>HAL_FLASHEx_Erase</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, stm32f0xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase))
@@ -913,7 +914,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[21]"></a>main</STRONG> (Thumb, 382 bytes, Stack size 8 bytes, main.o(i.main))
+<P><STRONG><a name="[21]"></a>main</STRONG> (Thumb, 430 bytes, Stack size 8 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 172<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_RCC_GetSysClockFreq &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
@@ -925,6 +926,7 @@ Global Symbols
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IWDG_Refresh
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IWDG_Init
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;restore_button_settings
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_button_press
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;animation_update

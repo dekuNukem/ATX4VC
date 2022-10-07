@@ -436,6 +436,16 @@ int main(void)
       animation_flag = 0;
       HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_RESET);
     }
+
+    // if it didnt turn on psu but PG is still high, that means 
+    // it is in hard power mode 
+    if(is_psu_on == 0 && HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin))
+    {
+      HAL_Delay(250);
+      if(HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin))
+        is_psu_on = 1;
+    }
+    
   }
   /* USER CODE END 3 */
 
