@@ -1,4 +1,29 @@
+    printf("%d %d", eeprom_buf[button_index], fan_index);
 
+      printf(" M\n");
+      // printf("%d %d %d\n", ds18b20_result, ds18b20_result >> 4, deg_c_to_fan_timer(ds18b20_result >> 4));
+
+void set_fanspeed(void)
+{
+  uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_TOTAL_STEP_COUNT;
+  printf("%d %d", eeprom_buf[BUTTON_FANSPEED], fan_index);
+  if(fan_index < FAN_SPEED_MANUAL_STEP_COUNT)
+  {
+    printf(" M\n");
+    is_fan_auto_mode = 0;
+    htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
+  }
+  else
+  {
+    printf(" A\n");
+    is_fan_auto_mode = 1;
+    user_led_blink(10);
+  }
+  if(fan_index == FAN_SPEED_MANUAL_STEP_COUNT - 1)
+    user_led_blink(2);
+}
+
+FAN_SPEED_STEP_COUNT
   while(1)
   {
     HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);

@@ -245,18 +245,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 
 #define FAN_PWM_FULL_POWER 501
-#define FAN_SPEED_STEP_COUNT 8
+#define FAN_SPEED_MANUAL_STEP_COUNT 8
+#define FAN_SPEED_TOTAL_STEP_COUNT 9
 
 #define DEG_C_LOOKUP_SIZE 64
 const uint16_t deg_c_to_fan_timer_lookup[DEG_C_LOOKUP_SIZE] = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 115, 131, 147, 163, 179, 195, 211, 227, 243, 259, 275, 291, 307, 323, 339, 355, 371, 387, 403, 419, 435, 451, 467, 483, 499, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501};
-const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 20*5, 40*5, 55*5, 65*5, 80*5, 90*5, FAN_PWM_FULL_POWER};
+const uint16_t fan_speend_lookup[FAN_SPEED_MANUAL_STEP_COUNT] = {0, 20*5, 40*5, 55*5, 65*5, 80*5, 90*5, FAN_PWM_FULL_POWER};
 
 uint16_t deg_c_to_fan_timer(int16_t deg_c)
 {
   if(deg_c < 0)
     return 20*5; // 20%
   if(deg_c >= DEG_C_LOOKUP_SIZE)
-    return 501; // 100%
+    return FAN_PWM_FULL_POWER; // 100%
   return deg_c_to_fan_timer_lookup[deg_c];
 }
 
@@ -282,19 +283,6 @@ void set_led_brightness(uint8_t button_status)
   global_hsv.v = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT] * 28; // change to 28 for full scale
 }
 
-void restore_button_settings(void)
-{
-  uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_STEP_COUNT;
-  htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
-
-  // default value
-  global_hsv.h = 127;
-  global_hsv.s = 255;
-  global_hsv.v = 8;
-  set_led_color(eeprom_buf[BUTTON_COLOR]);
-  set_led_brightness(eeprom_buf[BUTTON_BRIGHTNESS]);
-}
-
 void user_led_blink(uint8_t count)
 {
   for (int i = 0; i < count; ++i)
@@ -308,6 +296,37 @@ void user_led_blink(uint8_t count)
   }
 }
 
+
+uint8_t is_fan_auto_mode;
+
+void set_fanspeed(void)
+{
+  uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_TOTAL_STEP_COUNT;
+  printf("fan %d", fan_index);
+  if(fan_index < FAN_SPEED_MANUAL_STEP_COUNT)
+  {
+    printf(" M\n");
+    is_fan_auto_mode = 0;
+    htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
+  }
+  else
+  {
+    printf(" A\n");
+    is_fan_auto_mode = 1;
+  }
+}
+
+void restore_button_settings(void)
+{
+  set_fanspeed();
+  // default value
+  global_hsv.h = 127;
+  global_hsv.s = 255;
+  global_hsv.v = 8;
+  set_led_color(eeprom_buf[BUTTON_COLOR]);
+  set_led_brightness(eeprom_buf[BUTTON_BRIGHTNESS]);
+}
+
 uint32_t last_button_press;
 void handle_button_press(uint8_t button_index)
 {
@@ -319,10 +338,34 @@ void handle_button_press(uint8_t button_index)
   eeprom_buf[button_index]++;
   if(button_index == BUTTON_FANSPEED)
   {
-    uint8_t fan_index = eeprom_buf[button_index] % FAN_SPEED_STEP_COUNT;
-    htim14.Instance->CCR1 = fan_speend_lookup[fan_index];
-    if(fan_index == FAN_SPEED_STEP_COUNT - 1)
+    set_fanspeed();
+    uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_TOTAL_STEP_COUNT;
+    if(fan_index == FAN_SPEED_MANUAL_STEP_COUNT - 1)
+    {
       user_led_blink(2);
+    }
+    else if(fan_index >= FAN_SPEED_MANUAL_STEP_COUNT)
+    {
+      for (int iii = 0; iii < 5; ++iii)
+      {
+        memset(red_buf, 127, NEOPIXEL_COUNT);
+        memset(green_buf, 127, NEOPIXEL_COUNT);
+        memset(blue_buf, 127, NEOPIXEL_COUNT);
+        __disable_irq();
+        neopixel_show(red_buf, green_buf, blue_buf);
+        __enable_irq();
+        HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+        HAL_Delay(200);
+        memset(red_buf, 0, NEOPIXEL_COUNT);
+        memset(green_buf, 0, NEOPIXEL_COUNT);
+        memset(blue_buf, 0, NEOPIXEL_COUNT);
+        __disable_irq();
+        neopixel_show(red_buf, green_buf, blue_buf);
+        __enable_irq();
+        HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+        HAL_Delay(200);
+      }
+    }
   }
   else if(button_index == BUTTON_COLOR)
   {
@@ -464,10 +507,18 @@ int main(void)
     }
     
     // if unplugged, ds18b20_result will be -1, both before and after shifting
+    // and fan will run at full speed
     if(ds18b20_update_flag) 
     {
       ds18b20_result = ds18b20_get_temp();
-      printf("%d %d %d\n", ds18b20_result, ds18b20_result >> 4, deg_c_to_fan_timer(ds18b20_result >> 4));
+      if(is_fan_auto_mode)
+      {
+        printf("tp %d %d\n", ds18b20_result >> 4, deg_c_to_fan_timer(ds18b20_result >> 4));
+        if(ds18b20_result == -1)
+          htim14.Instance->CCR1 = FAN_PWM_FULL_POWER;
+        else
+          htim14.Instance->CCR1 = deg_c_to_fan_timer(ds18b20_result >> 4);
+      }
       ds18b20_update_flag = 0;
       ds18b20_start_conversion();
     }
