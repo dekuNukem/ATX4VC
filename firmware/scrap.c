@@ -1,8 +1,60 @@
-    printf("%d %d", eeprom_buf[button_index], fan_index);
+void user_led_blink(uint8_t count)
+{
+  for (int i = 0; i < count; ++i)
+  {
+    HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+    HAL_Delay(66);
+    // HAL_IWDG_Refresh(&hiwdg);
+    HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+    HAL_Delay(66);
+    // HAL_IWDG_Refresh(&hiwdg);
 
+    
+  }
+}
+void set_led_color(uint8_t button_status)
+{
+  uint8_t color_index = button_status % LED_COLOR_STEP_COUNT;
+  if(color_index == LED_COLOR_STEP_COUNT-1) // color_index 26 = white
+  {
+    global_hsv.h = 0;
+    global_hsv.s = 0;
+  }
+  else
+  {
+    global_hsv.h = color_index * 10; // 0, 10, 20, ..., 250
+    global_hsv.s = 255;
+  }
+}
+memset(red_buf, 127, NEOPIXEL_COUNT);
+        memset(green_buf, 127, NEOPIXEL_COUNT);
+        memset(blue_buf, 127, NEOPIXEL_COUNT);
+        __disable_irq();
+        neopixel_show(red_buf, green_buf, blue_buf);
+        __enable_irq();
+        HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+        HAL_Delay(200);
+        memset(red_buf, 0, NEOPIXEL_COUNT);
+        memset(green_buf, 0, NEOPIXEL_COUNT);
+        memset(blue_buf, 0, NEOPIXEL_COUNT);
+        __disable_irq();
+        neopixel_show(red_buf, green_buf, blue_buf);
+        __enable_irq();
+        HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+        HAL_Delay(200);
+
+    printf("%d %d", eeprom_buf[button_index], fan_index);
+memset(red_buf, my_rgb.r, NEOPIXEL_COUNT);
+    memset(green_buf, my_rgb.g, NEOPIXEL_COUNT);
+    memset(blue_buf, my_rgb.b, NEOPIXEL_COUNT);
+    neopixel_show(red_buf, green_buf, blue_buf);
       printf(" M\n");
       // printf("%d %d %d\n", ds18b20_result, ds18b20_result >> 4, deg_c_to_fan_timer(ds18b20_result >> 4));
-
+HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+    HAL_Delay(66);
+    // HAL_IWDG_Refresh(&hiwdg);
+    HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+    HAL_Delay(66);
 void set_fanspeed(void)
 {
   uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_TOTAL_STEP_COUNT;

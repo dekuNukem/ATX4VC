@@ -83,6 +83,8 @@ uint8_t blue_buf[NEOPIXEL_COUNT];
 hsvcolor global_hsv;
 rgbcolor my_rgb;
 
+uint8_t is_fan_auto_mode;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -240,7 +242,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   // scan buttons every 64ms
   if(frame_interrupt_count % 4 == 0)
     scan_buttons();
-  if(frame_interrupt_count % 46 == 0)
+  if(is_fan_auto_mode && frame_interrupt_count % 46 == 0)
     ds18b20_update_flag = 1;
 }
 
@@ -283,21 +285,41 @@ void set_led_brightness(uint8_t button_status)
   global_hsv.v = led_brightness_lookup[button_status % LED_BRIGHTNESS_STEP_COUNT] * 28; // change to 28 for full scale
 }
 
-void user_led_blink(uint8_t count)
+void user_led_blink(uint8_t count, uint8_t duration_ms, uint8_t include_argb)
 {
+  uint8_t blink_brightness = global_hsv.v/4;
+  if(blink_brightness < 16)
+    blink_brightness = 16;
   for (int i = 0; i < count; ++i)
   {
+    if(include_argb)
+    {
+      memset(red_buf, blink_brightness, NEOPIXEL_COUNT);
+      memset(green_buf, blink_brightness, NEOPIXEL_COUNT);
+      memset(blue_buf, blink_brightness, NEOPIXEL_COUNT);
+      __disable_irq();
+      neopixel_show(red_buf, green_buf, blue_buf);
+      __enable_irq();
+    }
     HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
-    HAL_Delay(66);
-    // HAL_IWDG_Refresh(&hiwdg);
+    HAL_IWDG_Refresh(&hiwdg);
+    HAL_Delay(duration_ms);
+    HAL_IWDG_Refresh(&hiwdg);
+    if(include_argb)
+    {
+      memset(red_buf, 0, NEOPIXEL_COUNT);
+      memset(green_buf, 0, NEOPIXEL_COUNT);
+      memset(blue_buf, 0, NEOPIXEL_COUNT);
+      __disable_irq();
+      neopixel_show(red_buf, green_buf, blue_buf);
+      __enable_irq();
+    }
     HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
-    HAL_Delay(66);
-    // HAL_IWDG_Refresh(&hiwdg);
+    HAL_IWDG_Refresh(&hiwdg);
+    HAL_Delay(duration_ms);
+    HAL_IWDG_Refresh(&hiwdg);
   }
 }
-
-
-uint8_t is_fan_auto_mode;
 
 void set_fanspeed(void)
 {
@@ -341,41 +363,23 @@ void handle_button_press(uint8_t button_index)
     set_fanspeed();
     uint8_t fan_index = eeprom_buf[BUTTON_FANSPEED] % FAN_SPEED_TOTAL_STEP_COUNT;
     if(fan_index == FAN_SPEED_MANUAL_STEP_COUNT - 1)
-    {
-      user_led_blink(2);
-    }
-    else if(fan_index >= FAN_SPEED_MANUAL_STEP_COUNT)
-    {
-      for (int iii = 0; iii < 5; ++iii)
-      {
-        memset(red_buf, 127, NEOPIXEL_COUNT);
-        memset(green_buf, 127, NEOPIXEL_COUNT);
-        memset(blue_buf, 127, NEOPIXEL_COUNT);
-        __disable_irq();
-        neopixel_show(red_buf, green_buf, blue_buf);
-        __enable_irq();
-        HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
-        HAL_Delay(200);
-        memset(red_buf, 0, NEOPIXEL_COUNT);
-        memset(green_buf, 0, NEOPIXEL_COUNT);
-        memset(blue_buf, 0, NEOPIXEL_COUNT);
-        __disable_irq();
-        neopixel_show(red_buf, green_buf, blue_buf);
-        __enable_irq();
-        HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
-        HAL_Delay(200);
-      }
-    }
+      user_led_blink(3, 66, 1); // fastest manual speed, fast blink 3 times
+    else if(fan_index >= FAN_SPEED_MANUAL_STEP_COUNT) 
+      user_led_blink(5, 200, 1); // in auto mode, slow blink 5 times
+    else
+      user_led_blink(1, 66, 1); // button pressed, fast blink once
   }
   else if(button_index == BUTTON_COLOR)
   {
     set_led_color(eeprom_buf[button_index]);
+    user_led_blink(1, 66, 0);
   }
   else if(button_index == BUTTON_BRIGHTNESS)
   {
     set_led_brightness(eeprom_buf[button_index]);
+    user_led_blink(1, 66, 0);
     if(eeprom_buf[button_index] % LED_BRIGHTNESS_STEP_COUNT == LED_BRIGHTNESS_STEP_COUNT - 1)
-      user_led_blink(2);
+      user_led_blink(2, 66, 1);
   }
   else if(button_index == BUTTON_POWER)
   {
@@ -383,11 +387,15 @@ void handle_button_press(uint8_t button_index)
     if(is_psu_on)
       frame_interrupt_count = 0;
     HAL_GPIO_WritePin(PWR_ON_GPIO_Port, PWR_ON_Pin, 1-is_psu_on);
+    user_led_blink(1, 66, 0);
     return; // no need to save power button status
+  }
+  else if(button_index == BUTTON_RGB_MODE)
+  {
+    user_led_blink(1, 66, 0);
   }
   ee_format();
   ee_write(0, EEPROM_BUF_SIZE, eeprom_buf);
-  user_led_blink(1);
 }
 
 /* USER CODE END 0 */
@@ -425,7 +433,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM17_Init();
   MX_TIM14_Init();
-  // MX_IWDG_Init();
+  MX_IWDG_Init();
   MX_TIM2_Init();
 
   /* Initialize interrupts */
@@ -465,7 +473,7 @@ int main(void)
 
   while (1)
   {
-    // HAL_IWDG_Refresh(&hiwdg);
+    HAL_IWDG_Refresh(&hiwdg);
     for (int i = 0; i < BUTTON_COUNT; ++i)
     {
       if(is_pressed(i))
@@ -497,28 +505,23 @@ int main(void)
       HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_RESET);
     }
 
-    // if atx4vc never turned on the psu, but PG is still high, that means
+    // if atx4vc did not turn psu on, but PG is still high,
     // it is in hard power mode 
     if(is_psu_on == 0 && HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin))
     {
-      HAL_Delay(250);
+      HAL_Delay(250); // give PG some time to decay
       if(HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin))
         is_psu_on = 1;
     }
-    
-    // if unplugged, ds18b20_result will be -1, both before and after shifting
-    // and fan will run at full speed
-    if(ds18b20_update_flag) 
+
+    if(ds18b20_update_flag)
     {
       ds18b20_result = ds18b20_get_temp();
-      if(is_fan_auto_mode)
-      {
-        printf("tp %d %d\n", ds18b20_result >> 4, deg_c_to_fan_timer(ds18b20_result >> 4));
-        if(ds18b20_result == -1)
-          htim14.Instance->CCR1 = FAN_PWM_FULL_POWER;
-        else
-          htim14.Instance->CCR1 = deg_c_to_fan_timer(ds18b20_result >> 4);
-      }
+      printf("tp %d %d\n", ds18b20_result >> 4, deg_c_to_fan_timer(ds18b20_result >> 4));
+      if(ds18b20_result == -1) // sensor unplugged, full power failsafe
+        htim14.Instance->CCR1 = FAN_PWM_FULL_POWER;
+      else
+        htim14.Instance->CCR1 = deg_c_to_fan_timer(ds18b20_result >> 4);
       ds18b20_update_flag = 0;
       ds18b20_start_conversion();
     }
