@@ -112,6 +112,8 @@ int fputc(int ch, FILE *f)
   return ch;
 }
 
+int16_t ds18b20_result;
+
 #define LED_BRIGHTNESS_STEP_COUNT 9
 #define BREATHING_FRAME_COUNT 300
 #define SIN_LOOKUP_SIZE 360
@@ -229,6 +231,7 @@ void animation_update(void)
 }
 
 uint8_t animation_flag;
+uint8_t ds18b20_update_flag;
 // happens every 16ms
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -237,6 +240,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   // scan buttons every 64ms
   if(frame_interrupt_count % 4 == 0)
     scan_buttons();
+  if(frame_interrupt_count % 46 == 0)
+    ds18b20_update_flag = 1;
 }
 
 #define FAN_PWM_FULL_POWER 501
@@ -285,10 +290,10 @@ void user_led_blink(uint8_t count)
   {
     HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
     HAL_Delay(66);
-    HAL_IWDG_Refresh(&hiwdg);
+    // HAL_IWDG_Refresh(&hiwdg);
     HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
     HAL_Delay(66);
-    HAL_IWDG_Refresh(&hiwdg);
+    // HAL_IWDG_Refresh(&hiwdg);
   }
 }
 
@@ -366,7 +371,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM17_Init();
   MX_TIM14_Init();
-  MX_IWDG_Init();
+  // MX_IWDG_Init();
   MX_TIM2_Init();
 
   /* Initialize interrupts */
@@ -402,10 +407,11 @@ int main(void)
   HAL_TIM_Base_Start(&htim14);
   HAL_TIM_PWM_Init(&htim14);
   HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
+  ds18b20_start_conversion();
 
   while (1)
   {
-    HAL_IWDG_Refresh(&hiwdg);
+    // HAL_IWDG_Refresh(&hiwdg);
     for (int i = 0; i < BUTTON_COUNT; ++i)
     {
       if(is_pressed(i))
@@ -437,7 +443,7 @@ int main(void)
       HAL_GPIO_WritePin(GPIOA, DEBUG_Pin, GPIO_PIN_RESET);
     }
 
-    // if it didnt turn on psu but PG is still high, that means 
+    // if atx4vc never turned on the psu, but PG is still high, that means
     // it is in hard power mode 
     if(is_psu_on == 0 && HAL_GPIO_ReadPin(ATX_PG_GPIO_Port, ATX_PG_Pin))
     {
@@ -446,6 +452,13 @@ int main(void)
         is_psu_on = 1;
     }
     
+    if(ds18b20_update_flag) 
+    {
+      ds18b20_result = ds18b20_get_temp();
+      printf("%d\n", ds18b20_result);
+      ds18b20_update_flag = 0;
+      ds18b20_start_conversion();
+    }
   }
   /* USER CODE END 3 */
 
@@ -517,7 +530,7 @@ static void MX_IWDG_Init(void)
 {
 
   hiwdg.Instance = IWDG;
-  hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_8;
   hiwdg.Init.Window = 4095;
   hiwdg.Init.Reload = 4095;
   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
