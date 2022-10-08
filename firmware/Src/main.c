@@ -307,9 +307,9 @@ void user_led_blink(uint8_t count, uint8_t duration_ms, uint8_t include_argb)
     HAL_IWDG_Refresh(&hiwdg);
     if(include_argb)
     {
-      memset(red_buf, 0, NEOPIXEL_COUNT);
-      memset(green_buf, 0, NEOPIXEL_COUNT);
-      memset(blue_buf, 0, NEOPIXEL_COUNT);
+      memset(red_buf, blink_brightness / 8, NEOPIXEL_COUNT);
+      memset(green_buf, blink_brightness / 8, NEOPIXEL_COUNT);
+      memset(blue_buf, blink_brightness / 8, NEOPIXEL_COUNT);
       __disable_irq();
       neopixel_show(red_buf, green_buf, blue_buf);
       __enable_irq();

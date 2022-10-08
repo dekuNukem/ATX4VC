@@ -1837,9 +1837,9 @@ Image Symbol Table
     i.set_led_color                          0x08003128   Section        0  main.o(i.set_led_color)
     i.spi_fastwrite_buf_size_even            0x0800314c   Section        0  neopixel.o(i.spi_fastwrite_buf_size_even)
     i.user_led_blink                         0x0800316c   Section        0  main.o(i.user_led_blink)
-    .constdata                               0x08003240   Section      535  main.o(.constdata)
-    .constdata                               0x08003457   Section       16  system_stm32f0xx.o(.constdata)
-    .constdata                               0x08003467   Section        8  system_stm32f0xx.o(.constdata)
+    .constdata                               0x0800324c   Section      535  main.o(.constdata)
+    .constdata                               0x08003463   Section       16  system_stm32f0xx.o(.constdata)
+    .constdata                               0x08003473   Section        8  system_stm32f0xx.o(.constdata)
     .data                                    0x20000000   Section        4  neopixel.o(.data)
     .data                                    0x20000004   Section        4  delay_us.o(.data)
     .data                                    0x20000008   Section       40  main.o(.data)
@@ -2080,16 +2080,16 @@ Image Symbol Table
     set_led_brightness                       0x08003109   Thumb Code    22  main.o(i.set_led_brightness)
     set_led_color                            0x08003129   Thumb Code    32  main.o(i.set_led_color)
     spi_fastwrite_buf_size_even              0x0800314d   Thumb Code    28  neopixel.o(i.spi_fastwrite_buf_size_even)
-    user_led_blink                           0x0800316d   Thumb Code   198  main.o(i.user_led_blink)
-    boot_message                             0x08003240   Data          22  main.o(.constdata)
-    sin_lookup                               0x08003256   Data         360  main.o(.constdata)
-    deg_c_to_fan_timer_lookup                0x080033be   Data         128  main.o(.constdata)
-    fan_speend_lookup                        0x0800343e   Data          16  main.o(.constdata)
-    led_brightness_lookup                    0x0800344e   Data           9  main.o(.constdata)
-    AHBPrescTable                            0x08003457   Data          16  system_stm32f0xx.o(.constdata)
-    APBPrescTable                            0x08003467   Data           8  system_stm32f0xx.o(.constdata)
-    Region$$Table$$Base                      0x08003470   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003490   Number         0  anon$$obj.o(Region$$Table)
+    user_led_blink                           0x0800316d   Thumb Code   212  main.o(i.user_led_blink)
+    boot_message                             0x0800324c   Data          22  main.o(.constdata)
+    sin_lookup                               0x08003262   Data         360  main.o(.constdata)
+    deg_c_to_fan_timer_lookup                0x080033ca   Data         128  main.o(.constdata)
+    fan_speend_lookup                        0x0800344a   Data          16  main.o(.constdata)
+    led_brightness_lookup                    0x0800345a   Data           9  main.o(.constdata)
+    AHBPrescTable                            0x08003463   Data          16  system_stm32f0xx.o(.constdata)
+    APBPrescTable                            0x08003473   Data           8  system_stm32f0xx.o(.constdata)
+    Region$$Table$$Base                      0x0800347c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800349c   Number         0  anon$$obj.o(Region$$Table)
     ws_padding_buf                           0x20000000   Data           4  neopixel.o(.data)
     us_timer                                 0x20000004   Data           4  delay_us.o(.data)
     is_psu_on                                0x20000008   Data           1  main.o(.data)
@@ -2128,9 +2128,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000034cc, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000034d8, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003490, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000349c, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2297,28 +2297,28 @@ Memory Map of the image
     0x08003108   0x08003108   0x00000020   Code   RO          423    i.set_led_brightness  main.o
     0x08003128   0x08003128   0x00000024   Code   RO          424    i.set_led_color     main.o
     0x0800314c   0x0800314c   0x00000020   Code   RO           13    i.spi_fastwrite_buf_size_even  neopixel.o
-    0x0800316c   0x0800316c   0x000000d4   Code   RO          425    i.user_led_blink    main.o
-    0x08003240   0x08003240   0x00000217   Data   RO          427    .constdata          main.o
-    0x08003457   0x08003457   0x00000010   Data   RO         3665    .constdata          system_stm32f0xx.o
-    0x08003467   0x08003467   0x00000008   Data   RO         3666    .constdata          system_stm32f0xx.o
-    0x0800346f   0x0800346f   0x00000001   PAD
-    0x08003470   0x08003470   0x00000020   Data   RO         4011    Region$$Table       anon$$obj.o
+    0x0800316c   0x0800316c   0x000000e0   Code   RO          425    i.user_led_blink    main.o
+    0x0800324c   0x0800324c   0x00000217   Data   RO          427    .constdata          main.o
+    0x08003463   0x08003463   0x00000010   Data   RO         3665    .constdata          system_stm32f0xx.o
+    0x08003473   0x08003473   0x00000008   Data   RO         3666    .constdata          system_stm32f0xx.o
+    0x0800347b   0x0800347b   0x00000001   PAD
+    0x0800347c   0x0800347c   0x00000020   Data   RO         4011    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003490, Size: 0x00000778, Max: 0x00001800, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800349c, Size: 0x00000778, Max: 0x00001800, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08003490   0x00000004   Data   RW           15    .data               neopixel.o
-    0x20000004   0x08003494   0x00000004   Data   RW          291    .data               delay_us.o
-    0x20000008   0x08003498   0x00000028   Data   RW          431    .data               main.o
-    0x20000030   0x080034c0   0x00000004   Data   RW         2496    .data               stm32f0xx_hal.o
-    0x20000034   0x080034c4   0x00000004   Data   RW         3667    .data               system_stm32f0xx.o
-    0x20000038   0x080034c8   0x00000004   Data   RW         3991    .data               mc_p.l(stdout.o)
+    0x20000000   0x0800349c   0x00000004   Data   RW           15    .data               neopixel.o
+    0x20000004   0x080034a0   0x00000004   Data   RW          291    .data               delay_us.o
+    0x20000008   0x080034a4   0x00000028   Data   RW          431    .data               main.o
+    0x20000030   0x080034cc   0x00000004   Data   RW         2496    .data               stm32f0xx_hal.o
+    0x20000034   0x080034d0   0x00000004   Data   RW         3667    .data               system_stm32f0xx.o
+    0x20000038   0x080034d4   0x00000004   Data   RW         3991    .data               mc_p.l(stdout.o)
     0x2000003c        -       0x00000018   Zero   RW           14    .bss                neopixel.o
     0x20000054        -       0x00000028   Zero   RW          163    .bss                buttons.o
     0x2000007c        -       0x00000009   Zero   RW          378    .bss                ds18b20.o
-    0x20000085   0x080034cc   0x00000003   PAD
+    0x20000085   0x080034d8   0x00000003   PAD
     0x20000088        -       0x000002d0   Zero   RW          426    .bss                main.o
     0x20000358        -       0x00000020   Zero   RW         3507    .bss                stm32f0xx_hal_flash.o
     0x20000378        -       0x00000400   Zero   RW            1    STACK               startup_stm32f042x6.o
@@ -2336,7 +2336,7 @@ Image component sizes
         52         10          0          4          0       1903   delay_us.o
         72          4          0          0          9       1508   ds18b20.o
        196         12          0          0          0       2429   ee.o
-      2692        236        535         40        720      13256   main.o
+      2704        234        535         40        720      13296   main.o
        284          4          0          0          0       3639   my_1wire.o
        164         16          0          4         24     456630   neopixel.o
         88         38        192          0       1024        636   startup_stm32f042x6.o
@@ -2356,7 +2356,7 @@ Image component sizes
         92         14         24          4          0       1111   system_stm32f0xx.o
 
     ----------------------------------------------------------------------
-     11134        814        784         56       1852     553218   Object Totals
+     11146        812        784         56       1852     553258   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         22          0          1          0          3          0   (incl. Padding)
 
@@ -2409,15 +2409,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12672        868        784         60       1852     548866   Grand Totals
-     12672        868        784         60       1852     548866   ELF Image Totals
-     12672        868        784         60          0          0   ROM Totals
+     12684        866        784         60       1852     548906   Grand Totals
+     12684        866        784         60       1852     548906   ELF Image Totals
+     12684        866        784         60          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13456 (  13.14kB)
+    Total RO  Size (Code + RO Data)                13468 (  13.15kB)
     Total RW  Size (RW Data + ZI Data)              1912 (   1.87kB)
-    Total ROM Size (Code + RO Data + RW Data)      13516 (  13.20kB)
+    Total ROM Size (Code + RO Data + RW Data)      13528 (  13.21kB)
 
 ==============================================================================
 
