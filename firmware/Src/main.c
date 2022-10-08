@@ -247,7 +247,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 #define FAN_PWM_FULL_POWER 501
 #define FAN_SPEED_STEP_COUNT 8
 
+#define DEG_C_LOOKUP_SIZE 64
+const uint16_t deg_c_to_fan_timer_lookup[DEG_C_LOOKUP_SIZE] = {100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 115, 131, 147, 163, 179, 195, 211, 227, 243, 259, 275, 291, 307, 323, 339, 355, 371, 387, 403, 419, 435, 451, 467, 483, 499, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501, 501};
 const uint16_t fan_speend_lookup[FAN_SPEED_STEP_COUNT] = {0, 20*5, 40*5, 55*5, 65*5, 80*5, 90*5, FAN_PWM_FULL_POWER};
+
+uint16_t deg_c_to_fan_timer(int16_t deg_c)
+{
+  if(deg_c < 0)
+    return 20*5; // 20%
+  if(deg_c >= DEG_C_LOOKUP_SIZE)
+    return 501; // 100%
+  return deg_c_to_fan_timer_lookup[deg_c];
+}
 
 #define LED_COLOR_STEP_COUNT 27
 void set_led_color(uint8_t button_status)
@@ -452,10 +463,11 @@ int main(void)
         is_psu_on = 1;
     }
     
+    // if unplugged, ds18b20_result will be -1, both before and after shifting
     if(ds18b20_update_flag) 
     {
       ds18b20_result = ds18b20_get_temp();
-      printf("%d\n", ds18b20_result);
+      printf("%d %d %d\n", ds18b20_result, ds18b20_result >> 4, deg_c_to_fan_timer(ds18b20_result >> 4));
       ds18b20_update_flag = 0;
       ds18b20_start_conversion();
     }
