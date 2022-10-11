@@ -28,14 +28,14 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -58,8 +58,8 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -197,11 +197,11 @@
 <text x="56.6374" y="55.5968" size="1.4224" layer="25" rot="R270" align="center">GND</text>
 <text x="54.0974" y="55.5968" size="1.4224" layer="25" rot="R270" align="center">12V</text>
 <text x="49.0266" y="55.5282" size="1.4224" layer="25" rot="R90" align="center">PWM</text>
-<text x="24.13" y="34.417" size="1.4224" layer="26" rot="MR180" align="center">HARD
+<text x="24.13" y="34.417" size="1.27" layer="25" rot="R180" align="center">HARD
 PWR</text>
-<text x="29.972" y="34.417" size="1.4224" layer="26" rot="MR180" align="center">SOFT
+<text x="29.972" y="34.417" size="1.27" layer="25" rot="R180" align="center">SOFT
 PWR</text>
-<text x="27.051" y="34.925" size="1.4224" layer="25" align="center">RESET</text>
+<text x="27.178" y="41.148" size="1.4224" layer="25" align="center">RESET</text>
 <text x="28.956" y="21.844" size="1.778" layer="25" align="center">PWR SW</text>
 <circle x="4.318" y="4.191" radius="4" width="0" layer="41"/>
 <circle x="4.318" y="65.786" radius="4" width="0" layer="41"/>
@@ -211,7 +211,7 @@ PWR</text>
 <circle x="81.153" y="4.191" radius="4" width="0" layer="42"/>
 <circle x="4.318" y="65.786" radius="4" width="0" layer="42"/>
 <circle x="81.153" y="65.913" radius="4" width="0" layer="42"/>
-<text x="70.4388" y="36.83" size="1.6764" layer="25" rot="R270" align="center">MAX 5A TOTAL</text>
+<text x="69.9308" y="36.322" size="1.4224" layer="25" rot="R270" align="center">5A FUSE   7A TOTAL</text>
 <text x="75.565" y="59.182" size="2.1844" layer="25" rot="R270" align="center">G</text>
 <text x="73.406" y="47.498" size="2.1844" layer="25" rot="R270" align="center">G</text>
 <text x="73.406" y="38.735" size="2.1844" layer="25" rot="R270" align="center">G</text>
@@ -298,7 +298,7 @@ SPD</text>
 <text x="44.3522" y="56.2564" size="1.4224" layer="25" align="center">5</text>
 <rectangle x1="77.978" y1="9.3218" x2="79.6798" y2="9.779" layer="25"/>
 <rectangle x1="72.6567" y1="21.5773" x2="74.3585" y2="22.0345" layer="25" rot="R90"/>
-<text x="63.627" y="48.641" size="1.778" layer="25" rot="R180" align="center">ARGB</text>
+<text x="62.992" y="48.641" size="1.778" layer="25" align="center">ARGB</text>
 <polygon width="0.2032" layer="41">
 <vertex x="65.024" y="51.816"/>
 <vertex x="61.087" y="47.879"/>
@@ -332,6 +332,9 @@ SPD</text>
 </polygon>
 <rectangle x1="70.358" y1="50.8" x2="71.628" y2="53.848" layer="41"/>
 <rectangle x1="68.453" y1="49.149" x2="69.723" y2="52.197" layer="41" rot="R90"/>
+<text x="65.278" y="52.451" size="1.016" layer="25" align="center">5</text>
+<text x="67.818" y="48.641" size="1.016" layer="25" align="center">D</text>
+<text x="72.898" y="48.641" size="1.016" layer="25" rot="R180" align="center">G</text>
 </plain>
 <libraries>
 <library name="my_usbc_16p">
@@ -1195,7 +1198,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <attribute name="NAME" x="28.9433" y="43.561" size="0.8128" layer="25" rot="R90"/>
 </element>
 <element name="R5" library="atx_power_control" package="0805" value="5K1" x="33.2994" y="32.7698" smashed="yes" rot="R270">
-<attribute name="NAME" x="31.6141" y="33.3756" size="0.8128" layer="25" rot="R270"/>
+<attribute name="NAME" x="34.0271" y="33.6296" size="0.8128" layer="25" rot="R270"/>
 </element>
 <element name="C2" library="atx_power_control" package="0805$1" value="10uF" x="31.75" y="57.912" smashed="yes" rot="R90">
 <attribute name="NAME" x="29.9339" y="58.2498" size="0.8128" layer="25" rot="R270"/>
@@ -1340,7 +1343,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <attribute name="VALUE" x="49.022" y="52.451" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="R15" library="atx_power_control" package="0805" value="5K1" x="32.639" y="36.957" smashed="yes" rot="R180">
-<attribute name="NAME" x="31.623" y="35.2425" size="0.8128" layer="25"/>
+<attribute name="NAME" x="32.385" y="35.2425" size="0.8128" layer="25"/>
 </element>
 <element name="LED8" library="adafruit" package="CHIP-LED0805" value="" x="32.004" y="40.259" smashed="yes">
 <attribute name="VALUE" x="34.544" y="38.989" size="1.27" layer="27" rot="R90"/>
@@ -1522,10 +1525,10 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="38.9528" y1="40.5984" x2="37.871" y2="39.5166" width="0.2032" layer="1"/>
 <wire x1="37.871" y1="39.5166" x2="37.871" y2="37.2218" width="0.2032" layer="1"/>
 <wire x1="52.41" y1="13.063" x2="56.81" y2="13.063" width="1.016" layer="1"/>
-<wire x1="38.354" y1="60.452" x2="31.877" y2="60.452" width="0.8128" layer="16"/>
+<wire x1="36.703" y1="60.452" x2="31.877" y2="60.452" width="0.8128" layer="16"/>
 <wire x1="31.75" y1="60.325" x2="31.877" y2="60.452" width="0.8128" layer="16"/>
-<wire x1="38.354" y1="60.452" x2="39.497" y2="59.309" width="0.8128" layer="16"/>
-<wire x1="39.497" y1="59.309" x2="39.497" y2="51.308" width="0.8128" layer="16"/>
+<wire x1="36.703" y1="60.452" x2="39.497" y2="57.658" width="0.8128" layer="16"/>
+<wire x1="39.497" y1="57.658" x2="39.497" y2="51.308" width="0.8128" layer="16"/>
 <wire x1="39.497" y1="51.308" x2="39.497" y2="49.911" width="0.8128" layer="16"/>
 <wire x1="41.275" y1="48.133" x2="41.275" y2="45.339" width="0.8128" layer="16"/>
 <wire x1="39.497" y1="49.911" x2="40.894" y2="48.514" width="0.8128" layer="16"/>

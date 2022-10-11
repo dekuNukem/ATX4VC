@@ -55,3 +55,8 @@ adjusted trace width
 added jumper pad on 5V USBC data lines
 double checked component values
 wired to soft power by default, no need for header
+
+PD1 V2
+made more space for 2nd ARGB header
+changed amp rating silkscreen
+moved soft power and hard power silkscreen back to top
