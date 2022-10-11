@@ -12,7 +12,7 @@ ATX4VC combines many convenient features in one place:
 
 * Power button and power LED headers
 
-* **Two** 4-pin PWM fan headers. Manual fan speed or via temperature probe.
+* **Two** 4-pin PWM fan headers. Manual fan speed or via **temperature probe**.
 
 * **Two** Addressable RGB(ARGB) headers
 
@@ -30,11 +30,7 @@ ATX4VC can be used to:
 
 ## Showcase
 
-ATX4VC supports **full-size ATX PSU**, seen here (lower right) in my RGBeeb project, powering a BBC Micro motherboard with +5V and -5V.
-
-It provides a clean interface for PSU control, RGB animation, and USB-C power outout.
-
-[Read more about the build here.](https://github.com/dekuNukem/RGBeeb)
+[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC (seen lower right) powers a BBC Micro motherboard with +5V and -5V using a full-size ATX PSU.
 
 ![Alt text](photos/rgbeeb.jpeg)
 
