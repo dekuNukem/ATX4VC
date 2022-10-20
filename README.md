@@ -192,6 +192,8 @@ Press **FAN SPD** button until the user LED `slowly blinks 5 times`. Now fan spe
 
 The fan starts to speed up at 25°C, and reaches full speed at 50°C. If probe is not detected, it will run at full speed.
 
+You can use a heat gun and air duster to test out the probe.
+
 ### Addressable RGB (ARGB)
 
 Two standard ARGB headers are available. Simply plug them in. Up to 100 ARGB LEDs are supported.
