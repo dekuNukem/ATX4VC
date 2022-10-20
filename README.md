@@ -12,11 +12,11 @@ ATX4VC combines many convenient features in one place:
 
 * Power button and power LED headers
 
-* **Two** 4-pin PWM fan headers. Manual fan speed or via **temperature probe**.
+* Two 4-pin **PWM fan** headers. Manual fan speed or via **temperature probe**.
 
-* **Two** Addressable RGB(ARGB) headers
+* Two **Addressable RGB**(ARGB) headers
 
-* **Two** USB-C ports for power output and firmware update
+* Two **USB-C** ports for power output and firmware update
 
 ATX4VC can be used to:
 
