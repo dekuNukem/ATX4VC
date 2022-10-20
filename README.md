@@ -190,7 +190,7 @@ Press **FAN SPD** button until the user LED `slowly blinks 5 times`. Now fan spe
 
 ![Alt text](photos/curve.png)
 
-The fan starts to speed up at 25°C, and reaches full speed at 50°C.
+The fan starts to speed up at 25°C, and reaches full speed at 50°C. If probe is not detected, it will run at full speed.
 
 ### Addressable RGB (ARGB)
 
