@@ -30,7 +30,7 @@ ATX4VC can be used to:
 
 ## Showcase
 
-[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC (seen lower right) powers a BBC Micro motherboard with +5V and -5V using a full-size ATX PSU.
+[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC (seen lower right) powers a BBC Micro with +5V and -5V using a full-size ATX PSU.
 
 ![Alt text](photos/rgbeeb.jpeg)
 
@@ -52,7 +52,7 @@ Here it powers a Macintosh Plus motherboard with +12V, +5V, and -12V.
 
 ## Why / Project Goals
 
-Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, runs hot, and sometimes explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
+Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, runs hot, and (slightly) explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
 
 ATX4VC is designed to replace them with much more reliable modern ATX power supplies, and as a tool to help test and diagnose vintage computers. 
 
@@ -106,13 +106,13 @@ That's the gist of it! But **please do keep reading** for the complete info.
 
 You can use the built-in power button, or connect an additional button to the header.
 
-Any momentary switch will do, such as the one in PC cases.
+Both momentary switch and toggle switch are supported.
 
 ![Alt text](photos/pwrheader.jpeg)
 
 You can also add an external power LED. Be ware of polarity.
 
-The power LED is connected to fused 5V rail. **No need for external resistors**. A 2.5K resistor is built-in.
+**No need for external resistors**. A 2.5K resistor is built-in.
 
 ### Power Connection
 
@@ -158,9 +158,21 @@ Negative rails are not fused because they are low-current (around 200mA), and bu
 
 Two PWM Fan headers are available. You can plug in standard 12V PC fans, both 3-Pin and 4-Pin.
 
-Press `FAN SPD` button to change speed manually.
-
 ![Alt text](photos/fan.jpeg)
+
+Press `FAN SPD` button to cycle through different speeds:
+
+| Fan Speed (%) |                     Note                    |
+|:-------------:|:-------------------------------------------:|
+|       0       | May or may not stop depending on fan itself |
+|       20      |                                             |
+|       40      |                                             |
+|       55      |                                             |
+|       65      |                                             |
+|       80      |                                             |
+|       90      |                                             |
+|      100      |                3 fast blinks                |
+|      Auto     |                5 slow blinks                |
 
 Speed control only available on 4-Pin fans. 3-Pin fan will always run at full speed.
 
@@ -168,15 +180,17 @@ Speed control only available on 4-Pin fans. 3-Pin fan will always run at full sp
 
 ATX4VC supports the DS18B20 temperature sensor. They are inexpensive and very popular in Arduino projects.
 
-Beware of fake counterfeits! Best to get them from a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050) or [Adafruit](https://www.adafruit.com/product/381).
+Beware of counterfeits! Best to get them from a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050) or [Adafruit](https://www.adafruit.com/product/381).
 
-Connect the headers, match the pinout.
+Connect the headers. Usually VCC is red, GND is black, DATA is yellow.
 
 ![Alt text](photos/probe.png)
 
-Then **HOLD** FAN SPD button to activate fan curve. The user LED should stay on for 1 second then turn off.
+Press **FAN SPD** button until the user LED `slowly blinks 5 times`. Now fan speed will depend on the temperature reading.
 
-If Temperature proble is not detected, the user LED will flash 5 times.
+![Alt text](photos/curve.png)
+
+The fan starts to speed up at 25°C, and reaches full speed at 50°C.
 
 ### Addressable RGB (ARGB)
 
@@ -218,9 +232,11 @@ This shorts PS_ON pin to GND, and turns on PSU immediately when plugged in.
 
 ### RGBA over USB
 
-In [RGBeeb](https://github.com/dekuNukem/RGBeeb) the rightmost USB-C port is used to carry ARGB power and signal in one cable.
+You can use the rightmost USB-C port to carry ARGB power and signal in one cable.
 
-5V and GND is the same, and ARGB data is on D+ line. To use it, short the jumper with some solder.
+Short the jumper with some solder to put ARGB data on the D+ line. [Seen in RGBeeb](https://github.com/dekuNukem/RGBeeb#did-anyone-say-rgb).
+
+![Alt text](photos/jump.png)
 
 ### Additional Headers
 
