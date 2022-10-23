@@ -122,9 +122,17 @@ Observe the voltage on each terminal block.
 
 Loosen the screw, insert the cable into the hole, and tighten it again.
 
+You can add some solder to prevent the strands from coming loose.
+
 Don't leave conductor exposed! Trim it to prevent shorts.
 
 ![Alt text](photos/terminal.jpeg)
+
+Also, make sure the conductor is thick enough! Alligator clips are handy, but many of them have very thin wires.
+
+If so, you can solder a thicker cable to it.
+
+![Alt text](photos/thin.png)
 
 ### Current Limit
 
@@ -239,6 +247,12 @@ You can use the rightmost USB-C port to carry ARGB power and signal in one cable
 Short the jumper with some solder to put ARGB data on the D+ line. [Seen in RGBeeb](https://github.com/dekuNukem/RGBeeb#did-anyone-say-rgb).
 
 ![Alt text](photos/jump.png)
+
+### Button Header
+
+External momentary buttons can be connected to adjust various settings:
+
+![Alt text](photos/aux_header.png)
 
 ### Additional Headers
 
