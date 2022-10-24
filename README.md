@@ -122,15 +122,13 @@ Observe the voltage on each terminal block.
 
 Loosen the screw, insert the cable into the hole, and tighten it again.
 
-You can add some solder to prevent the strands from coming loose.
-
 Don't leave conductor exposed! Trim it to prevent shorts.
 
 ![Alt text](photos/terminal.jpeg)
 
-Also, make sure the conductor is thick enough! Alligator clips are handy, but many of them have very thin wires.
+Also, make sure the conductor is thick enough!
 
-If so, you can solder a thicker cable to it.
+Alligator clips are handy, but many have very thin wires. If so, remove the clip and solder a thicker cable to it.
 
 ![Alt text](photos/thin.png)
 
