@@ -132,6 +132,20 @@ Alligator clips are handy, but many have very thin wires. If so, remove the clip
 
 ![Alt text](photos/thin.png)
 
+### Pre-flight Checks
+
+Before powering up:
+
+* Double check the **correct voltage terminal** is used
+
+* Check for **dead shorts** between each voltage rail and GND, and between themselves!
+
+Once powered up:
+
+* Check voltage readings on each rail
+
+Remember that ATX4VC **DOES NOT** monitor or condition PSU voltage outputs, so make sure the PSU itself is trustworthy.
+
 ### Current Limit
 
 ATX4VC has current limit as follows:
