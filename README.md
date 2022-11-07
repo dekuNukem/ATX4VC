@@ -120,7 +120,7 @@ Observe the voltage on each terminal block.
 
 ![Alt text](photos/rails.jpeg)
 
-Loosen the screw, insert the cable into the hole, and tighten it again.
+Strip the cable, loosen the screw, insert into the hole, and tighten it again.
 
 Don't leave conductor exposed! Trim it to prevent shorts.
 
@@ -128,9 +128,13 @@ Don't leave conductor exposed! Trim it to prevent shorts.
 
 Also, make sure the conductor is thick enough!
 
-Alligator clips are handy, but many have very thin wires. If so, remove the clip and solder a thicker cable to it.
+Alligator clips are handy, but many have very thin wires. If so, you can solder a thicker cable to it.
 
 ![Alt text](photos/thin.png)
+
+Label the rails, vinyl stickers are available in the [product page](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/):
+
+![Alt text](photos/labels.png)
 
 ### Pre-flight Checks
 
@@ -276,9 +280,9 @@ A few more signals are available on headers.
 |:----:|:-------------:|--------------------------------------------------|
 |  PG  |   Power Good  | High (+5V) when output is correct and stable     |
 | 5VSB |   5V Standby  | Available when PSU is off, max current 2A usually|
-|  CLK |     SWCLK     | For microcontroller programming                  |
-|  DIO |     SWDIO     | For microcontroller programming                  |
-|  3V3 |   3.3V Power  |                                                  |
+|  CLK |     SWCLK     | For microcontroller (MCU) programming            |
+|  DIO |     SWDIO     | For MCU programming                  			  |
+|  3V3 |   3.3V Power  | Regulated from 5VSB for MCU power, 500mA max     |
 |  GND |     Ground    |                                                  |
 |  TX  | UART Transmit | Prints some debugging messages @ 115200bps       |
 |  RX  |     Unused    |                                                  |
