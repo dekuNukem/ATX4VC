@@ -134,7 +134,7 @@ Alligator clips are handy, but many have very thin wires. If so, you can solder 
 
 Label the rails, vinyl stickers are available in the [product page](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/):
 
-![Alt text](photos/labels.png)
+![Alt text](photos/label.png)
 
 ### Pre-flight Checks
 
