@@ -106,13 +106,9 @@ That's the gist of it! But **please do keep reading** for the complete info.
 
 You can use the built-in power button, or connect an additional button to the header.
 
-Both momentary switch and toggle switch are supported.
-
 ![Alt text](photos/pwrheader.jpeg)
 
-You can also add an external power LED. Be ware of polarity.
-
-**No need for external resistors**. A 2.5K resistor is built-in.
+You can also add an external power LED. Be ware of polarity. **No need for external resistors**. A 2.5K resistor is built-in.
 
 ### Power Connection
 
@@ -120,7 +116,7 @@ Observe the voltage on each terminal block.
 
 ![Alt text](photos/rails.jpeg)
 
-Strip the cable, loosen the screw, insert into the hole, and tighten it again.
+Strip the cable, loosen the screw, insert into the hole, and tighten again.
 
 Don't leave conductor exposed! Trim it to prevent shorts.
 
