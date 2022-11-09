@@ -288,16 +288,16 @@
 by exp-lbrs.ulp</description>
 <packages>
 <package name="396_10P">
-<pad name="P$1" x="-19.8" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$3" x="-11.88" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$4" x="-7.92" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$5" x="-3.96" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$6" x="0" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$7" x="3.96" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$8" x="7.92" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$9" x="11.88" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$10" x="15.84" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$11" x="19.8" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
+<pad name="P$1" x="19.8" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$3" x="11.88" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$4" x="7.92" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$5" x="3.96" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$6" x="0" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$7" x="-3.96" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$8" x="-7.92" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$9" x="-11.88" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$10" x="-15.84" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
+<pad name="P$11" x="-19.8" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
 <wire x1="-21.78" y1="4.15" x2="21.78" y2="4.15" width="0.1524" layer="21"/>
 <wire x1="21.78" y1="4.15" x2="21.78" y2="3.896" width="0.1524" layer="21"/>
 <wire x1="21.78" y1="3.896" x2="21.78" y2="3.642" width="0.1524" layer="21"/>
@@ -306,7 +306,7 @@ by exp-lbrs.ulp</description>
 <wire x1="-21.78" y1="3.896" x2="-21.78" y2="3.642" width="0.1524" layer="21"/>
 <wire x1="-21.78" y1="3.642" x2="-21.78" y2="3.388" width="0.1524" layer="21"/>
 <wire x1="-21.78" y1="3.388" x2="-21.78" y2="-5.45" width="0.1524" layer="21"/>
-<wire x1="-21.78" y1="-5.45" x2="21.78" y2="-5.45" width="0.1524" layer="21"/>
+<wire x1="-21.78" y1="-5.45" x2="21.78" y2="-5.45" width="0.1524" layer="51"/>
 <wire x1="21.78" y1="-5.45" x2="21.78" y2="3.388" width="0.1524" layer="21"/>
 <wire x1="-21.78" y1="3.388" x2="21.78" y2="3.388" width="0.4064" layer="21"/>
 <wire x1="-21.78" y1="3.642" x2="21.78" y2="3.642" width="0.4064" layer="21"/>
@@ -394,26 +394,26 @@ by exp-lbrs.ulp</description>
 <rectangle x1="-2" y1="5" x2="2" y2="6" layer="21"/>
 </package>
 <package name="3.96_FEMALE_GAP">
-<pad name="P$1" x="-19.8" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$2" x="-19.8" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$5" x="-11.88" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$6" x="-11.88" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$7" x="-7.92" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$8" x="-7.92" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$9" x="-3.96" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$10" x="-3.96" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$11" x="0" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$12" x="0" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$13" x="3.96" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$14" x="3.96" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$15" x="7.92" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$16" x="7.92" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$17" x="11.88" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$18" x="11.88" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$19" x="15.84" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$20" x="15.84" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$21" x="19.8" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$22" x="19.8" y="-1.25" drill="1.5" thermals="no"/>
+<pad name="P$1" x="19.8" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$2" x="19.8" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$5" x="11.88" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$6" x="11.88" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$7" x="7.92" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$8" x="7.92" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$9" x="3.96" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$10" x="3.96" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$11" x="0" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$12" x="0" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$13" x="-3.96" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$14" x="-3.96" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$15" x="-7.92" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$16" x="-7.92" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$17" x="-11.88" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$18" x="-11.88" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$19" x="-15.84" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$20" x="-15.84" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$21" x="-19.8" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$22" x="-19.8" y="1.25" drill="1.5" rot="R180" thermals="no"/>
 <wire x1="-22.205" y1="2.5" x2="22.205" y2="2.5" width="0.254" layer="21"/>
 <wire x1="-22.205" y1="-2.5" x2="22.205" y2="-2.5" width="0.254" layer="21"/>
 <wire x1="-22.205" y1="-2.5" x2="-22.205" y2="2.5" width="0.254" layer="21"/>
@@ -1094,6 +1094,8 @@ by exp-lbrs.ulp</description>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1160,6 +1162,13 @@ by exp-lbrs.ulp</description>
 <instance part="P+6" gate="1" x="25.4" y="101.6" smashed="yes">
 <attribute name="VALUE" x="22.86" y="96.52" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="JP3" gate="G$1" x="165.1" y="78.74" smashed="yes">
+<attribute name="NAME" x="158.75" y="84.455" size="1.778" layer="95"/>
+<attribute name="VALUE" x="158.75" y="73.66" size="1.778" layer="96"/>
+</instance>
+<instance part="GND5" gate="1" x="177.8" y="73.66" smashed="yes">
+<attribute name="VALUE" x="175.26" y="71.12" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1197,6 +1206,9 @@ by exp-lbrs.ulp</description>
 <pinref part="U$1" gate="G$1" pin="11_VBATT"/>
 <pinref part="U$3" gate="G$1" pin="11_VBATT"/>
 <wire x1="43.18" y1="81.28" x2="116.84" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="G$1" pin="1"/>
+<wire x1="116.84" y1="81.28" x2="162.56" y2="81.28" width="0.1524" layer="91"/>
+<junction x="116.84" y="81.28"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1262,6 +1274,12 @@ by exp-lbrs.ulp</description>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="-17.78" y1="99.06" x2="-27.94" y2="99.06" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="JP3" gate="G$1" pin="2"/>
+<wire x1="177.8" y1="76.2" x2="177.8" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="78.74" x2="162.56" y2="78.74" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="-12V" class="0">
 <segment>
@@ -1293,10 +1311,6 @@ by exp-lbrs.ulp</description>
 <wire x1="81.28" y1="185.42" x2="68.58" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="185.42" x2="68.58" y2="187.96" width="0.1524" layer="91"/>
 <junction x="68.58" y="187.96"/>
-<pinref part="J1" gate="G$1" pin="5V@0"/>
-<wire x1="81.28" y1="182.88" x2="68.58" y2="182.88" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="182.88" x2="68.58" y2="185.42" width="0.1524" layer="91"/>
-<junction x="68.58" y="185.42"/>
 <pinref part="U$8" gate="G$1" pin="B0"/>
 <pinref part="U$8" gate="G$1" pin="B1"/>
 <wire x1="53.594" y1="189.23" x2="53.594" y2="186.69" width="0.1524" layer="91"/>

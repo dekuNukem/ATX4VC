@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="3.96" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -717,26 +717,26 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="22.205" y1="-2.5" x2="22.205" y2="2.5" width="0.254" layer="21"/>
 </package>
 <package name="3.96_FEMALE_GAP">
-<pad name="P$1" x="-19.8" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$2" x="-19.8" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$5" x="-11.88" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$6" x="-11.88" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$7" x="-7.92" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$8" x="-7.92" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$9" x="-3.96" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$10" x="-3.96" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$11" x="0" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$12" x="0" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$13" x="3.96" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$14" x="3.96" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$15" x="7.92" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$16" x="7.92" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$17" x="11.88" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$18" x="11.88" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$19" x="15.84" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$20" x="15.84" y="-1.25" drill="1.5" thermals="no"/>
-<pad name="P$21" x="19.8" y="1.25" drill="1.5" thermals="no"/>
-<pad name="P$22" x="19.8" y="-1.25" drill="1.5" thermals="no"/>
+<pad name="P$1" x="19.8" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$2" x="19.8" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$5" x="11.88" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$6" x="11.88" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$7" x="7.92" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$8" x="7.92" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$9" x="3.96" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$10" x="3.96" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$11" x="0" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$12" x="0" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$13" x="-3.96" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$14" x="-3.96" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$15" x="-7.92" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$16" x="-7.92" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$17" x="-11.88" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$18" x="-11.88" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$19" x="-15.84" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$20" x="-15.84" y="1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$21" x="-19.8" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
+<pad name="P$22" x="-19.8" y="1.25" drill="1.5" rot="R180" thermals="no"/>
 <wire x1="-22.205" y1="2.5" x2="22.205" y2="2.5" width="0.254" layer="21"/>
 <wire x1="-22.205" y1="-2.5" x2="22.205" y2="-2.5" width="0.254" layer="21"/>
 <wire x1="-22.205" y1="-2.5" x2="-22.205" y2="2.5" width="0.254" layer="21"/>
