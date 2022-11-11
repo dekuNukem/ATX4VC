@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -754,6 +754,16 @@ MAX3223-MAX3243.pdf</description>
 <smd name="P$9" x="-4.2" y="0" dx="3" dy="2" layer="1" rot="R90" thermals="no"/>
 <smd name="P$10" x="-8.4" y="0" dx="3" dy="2" layer="1" rot="R90" thermals="no"/>
 </package>
+<package name="ROCK_SWITCH">
+<pad name="P$1" x="-4.7" y="0" drill="1.5" shape="long"/>
+<pad name="P$2" x="5.3" y="0" drill="1.5" shape="long"/>
+<pad name="P$3" x="-4.7" y="4.7" drill="1.5" shape="long"/>
+<pad name="P$4" x="5.3" y="4.7" drill="1.5" shape="long"/>
+<wire x1="-10.5" y1="0" x2="-10.5" y2="24.5" width="0.1524" layer="21"/>
+<wire x1="10.5" y1="0" x2="10.5" y2="24.5" width="0.1524" layer="21"/>
+<wire x1="-10.5156" y1="24.5364" x2="10.5156" y2="24.5364" width="0.1524" layer="21"/>
+<wire x1="-10.5156" y1="22.5" x2="10.5156" y2="22.5" width="0.1524" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="342_SWITCH_SYM">
@@ -1076,6 +1086,16 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="-5.08" y1="-25.4" x2="7.62" y2="-25.4" width="0.1524" layer="94"/>
 <wire x1="7.62" y1="-25.4" x2="7.62" y2="25.4" width="0.1524" layer="94"/>
 <wire x1="7.62" y1="25.4" x2="-5.08" y2="25.4" width="0.1524" layer="94"/>
+</symbol>
+<symbol name="ROCK">
+<pin name="P$1" x="-10.16" y="-2.54" length="middle"/>
+<pin name="P$2" x="12.7" y="-2.54" length="middle" rot="R180"/>
+<pin name="P$3" x="-10.16" y="5.08" length="middle"/>
+<pin name="P$4" x="12.7" y="5.08" length="middle" rot="R180"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="7.62" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="-5.08" y2="7.62" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1713,6 +1733,24 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <connect gate="G$1" pin="P$7" pad="P$7"/>
 <connect gate="G$1" pin="P$8" pad="P$8"/>
 <connect gate="G$1" pin="P$9" pad="P$9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ROCK_SW">
+<gates>
+<gate name="G$1" symbol="ROCK" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="ROCK_SWITCH">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
 </connects>
 <technologies>
 <technology name=""/>
