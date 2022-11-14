@@ -30,7 +30,7 @@ ATX4VC can be used to:
 
 ## Showcase
 
-[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC (seen lower right) powers a BBC Micro with +5V and -5V using a full-size ATX PSU.
+[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC (seen lower right) powers a BBC Micro with +5 and -5V using a full-size ATX PSU.
 
 ![Alt text](photos/rgbeeb.jpeg)
 
@@ -46,15 +46,15 @@ I even took it to a coffee shop and wrote most of this very document! But that's
 
 You can also just use it as a multi-voltage bench PSU for testing and diagnostics.
 
-Here it powers a Macintosh Plus motherboard with +12V, +5V, and -12V.
+Here it powers a Macintosh Plus motherboard with +12, +5, and -12V.
 
 ![Alt text](photos/mac.jpeg)
 
 ## Why / Project Goals
 
-Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, runs hot, and (slightly) explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
+Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, hot, and (slightly) explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
 
-ATX4VC is designed to replace them with much more reliable modern ATX power supplies, and as a tool to help test and diagnose vintage computers. 
+ATX4VC is designed to replace them with much more reliable modern ATX PSUs, and help test and diagnose vintage computers.
 
 ## Table of Contents
 
@@ -98,13 +98,13 @@ ATX4VC is designed to replace them with much more reliable modern ATX power supp
 
 ![Alt text](photos/start.jpeg)
 
-The PSU should turn on, and all voltage rail LEDs should light up. 
+The PSU should turn on, all voltage rail LEDs should light up. 
 
 That's the gist of it! But **please do keep reading** for the complete info.
 
 ### Power Button and Power LED
 
-You can use the built-in power button, or connect an additional button to the header.
+You can use the built-in power button, or connect an external button to the header.
 
 ![Alt text](photos/pwrheader.jpeg)
 
@@ -144,7 +144,7 @@ Once powered up:
 
 * Check voltage readings on each rail
 
-Remember that ATX4VC **DOES NOT** monitor or condition PSU voltage outputs, so make sure the PSU itself is trustworthy.
+Remember that ATX4VC **DOES NOT** monitor or condition PSU voltage outputs, so make sure the PSU itself is of good quality and trustworthy!
 
 ### Current Limit
 
@@ -200,7 +200,9 @@ Speed control only available on 4-Pin fans. 3-Pin fan will always run at full sp
 
 ATX4VC supports the DS18B20 temperature sensor. They are inexpensive and very popular in Arduino projects.
 
-Beware of counterfeits! Best to get them from a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050) or [Adafruit](https://www.adafruit.com/product/381).
+The cheap ones on ebay are almost certainly counterfeits! They'll still work, but readings are noisier and less accurate.
+
+Try a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050), [Adafruit](https://www.adafruit.com/product/381), Mouser, or Digikey.
 
 Connect the headers. Usually VCC is red, GND is black, DATA is yellow.
 
