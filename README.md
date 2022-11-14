@@ -36,7 +36,7 @@ ATX4VC can be used to:
 
 But of course, a **pico ATX PSU** makes more sense due to its compact size. 
 
-Here it replaces the failed PSU in my Osborne 1, providing +12V and +5V.
+Here it replaces the failed PSU in my Osborne 1, providing +12 and +5V.
 
 ![Alt text](photos/os1.jpeg)
 
