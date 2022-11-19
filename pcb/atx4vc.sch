@@ -3968,6 +3968,7 @@ by exp-lbrs.ulp</description>
 <part name="R21" library="atx_power_control" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
 <part name="GND41" library="backplane" deviceset="GND" device=""/>
 <part name="R22" library="atx_power_control" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
+<part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4384,6 +4385,9 @@ by exp-lbrs.ulp</description>
 <instance part="R22" gate="G$1" x="312.42" y="73.66" smashed="yes" rot="R270">
 <attribute name="NAME" x="313.9186" y="77.47" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="309.118" y="77.47" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="SUPPLY3" gate="G$1" x="-50.8" y="101.6" smashed="yes">
+<attribute name="VALUE" x="-52.705" y="104.775" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -4865,6 +4869,11 @@ by exp-lbrs.ulp</description>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
 <wire x1="-86.36" y1="160.02" x2="-86.36" y2="154.94" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="JP15" gate="A" pin="2"/>
+<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
+<wire x1="-58.42" y1="99.06" x2="-50.8" y2="99.06" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -5176,6 +5185,12 @@ by exp-lbrs.ulp</description>
 <wire x1="254" y1="-43.18" x2="254" y2="-78.74" width="0.1524" layer="91"/>
 <wire x1="254" y1="-78.74" x2="-76.2" y2="-78.74" width="0.1524" layer="91"/>
 <wire x1="-76.2" y1="-78.74" x2="-76.2" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="-76.2" y1="17.78" x2="-76.2" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="-76.2" y1="88.9" x2="-86.36" y2="88.9" width="0.1524" layer="91"/>
+<junction x="-76.2" y="17.78"/>
+<wire x1="-86.36" y1="88.9" x2="-86.36" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="JP15" gate="A" pin="1"/>
+<wire x1="-86.36" y1="99.06" x2="-66.04" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$30" class="0">
