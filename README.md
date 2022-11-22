@@ -116,9 +116,9 @@ Observe the voltage on each terminal block.
 
 ![Alt text](photos/rails.jpeg)
 
-Strip the cable, loosen the screw, insert into the hole, and tighten again.
+Strip the cable, loosen the screw, insert into the hole, **hold the terminal block steady with your finger** and tighten it back up.
 
-Don't leave conductor exposed! Trim it to prevent shorts.
+Don't leave conductor exposed to prevent shorts.
 
 ![Alt text](photos/terminal.jpeg)
 

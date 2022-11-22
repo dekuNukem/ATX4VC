@@ -19,7 +19,7 @@ moved on-board power button
 adjusted silkscreen
 removed pots and added buttons and headers instead
 added restrict over 7905
-added USB-C connecter for ARGB
+added USB-C connector for ARGB
 
 PT4
 removed copper pour near terminals
@@ -60,3 +60,10 @@ PD1 V2
 made more space for 2nd ARGB header
 changed amp rating silkscreen
 moved soft power and hard power silkscreen back to top
+
+PD2
+
+added additional 3.69mm power connector
+moved power rail LED to the side
+added fuse blow detect with 74lvc chip
+rearranged components
