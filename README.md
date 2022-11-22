@@ -6,17 +6,17 @@ ATX4VC is an all-in-one controller for **using ATX power supply on vintage compu
 
 ![Alt text](photos/title.jpeg)
 
-ATX4VC combines many convenient features in one place:
+It has:
 
-* All common voltages: +12V, +5V, +3.3V, -5V, -12V. Fused.
+* All common voltages: +12V, +5V, +3.3V, -5V, -12V. 
 
 * Power button and power LED headers
 
-* Two 4-pin **PWM fan** headers. Manual fan speed or via **temperature probe**.
+* 4-pin **PWM fan** headers. Manual fan speed control or via **temperature probe**.
 
-* Two **Addressable RGB**(ARGB) headers
+* **Addressable RGB**(ARGB) headers
 
-* Two **USB-C** ports for power output and firmware update
+* **USB-C** power output and firmware update
 
 ATX4VC can be used to:
 
