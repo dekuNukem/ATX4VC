@@ -8,7 +8,7 @@ ATX4VC is an all-in-one controller for **using ATX power supply on vintage compu
 
 It has:
 
-* All common voltages: +12V, +5V, +3.3V, -5V, -12V. 
+* All common voltages in one place: +12V, +5V, +3.3V, -5V, -12V. 
 
 * Power button and power LED headers
 
@@ -40,7 +40,7 @@ Here it replaces the failed PSU in my Osborne 1, providing +12 and +5V.
 
 ![Alt text](photos/os1.jpeg)
 
-I even took it to a coffee shop and wrote most of this very document! But that's the story for another day.
+I even took it to a coffee shop and wrote most of this very document! But that's for another day.
 
 ![Alt text](photos/coffee.jpeg)
 
@@ -116,9 +116,15 @@ Observe the voltage on each terminal block.
 
 ![Alt text](photos/rails.jpeg)
 
-Strip the cable, loosen the screw, insert into the hole, **hold the terminal block steady with your finger** and tighten it back up.
+* Strip the cable
 
-Don't leave conductor exposed to prevent shorts.
+* Loosen screw
+
+* Insert into hole
+
+* **hold the terminal block steady with your finger** while tightening it back up
+
+* Don't leave conductor exposed to prevent shorts.
 
 ![Alt text](photos/terminal.jpeg)
 
