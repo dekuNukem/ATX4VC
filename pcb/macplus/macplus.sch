@@ -363,35 +363,35 @@ by exp-lbrs.ulp</description>
 by exp-lbrs.ulp</description>
 <packages>
 <package name="ATX24_STRAIGHT">
-<pad name="1" x="23.1" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="2" x="18.9" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="3" x="14.7" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="4" x="10.5" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="5" x="6.3" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="6" x="2.1" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="7" x="-2.1" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="8" x="-6.3" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="9" x="-10.5" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="10" x="-14.7" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="11" x="-18.9" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="12" x="-23.1" y="-2.7" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="13" x="23.1" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="14" x="18.9" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="15" x="14.7" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="16" x="10.5" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="17" x="6.3" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="18" x="2.1" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="19" x="-2.1" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="20" x="-6.3" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="21" x="-10.5" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="22" x="-14.7" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="23" x="-18.9" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<pad name="24" x="-23.1" y="2.8" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
-<wire x1="-25.8" y1="5" x2="25.8" y2="5" width="0.254" layer="21"/>
-<wire x1="-25.8" y1="-5" x2="25.8" y2="-5" width="0.254" layer="21"/>
-<wire x1="-25.8" y1="5" x2="-25.8" y2="-5" width="0.254" layer="21"/>
-<wire x1="25.8" y1="5" x2="25.8" y2="-5" width="0.254" layer="21"/>
-<rectangle x1="-2" y1="5" x2="2" y2="6" layer="21"/>
+<pad name="1" x="23.1" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="2" x="18.9" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="3" x="14.7" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="4" x="10.5" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="5" x="6.3" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="6" x="2.1" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="7" x="-2.1" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="8" x="-6.3" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="9" x="-10.5" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="10" x="-14.7" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="11" x="-18.9" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="12" x="-23.1" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="13" x="23.1" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="14" x="18.9" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="15" x="14.7" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="16" x="10.5" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="17" x="6.3" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="18" x="2.1" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="19" x="-2.1" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="20" x="-6.3" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="21" x="-10.5" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="22" x="-14.7" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="23" x="-18.9" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="24" x="-23.1" y="2.1" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<wire x1="-25.8" y1="4.3" x2="25.8" y2="4.3" width="0.254" layer="21"/>
+<wire x1="-25.8" y1="-4.35" x2="25.8" y2="-4.35" width="0.254" layer="21"/>
+<wire x1="-25.8" y1="4.3" x2="-25.8" y2="-4.35" width="0.254" layer="21"/>
+<wire x1="25.8" y1="4.3" x2="25.8" y2="-4.35" width="0.254" layer="21"/>
+<rectangle x1="-2" y1="3.284" x2="2" y2="4.284" layer="21"/>
 </package>
 <package name="3.96_FEMALE_GAP">
 <pad name="P$1" x="19.8" y="-1.25" drill="1.5" rot="R180" thermals="no"/>
@@ -832,6 +832,50 @@ by exp-lbrs.ulp</description>
 <description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
+<package name="1X02" urn="urn:adsk.eagle:footprint:22309/1" library_version="4">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+</package>
+<package name="1X02/90" urn="urn:adsk.eagle:footprint:22310/1" library_version="4">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
+<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
+<pad name="1" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<text x="-3.175" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="4.445" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
+<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
+<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
+<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
+</package>
 <package name="1X03" urn="urn:adsk.eagle:footprint:22340/1" library_version="4">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-3.175" y1="1.27" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
@@ -892,64 +936,8 @@ by exp-lbrs.ulp</description>
 <rectangle x1="-0.381" y1="-2.921" x2="0.381" y2="-1.905" layer="21"/>
 <rectangle x1="2.159" y1="-2.921" x2="2.921" y2="-1.905" layer="21"/>
 </package>
-<package name="1X02" urn="urn:adsk.eagle:footprint:22309/1" library_version="4">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.54" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
-<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
-</package>
-<package name="1X02/90" urn="urn:adsk.eagle:footprint:22310/1" library_version="4">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
-<pad name="1" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<text x="-3.175" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="4.445" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
-<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
-<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
-<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
-</package>
 </packages>
 <packages3d>
-<package3d name="1X03" urn="urn:adsk.eagle:package:22458/2" type="model" library_version="4">
-<description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="1X03"/>
-</packageinstances>
-</package3d>
-<package3d name="1X03/90" urn="urn:adsk.eagle:package:22459/2" type="model" library_version="4">
-<description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="1X03/90"/>
-</packageinstances>
-</package3d>
 <package3d name="1X02" urn="urn:adsk.eagle:package:22435/2" type="model" library_version="4">
 <description>PIN HEADER</description>
 <packageinstances>
@@ -962,8 +950,30 @@ by exp-lbrs.ulp</description>
 <packageinstance name="1X02/90"/>
 </packageinstances>
 </package3d>
+<package3d name="1X03" urn="urn:adsk.eagle:package:22458/2" type="model" library_version="4">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X03"/>
+</packageinstances>
+</package3d>
+<package3d name="1X03/90" urn="urn:adsk.eagle:package:22459/2" type="model" library_version="4">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X03/90"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
+<symbol name="PINHD2" urn="urn:adsk.eagle:symbol:22308/1" library_version="4">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
+<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
 <symbol name="PINHD3" urn="urn:adsk.eagle:symbol:22339/1" library_version="4">
 <wire x1="-6.35" y1="-5.08" x2="1.27" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="1.27" y1="-5.08" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
@@ -975,18 +985,44 @@ by exp-lbrs.ulp</description>
 <pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="3" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
 </symbol>
-<symbol name="PINHD2" urn="urn:adsk.eagle:symbol:22308/1" library_version="4">
-<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
-<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
 </symbols>
 <devicesets>
+<deviceset name="PINHD-1X2" urn="urn:adsk.eagle:component:22516/4" prefix="JP" uservalue="yes" library_version="4">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X02">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22435/2"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="POPULARITY" value="98" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="/90" package="1X02/90">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22437/2"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="POPULARITY" value="24" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="PINHD-1X3" urn="urn:adsk.eagle:component:22524/4" prefix="JP" uservalue="yes" library_version="4">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <gates>
@@ -1025,42 +1061,6 @@ by exp-lbrs.ulp</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PINHD-1X2" urn="urn:adsk.eagle:component:22516/4" prefix="JP" uservalue="yes" library_version="4">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X02">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:22435/2"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="POPULARITY" value="98" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="/90" package="1X02/90">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:22437/2"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="POPULARITY" value="24" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -1084,7 +1084,6 @@ by exp-lbrs.ulp</description>
 <part name="JP4" library="atx_power_control" deviceset="PINHD-1X4" device=""/>
 <part name="U$8" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
 <part name="U$2" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
-<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
@@ -1096,6 +1095,7 @@ by exp-lbrs.ulp</description>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
 </parts>
 <sheets>
 <sheet>
@@ -1130,10 +1130,6 @@ by exp-lbrs.ulp</description>
 </instance>
 <instance part="U$8" gate="G$1" x="38.1" y="187.96" smashed="yes"/>
 <instance part="U$2" gate="G$1" x="154.94" y="175.26" smashed="yes"/>
-<instance part="JP1" gate="A" x="5.08" y="101.6" smashed="yes">
-<attribute name="NAME" x="-1.27" y="107.315" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-1.27" y="93.98" size="1.778" layer="96"/>
-</instance>
 <instance part="JP2" gate="G$1" x="180.34" y="160.02" smashed="yes">
 <attribute name="NAME" x="173.99" y="165.735" size="1.778" layer="95"/>
 <attribute name="VALUE" x="173.99" y="154.94" size="1.778" layer="96"/>
@@ -1156,11 +1152,11 @@ by exp-lbrs.ulp</description>
 <instance part="GND4" gate="1" x="-27.94" y="96.52" smashed="yes">
 <attribute name="VALUE" x="-30.48" y="93.98" size="1.778" layer="96"/>
 </instance>
-<instance part="P+5" gate="1" x="15.24" y="106.68" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="17.78" y="101.6" size="1.778" layer="96" rot="MR90"/>
+<instance part="P+5" gate="1" x="17.78" y="101.6" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="20.32" y="96.52" size="1.778" layer="96" rot="MR90"/>
 </instance>
-<instance part="P+6" gate="1" x="25.4" y="101.6" smashed="yes">
-<attribute name="VALUE" x="22.86" y="96.52" size="1.778" layer="96" rot="R90"/>
+<instance part="P+6" gate="1" x="12.7" y="106.68" smashed="yes">
+<attribute name="VALUE" x="10.16" y="101.6" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="JP3" gate="G$1" x="165.1" y="78.74" smashed="yes">
 <attribute name="NAME" x="158.75" y="84.455" size="1.778" layer="95"/>
@@ -1168,6 +1164,10 @@ by exp-lbrs.ulp</description>
 </instance>
 <instance part="GND5" gate="1" x="177.8" y="73.66" smashed="yes">
 <attribute name="VALUE" x="175.26" y="71.12" size="1.778" layer="96"/>
+</instance>
+<instance part="JP1" gate="A" x="5.08" y="101.6" smashed="yes">
+<attribute name="NAME" x="-1.27" y="107.315" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-1.27" y="93.98" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -1338,9 +1338,9 @@ by exp-lbrs.ulp</description>
 <junction x="116.84" y="106.68"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="JP1" gate="A" pin="1"/>
 <pinref part="P+6" gate="1" pin="+5V"/>
-<wire x1="2.54" y1="99.06" x2="25.4" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="104.14" x2="12.7" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -1379,8 +1379,8 @@ by exp-lbrs.ulp</description>
 </segment>
 <segment>
 <pinref part="P+5" gate="1" pin="+12V"/>
-<pinref part="JP1" gate="A" pin="1"/>
-<wire x1="15.24" y1="104.14" x2="2.54" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="A" pin="3"/>
+<wire x1="17.78" y1="99.06" x2="2.54" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -1395,9 +1395,9 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
 <pinref part="JP4" gate="A" pin="3"/>
-<wire x1="2.54" y1="101.6" x2="-17.78" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="A" pin="2"/>
+<wire x1="-17.78" y1="101.6" x2="2.54" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
