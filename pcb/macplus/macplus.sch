@@ -300,9 +300,9 @@ by exp-lbrs.ulp</description>
 <pad name="P$11" x="-19.8" y="0" drill="1.5" shape="long" rot="R270" thermals="no"/>
 <wire x1="21.78" y1="4.15" x2="21.78" y2="3.896" width="0.1524" layer="21"/>
 <wire x1="-21.78" y1="4.15" x2="-21.78" y2="3.896" width="0.1524" layer="21"/>
-<wire x1="-21.78" y1="3.896" x2="-21.78" y2="-5.45" width="0.1524" layer="21"/>
-<wire x1="-21.78" y1="-5.45" x2="21.78" y2="-5.45" width="0.1524" layer="21"/>
-<wire x1="21.78" y1="-5.45" x2="21.78" y2="3.896" width="0.1524" layer="21"/>
+<wire x1="-21.78" y1="3.896" x2="-21.78" y2="-5.45" width="0.254" layer="21"/>
+<wire x1="-21.78" y1="-5.45" x2="21.78" y2="-5.45" width="0.254" layer="21"/>
+<wire x1="21.78" y1="-5.45" x2="21.78" y2="3.896" width="0.254" layer="21"/>
 <wire x1="-21.78" y1="3.896" x2="21.78" y2="3.896" width="1.016" layer="21"/>
 </package>
 </packages>
