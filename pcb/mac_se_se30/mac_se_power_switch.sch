@@ -497,10 +497,10 @@ by exp-lbrs.ulp</description>
 by exp-lbrs.ulp</description>
 <packages>
 <package name="ROCK_SWITCH">
-<pad name="P$1" x="-4.7" y="0" drill="1.5" shape="long"/>
-<pad name="P$2" x="5.3" y="0" drill="1.5" shape="long"/>
-<pad name="P$3" x="-4.7" y="4.7" drill="1.5" shape="long"/>
-<pad name="P$4" x="5.3" y="4.7" drill="1.5" shape="long"/>
+<pad name="P$1" x="-4.7" y="0" drill="1.7" shape="long"/>
+<pad name="P$2" x="5.3" y="0" drill="1.7" shape="long"/>
+<pad name="P$3" x="-4.7" y="5" drill="1.7" shape="long"/>
+<pad name="P$4" x="5.3" y="5" drill="1.7" shape="long"/>
 <wire x1="-10.5" y1="0" x2="-10.5" y2="24.5" width="0.1524" layer="21"/>
 <wire x1="10.5" y1="0" x2="10.5" y2="24.5" width="0.1524" layer="21"/>
 <wire x1="-10.5156" y1="24.5364" x2="10.5156" y2="24.5364" width="0.1524" layer="21"/>

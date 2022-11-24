@@ -30,7 +30,7 @@
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
@@ -201,7 +201,7 @@
 <text x="8.382" y="27.6398" size="1.27" layer="25" rot="R180" align="center">12V</text>
 <text x="30.099" y="17.526" size="1.778" layer="26" distance="35" rot="MR180" align="center">Macintosh 128K/512K/Plus ATX Adaptor</text>
 <text x="48.641" y="25.4" size="1.4224" layer="26" distance="30" rot="MR90" align="center">dekuNukem
-PT2 Nov22</text>
+PD1 Nov22</text>
 <text x="28.956" y="4.191" size="1.27" layer="25" distance="30" rot="R180" align="center">LATCH TOWARDS EDGE</text>
 <text x="9.3518" y="30.226" size="1.27" layer="25" rot="R90" align="center">BAT</text>
 <text x="2.5862" y="29.845" size="1.27" layer="25" rot="R270" align="center">GND</text>
@@ -221,11 +221,12 @@ PT2 Nov22</text>
 <wire x1="6.096" y1="17.78" x2="1.016" y2="17.78" width="0.254" layer="21"/>
 <wire x1="6.096" y1="27.94" x2="6.096" y2="25.654" width="0.254" layer="21"/>
 <wire x1="6.096" y1="25.4" x2="6.096" y2="18.034" width="0.8128" layer="21"/>
-<text x="44.577" y="12.446" size="1.4224" layer="26" distance="30" rot="MR180" align="center">Instructions:
+<text x="44.577" y="12.446" size="1.4224" layer="26" distance="30" rot="MR180" align="center">Instructions
 atx4vc.com</text>
 <text x="52.07" y="8.2088" size="2.1844" layer="26" rot="R180" align="center">+</text>
 <text x="23.368" y="12.446" size="1.9304" layer="26" distance="30" rot="MR0" align="center">FUSE
 5A MAX</text>
+<text x="12.4922" y="12.192" size="1.27" layer="25" rot="R270" align="center">PWR SW</text>
 </plain>
 <libraries>
 <library name="396_conn">
@@ -733,9 +734,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 </element>
 <element name="U$8" library="atx_power_control" package="FUSE_HOLDER_3IN1" value="CAR_FUSE_HOLDER3IN1" x="23.368" y="12.446" smashed="yes" rot="R180"/>
 <element name="U$2" library="atx_power_control" package="FUSE_HOLDER_3IN1" value="CAR_FUSE_HOLDER3IN1" x="44.577" y="12.446" smashed="yes"/>
-<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="10.578" y="12.286" smashed="yes" rot="R90">
-<attribute name="POPULARITY" value="98" x="10.578" y="12.286" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="13.753" y="9.746" size="1.27" layer="27" rot="R90"/>
+<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="10.197" y="12.286" smashed="yes" rot="R90">
+<attribute name="POPULARITY" value="98" x="10.197" y="12.286" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="13.372" y="9.746" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="6.0706" y="30.2006" smashed="yes" rot="R180">
 <attribute name="POPULARITY" value="98" x="6.0706" y="30.2006" size="0.6096" layer="27" rot="R180" display="off"/>
@@ -932,9 +933,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="J7" pad="1"/>
 <contactref element="JP2" pad="1"/>
 <wire x1="4.547" y1="11.143" x2="4.674" y2="11.016" width="0.254" layer="1"/>
-<wire x1="10.578" y1="11.016" x2="4.674" y2="11.016" width="0.254" layer="1"/>
-<wire x1="10.578" y1="11.016" x2="9.9568" y2="10.3948" width="0.254" layer="1"/>
-<wire x1="9.9568" y1="10.3948" x2="9.9568" y2="4.7752" width="0.254" layer="1"/>
+<wire x1="10.197" y1="11.016" x2="4.674" y2="11.016" width="0.254" layer="1"/>
+<wire x1="10.197" y1="11.016" x2="9.9568" y2="10.7758" width="0.254" layer="1"/>
+<wire x1="9.9568" y1="10.7758" x2="9.9568" y2="4.7752" width="0.254" layer="1"/>
 <wire x1="9.9568" y1="4.7752" x2="10.4902" y2="4.2418" width="0.254" layer="1"/>
 <wire x1="14.1422" y1="4.2418" x2="16.246" y2="2.138" width="0.254" layer="1"/>
 <wire x1="10.4902" y1="4.2418" x2="14.1422" y2="4.2418" width="0.254" layer="1"/>

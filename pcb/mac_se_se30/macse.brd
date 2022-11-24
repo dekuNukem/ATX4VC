@@ -203,7 +203,7 @@
 <text x="41.129" y="29.826" size="1.778" layer="25" align="center">G</text>
 <text x="26.393" y="29.905" size="1.778" layer="25" align="center">5</text>
 <text x="26.003" y="9.567" size="1.9304" layer="26" distance="35" rot="MR0" align="center">Macintosh SE ATX Adaptor</text>
-<text x="26.051" y="6.886" size="1.4224" layer="26" distance="30" rot="MR0" align="center">PT1 dekuNukem Nov 2022</text>
+<text x="26.051" y="6.886" size="1.4224" layer="26" distance="30" rot="MR0" align="center">PD1 dekuNukem Nov 2022</text>
 <wire x1="22.225" y1="37.846" x2="22.225" y2="31.496" width="0.254" layer="21"/>
 <wire x1="22.86" y1="31.496" x2="29.972" y2="31.496" width="1.016" layer="21"/>
 <wire x1="33.274" y1="37.846" x2="33.274" y2="31.496" width="0.254" layer="21"/>
@@ -773,9 +773,10 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="6.976" y1="31.307" x2="6.976" y2="34.987" width="2.794" layer="1"/>
 <wire x1="8.3618" y1="37.3888" x2="6.976" y2="36.003" width="0.6096" layer="1"/>
 <wire x1="6.976" y1="34.987" x2="6.976" y2="36.003" width="0.6096" layer="1"/>
-<wire x1="8.3618" y1="37.3888" x2="26.416" y2="37.3888" width="0.6096" layer="1"/>
+<wire x1="8.3618" y1="37.3888" x2="25.4" y2="37.3888" width="0.6096" layer="1"/>
 <contactref element="JP3" pad="3"/>
-<wire x1="26.416" y1="37.3888" x2="26.416" y2="33.782" width="0.6096" layer="1"/>
+<wire x1="25.4" y1="37.3888" x2="26.416" y2="36.3728" width="0.6096" layer="1"/>
+<wire x1="26.416" y1="36.3728" x2="26.416" y2="33.782" width="0.6096" layer="1"/>
 </signal>
 <signal name="-12V">
 <contactref element="U$1" pad="6"/>
