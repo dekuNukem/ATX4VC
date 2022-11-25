@@ -216,9 +216,9 @@
 <text x="53.467" y="24.003" size="2.1844" layer="25" distance="35" align="center">+</text>
 <wire x1="74.676" y1="46.736" x2="74.676" y2="39.116" width="1.016" layer="21"/>
 <text x="69.216" y="13.325" size="1.016" layer="25" distance="35" rot="R315" align="center">min 1uF</text>
-<text x="4.183" y="43.907" size="1.778" layer="25" rot="R270" align="center">GND</text>
+<text x="1.389" y="39.843" size="1.778" layer="25" rot="R270" align="center">GND</text>
 <text x="8.417" y="30.599" size="1.778" layer="25" align="center">GND</text>
-<text x="9.009" y="40.605" size="1.778" layer="25" rot="R270" align="center">PS_ON</text>
+<text x="9.263" y="41.113" size="1.778" layer="25" rot="R270" align="center">PS_ON</text>
 <text x="9.687" y="34.409" size="1.778" layer="25" align="center">PS_ON</text>
 </plain>
 <libraries>
