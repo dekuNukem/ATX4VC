@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="yes" active="yes"/>
@@ -825,6 +825,19 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="11.1" y1="4.3" x2="11.1" y2="-4.35" width="0.254" layer="22"/>
 <rectangle x1="-2" y1="3.328" x2="2" y2="4.328" layer="22" rot="R180"/>
 </package>
+<package name="APPLEII">
+<pad name="1" x="4.2" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="2" x="4.2" y="2.15" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="3" x="0" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="4" x="0" y="2.15" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="5" x="-4.2" y="-2.05" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<pad name="6" x="-4.2" y="2.15" drill="1.8" diameter="2.9" rot="R180" thermals="no"/>
+<wire x1="-6.9" y1="4.3" x2="6.9" y2="4.3" width="0.254" layer="21"/>
+<wire x1="-6.9" y1="-4.35" x2="6.9" y2="-4.35" width="0.254" layer="21"/>
+<wire x1="-6.9" y1="4.3" x2="-6.9" y2="-4.35" width="0.254" layer="21"/>
+<wire x1="6.9" y1="4.3" x2="6.9" y2="-4.35" width="0.254" layer="21"/>
+<rectangle x1="-2" y1="-4.336" x2="2" y2="-3.336" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="342_SWITCH_SYM">
@@ -1190,6 +1203,18 @@ MAX3223-MAX3243.pdf</description>
 <pin name="6_2B" x="10.16" y="-2.54" visible="pad" length="middle" direction="pwr" rot="R180"/>
 <pin name="7_1Y" x="10.16" y="2.54" visible="pad" length="middle" direction="pwr" rot="R180"/>
 <pin name="8_VCC" x="10.16" y="7.62" visible="pad" length="middle" direction="pwr" rot="R180"/>
+</symbol>
+<symbol name="APPLEII">
+<pin name="P$1" x="-12.7" y="-5.08" length="middle"/>
+<pin name="P$2" x="12.7" y="-5.08" length="middle" rot="R180"/>
+<pin name="P$3" x="-12.7" y="0" length="middle"/>
+<pin name="P$4" x="12.7" y="0" length="middle" rot="R180"/>
+<pin name="P$5" x="-12.7" y="5.08" length="middle"/>
+<pin name="P$6" x="12.7" y="5.08" length="middle" rot="R180"/>
+<wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="7.62" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="-7.62" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="7.62" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1912,6 +1937,26 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <connect gate="G$1" pin="6_2B" pad="6"/>
 <connect gate="G$1" pin="7_1Y" pad="7"/>
 <connect gate="G$1" pin="8_VCC" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="APPLEII">
+<gates>
+<gate name="G$1" symbol="APPLEII" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="APPLEII">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+<connect gate="G$1" pin="P$3" pad="3"/>
+<connect gate="G$1" pin="P$4" pad="4"/>
+<connect gate="G$1" pin="P$5" pad="5"/>
+<connect gate="G$1" pin="P$6" pad="6"/>
 </connects>
 <technologies>
 <technology name=""/>
