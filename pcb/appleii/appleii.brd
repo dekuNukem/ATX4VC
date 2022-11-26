@@ -212,14 +212,19 @@
 <text x="73.797" y="14.86" size="2.1844" layer="25" distance="35" rot="R45" align="center">+</text>
 <text x="3.947" y="2.16" size="2.1844" layer="25" distance="35" rot="MR0" align="center">+</text>
 <text x="3.947" y="11.05" size="2.1844" layer="25" distance="35" align="center">+</text>
-<text x="41.783" y="24.003" size="2.1844" layer="25" distance="35" align="center">+</text>
-<text x="53.467" y="24.003" size="2.1844" layer="25" distance="35" align="center">+</text>
+<text x="44.069" y="22.987" size="2.1844" layer="25" distance="35" align="center">+</text>
+<text x="55.753" y="22.987" size="2.1844" layer="25" distance="35" align="center">+</text>
 <wire x1="74.676" y1="46.736" x2="74.676" y2="39.116" width="1.016" layer="21"/>
 <text x="69.216" y="13.325" size="1.016" layer="25" distance="35" rot="R315" align="center">min 1uF</text>
 <text x="1.389" y="39.843" size="1.778" layer="25" rot="R270" align="center">GND</text>
 <text x="8.417" y="30.599" size="1.778" layer="25" align="center">GND</text>
 <text x="9.263" y="41.113" size="1.778" layer="25" rot="R270" align="center">PS_ON</text>
 <text x="9.687" y="34.409" size="1.778" layer="25" align="center">PS_ON</text>
+<text x="60.706" y="44.196" size="1.4224" layer="26" distance="35" rot="MR0" align="center">12V
+Center
+Positive</text>
+<text x="68.485" y="44.4842" size="1.27" layer="26" distance="35" rot="MR0" align="center">GND</text>
+<text x="68.485" y="40.9282" size="1.27" layer="26" distance="35" rot="MR0" align="center">12V</text>
 </plain>
 <libraries>
 <library name="atx_power_control">
@@ -1609,22 +1614,6 @@ by exp-lbrs.ulp</description>
 </package>
 </packages>
 </library>
-<library name="396_conn">
-<description>Generated from &lt;b&gt;pmm.sch&lt;/b&gt;&lt;p&gt;
-by exp-lbrs.ulp</description>
-<packages>
-<package name="396_2P">
-<pad name="P$1" x="-1.98" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$2" x="1.98" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<wire x1="-3.98" y1="-4.4" x2="-3.98" y2="3.3" width="0.1524" layer="21"/>
-<wire x1="-3.98" y1="3.3" x2="3.94" y2="3.3" width="0.508" layer="21"/>
-<wire x1="3.94" y1="3.3" x2="3.98" y2="3.3" width="0.1524" layer="21"/>
-<wire x1="-3.98" y1="-4.4" x2="3.94" y2="-4.4" width="0.1524" layer="21"/>
-<wire x1="3.94" y1="-4.4" x2="3.98" y2="-4.4" width="0.1524" layer="21"/>
-<wire x1="3.94" y1="-4.4" x2="3.94" y2="3.3" width="0.1524" layer="21"/>
-</package>
-</packages>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1869,7 +1858,13 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 </element>
 <element name="JP4" library="appleii" package="1X04" value="" x="61.468" y="5.842" smashed="yes" rot="R270"/>
 <element name="JP1" library="appleii" package="1X04" value="" x="69.596" y="5.842" smashed="yes" rot="R270"/>
-<element name="U$7" library="396_conn" package="396_2P" value="VH396_2P" x="72.39" y="42.5958" smashed="yes" rot="R270"/>
+<element name="J3" library="atx_power_control" package="SCREWTERMINAL-3.5MM-2-NS" value="" x="71.374" y="40.894" smashed="yes" rot="R90">
+<attribute name="PROD_ID" value="CONN-13512" x="71.374" y="40.894" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="SF_ID" value="PRT-09918" x="71.374" y="40.894" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="SF_SKU" value="PRT-08432" x="71.374" y="40.894" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="SKU" value="PRT-09914" x="71.374" y="40.894" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="70.104" y="39.624" size="0.6096" layer="27" font="vector" ratio="20" rot="R90"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -1903,7 +1898,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="JP1" pad="1"/>
 <contactref element="J1" pad="GNDBREAK"/>
 <contactref element="J1" pad="GND"/>
-<contactref element="U$7" pad="P$1"/>
+<contactref element="J3" pad="2"/>
 </signal>
 <signal name="+5V">
 <contactref element="U$8" pad="A0"/>
@@ -2046,10 +2041,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 </signal>
 <signal name="N$1">
 <contactref element="J1" pad="PWR"/>
-<contactref element="U$7" pad="P$2"/>
-<wire x1="62.484" y1="33.29" x2="64.532" y2="33.29" width="3.175" layer="16"/>
-<wire x1="71.8578" y1="40.6158" x2="72.39" y2="40.6158" width="3.175" layer="16"/>
-<wire x1="64.532" y1="33.29" x2="71.8578" y2="40.6158" width="3.175" layer="16"/>
+<contactref element="J3" pad="1"/>
+<wire x1="71.374" y1="40.894" x2="63.77" y2="33.29" width="2.54" layer="16"/>
+<wire x1="63.77" y1="33.29" x2="62.484" y2="33.29" width="2.54" layer="16"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

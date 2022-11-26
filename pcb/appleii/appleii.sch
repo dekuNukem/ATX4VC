@@ -12463,50 +12463,6 @@ This is the standard 5.5mm barrel jack for power. The PTH is the most common, pr
 </deviceset>
 </devicesets>
 </library>
-<library name="396_conn">
-<description>Generated from &lt;b&gt;pmm.sch&lt;/b&gt;&lt;p&gt;
-by exp-lbrs.ulp</description>
-<packages>
-<package name="396_2P">
-<pad name="P$1" x="-1.98" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$2" x="1.98" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<wire x1="-3.98" y1="-4.4" x2="-3.98" y2="3.3" width="0.1524" layer="21"/>
-<wire x1="-3.98" y1="3.3" x2="3.94" y2="3.3" width="0.508" layer="21"/>
-<wire x1="3.94" y1="3.3" x2="3.98" y2="3.3" width="0.1524" layer="21"/>
-<wire x1="-3.98" y1="-4.4" x2="3.94" y2="-4.4" width="0.1524" layer="21"/>
-<wire x1="3.94" y1="-4.4" x2="3.98" y2="-4.4" width="0.1524" layer="21"/>
-<wire x1="3.94" y1="-4.4" x2="3.94" y2="3.3" width="0.1524" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="VH396_2P">
-<pin name="P$1" x="-5.08" y="0" length="middle"/>
-<pin name="P$2" x="-5.08" y="-2.54" length="middle"/>
-<wire x1="0" y1="2.54" x2="0" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="0" y1="-5.08" x2="7.62" y2="-5.08" width="0.1524" layer="94"/>
-<wire x1="7.62" y1="-5.08" x2="7.62" y2="2.54" width="0.1524" layer="94"/>
-<wire x1="7.62" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="VH396_2P">
-<gates>
-<gate name="G$1" symbol="VH396_2P" x="-2.54" y="0"/>
-</gates>
-<devices>
-<device name="" package="396_2P">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12559,9 +12515,9 @@ by exp-lbrs.ulp</description>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="JP4" library="appleii" deviceset="4PIN_FAN" device=""/>
 <part name="JP1" library="appleii" deviceset="4PIN_FAN" device=""/>
-<part name="U$7" library="396_conn" deviceset="VH396_2P" device=""/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="J3" library="atx_power_control" deviceset="CONN_02" device="3.5MM-NO_SILK"/>
 </parts>
 <sheets>
 <sheet>
@@ -12685,12 +12641,15 @@ by exp-lbrs.ulp</description>
 </instance>
 <instance part="JP4" gate="A" x="15.24" y="96.52" smashed="yes"/>
 <instance part="JP1" gate="A" x="15.24" y="127" smashed="yes"/>
-<instance part="U$7" gate="G$1" x="187.96" y="144.78" smashed="yes"/>
 <instance part="GND12" gate="1" x="203.2" y="142.24" smashed="yes">
 <attribute name="VALUE" x="200.66" y="139.7" size="1.778" layer="96"/>
 </instance>
 <instance part="GND13" gate="1" x="172.72" y="132.08" smashed="yes">
 <attribute name="VALUE" x="170.18" y="129.54" size="1.778" layer="96"/>
+</instance>
+<instance part="J3" gate="G$1" x="190.5" y="142.24" smashed="yes" rot="R180">
+<attribute name="VALUE" x="193.04" y="147.066" size="1.778" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="193.04" y="136.652" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -12799,11 +12758,10 @@ by exp-lbrs.ulp</description>
 <wire x1="167.64" y1="137.16" x2="172.72" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="137.16" x2="172.72" y2="134.62" width="0.1524" layer="91"/>
 <junction x="167.64" y="137.16"/>
-</segment>
-<segment>
-<pinref part="U$7" gate="G$1" pin="P$1"/>
-<pinref part="GND12" gate="1" pin="GND"/>
-<wire x1="182.88" y1="144.78" x2="203.2" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="J3" gate="G$1" pin="2"/>
+<wire x1="182.88" y1="139.7" x2="182.88" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="137.16" x2="172.72" y2="137.16" width="0.1524" layer="91"/>
+<junction x="172.72" y="137.16"/>
 </segment>
 </net>
 <net name="-12V" class="0">
@@ -12955,7 +12913,7 @@ by exp-lbrs.ulp</description>
 <net name="N$1" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="PWR"/>
-<pinref part="U$7" gate="G$1" pin="P$2"/>
+<pinref part="J3" gate="G$1" pin="1"/>
 <wire x1="167.64" y1="142.24" x2="182.88" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
