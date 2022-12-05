@@ -52,7 +52,7 @@ Couple of things to note:
 
 ### Already assembled?
 
-[Click me to jump to installation](#installation)
+[Click me to jump to next section](#board-information)
 
 ### Required tools
 
@@ -118,16 +118,40 @@ This is optional, but I like to clean off the flux with 90%+ isopropyl alcohol. 
 
 Make sure it is **completely dry** before proceeding.
 
-### Finishing Touches
+## Board Information
 
-Push the fuse into the holder.
+### Connectors
+
+Battery header
+
+Power Switch header and terminal block
+
+4-pin PC fan header
+
+You can run the PC fan at either 5V or 12V. At 12V it will spin at full speed, while 5V will be much quieter.
+
+### Fuse Info
+
+* Use common car fuses RATED **5A OR LESS**
+
+* Regular, Mini, and low-profile Mini all will work. Simply push into the holder.
+
+* **DO NOT BYPASS FUSES**
 
 ## Pre-installation Test
 
-To make sure everything is working, I strongly suggest testing it out before installing.
-
-* Plug in the Pico ATX PSU
+Use a multimeter to check for dead shorts between each voltage pin and GND
 
 
+
+If all good, plug in Pico ATX PSU, and the barrel jack connector.
+
+The PSU should turn on, measure the voltage on each rail and confirm they are correct and within spec, careful with the metal probe to prevent shorts.
 
 ## Installation
+
+You need to take off the back cover to install this board, it's very straightforward, but make sure the computer is unplugged!
+
+During disassembly, it's a good idea to **Take plenty of photos**. It never hurts to have reference.
+
+You'll need a long Torx screwdriver to reach the screw inside the handle. There should be five screws, 

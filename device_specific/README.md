@@ -20,9 +20,13 @@ They are:
 
 ### Macintosh SE/SE30
 
+Coming soon! [Join our Discord](https://discord.gg/T9uuFudg7j) for updates!
+
 [Purchase Link](.) / [Instructions](mac_se.md)
 
 ### Apple II/II Plus/IIe/IIGS
+
+Coming soon! [Join our Discord](https://discord.gg/T9uuFudg7j) for updates!
 
 [Purchase Link](.) / [Instructions](apple_ii.md)
 
