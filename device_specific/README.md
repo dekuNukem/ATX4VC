@@ -1,4 +1,4 @@
-# Device-Specific ATX Adaptor Boards
+# Device-Specific Pico ATX Adaptors
 
 Those boards let you use modern **Pico ATX PSU** in retro computers.
 
@@ -6,19 +6,25 @@ They are:
 
 * Cheaper than the [full-fat ATX4VC](../)
 
-* Easy assembly as through-hole-only kits
-
 * Designed to fit specific machines
 
 * Non-destructive and reversible
 
+* Easy assembly as through-hole-only kits
+
 ## Get one / Instructions
 
-[Click me for **Macintosh 128K/512K/Plus**]
+### Macintosh 128K/512K/Plus
 
-[Click me for **Macintosh SE/SE30**]
+[Purchase Link](.) / [Instructions](og_mac.md)
 
-[Click me for **Apple II/II Plus/IIe/IIGS**]
+### Macintosh SE/SE30
+
+[Purchase Link](.) / [Instructions](mac_se.md)
+
+### Apple II/II Plus/IIe/IIGS
+
+[Purchase Link](.) / [Instructions](apple_ii.md)
 
 ## Get in Touch
 
