@@ -1,7 +1,10 @@
 import sys
 
-text_file = open(sys.argv[1])
-# text_file = open("README.md")
+if len(sys.argv) <= 1:
+	print(__file__, 'text_file')
+	exit()
+
+text_file = open(sys.argv[1], encoding="utf8")
 
 def make_section(text):
 	text = text.lstrip("## ").replace('\r', '').replace('\n', '').strip()
