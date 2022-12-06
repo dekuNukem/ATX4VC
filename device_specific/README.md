@@ -1,6 +1,6 @@
-# Device-Specific Pico ATX Adaptors
+# ATX4VC Pico
 
-Those boards let you use modern **Pico ATX PSU** in retro computers.
+ATX4VC Pico are **device-specific** adaptors let you use modern **Pico ATX PSU** in retro computers.
 
 They are:
 
@@ -16,19 +16,17 @@ They are:
 
 ### Macintosh 128K/512K/Plus
 
-[Purchase Link](.) / [Instructions](og_mac.md)
+* [Purchase Link](.)
+
+* [Instructions](og_mac.md)
 
 ### Macintosh SE/SE30
 
 Coming soon! [Join our Discord](https://discord.gg/T9uuFudg7j) for updates!
 
-[Purchase Link](.) / [Instructions](mac_se.md)
-
 ### Apple II/II Plus/IIe/IIGS
 
 Coming soon! [Join our Discord](https://discord.gg/T9uuFudg7j) for updates!
-
-[Purchase Link](.) / [Instructions](apple_ii.md)
 
 ## Get in Touch
 

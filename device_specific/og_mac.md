@@ -1,6 +1,6 @@
-# Pico ATX Adaptor for Macintosh 128K / 512K / Mac Plus
+# ATX4VC Pico for Macintosh 128K / 512K / Mac Plus
 
-This board lets you use modern **Pico ATX PSU** in OG Macintosh computers.
+This adaptor lets you use modern **Pico ATX PSU** in OG Macintosh computers.
 
 It plugs into the motherboard power connector, and bypasses the unreliable built-in PSU all together.
 
@@ -12,7 +12,7 @@ It plugs into the motherboard power connector, and bypasses the unreliable built
 
 * Cheaper and simpler than recapping
 
-* 4-Pin **PC fan header** for additional cooling
+* **PC fan header** for additional cooling
 
 * **Fused** positive rails
 
@@ -223,7 +223,7 @@ Measure the voltage again, check fuse, and then go through the usual repair step
 
 ### Big Mac Fan
 
-I suggest mounting a fan inside, those early macs run really hot, and a fan would really help in prolonging the lifetime.
+Those early macs run really hot, and putting in a fan would help in prolonging the lifetime.
 
 Any PC fan should work, you can select 5V or 12V, I like to set it to 5V so it's quieter.
 
@@ -233,4 +233,4 @@ Some fans running on 12V might generate interference with CRT, try move it furth
 
 ### Power Cable and Switch
 
-This part is a bit
+I'll admit, this is
