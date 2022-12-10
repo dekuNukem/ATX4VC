@@ -302,13 +302,13 @@ Connect the other end in the same way, and **cover up the original 120/220V powe
 
 Now you just have to plug in the DC jack to turn it on.
 
+There is definitely room for improvements here, so if you come up with anything [let me know](#questions-or-comments) and I'll update it!
+
 A few extra ideas:
 
-* Desolder the original 120/220V power port?
+* Desolder the original 120/220V power port and mount the jack there?
 
 * Maybe wire the original power switch to the terminal block? Not sure if need to cut any traces.
-
-And of course if you come up with better ideas, [let me know](#questions-or-comments) and I'll update it!
 
 ## Troubleshooting
 
