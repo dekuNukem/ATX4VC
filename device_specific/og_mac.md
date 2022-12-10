@@ -26,6 +26,24 @@ Full-fat ATX4VC
 
 USB4VC
 
+## Table of Contents
+
+- [Getting a Pico PSU](#getting-a-pico-psu)
+
+- [Kit Assembly](#kit-assembly)
+
+- [Board Features](#board-features)
+
+- [Pre-installation Checks](#pre-installation-checks)
+
+- [Installation](#installation)
+
+- [Power Routing](#power-routing)
+
+- [Troubleshooting](#troubleshooting)
+
+- [Questions or Comments?](#questions-or-comments)
+
 ## Getting a Pico PSU
 
 PicoPSU are tiny ATX power supplies for small PCs, but perfect for retro computers as well.
@@ -248,7 +266,7 @@ Vents on top of the case is a good location, maybe you can ziptie it there. Of c
 
 **Don't mount the fan too close to the CRT**, or the picture might wobble from the motor's magnetic field.
 
-### Power Cable and Switch
+## Power Routing
 
 Now it works, how are we going to mount the DC jack receptacle?
 
