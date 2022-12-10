@@ -12,7 +12,7 @@ It plugs into the motherboard power connector, and bypasses the unreliable built
 
 * Cheaper and simpler than recapping
 
-* **PC fan header** for adding cooling
+* **PC fan header** for cooling upgrades
 
 * **Fused** positive rails
 
@@ -20,13 +20,13 @@ It plugs into the motherboard power connector, and bypasses the unreliable built
 
 ## Pico ATX PSU
 
-You need one of those. They are tiny ATX power supplies for small form-factor PCs, but are perfect for retro computers as well.
+They are tiny ATX power supplies for small PCs, but perfect for retro computers as well.
 
 * Just search `Pico ATX` on ebay/amazon
 
 * I tried many different brands and they all work fine, but try get one with beefier components.
 
-* Many claim a power output of 160W, which I find highly dubious. Half of that is more realistic, still plenty though.
+* Many claim a power output of 160W, which I find highly dubious. Half of that is probably more realistic, still plenty though.
 
 * They require a power brick with **12V DC** with **center positive** 5.5x2.1mm barrel jacks. Those are very popular and you might already have one. Double check the label.
 
@@ -52,7 +52,7 @@ Nothing too tricky in this kit, all basic through-hole stuff.
 
 If this is your first time, a few tips:
 
-* Make sure your soldering iron has proper **temperature control**, NOT the cheap ones with just a power switch! Those get way too hot and will damage the PCB very easily.
+* Make sure your soldering iron has proper **temperature control**, NOT the cheap ones with just a power switch! They get way too hot and will damage the PCB.
 
 * Use **leaded solder**, much easier to work with.
 
@@ -68,7 +68,7 @@ Note the name of all the parts:
 
 Observe the reference photo and assembly notes:
 
-Insert component, hold it in place with masking tape or sticky putty. Flip it over, solder **a single pin** first, then make sure the part is **straight in all directions**.
+Insert component, hold it in place with masking tape or sticky putty. Flip it over and solder **a single pin** first, then make sure the part is **straight in all directions**.
 
 If not, you can adjust it while melting that single pin. Once happy, solder the rest of the pins.
 
