@@ -264,6 +264,8 @@ Any PC fan should work, you can run it at 12V (full speed) or 5V (quieter).
 
 Vents on top of the case is a good location, maybe you can ziptie it there. Of course it's up to you!
 
+Make sure the fan is secured, nothing touches the blade, and air flow direction is correct.
+
 **Don't mount the fan too close to the CRT**, or the picture might wobble from the motor's magnetic field.
 
 ## Power Routing
