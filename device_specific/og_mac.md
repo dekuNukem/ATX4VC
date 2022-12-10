@@ -2,7 +2,7 @@
 
 This adaptor lets you use modern **Pico ATX PSU** in Macintosh 128K / 512K / Plus computers.
 
-It plugs into the motherboard power connector, and bypasses the unreliable built-in PSU all together.
+It plugs into the motherboard and bypasses the unreliable built-in PSU all together.
 
 ![Alt text](photos/title.jpg)
 
@@ -346,7 +346,7 @@ Other common issues include:
 
 * Dirty contacts / Bad RAMs
 
-I strongly recommend watching [Adrian's Digital Basement Macintosh Repair-a-thon](https://www.youtube.com/watch?v=lKD65I86XGQ), where he covers a lot of those in detail.
+I highly recommend watching [Adrian's Digital Basement Macintosh Repair-a-thon](https://www.youtube.com/watch?v=lKD65I86XGQ), where he covers a lot of those in detail.
 
 The **power connector** and CRT **deflection capacitors** are notorious for cracking, here are some examples on mine:
 
