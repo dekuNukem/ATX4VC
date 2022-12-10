@@ -1,6 +1,6 @@
 # ATX4VC Pico for Macintosh 128K / 512K / Mac Plus
 
-This adaptor lets you use modern **Pico ATX PSU** in OG Macintosh computers.
+This adaptor lets you use modern **Pico ATX PSU** in Macintosh 128K / 512K / Plus computers.
 
 It plugs into the motherboard power connector, and bypasses the unreliable built-in PSU all together.
 
@@ -34,7 +34,7 @@ PicoPSU are tiny ATX power supplies for small PCs, but perfect for retro compute
 
 * [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html). Even the cheapest 80W one should be plenty.
 
-* You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`, they are *not that* cheap, so might as well support the official ones.
+* You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`, they are *not that* cheap, so might as well support the official product.
 
 * A power brick with **12V DC** and **center positive** 5.5x2.1mm barrel jacks is needed.
 
@@ -296,6 +296,30 @@ And of course if you come up with better ideas, [let me know](#questions-or-comm
 
 This adaptor eliminates the PSU from the equation, but that's only part of the puzzle!
 
+If something else is wrong, you still need to fix it.
+
+### Nothing Happens
+
+* Check for shorts on power rails, you can measure it on the analog board after removing the paper insulation.
+
+![Alt text](photos/pinout.png)
+
+* [This document](resources/plus_analog.pdf) is very helpful for finding faults on the analog board.
+
+* Check fuse
+
+### CRT Geometry Messed Up
+
+I had this happen with a knock-off generic PicoPSU, changing to another one fixed it.
+
+### Screen Wobbles
+
+* If it happens when floppy drive is active, try using a beefier power brick, or add more decoupling capacitors.
+
+* If happens while idle, make sure the fan is not too close to the CRT.
+
+### Other Failures
+
 Other common issues include:
 
 * Cracked solder joints
@@ -304,7 +328,7 @@ Other common issues include:
 
 * Dirty contacts / Bad RAMs
 
-I strongly recommend watching [Adrian's Digital Basement Macintosh Repair-a-thon](https://www.youtube.com/watch?v=lKD65I86XGQ), where he covers a lot of those issues in detail.
+I strongly recommend watching [Adrian's Digital Basement Macintosh Repair-a-thon](https://www.youtube.com/watch?v=lKD65I86XGQ), where he covers a lot of those in detail.
 
 The **power connector** and CRT **deflection capacitors** are notorious for cracking, here are some examples on mine:
 
@@ -312,9 +336,9 @@ The **power connector** and CRT **deflection capacitors** are notorious for crac
 
 ![Alt text](photos/crack2.jpeg)
 
-It might be very difficult to see with naked eye, so try use magnification!
+It might be very difficult to see with naked eye, so use magnification!
 
-Flux + new solder should fix it right up, if you find one crack do the whole row.
+Flux + new solder should fix it right up, if you find one crack might as well do the whole row.
 
 ## Questions or Comments?
 
