@@ -34,9 +34,9 @@ PicoPSU are tiny ATX power supplies for small PCs, but perfect for retro compute
 
 * [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html). Even the cheapest 80W one should be plenty.
 
-* You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`, they are *not that* cheap, so might as well support the official product.
+* You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`. They are *not that* cheap, so might as well support the official product.
 
-* A power brick with **12V DC** and **center positive** 5.5x2.1mm barrel jacks is needed.
+* A power brick with **12V DC** and **center positive** 5.5x2.5mm barrel jacks is needed.
 
 * Those are very popular and you might already have one. Make sure it has enough wattage.
 
@@ -70,7 +70,7 @@ If this is your first time, a few tips:
 
 * Set the temperature around 320C / 600F
 
-* Use plenty of additional flux, makes everything much easier. You can clean it off afterwards.
+* Use plenty of flux, makes everything much easier. You can clean it off afterwards.
 
 * [This video](https://www.youtube.com/watch?v=AqvHogekDI4) covers the basics pretty well, you can also watch others by searching `how to solder`.
 
@@ -96,7 +96,7 @@ Insert component, hold it in place with masking tape or sticky putty. Flip it ov
 
 If not, you can adjust it while melting that single pin. Once happy, solder the rest of the pins.
 
-I would suggest starting from shortest component to tallest. That would be 3.96mm female header -> fuse holder -> 0.1 inch headers -> terminal block -> fan header -> ATX connector -> 11-pin power connector.
+It's a good idea to start from shortest component to tallest.
 
 Make sure the solder melts properly and wets both the pin and pad to prevent cold solder joints, especially on thicker power pins.
 
@@ -128,7 +128,7 @@ You can wire a flip switch to it, or leave it jumpered so it turns on immediatel
 
 ### PC Fan Header
 
-* Any standard 3-pin or 4-pin PC fan should work
+* Any standard 3 or 4-pin PC fan should work
 
 * Run it at 5V or 12V by changing the jumper
 
@@ -168,7 +168,7 @@ During disassembly, it's a good idea to **take plenty of photos**. It never hurt
 
 ⚠️**Dangerous CRT voltage inside**! Make sure the computer is **unplugged for a few hours**! Or discharge the CRT yourself.
 
-You'll need a long **Torx T15 screwdriver**.
+You'll need a LONG **Torx T15 screwdriver**.
 
 Recommended steps:
 
@@ -182,7 +182,7 @@ Recommended steps:
 
 * Remove all the screws **apart from a single one inside the handle**.
 
-* Grab the handle with one hand, put the screwdriver on that single loosened screw, and try **gently** lifting the handle up. The back cover should pop loose.
+* Put the screwdriver on that single loosened screw, grab the handle and try **gently** lifting up. The back cover should pop loose.
 
 * Slowly **lift straight up** to remove the back cover.
 
@@ -220,7 +220,7 @@ Recommended steps:
 
 * Again, make sure the **missing wire matches the missing pin** on the socket.
 
-![Alt text](photos/128K.jpeg)
+![Alt text](photos/128k.jpeg)
 
 *I don't have a Mac 128K so this will have to do*
 
