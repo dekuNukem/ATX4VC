@@ -4,13 +4,13 @@ This adaptor lets you use modern **Pico ATX PSU** in OG Macintosh computers.
 
 It plugs into the motherboard power connector, and bypasses the unreliable built-in PSU all together.
 
+![Alt text](photos/title.jpg)
+
 ## Features
 
 * **Non-destructive** and reversible
 
-* Easy assembly as **through-hole-only** kit
-
-* Cheaper and simpler than recapping
+* Easy assembly and installation
 
 * **PC fan header** for cooling upgrades
 
@@ -18,29 +18,41 @@ It plugs into the motherboard power connector, and bypasses the unreliable built
 
 * Power switch and battery-backup headers
 
-## Pico ATX PSU
+## Get One / Other Stuff
 
-They are tiny ATX power supplies for small PCs, but perfect for retro computers as well.
+Click me to get one!
 
-* Just search `Pico ATX` on ebay/amazon
+Full-fat ATX4VC
 
-* I tried many different brands and they all work fine, but try get one with beefier components.
+USB4VC
 
-* Many claim a power output of 160W, which I find highly dubious. Half of that is probably more realistic, still plenty though.
+## Get a Pico PSU
 
-* They require a power brick with **12V DC** with **center positive** 5.5x2.1mm barrel jacks. Those are very popular and you might already have one. Double check the label.
+PicoPSU are tiny ATX power supplies for small PCs, but perfect for retro computers as well.
+
+![Alt text](photos/pico.jpg)
+
+* [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html) 
+
+* Generic ones are also on eBay/Amazon/Aliexpress. Search `Pico ATX`.
+
+* I tried a few generics, and they seem work well enough. So it's up to you.
+
+* I wouldn't trust generics power rating though, half is more realistic. 80W is plenty.
+
+* They require a power brick with **12V DC** and **center positive** 5.5x2.1mm barrel jacks. Those are very popular and you might already have one. Double check the label.
 
 ## Kit Assembly
 
 ### Already assembled?
 
-[Click me to jump to next section](#board-information) (Board Information).
+[Click me to jump to next section](#board-features) (Board Features).
 
 ### Required tools
 
-* **TEMPERATURE CONTROLLED** Soldering Iron
+* Soldering Iron
 
-* Solder (leaded 60/40 or 63/37 recommended)
+* Solder
 
 * Flux
 
@@ -52,7 +64,7 @@ Nothing too tricky in this kit, all basic through-hole stuff.
 
 If this is your first time, a few tips:
 
-* Make sure your soldering iron has proper **temperature control**, NOT the cheap ones with just a power switch! They get way too hot and will damage the PCB.
+* Make sure your soldering iron has **proper temperature control**, NOT the cheap ones with just a power switch! They get way too hot and will damage the PCB.
 
 * Use **leaded solder**, much easier to work with.
 
@@ -62,11 +74,19 @@ If this is your first time, a few tips:
 
 * [This video](https://www.youtube.com/watch?v=AqvHogekDI4) covers the basics pretty well, you can also watch others by searching `how to solder`.
 
+* Try your local makerspace or university lab!
+
 ### Assembly
 
-Note the name of all the parts:
+Parts are slightly different for Mac Plus and Mac 128K/512K, make sure to follow the correct one!
+
+![Alt text](photos/macplus_parts.png)
 
 Observe the reference photo and assembly notes:
+
+![Alt text](photos/macplus_assnote.png)
+
+![Alt text](photos/macplus_ref.png)
 
 Insert component, hold it in place with masking tape or sticky putty. Flip it over and solder **a single pin** first, then make sure the part is **straight in all directions**.
 
@@ -76,13 +96,15 @@ I would suggest starting from shortest component to tallest. That would be 3.96m
 
 Make sure the solder melts properly and wets both the pin and pad to prevent cold solder joints, especially on thicker power pins.
 
+Push in the fuse and insert the jumpers as shown.
+
 ### Inspection
 
-* Compare with the reference photo and notes, make sure part orientation is correct.
+* Compare with the reference photo and notes, make sure everything is in correct orientation.
 
-* Solder joints should be shiny and smooth. If you see spikes, put on more flux and melt it again.
+* Solder joints should be **shiny and smooth**. If you see spikes, put on more flux and melt it again.
 
-* There must be no solder bridges. If any, put on flux and melt it to remove.
+* There must be **no solder bridges**. If any, put on flux and melt it to remove.
 
 ### Cleaning
 
@@ -90,42 +112,57 @@ This is optional, but I like to clean off the flux with 90%+ isopropyl alcohol. 
 
 Make sure it is **completely dry** before proceeding.
 
-## Board Information
+## Board Features
 
-### Connectors
+![Alt text](photos/features.png)
 
-Battery header
+### Power Switch
 
-Power Switch header and terminal block
+The terminal block (and pin header) is connected to the ATX `PS_ON` pin.
 
-4-pin PC fan header
+You can wire a flip switch to it, or leave it jumpered so it turns on immediately when plugged in.
 
-You can run the PC fan at either 5V or 12V. At 12V it will spin at full speed, while 5V will be much quieter.
+### PC Fan Header
 
-### Fuse Info
+* Any standard 3-pin or 4-pin PC fan should work
 
-* Use common car fuses RATED **5A OR LESS**
+* Run it at 5V or 12V by changing the jumper
+
+* 12V is full speed, 5V is much quieter.
+
+### Fuse
+
+* Use common car fuse RATED **5A OR LESS**
 
 * Regular, Mini, and low-profile Mini all will work. Simply push into the holder.
 
 * **DO NOT BYPASS FUSES**
 
-## Pre-installation Test
+### +12V Filtering Cap (Optional)
 
-Use a multimeter to **check for dead shorts** between each power pin and GND
+* You can add a filtering cap to +12V rail, note the polarity if using electrolytic caps.
 
+### Battery Header (Optional)
 
-If all good, plug in Pico ATX PSU, and the barrel jack connector.
+* You can connect a 4.5V battery to the header.
 
-The PSU should turn on, measure the voltage on each rail and confirm they are correct and within spec, careful with the metal probe to prevent shorts.
+## Pre-installation Checks
+
+From the back, use a multimeter to **check for dead shorts** between each power pin and GND:
+
+![Alt text](photos/short.png)
+
+If all good, plug in Pico ATX PSU, and then power jack.
+
+The PSU should turn on, measure the voltage on each rail and confirm they are within spec.
 
 ## Installation
 
-During disassembly, it's a good idea to **Take plenty of photos**. It never hurts to have reference.
+During disassembly, it's a good idea to **take plenty of photos**. It never hurts to have reference.
 
 ### Remove Back Cover
 
-⚠️**Dangerous CRT voltage inside**! Make sure the computer is **unplugged and unused for a few hours**! Or discharge the CRT yourself.
+⚠️**Dangerous CRT voltage inside**! Make sure the computer is **unplugged for a few hours**! Or discharge the CRT yourself.
 
 You'll need a long **Torx T15 screwdriver**.
 
@@ -135,7 +172,9 @@ Recommended steps:
 
 * Loosen all the screws. Two at the bottom, one behind battery door, two in the handles.
 
-* Take photos of which goes in where, they might be different!
+* Take photos of which goes in where, the lower two has a thinner thread.
+
+![Alt text](photos/back.png)
 
 * Remove all the screws **apart from a single one inside the handle**.
 
@@ -143,66 +182,79 @@ Recommended steps:
 
 * Slowly **lift straight up** to remove the back cover.
 
-### Inspect and Clean
+![Alt text](photos/backoff.gif)
 
-While we're in, might as well give it an once-over.
-
-Possible activities:
-
-* Blow out dust
-
-* [Service the floppy drive](https://www.youtube.com/watch?v=0pGhwtyFG2I)
-
-* Inspect the analog board.
-
-* Remove the paper cover by pulling out the plastic pins. Look for damaged parts and cracked solder joints.
-
-* Common location include power connectors and CRT capacitors near the top.
-
-* The signs might be very subtle, so magnification might be needed.
-
-* Again, see [Adrian's Mac Repair-a-thon](https://www.youtube.com/watch?v=lKD65I86XGQ) for details.
-
-* **DO NOT TOUCH CRT COMPONENTS** if you don't know what you're doing!
+⚠️ **DO NOT TOUCH ANY CRT COMPONENTS** if you don't know what you're doing!
 
 ### Install the Adaptor
 
-* Unplug the power connector from motherboard.
+* Unplug the floppy and power cable from motherboard.
 
 * **DO NOT PULL STRAIGHT UP**, or you might break the CRT neck!
 
 * Wiggle gently until loose, and carefully unplug.
 
-* Plug Pico ATX PSU into the adaptor, make sure the power switch jumper is installed.
+![Alt text](photos/11p.jpeg)
 
-* Plug the adaptor into the motherboard power connector.
+* Plug the Pico PSU and the power cable into the adaptor.
+
+* The missing wire should match the missing pin on the socket.
+
+![Alt text](photos/cable.jpeg)
+
+* **[MAC PLUS]** Plug the adaptor back into the motherboard.
+
+![Alt text](photos/macplus_mb.jpeg)
 
 * It should go in firmly, although not reach the bottom.
 
-* **Bend down and double check** the pins are lined up and NOT off-by-one!
+* **Bend down and double check from both sides** that the pins are lined up and NOT off-by-one!
 
-* Plug analog board power cable into the adaptor.
+![Alt text](photos/off1.png)
 
-* Double check for shorts again if you want, you can do it by removing the paper cover on the analog board.
+* **[MAC 128K/512K]** Plug the extension cable into motherboard, then the adaptor.
+
+* Again, make sure the **missing wire matches the missing pin** on the socket
+
+* The adaptor will be floating in mid-air, which is unfortunate. Still, make sure it does not short on other components or metal case, add insulation if you want.
 
 ### Moment of Truth!
 
-If everything checks out, take a breath and plug in the barrel jack. Hopefully it will beep, and everything still works!
+If everything checks out, take a breath and plug it in.
 
-If so, we're pretty much done! If not, time to start troubleshooting!
+If your Mac was working before, hopefully it still does!
 
-Measure the voltage again, check fuse, and then go through the usual repair steps. Should be plenty of resources online.
+If the Mac is of unknown condition, now you'll find out!
+
+And if it doesn't work, [Check out the troubleshooting guide](#troubleshooting). 
 
 ### Big Mac Fan
 
-Those early macs run really hot, and putting in a fan would help in prolonging the lifetime.
+Those early Macs run really hot, so it's a good idea to put in a fan.
 
 Any PC fan should work, you can select 5V or 12V, I like to set it to 5V so it's quieter.
 
-picture of fan with jumpers and point out the cap spot.
+Some fans running on 12V might generate interference with CRT, try move it further away, or add some decoupling caps on the 12V line.
 
-Some fans running on 12V might generate interference with CRT, try move it further away, or add some decoupling caps on the 12V line. One spot is available on the adaptor.
+Check out [previous section](#board-features) for more details.
 
 ### Power Cable and Switch
 
-I'll admit, this is
+Now it works, how are we going to mount the DC jack receptacle?
+
+I'll admit this is where things goes a bit downhill, as I can't think of a way that's **BOTH non-destructive AND elegant**.
+
+For elegant but destructive, you can just drill a hole, but **PELASE DO NOT DO THIS!**
+
+For non-destructive but a bit messy, you can extend the power leads and feed them though the hole in the battery door.
+
+And of course if you come up with better ideas, [let me know](#questions-or-comments) and I'll update it!
+
+## Troubleshooting
+
+not comprehensive
+
+
+## Questions or Comments?
+
+Feel free to ask in official [Discord Chatroom](https://discord.gg/T9uuFudg7j), raise a [Github issue](https://github.com/dekuNukem/ATX4VC/issues), or email `dekunukem` `gmail.com`!

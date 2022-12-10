@@ -1,3 +1,29 @@
+### Does It Work?
+
+### Inspect and Clean
+
+While we're in, might as well give it an once-over.
+
+Possible activities:
+
+* Blow out dust
+
+* [Service the floppy drive](https://www.youtube.com/watch?v=0pGhwtyFG2I)
+
+* Inspect the analog board.
+
+* Remove the paper cover by pulling out the plastic pins. Look for damaged parts and cracked solder joints.
+
+* Common location include power connectors and CRT capacitors near the top.
+
+* The signs might be very subtle, so magnification might be needed.
+
+* See [Adrian's Mac Repair-a-thon](https://www.youtube.com/watch?v=lKD65I86XGQ) for details.
+
+* **DO NOT TOUCH CRT COMPONENTS** if you don't know what you're doing!
+
+
+
 [Click me for **Macintosh 128K/512K/Plus**](og_mac.md)
 
 [Purchase Link](.) / [Instructions](mac_se.md)
