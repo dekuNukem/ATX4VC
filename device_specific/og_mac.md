@@ -12,7 +12,7 @@ It plugs into the motherboard power connector, and bypasses the unreliable built
 
 * Easy assembly and installation
 
-* **PC fan header** for cooling upgrades
+* **PC fan header** for added cooling
 
 * **Fused** positive rails
 
@@ -26,21 +26,21 @@ Full-fat ATX4VC
 
 USB4VC
 
-## Get a Pico PSU
+## Getting a Pico PSU
 
 PicoPSU are tiny ATX power supplies for small PCs, but perfect for retro computers as well.
 
 ![Alt text](photos/pico.jpg)
 
-* [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html) 
+* [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html). Even the cheapest 80W one should be plenty.
 
-* Generic ones are also on eBay/Amazon/Aliexpress. Search `Pico ATX`.
+* You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`, they are *not that* cheap, so might as well support the official ones.
 
-* I tried a few generics, and they seem work well enough. So it's up to you.
+* A power brick with **12V DC** and **center positive** 5.5x2.1mm barrel jacks is needed.
 
-* I wouldn't trust generics power rating though, half is more realistic. 80W is plenty.
+* Those are very popular and you might already have one. Make sure it has enough wattage.
 
-* They require a power brick with **12V DC** and **center positive** 5.5x2.1mm barrel jacks. Those are very popular and you might already have one. Double check the label.
+Remember that this solution is **only as good as your PicoPSU and 12V Brick**, so don't skimp on them!
 
 ## Kit Assembly
 
@@ -82,11 +82,15 @@ Parts are slightly different for Mac Plus and Mac 128K/512K, make sure to follow
 
 ![Alt text](photos/macplus_parts.png)
 
-Observe the reference photo and assembly notes:
+![Alt text](photos/macog_parts.png)
 
-![Alt text](photos/macplus_assnote.png)
+Observe the assembly notes and reference photos:
+
+![Alt text](photos/assnote.png)
 
 ![Alt text](photos/macplus_ref.png)
+
+![Alt text](photos/macog_ref.png)
 
 Insert component, hold it in place with masking tape or sticky putty. Flip it over and solder **a single pin** first, then make sure the part is **straight in all directions**.
 
@@ -214,9 +218,13 @@ Recommended steps:
 
 * **[MAC 128K/512K]** Plug the extension cable into motherboard, then the adaptor.
 
-* Again, make sure the **missing wire matches the missing pin** on the socket
+* Again, make sure the **missing wire matches the missing pin** on the socket.
 
-* The adaptor will be floating in mid-air, which is unfortunate. Still, make sure it does not short on other components or metal case, add insulation if you want.
+![Alt text](photos/128K.jpeg)
+
+*I don't have a Mac 128K so this will have to do*
+
+* The adaptor will be floating in mid-air, which is unfortunate. Still, make sure it does not short on other components or metal case, secure and add insulation if needed.
 
 ### Moment of Truth!
 
@@ -226,17 +234,19 @@ If your Mac was working before, hopefully it still does!
 
 If the Mac is of unknown condition, now you'll find out!
 
+![Alt text](photos/working.jpeg)
+
 And if it doesn't work, [Check out the troubleshooting guide](#troubleshooting). 
 
 ### Big Mac Fan
 
 Those early Macs run really hot, so it's a good idea to put in a fan.
 
-Any PC fan should work, you can select 5V or 12V, I like to set it to 5V so it's quieter.
+Any PC fan should work, you can run it at 12V (full speed) or 5V (quieter).
 
-Some fans running on 12V might generate interference with CRT, try move it further away, or add some decoupling caps on the 12V line.
+Vents on top of the case is a good location, maybe you can ziptie it there. Of course it's up to you!
 
-Check out [previous section](#board-features) for more details.
+**Don't mount the fan too close to the CRT**, or the picture might wobble from the motor's magnetic field.
 
 ### Power Cable and Switch
 
@@ -244,16 +254,67 @@ Now it works, how are we going to mount the DC jack receptacle?
 
 I'll admit this is where things goes a bit downhill, as I can't think of a way that's **BOTH non-destructive AND elegant**.
 
-For elegant but destructive, you can just drill a hole, but **PELASE DO NOT DO THIS!**
+Neat but destructive: Just drill a hole, for petes sake **DON'T DO THIS!**
 
-For non-destructive but a bit messy, you can extend the power leads and feed them though the hole in the battery door.
+Non-destructive but a bit messy: Extend the power cable though the case:
+
+Cut the power cable in half:
+
+![Alt text](photos/half.jpeg)
+
+Now we're going to add some extra length.
+
+You can solder it, but I highly recommend using lever connectors such as the ones from WAGO.
+
+Strip the cables to the marked length, flip up, insert, flip down. Make sure the colors match.
+
+![Alt text](photos/strip.jpeg)
+
+![Alt text](photos/extra.jpeg)
+
+Now thread the cable through the square hole on the battery holder.
+
+![Alt text](photos/route.jpeg)
+
+Thread it though the same hole on the back case, now you can put it back on.
+
+Connect the other end with lever connector, and **cover up the original 120/220V power port**! This way you or someone else won't accidentally plug in and blow it up.
+
+![Alt text](photos/back.jpeg)
+
+Now you just have to plug in the DC jack to turn it on.
+
+A few extra ideas:
+
+* Desolder the original 120/220V power port?
+
+* Maybe wire the original power switch to the terminal block? Not sure if need to cut any traces.
 
 And of course if you come up with better ideas, [let me know](#questions-or-comments) and I'll update it!
 
 ## Troubleshooting
 
-not comprehensive
+This adaptor eliminates the PSU from the equation, but that's only part of the puzzle!
 
+Other common issues include:
+
+* Cracked solder joints
+
+* Shorted tantalum capacitors
+
+* Dirty contacts / Bad RAMs
+
+I strongly recommend watching [Adrian's Digital Basement Macintosh Repair-a-thon](https://www.youtube.com/watch?v=lKD65I86XGQ), where he covers a lot of those issues in detail.
+
+The **power connector** and CRT **deflection capacitors** are notorious for cracking, here are some examples on mine:
+
+![Alt text](photos/crack1.jpeg)
+
+![Alt text](photos/crack2.jpeg)
+
+It might be very difficult to see with naked eye, so try use magnification!
+
+Flux + new solder should fix it right up, if you find one crack do the whole row.
 
 ## Questions or Comments?
 
