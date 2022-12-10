@@ -216,7 +216,7 @@ Recommended steps:
 
 ![Alt text](photos/off1.png)
 
-* **[MAC 128K/512K]** Plug the extension cable into motherboard, then the adaptor.
+* **[MAC 128K/512K]** Plug the extension cable into motherboard, then bottom of the adaptor.
 
 * Again, make sure the **missing wire matches the missing pin** on the socket.
 
@@ -236,7 +236,7 @@ If the Mac is of unknown condition, now you'll find out!
 
 ![Alt text](photos/working.jpeg)
 
-And if it doesn't work, [Check out the troubleshooting guide](#troubleshooting). 
+And if it doesn't work, [check out the troubleshooting guide](#troubleshooting). 
 
 ### Big Mac Fan
 
@@ -278,7 +278,7 @@ Now thread the cable through the square hole on the battery holder.
 
 Thread it though the same hole on the back case, now you can put it back on.
 
-Connect the other end with lever connector, and **cover up the original 120/220V power port**! This way you or someone else won't accidentally plug in and blow it up.
+Connect the other end in the same way, and **cover up the original 120/220V power port**! This way you or someone else won't accidentally plug in and blow it up.
 
 ![Alt text](photos/back.jpeg)
 
@@ -300,7 +300,7 @@ If something else is wrong, you still need to fix it.
 
 ### Nothing Happens
 
-* Check for shorts on power rails, you can measure it on the analog board after removing the paper insulation.
+* Check for shorts on power rails, you can measure it on the back of analog board after removing the paper insulation.
 
 ![Alt text](photos/pinout.png)
 
@@ -314,7 +314,7 @@ I had this happen with a knock-off generic PicoPSU, changing to another one fixe
 
 ### Screen Wobbles
 
-* If it happens when floppy drive is active, try using a beefier power brick, or add more decoupling capacitors.
+* If it happens when floppy drive is active, try using a beefier power brick, or add decoupling capacitors.
 
 * If happens while idle, make sure the fan is not too close to the CRT.
 
