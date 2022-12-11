@@ -54,7 +54,7 @@ PicoPSU are tiny ATX power supplies for small PCs, but perfect for retro compute
 
 * You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`. They are *not that* cheap, so might as well support the official product.
 
-* A power brick with **12V DC** and **center positive** 5.5x2.5mm barrel jacks is needed.
+* A power brick with **12V DC** and **center positive** 5.5x2.5mm barrel jack is needed.
 
 * Those are very popular and you might already have one. Make sure it has enough wattage.
 
@@ -234,7 +234,7 @@ Recommended steps:
 
 ![Alt text](photos/off1.png)
 
-* **[MAC 128K/512K]** Plug the extension cable into motherboard, then bottom of the adaptor.
+* **[MAC 128K/512K]** Plug the extension cable into motherboard, then into bottom of the adaptor.
 
 * Again, make sure the **missing wire matches the missing pin** on the socket.
 
@@ -272,7 +272,7 @@ Make sure the fan is secured, nothing touches the blade, and air flow direction 
 
 Now it works, how are we going to mount the DC jack receptacle?
 
-I'll admit this is where things goes a bit downhill, as I can't think of a way that's **BOTH non-destructive AND elegant**.
+I'll admit this is where things goes a bit downhill, as there doesn't appear to be a way that's **BOTH non-destructive AND elegant**.
 
 Neat but destructive: Just drill a hole, for petes sake **DON'T DO THIS!**
 
@@ -311,6 +311,14 @@ A few extra ideas:
 * Desolder the original 120/220V power port and mount the jack there?
 
 * Maybe wire the original power switch to the terminal block? Not sure if need to cut any traces.
+
+## Enjoy!
+
+With internal PSU bypassed and added cooling, may your Mac lives many more years of trouble-free life!
+
+Questions or comments? Ask in our [Discord](https://discord.gg/T9uuFudg7j), raise a [Github issue](https://github.com/dekuNukem/ATX4VC/issues), or email `dekunukem` `gmail.com`!
+
+![Alt text](photos/final.jpeg)
 
 ## Troubleshooting
 
