@@ -12,11 +12,11 @@ It has:
 
 * Power button and power LED headers
 
-* 4-pin **PWM fan** headers. Manual fan speed control or via **temperature probe**.
+* PWM fan headers with temperature probe support
 
-* **Addressable RGB**(ARGB) headers
+* Addressable RGB(ARGB) headers
 
-* **USB-C** power output and firmware update
+* USB-C power output and firmware update
 
 ATX4VC can be used to:
 
@@ -48,7 +48,7 @@ I even took it to a coffee shop and wrote most of this very document! But that's
 
 ![Alt text](photos/coffee.jpeg)
 
-You can also just use it as a multi-voltage bench PSU for testing and diagnostics.
+You can also use it as a multi-voltage bench PSU for testing and diagnostics.
 
 Here it powers a Macintosh Plus motherboard with +12, +5, and -12V.
 
