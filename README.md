@@ -2,13 +2,13 @@
 
 [Buy ATX4VC](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/) | [Discord](https://discord.gg/T9uuFudg7j) | [User Manual](#user-manual) | [Table of Contents](#Table-of-Contents)
 
-ATX4VC is an all-in-one controller for **using ATX power supply on vintage computers**.
+ATX4VC lets you **use ATX power supply on vintage computers**.
 
 ![Alt text](photos/title.jpeg)
 
 It has:
 
-* All common voltages in one place: +12V, +5V, +3.3V, -5V, -12V. 
+* All common voltages: +12V, +5V, +3.3V, -5V, -12V. 
 
 * Power button and power LED headers
 
@@ -27,6 +27,10 @@ ATX4VC can be used to:
 * Test and diagnose vintage hardware
 
 * As general-purpose multi-voltage bench PSU
+
+## Get ATX4VC
+
+[Click me to get one on Tindie!](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/)
 
 ## Showcase
 
