@@ -8,13 +8,13 @@ ATX4VC lets you **use ATX power supply on vintage computers**.
 
 It has:
 
-* All common voltages: +12V, +5V, +3.3V, -5V, -12V. 
+* All common voltages: +12V, +5V, +3.3V, -5V, -12V.
 
 * Power button and power LED headers
 
 * PWM fan headers with temperature probe support
 
-* Addressable RGB(ARGB) headers
+* Addressable RGB (ARGB) headers
 
 * USB-C power output and firmware update
 
@@ -32,9 +32,15 @@ ATX4VC can be used to:
 
 [Click me to get one on Tindie!](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/)
 
+## PicoRC
+
+[Check out PicoRC](https://github.com/dekuNukem/PicoRC) for **device-specific** and **lower-cost** PicoPSU adaptors.
+
+Available for Apple II, Macintosh 128K/Plus, Macintosh SE SE/30, and more.
+
 ## Showcase
 
-[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC (seen lower right) powers a BBC Micro with +5 and -5V using a full-size ATX PSU.
+[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC powers a BBC Micro with +5 and -5V using a full-size ATX PSU.
 
 ![Alt text](photos/rgbeeb.jpeg)
 
