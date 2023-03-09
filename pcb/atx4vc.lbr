@@ -1210,17 +1210,17 @@ MAX3223-MAX3243.pdf</description>
 </symbol>
 <symbol name="2G08">
 <wire x1="-7.62" y1="10.16" x2="-7.62" y2="-12.7" width="0.1524" layer="94"/>
-<wire x1="-7.62" y1="-12.7" x2="5.08" y2="-12.7" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="-12.7" x2="5.08" y2="10.16" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="94"/>
-<pin name="1_1A" x="-12.7" y="7.62" visible="pad" length="middle" direction="pwr"/>
-<pin name="2_1B" x="-12.7" y="2.54" visible="pad" length="middle" direction="pwr"/>
-<pin name="3_2Y" x="-12.7" y="-2.54" visible="pad" length="middle" direction="pwr"/>
-<pin name="4_GND" x="-12.7" y="-7.62" visible="pad" length="middle" direction="pwr"/>
-<pin name="5_2A" x="10.16" y="-7.62" visible="pad" length="middle" direction="pwr" rot="R180"/>
-<pin name="6_2B" x="10.16" y="-2.54" visible="pad" length="middle" direction="pwr" rot="R180"/>
-<pin name="7_1Y" x="10.16" y="2.54" visible="pad" length="middle" direction="pwr" rot="R180"/>
-<pin name="8_VCC" x="10.16" y="7.62" visible="pad" length="middle" direction="pwr" rot="R180"/>
+<wire x1="-7.62" y1="-12.7" x2="12.7" y2="-12.7" width="0.1524" layer="94"/>
+<wire x1="12.7" y1="-12.7" x2="12.7" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="12.7" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="94"/>
+<pin name="1_1A" x="-12.7" y="7.62" length="middle" direction="pwr"/>
+<pin name="2_1B" x="-12.7" y="2.54" length="middle" direction="pwr"/>
+<pin name="3_2Y" x="-12.7" y="-2.54" length="middle" direction="pwr"/>
+<pin name="4_GND" x="-12.7" y="-7.62" length="middle" direction="pwr"/>
+<pin name="5_2A" x="17.78" y="-7.62" length="middle" direction="pwr" rot="R180"/>
+<pin name="6_2B" x="17.78" y="-2.54" length="middle" direction="pwr" rot="R180"/>
+<pin name="7_1Y" x="17.78" y="2.54" length="middle" direction="pwr" rot="R180"/>
+<pin name="8_VCC" x="17.78" y="7.62" length="middle" direction="pwr" rot="R180"/>
 </symbol>
 <symbol name="APPLEII">
 <pin name="P$1" x="-12.7" y="-5.08" length="middle"/>
