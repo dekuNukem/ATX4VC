@@ -2219,7 +2219,10 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <signal name="N$12">
 <contactref element="U$6" pad="3"/>
 <contactref element="U$6" pad="2"/>
-<wire x1="72.001" y1="36.83" x2="72.501" y2="36.83" width="0.2032" layer="1"/>
+<wire x1="72.001" y1="36.83" x2="72.009" y2="36.83" width="0.1524" layer="1"/>
+<wire x1="72.009" y1="36.83" x2="72.009" y2="36.068" width="0.1524" layer="1"/>
+<wire x1="72.009" y1="36.068" x2="72.501" y2="36.068" width="0.1524" layer="1"/>
+<wire x1="72.501" y1="36.068" x2="72.501" y2="36.83" width="0.1524" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
