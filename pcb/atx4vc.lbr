@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="2.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="yes" active="yes"/>
@@ -856,6 +856,31 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="-14.285" y1="-2.5" x2="-14.285" y2="2.5" width="0.254" layer="21"/>
 <wire x1="14.285" y1="-2.5" x2="14.285" y2="2.5" width="0.254" layer="21"/>
 </package>
+<package name="WAGL257">
+<pad name="P$1" x="0" y="2.5" drill="0.8"/>
+<pad name="P$2" x="0" y="-2.5" drill="0.8"/>
+<wire x1="-2.5" y1="5" x2="2.5" y2="5" width="0.1524" layer="25"/>
+<wire x1="2.5" y1="5" x2="2.5" y2="-5" width="0.1524" layer="25"/>
+<wire x1="2.5" y1="-5" x2="-2.5" y2="-5" width="0.1524" layer="25"/>
+<wire x1="-2.5" y1="-5" x2="-2.5" y2="5" width="0.1524" layer="25"/>
+</package>
+<package name="WAGO257-7">
+<pad name="P$1" x="-15" y="2.5" drill="0.8" thermals="no"/>
+<pad name="P$2" x="-15" y="-2.5" drill="0.8" thermals="no"/>
+<pad name="P$3" x="-10" y="2.5" drill="0.8" thermals="no"/>
+<pad name="P$4" x="-10" y="-2.5" drill="0.8" thermals="no"/>
+<pad name="P$5" x="-5" y="2.5" drill="0.8" thermals="no"/>
+<pad name="P$6" x="-5" y="-2.5" drill="0.8" thermals="no"/>
+<pad name="P$7" x="0" y="2.5" drill="0.8" thermals="no"/>
+<pad name="P$8" x="0" y="-2.5" drill="0.8" thermals="no"/>
+<pad name="P$9" x="5" y="2.5" drill="0.8" thermals="no"/>
+<pad name="P$10" x="5" y="-2.5" drill="0.8" thermals="no"/>
+<pad name="P$11" x="10" y="2.5" drill="0.8" thermals="no"/>
+<pad name="P$12" x="10" y="-2.5" drill="0.8" thermals="no"/>
+<pad name="P$13" x="15" y="2.5" drill="0.8" thermals="no"/>
+<pad name="P$14" x="15" y="-2.5" drill="0.8" thermals="no"/>
+<wire x1="-17.5" y1="5" x2="17.5" y2="5" width="0.1524" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="342_SWITCH_SYM">
@@ -1244,6 +1269,26 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="-7.62" y1="-15.24" x2="12.7" y2="-15.24" width="0.1524" layer="94"/>
 <wire x1="12.7" y1="-15.24" x2="12.7" y2="15.24" width="0.1524" layer="94"/>
 <wire x1="12.7" y1="15.24" x2="-7.62" y2="15.24" width="0.1524" layer="94"/>
+</symbol>
+<symbol name="WAGO257">
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="-2.54" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="-5.08" y2="2.54" width="0.1524" layer="94"/>
+<pin name="P$1" x="-10.16" y="0" length="middle"/>
+</symbol>
+<symbol name="WAGO257-7">
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-33.02" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-33.02" x2="5.08" y2="-33.02" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="-33.02" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="-5.08" y2="2.54" width="0.1524" layer="94"/>
+<pin name="P$1" x="-10.16" y="0" length="middle"/>
+<pin name="P$2" x="-10.16" y="-5.08" length="middle"/>
+<pin name="P$3" x="-10.16" y="-10.16" length="middle"/>
+<pin name="P$4" x="-10.16" y="-15.24" length="middle"/>
+<pin name="P$5" x="-10.16" y="-20.32" length="middle"/>
+<pin name="P$6" x="-10.16" y="-25.4" length="middle"/>
+<pin name="P$7" x="-10.16" y="-30.48" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2005,6 +2050,42 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <connect gate="G$1" pin="-12V" pad="60 61"/>
 <connect gate="G$1" pin="-5V" pad="70 71"/>
 <connect gate="G$1" pin="GND" pad="10 11 20 21"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="WAGO257">
+<gates>
+<gate name="G$1" symbol="WAGO257" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="WAGL257">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="WAGO257-7">
+<gates>
+<gate name="G$1" symbol="WAGO257-7" x="0" y="15.24"/>
+</gates>
+<devices>
+<device name="" package="WAGO257-7">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
+<connect gate="G$1" pin="P$2" pad="P$3 P$4"/>
+<connect gate="G$1" pin="P$3" pad="P$5 P$6"/>
+<connect gate="G$1" pin="P$4" pad="P$7 P$8"/>
+<connect gate="G$1" pin="P$5" pad="P$9 P$10"/>
+<connect gate="G$1" pin="P$6" pad="P$11 P$12"/>
+<connect gate="G$1" pin="P$7" pad="P$13 P$14"/>
 </connects>
 <technologies>
 <technology name=""/>
