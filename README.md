@@ -14,9 +14,9 @@ It has:
 
 * PC fan headers with PWM and temp probe support
 
-* Addressable RGB (ARGB) headers
+* Addressable RGB (ARGB) header
 
-* USB-C power output and firmware update
+* USB-C power output
 
 ATX4VC can be used to:
 
@@ -34,19 +34,19 @@ ATX4VC can be used to:
 
 ## PicoRC
 
-[Check out PicoRC](https://github.com/dekuNukem/PicoRC) for **device-specific** and **lower-cost** PicoPSU adaptors.
+Also [Check out PicoRC](https://github.com/dekuNukem/PicoRC) for **device-specific** and **lower-cost** PicoPSU adaptors.
 
 Available for Apple II, Macintosh 128K/Plus, Macintosh SE SE/30, and more.
 
 ## Showcase
 
-A **pico ATX PSU** is a perfect match due to its compact size. 
+**Pico ATX PSU** is a perfect match due to its compact size. 
 
 Here it replaces the failed PSU in my Osborne 1, providing +12 and +5V.
 
 ![Alt text](photos/os1.jpeg)
 
-It also functions as a multi-voltage bench PSU for testing and diagnostics.
+It also works as a multi-voltage bench PSU for testing and diagnostics.
 
 Here it powers a Macintosh Plus motherboard with +12, +5, and -12V.
 
@@ -108,7 +108,7 @@ Remember that this solution is **only as good as your PicoPSU and 12V Brick**, s
 
 ### Quick Start
 
-* Make sure the jumper is in "soft power" setting (right two pins)
+* Make sure the jumper is in "soft power" setting (right 2 pins), or no jumper at all.
 
 * Plug in ATX connector
 
@@ -134,21 +134,19 @@ Observe the voltage on each terminal block.
 
 ![Alt text](photos/rails.jpeg)
 
-* Strip the cable
+* Strip the insulation
 
 * Loosen screw
 
 * Insert into hole
 
-* **hold the terminal block steady with your finger** while tightening it back up
+* **Hold the terminal block steady** while tightening it back up
 
 * Don't leave conductor exposed to prevent shorts.
 
 ![Alt text](photos/terminal.jpeg)
 
 Also, make sure the conductor is thick enough!
-
-Alligator clips are handy, but many have very thin wires. If so, you can solder a thicker cable to it.
 
 ![Alt text](photos/thin.png)
 
@@ -171,8 +169,6 @@ Once powered up:
 Remember that ATX4VC **DOES NOT** monitor or condition PSU voltage outputs, so make sure the PSU itself is of good quality and trustworthy!
 
 ### Current Limit
-
-ATX4VC has current limit as follows:
 
 * **`5 AMPS MAX`** OVER **ANY SINGLE RAIL**
 
