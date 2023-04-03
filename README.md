@@ -10,9 +10,9 @@ It has:
 
 * All common voltages: +12V, +5V, +3.3V, -5V, -12V.
 
-* Power button and power LED headers
+* Power button and LED headers
 
-* PWM fan headers with temperature probe support
+* PC fan headers with PWM and temp probe support
 
 * Addressable RGB (ARGB) headers
 
@@ -20,7 +20,7 @@ It has:
 
 ATX4VC can be used to:
 
-* Replace retro computer power supplies
+* Replace retro computer PSUs
 
 * Add cooling and lighting upgrades
 
@@ -40,21 +40,13 @@ Available for Apple II, Macintosh 128K/Plus, Macintosh SE SE/30, and more.
 
 ## Showcase
 
-[In my RGBeeb project](https://github.com/dekuNukem/RGBeeb), ATX4VC powers a BBC Micro with +5 and -5V using a full-size ATX PSU.
-
-![Alt text](photos/rgbeeb.jpeg)
-
-But of course, a **pico ATX PSU** makes more sense due to its compact size. 
+A **pico ATX PSU** is a perfect match due to its compact size. 
 
 Here it replaces the failed PSU in my Osborne 1, providing +12 and +5V.
 
 ![Alt text](photos/os1.jpeg)
 
-I even took it to a coffee shop and wrote most of this very document! But that's for another day.
-
-![Alt text](photos/coffee.jpeg)
-
-You can also use it as a multi-voltage bench PSU for testing and diagnostics.
+It also functions as a multi-voltage bench PSU for testing and diagnostics.
 
 Here it powers a Macintosh Plus motherboard with +12, +5, and -12V.
 
@@ -97,6 +89,22 @@ ATX4VC is designed to replace them with much more reliable modern ATX PSUs, and 
 [USB Firmware Update](#USB-Firmware-Update)
 
 ## User Manual
+
+### Get a Pico PSU
+
+ATX4VC works with **any standard ATX PSU**, but a PicoPSU is recommended due to its compact size.
+
+![Alt text](photos/pico.jpg)
+
+* [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html). Even the cheapest 80W one should be plenty.
+
+* You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`. They are *not that* cheap, so I strongly suggest supporting the high-quality official products.
+
+* A power brick with **12V DC** and **center positive** 5.5x2.5mm barrel jack is needed.
+
+* They are very popular and you might already have one. Make sure it has enough wattage.
+
+Remember that this solution is **only as good as your PicoPSU and 12V Brick**, so don't skimp on them!
 
 ### Quick Start
 
@@ -270,13 +278,7 @@ Move the jumper to the left for hard power.
 
 This shorts PS_ON pin to GND, and turns on PSU immediately when plugged in.
 
-### RGBA over USB
-
-You can use the rightmost USB-C port to carry ARGB power and signal in one cable.
-
-Short the jumper with some solder to put ARGB data on the D+ line. [Seen in RGBeeb](https://github.com/dekuNukem/RGBeeb#did-anyone-say-rgb).
-
-![Alt text](photos/jump.png)
+You can also wire up a toggle / latching switch to the left two pins to control the PSU directly.
 
 ### Button Header
 
