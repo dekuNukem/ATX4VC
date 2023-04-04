@@ -67,3 +67,10 @@ added additional 3.69mm power connector
 moved power rail LED to the side
 added fuse blow detect with 74lvc chip
 rearranged components
+
+PT6 20230404
+added breakoff tabs
+added in-board mounting holes
+moved MCU to its own daughterboard
+reduced PCB size
+new lever terminal block
