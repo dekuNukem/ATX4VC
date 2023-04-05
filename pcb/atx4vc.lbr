@@ -920,6 +920,9 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="18.8" y1="9.3" x2="18.8" y2="-7" width="0.1524" layer="21"/>
 <text x="0" y="7.5" size="1.778" layer="51" rot="R180" align="center">OPENING</text>
 </package>
+<package name="EDGEPAD">
+<smd name="P$1" x="0" y="0" dx="3" dy="5" layer="1" thermals="no" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="342_SWITCH_SYM">
@@ -1328,6 +1331,13 @@ MAX3223-MAX3243.pdf</description>
 <pin name="P$5" x="-10.16" y="-20.32" length="middle"/>
 <pin name="P$6" x="-10.16" y="-25.4" length="middle"/>
 <pin name="P$7" x="-10.16" y="-30.48" length="middle"/>
+</symbol>
+<symbol name="EDGEPAD">
+<pin name="P$1" x="-5.08" y="0" length="middle"/>
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="7.62" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2136,6 +2146,21 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <connect gate="G$1" pin="P$5" pad="P$9 P$10"/>
 <connect gate="G$1" pin="P$6" pad="P$11 P$12"/>
 <connect gate="G$1" pin="P$7" pad="P$13 P$14"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="EDGEPAD">
+<gates>
+<gate name="G$1" symbol="EDGEPAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="EDGEPAD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
