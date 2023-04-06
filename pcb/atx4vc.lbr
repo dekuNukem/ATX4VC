@@ -923,6 +923,9 @@ MAX3223-MAX3243.pdf</description>
 <package name="EDGEPAD">
 <smd name="P$1" x="0" y="0" dx="3" dy="5" layer="1" thermals="no" cream="no"/>
 </package>
+<package name="EDGEPAD_20MM">
+<smd name="P$1" x="0" y="0" dx="3" dy="20" layer="1" thermals="no" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="342_SWITCH_SYM">
@@ -2159,6 +2162,14 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </gates>
 <devices>
 <device name="" package="EDGEPAD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="EDGEPAD_20MM" package="EDGEPAD_20MM">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
