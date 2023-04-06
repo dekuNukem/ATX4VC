@@ -74,3 +74,4 @@ added in-board mounting holes
 moved MCU to its own daughterboard
 reduced PCB size
 new lever terminal block
+added 5VSB to terminal block
