@@ -232,7 +232,7 @@ PT6 APR23</text>
 <text x="53.721" y="56.515" size="1.4224" layer="25" rot="R180" align="center">5VSB</text>
 <text x="51.943" y="52.705" size="1.778" layer="25" rot="R90" align="center">G</text>
 <wire x1="55.245" y1="18.669" x2="55.245" y2="8.636" width="0.3048" layer="21"/>
-<text x="52.705" y="12.319" size="2.1844" layer="25" rot="R90" align="center">PSW</text>
+<text x="53.34" y="12.573" size="2.1844" layer="25" rot="R90" align="center">PSW</text>
 <text x="57.785" y="12.954" size="2.1844" layer="25" rot="R90" align="center">LED</text>
 <text x="58.039" y="9.779" size="2.1844" layer="25" rot="R180" align="center">- +</text>
 <text x="36.068" y="25.4462" size="1.4224" layer="25" rot="R180" align="center">PG</text>
@@ -299,6 +299,7 @@ PT6 APR23</text>
 <hole x="69.215" y="8.255" drill="0.381"/>
 <hole x="69.215" y="61.595" drill="0.381"/>
 <hole x="9.017" y="61.595" drill="0.381"/>
+<text x="51.181" y="12.573" size="1.4224" layer="25" rot="R90" align="center">LOCKING</text>
 </plain>
 <libraries>
 <library name="adafruit">
