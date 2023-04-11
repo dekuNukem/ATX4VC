@@ -3523,8 +3523,8 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="R1" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5.1K"/>
-<part name="R2" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5.1K"/>
+<part name="R1" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
+<part name="R2" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
 <part name="C1" library="clock" deviceset="CAP" device="0805" value="1uF"/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -3538,10 +3538,10 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <part name="SW3" library="3pos_slide_switch_centered" deviceset="324_SW" device="" value="324_SW"/>
 <part name="SW4" library="3pos_slide_switch_centered" deviceset="324_SW" device="" value="324_SW"/>
 <part name="LED2" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
-<part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="1K"/>
+<part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
 <part name="GND9" library="backplane" deviceset="GND" device=""/>
 <part name="+3V2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="R5" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5.1K"/>
+<part name="R5" library="joyAnalog" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="U4" library="3pos_slide_switch" deviceset="XC6206_DEV" device=""/>
 <part name="C2" library="clock" deviceset="CAP" device="0805" value="1uF"/>
@@ -3567,6 +3567,8 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="U$7" library="adafruit_changed" deviceset="PINHD1X2" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
 </parts>
 <sheets>
 <sheet>
@@ -3723,6 +3725,13 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 </instance>
 <instance part="GND14" gate="1" x="63.5" y="-55.88" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="66.04" y="-58.42" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="P+4" gate="1" x="-101.6" y="38.1" smashed="yes">
+<attribute name="VALUE" x="-104.14" y="33.02" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R3" gate="G$1" x="-96.52" y="30.48" smashed="yes" rot="MR180">
+<attribute name="NAME" x="-100.33" y="28.9814" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="-100.33" y="33.782" size="1.778" layer="96" rot="MR180"/>
 </instance>
 </instances>
 <busses>
@@ -3950,6 +3959,11 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <wire x1="-68.58" y1="38.1" x2="-58.42" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="38.1" x2="-58.42" y2="40.64" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="P+4" gate="1" pin="+5V"/>
+<wire x1="-101.6" y1="30.48" x2="-101.6" y2="35.56" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="BUTTON1" class="0">
 <segment>
@@ -4040,6 +4054,10 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <wire x1="-40.64" y1="35.56" x2="-40.64" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="PA6"/>
 <wire x1="-40.64" y1="25.4" x2="-17.78" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="35.56" x2="-91.44" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="35.56" x2="-91.44" y2="30.48" width="0.1524" layer="91"/>
+<junction x="-68.58" y="35.56"/>
+<pinref part="R3" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$7" class="0">
