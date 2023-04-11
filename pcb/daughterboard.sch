@@ -3535,7 +3535,6 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <part name="C4" library="clock" deviceset="CAP" device="0805" value="100nF"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="SW3" library="3pos_slide_switch_centered" deviceset="324_SW" device="" value="324_SW"/>
 <part name="SW4" library="3pos_slide_switch_centered" deviceset="324_SW" device="" value="324_SW"/>
 <part name="LED2" library="adafruit" deviceset="LED" device="CHIP-LED0805"/>
 <part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
@@ -3569,6 +3568,7 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
+<part name="U$8" library="adafruit_changed" deviceset="PINHD1X2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3628,7 +3628,6 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <instance part="GND11" gate="1" x="111.76" y="38.1" smashed="yes">
 <attribute name="VALUE" x="109.22" y="35.56" size="1.778" layer="96"/>
 </instance>
-<instance part="SW3" gate="G$1" x="91.44" y="55.88" smashed="yes" rot="R90"/>
 <instance part="SW4" gate="G$1" x="91.44" y="2.54" smashed="yes" rot="MR270"/>
 <instance part="LED2" gate="G$1" x="-73.66" y="20.32" smashed="yes" rot="MR90">
 <attribute name="NAME" x="-78.232" y="23.876" size="1.778" layer="95" rot="MR180"/>
@@ -3733,6 +3732,10 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <attribute name="NAME" x="-100.33" y="28.9814" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="-100.33" y="33.782" size="1.778" layer="96" rot="MR180"/>
 </instance>
+<instance part="U$8" gate="1" x="91.44" y="83.82" smashed="yes" rot="R90">
+<attribute name="NAME" x="85.725" y="77.47" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="96.52" y="77.47" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -3771,11 +3774,11 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 </segment>
 <segment>
 <pinref part="GND11" gate="1" pin="GND"/>
-<pinref part="SW3" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="40.64" x2="111.76" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="SW3" gate="G$1" pin="4"/>
 <wire x1="93.98" y1="71.12" x2="93.98" y2="40.64" width="0.1524" layer="91"/>
-<junction x="93.98" y="40.64"/>
+<pinref part="U$8" gate="1" pin="2"/>
+<wire x1="93.98" y1="71.12" x2="91.44" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="71.12" x2="91.44" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
@@ -3968,16 +3971,16 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <net name="BUTTON1" class="0">
 <segment>
 <label x="66.04" y="40.64" size="1.778" layer="95"/>
-<pinref part="SW3" gate="G$1" pin="2"/>
 <wire x1="53.34" y1="40.64" x2="86.36" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="SW3" gate="G$1" pin="3"/>
 <wire x1="86.36" y1="71.12" x2="86.36" y2="40.64" width="0.1524" layer="91"/>
-<junction x="86.36" y="40.64"/>
 <pinref part="IC3" gate="G$1" pin="NRST"/>
 <wire x1="20.32" y1="33.02" x2="30.48" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="33.02" x2="30.48" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="25.4" x2="53.34" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="25.4" x2="53.34" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="U$8" gate="1" pin="1"/>
+<wire x1="86.36" y1="71.12" x2="88.9" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="71.12" x2="88.9" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="BUTTON2" class="0">
