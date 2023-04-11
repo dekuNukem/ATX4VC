@@ -3997,9 +3997,9 @@ Super Speed pins not available on the 16-pin purely SMD connector so this part i
 <pinref part="JP1" gate="A" pin="4"/>
 <wire x1="17.78" y1="73.66" x2="7.62" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="60.96" x2="-30.48" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="-30.48" y1="60.96" x2="-30.48" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PA5"/>
-<wire x1="-30.48" y1="27.94" x2="-17.78" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="60.96" x2="-30.48" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="G$1" pin="PA7"/>
+<wire x1="-17.78" y1="22.86" x2="-30.48" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
