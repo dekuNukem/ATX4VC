@@ -8,7 +8,7 @@
 </settings>
 <grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
@@ -28,14 +28,14 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -46,9 +46,9 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
@@ -58,8 +58,8 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -199,12 +199,10 @@
 <wire x1="27.238" y1="0" x2="28" y2="0.762" width="0" layer="20" curve="90"/>
 <text x="9.92" y="15.763" size="1.778" layer="26" rot="MR180" align="center">ATX4VC
 MCU Board</text>
-<text x="21.604" y="19.928" size="1.27" layer="26" rot="MR180" align="center">ATX4VC.com
-dekuNukem</text>
 <hole x="13" y="2" drill="3" locked="yes"/>
 <circle x="13" y="2" radius="2.6" width="0" layer="41"/>
 <text x="14.5034" y="17.3274" size="1.016" layer="25" rot="R180" align="center">FAN</text>
-<text x="21.0266" y="19.9644" size="1.016" layer="25" rot="R270" align="center">MODE</text>
+<text x="21.1536" y="20.5994" size="1.016" layer="25" rot="R270" align="center">MODE</text>
 <text x="21.0266" y="14.3764" size="1.016" layer="25" rot="R270" align="center">COLOR</text>
 <text x="21.0266" y="3.8354" size="1.016" layer="25" rot="R270" align="center">BRGHT</text>
 <text x="18.7706" y="0.7066" size="1.016" layer="25" distance="10" align="center">SOFT PWR</text>
@@ -213,9 +211,18 @@ dekuNukem</text>
 <text x="1.3716" y="15.6926" size="1.27" layer="25" align="center">D</text>
 <text x="11.2314" y="7.5946" size="0.8128" layer="25" distance="10" rot="R90" align="center">CLK</text>
 <text x="13.1526" y="5.4864" size="0.8128" layer="25" distance="10" rot="R270" align="center">DIO</text>
-<text x="9.793" y="10.784" size="1.27" layer="26" rot="MR180" align="center">PD1 APR23</text>
-<text x="19.2024" y="15.2954" size="0.8128" layer="26" rot="MR180" align="center">TX</text>
-<text x="16.6624" y="15.2954" size="0.8128" layer="26" rot="MR180" align="center">DB</text>
+<text x="19.2024" y="18.3434" size="0.8128" layer="26" rot="MR180" align="center">TX</text>
+<text x="16.6624" y="18.3434" size="0.8128" layer="26" rot="MR180" align="center">DB</text>
+<text x="24.3286" y="14.3764" size="1.016" layer="26" rot="MR270" align="center">RGB
+COLOR</text>
+<text x="24.3124" y="20.9296" size="1.016" layer="26" rot="MR90" align="center">RGB
+MODE</text>
+<text x="17.4244" y="21.1374" size="1.016" layer="26" rot="MR180" align="center">FAN SPD</text>
+<text x="26.7254" y="4.0386" size="1.016" layer="26" rot="MR90" align="center">BRGHT</text>
+<text x="18.6436" y="1.0876" size="1.016" layer="26" distance="10" rot="MR0" align="center">SOFT PWR</text>
+<text x="9.892" y="10.298" size="1.27" layer="26" rot="MR0" align="center">dekuNukem
+PD1 APR23</text>
+<text x="5.348" y="0.878" size="1.27" layer="26" rot="MR180" align="center">ATX4VC.com</text>
 </plain>
 <libraries>
 <library name="clock">
@@ -883,11 +890,11 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <attribute name="VALUE" x="5.08" y="3.81" size="0.762" layer="27" align="center"/>
 </element>
 <element name="U$1" library="adafruit_changed" package="1X02" value="PINHD1X2" x="17.399" y="22.86" smashed="yes"/>
-<element name="U$2" library="adafruit_changed" package="1X02" value="PINHD1X2" x="24.638" y="22.86" smashed="yes"/>
+<element name="U$2" library="adafruit_changed" package="1X02" value="PINHD1X2" x="26.797" y="20.828" smashed="yes" rot="R90"/>
 <element name="U$3" library="adafruit_changed" package="1X02" value="PINHD1X2" x="26.797" y="14.224" smashed="yes" rot="R90"/>
 <element name="U$4" library="adafruit_changed" package="1X02" value="PINHD1X2" x="26.797" y="8.509" smashed="yes" rot="R270"/>
 <element name="SW1" library="3pos_slide_switch_centered" package="342_SWICH_FOOT" value="324_SW" x="17.399" y="19.812" smashed="yes"/>
-<element name="SW2" library="3pos_slide_switch_centered" package="342_SWICH_FOOT" value="324_SW" x="24.638" y="19.812" smashed="yes" rot="R180"/>
+<element name="SW2" library="3pos_slide_switch_centered" package="342_SWICH_FOOT" value="324_SW" x="23.622" y="20.828" smashed="yes" rot="R90"/>
 <element name="SW5" library="3pos_slide_switch_centered" package="342_SWICH_FOOT" value="324_SW" x="23.622" y="14.224" smashed="yes" rot="R90"/>
 <element name="SW6" library="3pos_slide_switch_centered" package="342_SWICH_FOOT" value="324_SW" x="17.399" y="6.35" smashed="yes" rot="R180"/>
 <element name="U$5" library="adafruit_changed" package="1X02" value="PINHD1X2" x="12.192" y="6.477" smashed="yes" rot="R45"/>
@@ -1247,13 +1254,14 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="SW2" pad="P$3"/>
 <contactref element="U$2" pad="1"/>
 <wire x1="18.0168" y1="12.882" x2="19.105" y2="12.882" width="0.2032" layer="1"/>
-<wire x1="20.828" y1="17.077" x2="22.438" y2="18.687" width="0.2032" layer="1"/>
 <wire x1="19.105" y1="12.882" x2="20.828" y2="14.605" width="0.2032" layer="1"/>
 <wire x1="20.828" y1="14.605" x2="20.828" y2="17.077" width="0.2032" layer="1"/>
-<wire x1="22.438" y1="18.687" x2="24.638" y2="18.687" width="1.016" layer="1"/>
-<wire x1="24.638" y1="18.687" x2="26.838" y2="18.687" width="1.016" layer="1"/>
-<wire x1="24.638" y1="18.687" x2="24.638" y2="21.59" width="0.2032" layer="1"/>
-<wire x1="24.638" y1="21.59" x2="23.368" y2="22.86" width="0.2032" layer="1"/>
+<wire x1="22.497" y1="23.028" x2="22.497" y2="20.828" width="1.016" layer="1"/>
+<wire x1="22.497" y1="20.828" x2="22.497" y2="18.628" width="1.016" layer="1"/>
+<wire x1="26.797" y1="19.558" x2="25.527" y2="20.828" width="0.2032" layer="1"/>
+<wire x1="25.527" y1="20.828" x2="22.497" y2="20.828" width="0.2032" layer="1"/>
+<wire x1="20.828" y1="17.077" x2="22.379" y2="18.628" width="0.2032" layer="1"/>
+<wire x1="22.379" y1="18.628" x2="22.497" y2="18.628" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$11">
 <contactref element="SW5" pad="P$2"/>
