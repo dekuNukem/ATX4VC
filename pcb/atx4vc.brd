@@ -199,7 +199,7 @@
 <circle x="65.153" y="65.913" radius="4" width="0" layer="42"/>
 <text x="35.433" y="17.399" size="1.9304" layer="25" align="center">ATX4VC.com
 dekuNukem
-PT2 APR23</text>
+PD2 APR23</text>
 <wire x1="10.397" y1="61.254" x2="59.111" y2="61.254" width="0.0762" layer="20"/>
 <wire x1="59.111" y1="61.254" x2="61.016" y2="63.159" width="0.0762" layer="20" curve="90"/>
 <wire x1="61.016" y1="63.159" x2="61.016" y2="67.595" width="0.0762" layer="20"/>
