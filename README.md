@@ -6,15 +6,15 @@ ATX4VC lets you **use ATX power supply on vintage computers**.
 
 ![Alt text](photos/title2.jpeg)
 
-Features:
+It has:
 
 * All common voltages: +12V, +5V, +3.3V, -5V, -12V.
 
-* Tooless Lever-Actuated Terminal Block
+* Toolless Lever-Actuated Terminal Block
 
 * PC Fan Header
 
-* USB-C and Axillary Power Output
+* USB-C and Auxiliary Power Output
 
 * Fan speed, soft power, ARGB animation with optional MCU board.
 
