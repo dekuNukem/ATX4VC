@@ -4,25 +4,23 @@
 
 ATX4VC lets you **use ATX power supply on vintage computers**.
 
-![Alt text](photos/title.jpeg)
+![Alt text](photos/title2.jpeg)
 
-It has:
+Features:
 
 * All common voltages: +12V, +5V, +3.3V, -5V, -12V.
 
-* Power button and LED headers
+* Tooless Lever-Actuated Terminal Block
 
-* PC fan headers with PWM and temp probe support
+* PC Fan Header
 
-* Addressable RGB (ARGB) header
+* USB-C and Axillary Power Output
 
-* USB-C power output
+* Fan speed, soft power, ARGB animation with optional MCU board.
 
-ATX4VC can be used to:
+You can use ATX4VC to:
 
 * Replace retro computer PSUs
-
-* Add cooling and lighting upgrades
 
 * Test and diagnose vintage hardware
 
@@ -40,11 +38,11 @@ Available for Apple II, Macintosh 128K/Plus, Macintosh SE SE/30, and more.
 
 ## Showcase
 
-**Pico ATX PSU** is a perfect match due to its compact size. 
+Here ATX4VC replaces the dead PSU in my IBM 5155 Portable PC, providing +12, +5, -12, and -5V.
 
-Here it replaces the failed PSU in my Osborne 1, providing +12 and +5V.
+Note the significant simplification and space/weight saving.
 
-![Alt text](photos/os1.jpeg)
+![Alt text](photos/5155psu.png)
 
 It also works as a multi-voltage bench PSU for testing and diagnostics.
 
@@ -60,45 +58,35 @@ ATX4VC is designed to replace them with much more reliable modern ATX PSUs, and 
 
 ## Table of Contents
 
-[Quick Start Guide](#Quick-Start)
+- [Pico PSU](#get-a-pico-psu)
 
-[Power Button and Power LED](#Power-Button-and-Power-LED)
+- [Quick Start](#quick-start)
 
-[Power Connection](#Power-Connection)
+- [Power Button](#power-button)
 
-[Current Limit](#Current-Limit)
+- [Power Connection](#power-connection)
 
-[Fuses](#Fuses)
+- [Pre-flight Checks](#pre-flight-checks)
 
-[Fan Headers](#Fan-Headers)
+- [Current Limit](#current-limit)
 
-[Temperature Probe](#Temperature-Probe)
+- [Fuses](#fuses)
 
-[Addressable RGB (ARGB)](#Addressable-RGB-ARGB)
+- [Fan Headers](#fan-headers)
 
-[USB-C Power Output](#USB-C-Power-Output)
-
-[Dimension Drawings](#Dimension-Drawings)
-
-[Hard Power](#Hard-Power)
-
-[RGBA over USB](#RGBA-over-USB)
-
-[Additional Headers](#Additional-Headers)
-
-[USB Firmware Update](#USB-Firmware-Update)
+- [USB-C Power Output](#usb-c-power-output)
 
 ## User Manual
 
 ### Get a Pico PSU
 
-ATX4VC works with **any standard ATX PSU**, but a PicoPSU is recommended due to its compact size.
+ATX4VC works with **any ATX PSU**, but a PicoPSU is recommended due to its compact size.
 
 ![Alt text](photos/pico.jpg)
 
 * [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html). Even the cheapest 80W one should be plenty.
 
-* You can also find generic ones on eBay/Amazon/Aliexpress by searching `Pico ATX`. They are *not that* cheap, so I strongly suggest supporting the high-quality official products.
+* You can also find generic clones on eBay/Amazon/Aliexpress. They are pretty poor quality and *not that* cheap, so I strongly suggest supporting the official product.
 
 * A power brick with **12V DC** and **center positive** 5.5x2.5mm barrel jack is needed.
 
@@ -108,43 +96,41 @@ Remember that this solution is **only as good as your PicoPSU and 12V Brick**, s
 
 ### Quick Start
 
-* Make sure the jumper is in "soft power" setting (right 2 pins), or no jumper at all.
-
 * Plug in ATX connector
 
-* Press the power button
+* Connect Power Button (left two pins)
 
-![Alt text](photos/start.jpeg)
+* (Optional) Connect Power LED (right two pins, note polarity, resistor NOT needed)
+
+![Alt text](photos/start2.jpeg)
 
 The PSU should turn on, all voltage rail LEDs should light up. 
 
 That's the gist of it! But **please do keep reading** for the complete info.
 
-### Power Button and Power LED
+### Power Button
 
-You can use the built-in power button, or connect an external button to the header.
+The power button should be latching type (aka NOT momentary).
 
-![Alt text](photos/pwrheader.jpeg)
-
-You can also add an external power LED. Be ware of polarity. **No need for external resistors**. A 2.5K resistor is built-in.
+If you **do** want to use a momentary button for soft power, get the optional MCU board.
 
 ### Power Connection
 
-Observe the voltage on each terminal block.
+![Alt text](photos/rails2.jpeg)
 
-![Alt text](photos/rails.jpeg)
+* Pinout same on terminal block and auxiliary connector.
 
-* Strip the insulation
+* 5VSB = 5V Standby. Available even when PSU is off.
 
-* Loosen screw
+* Power Good: 5V when all voltages are stable and correct, 0V otherwise.
 
-* Insert into hole
+To connect a wire:
 
-* **Hold the terminal block steady** while tightening it back up
+* Strip the insulation about 12mm / 0.5in.
 
-* Don't leave conductor exposed to prevent shorts.
+* Lift handle, insert, press back down.
 
-![Alt text](photos/terminal.jpeg)
+![Alt text](photos/block.jpeg)
 
 Also, make sure the conductor is thick enough!
 
@@ -182,7 +168,7 @@ See your PSU label or datasheet to see how much current it can provide:
 
 ### Fuses
 
-+12V, +5V, and +3.3V are fused.
+Positive voltages are fused.
 
 * USE FUSES RATED **5A OR LESS**
 
@@ -192,148 +178,57 @@ ATX4VC uses common car fuses. Regular, Mini, and low-profile Mini all will work.
 
 ![Alt text](photos/fuses.png)
 
-Negative rails are not fused because they are low-current (around 200mA), and built-in protection is adequate.
+Negative rails are unfused because they are low-current (around 200mA), and built-in protection is adequate.
 
 ### Fan Headers
 
-Two PWM Fan headers are available. You can plug in standard 12V PC fans, both 3-Pin and 4-Pin.
+A PC Fan header is available. You can plug in any standard 12V PC fan, both 3-Pin and 4-Pin.
 
-![Alt text](photos/fan.jpeg)
+![Alt text](photos/fan2.jpeg)
 
-Press `FAN SPD` button to cycle through different speeds:
+By default it will run at full speed.
 
-| Fan Speed (%) |                     Note                    |
-|:-------------:|:-------------------------------------------:|
-|       0       | May or may not stop depending on fan itself |
-|       20      |                                             |
-|       40      |                                             |
-|       55      |                                             |
-|       65      |                                             |
-|       80      |                                             |
-|       90      |                                             |
-|      100      |                3 fast blinks                |
-|      Auto     |                5 slow blinks                |
-
-Speed control only available on 4-Pin fans. 3-Pin fan will always run at full speed.
-
-### Temperature Probe
-
-ATX4VC supports the DS18B20 temperature sensor. They are inexpensive and very popular in Arduino projects.
-
-The cheap ones on ebay are almost certainly counterfeits! They'll still work, but readings are noisier and less accurate.
-
-Try a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050), [Adafruit](https://www.adafruit.com/product/381), Mouser, or Digikey.
-
-Connect the headers. Usually VCC is red, GND is black, DATA is yellow.
-
-![Alt text](photos/probe.png)
-
-Press **FAN SPD** button until the user LED `slowly blinks 5 times`. Now fan speed will depend on the temperature reading.
-
-![Alt text](photos/curve.png)
-
-The fan starts to speed up at 25°C, and reaches full speed at 50°C. If probe is not detected, it will run at full speed.
-
-You can use a heat gun and air duster to test out the probe.
-
-### Addressable RGB (ARGB)
-
-Two standard ARGB headers are available. Simply plug them in. Up to 100 ARGB LEDs are supported.
-
-Use **RGB MODE** button to change animation type, **BRIGHT** and **COLOUR** button to adjust brightness and colour.
-
-Hold the button to cycle through faster.
-
-![Alt text](photos/rgb.jpeg)
+PWM speed adjustment and temperature probe is supported on optional MCU board.
 
 ### USB-C Power Output
 
-Two USB-C connectors are available for powering external devices.
+USB-C connectors are available for powering external devices.
 
-The left port provides 5V Standby, which is active even when PSU is off. Although max current is limited (typically 1 to 2 Amps)
+The one on ATX4VC itself is on regular 5V rail, can provide full current.
 
-The right port is on regular 5V rail. It can provide more current, but only available when PSU is on.
+The one on MCU daughterboard provides 5V standby, lower current but always available.
 
 Those ports are **output only**, don't try to backfeed them with another powered device.
 
-![Alt text](photos/usbc.jpeg)
+![Alt text](photos/usb2.jpeg)
 
-### Dimension Drawings
+## MCU Daughterboard
 
-ATX4VC is compatible with **2.5 inch PC drive bay**, and is compact enough to fit in most vintage computers.
-
-Use M3 screws and nuts. Dimension drawing below:
-
-![Alt text](photos/unit.png)
-
-## Additional Features
-
-### Hard Power
-
-Move the jumper to the left for hard power.
-
-This shorts PS_ON pin to GND, and turns on PSU immediately when plugged in.
-
-You can also wire up a toggle / latching switch to the left two pins to control the PSU directly.
-
-### Button Header
-
-External momentary buttons can be connected to adjust various settings:
-
-![Alt text](photos/aux_header.png)
-
-### Additional Headers
-
-A few more signals are available on headers.
-
-![Alt text](photos/debugheader.png)
-
-|  Pin |    Function   | Note                                             |
-|:----:|:-------------:|--------------------------------------------------|
-|  PG  |   Power Good  | High (+5V) when output is correct and stable     |
-| 5VSB |   5V Standby  | Available when PSU is off, max current 2A usually|
-|  CLK |     SWCLK     | For microcontroller (MCU) programming            |
-|  DIO |     SWDIO     | For MCU programming                  			  |
-|  3V3 |   3.3V Power  | Regulated from 5VSB for MCU power, 500mA max     |
-|  GND |     Ground    |                                                  |
-|  TX  | UART Transmit | Prints some debugging messages @ 115200bps       |
-|  RX  |     Unused    |                                                  |
+Under construction ...
 
 ## USB Firmware Update
-
-TURN OFF AND UNPLUG ATX PSU BEFORE STARTING.
 
 Under construction ...
 
 ## Table of Contents (again)
 
-[Quick Start Guide](#Quick-Start)
+- [Pico PSU](#get-a-pico-psu)
 
-[Power Button and Power LED](#Power-Button-and-Power-LED)
+- [Quick Start](#quick-start)
 
-[Power Connection](#Power-Connection)
+- [Power Button](#power-button)
 
-[Current Limit](#Current-Limit)
+- [Power Connection](#power-connection)
 
-[Fuses](#Fuses)
+- [Pre-flight Checks](#pre-flight-checks)
 
-[Fan Headers](#Fan-Headers)
+- [Current Limit](#current-limit)
 
-[Temperature Probe](#Temperature-Probe)
+- [Fuses](#fuses)
 
-[Addressable RGB (ARGB)](#Addressable-RGB-ARGB)
+- [Fan Headers](#fan-headers)
 
-[USB-C Power Output](#USB-C-Power-Output)
-
-[Dimension Drawings](#Dimension-Drawings)
-
-[Hard Power](#Hard-Power)
-
-[RGBA over USB](#RGBA-over-USB)
-
-[Additional Headers](#Additional-Headers)
-
-[USB Firmware Update](#USB-Firmware-Update)
+- [USB-C Power Output](#usb-c-power-output)
 
 ## Questions or Comments?
 
