@@ -16,7 +16,7 @@ It has:
 
 * USB-C and Auxiliary Power Output
 
-* Fan speed, soft power, ARGB animation with optional MCU board.
+* Fan speed, soft power, ARGB animation with optional MCU daughterboard.
 
 You can use ATX4VC to:
 
@@ -112,7 +112,7 @@ That's the gist of it! But **please do keep reading** for the complete info.
 
 The power button should be latching type (aka NOT momentary).
 
-If you **do** want to use a momentary button for soft power, get the optional MCU board.
+If you **do** want to use a momentary button for soft power, use the optional [MCU daughterboard](#mcu-daughterboard).
 
 ### Power Connection
 
@@ -188,7 +188,7 @@ A PC Fan header is available. You can plug in any standard 12V PC fan, both 3-Pi
 
 By default it will run at full speed.
 
-PWM speed adjustment and temperature probe is supported on optional MCU board.
+PWM speed adjustment and temperature probe is supported on optional [MCU daughterboard](#mcu-daughterboard).
 
 ### USB-C Power Output
 
