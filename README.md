@@ -194,7 +194,7 @@ PWM speed adjustment and temperature probe is supported on optional [MCU daughte
 
 USB-C connectors are available for powering external devices.
 
-The one on ATX4VC itself is on regular 5V rail, can provide full current.
+The one on ATX4VC itself is on regular 5V rail and can provide full current.
 
 The one on MCU daughterboard provides 5V standby, lower current but always available.
 
@@ -204,7 +204,75 @@ Those ports are **output only**, don't try to backfeed them with another powered
 
 ## MCU Daughterboard
 
-Under construction ...
+The optional MCU daughterboard adds the following new features:
+
+* **Soft power** with momentary buttons
+
+* Addressable RGB (**ARGB**) lighting. Adjustable brightness, animation, and color.
+
+* DS18B20 **Temperature Probe** support
+
+* PWM **fan speed control**, manual & automatic
+
+* 5V Standby USB-C power output
+
+### Installation
+
+The MCU board should come with two screws and a standoff:
+
+![Alt text](photos/mcusmall.jpeg)
+
+* Put one screw from bottom side
+
+* Install and tighten the standoff
+
+* Plug in the MCU board
+
+* Secure it in place with the other screw
+
+![Alt text](photos/mcuinstall.png)
+
+### Soft Power
+
+Press the soft power button to turn on, press again to turn off.
+
+You can also solder a header for an external button.
+
+![Alt text](photos/soft.png)
+
+### ARGB animation
+
+Plug device into the ARGB header.
+
+![Alt text](photos/rgbheader.jpeg)
+
+Use **RGB Mode**, **Color**, and **Brightness** button to adjust settings. Headers are available for external buttons.
+
+![Alt text](photos/rgb.png)
+
+### Fan Speed
+
+Press `FAN SPD` button to cycle through different speeds:
+
+![Alt text](photos/fanspeed.png)
+
+### Temperature Probe
+
+ATX4VC supports the DS18B20 temperature sensor. They are inexpensive and very popular in Arduino projects.
+
+The cheap ones are almost certainly counterfeits! They'll still work, but readings are noisier and less accurate.
+
+Try a reputable distributor like [Sparkfun](https://www.sparkfun.com/products/11050), [Adafruit](https://www.adafruit.com/product/381), Mouser, or Digikey.
+
+Connect the headers. Usually VCC is red, GND is black, DATA is yellow.
+
+![Alt text](photos/ds.png)
+
+Press **FAN SPD** button until the user LED `slowly blinks 5 times`. Now fan speed will depend on the temperature reading.
+
+The fan starts to speed up at 25°C, and reaches full speed at 50°C. If probe is not detected, it will run at full speed.
+
+You can use a heat gun and air duster to test it.
 
 ## USB Firmware Update
 
