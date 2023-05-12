@@ -4,9 +4,13 @@
 
 ATX4VC lets you **use ATX power supply on vintage computers**.
 
+* Plug in ATX PSU on one end
+
+* Get 12V, 5V, -12V, -5V out the other!
+
 ![Alt text](photos/title2.jpeg)
 
-It has:
+Features:
 
 * All common voltages: +12V, +5V, +3.3V, -5V, -12V.
 
@@ -98,27 +102,27 @@ Remember that this solution is **only as good as your PicoPSU and 12V Brick**, s
 
 * Plug in ATX connector
 
-* Connect Power Button (left two pins)
-
-* (Optional) Connect Power LED (right two pins, note polarity, resistor NOT needed)
+* Plug in Power Button (left two pins)
 
 ![Alt text](photos/start2.jpeg)
 
-The PSU should turn on, all voltage rail LEDs should light up. 
+Press the button. PSU should turn on, all voltage rail LEDs should light up. 
 
 That's the gist of it! But **please do keep reading** for the complete info.
 
-### Power Button
+### Power Button and LED
 
 The power button should be latching type (aka NOT momentary).
 
-If you **do** want to use a momentary button for soft power, use the optional [MCU daughterboard](#mcu-daughterboard).
+You can also hook up a Power LED (right two pins, note polarity, resistor NOT needed).
+
+If you **do** want to use a momentary button with soft power, use the optional [MCU daughterboard](#mcu-daughterboard).
 
 ### Power Connection
 
 ![Alt text](photos/rails2.jpeg)
 
-* Pinout same on terminal block and auxiliary connector.
+* Pinout is the same on terminal block and auxiliary connector.
 
 * 5VSB = 5V Standby. Available even when PSU is off.
 
@@ -128,7 +132,7 @@ To connect a wire:
 
 * Strip the insulation about 12mm / 0.5in.
 
-* Lift handle, insert, press back down.
+* Lift handle, insert, push back down.
 
 ![Alt text](photos/block.jpeg)
 
@@ -168,8 +172,6 @@ See your PSU label or datasheet to see how much current it can provide:
 
 ### Fuses
 
-Positive voltages are fused.
-
 * USE FUSES RATED **5A OR LESS**
 
 * **DO NOT BYPASS FUSES**
@@ -177,8 +179,6 @@ Positive voltages are fused.
 ATX4VC uses common car fuses. Regular, Mini, and low-profile Mini all will work. Simply push into the holder.
 
 ![Alt text](photos/fuses.png)
-
-Negative rails are unfused because they are low-current (around 200mA), and built-in protection is adequate.
 
 ### Fan Headers
 
@@ -188,15 +188,15 @@ A PC Fan header is available. You can plug in any standard 12V PC fan, both 3-Pi
 
 By default it will run at full speed.
 
-PWM speed adjustment and temperature probe is supported on optional [MCU daughterboard](#mcu-daughterboard).
+PWM speed control and temperature probe is supported on optional [MCU daughterboard](#mcu-daughterboard).
 
 ### USB-C Power Output
 
 USB-C connectors are available for powering external devices.
 
-The one on ATX4VC itself is on regular 5V rail and can provide full current.
+The port on ATX4VC itself is on regular 5V rail and can provide full current.
 
-The one on MCU daughterboard provides 5V standby, lower current but always available.
+The port on MCU daughterboard provides 5V standby, lower current but always available.
 
 Those ports are **output only**, don't try to backfeed them with another powered device.
 
