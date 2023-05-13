@@ -124,6 +124,8 @@ If you **do** want to use a momentary button with soft power, use the optional [
 
 * Pinout is the same on terminal block and auxiliary connector.
 
+* Use **7P VH 3.96** female connector for aux power out.
+
 * 5VSB = 5V Standby. Available even when PSU is off.
 
 * Power Good: 5V when all voltages are stable and correct, 0V otherwise.
@@ -194,17 +196,17 @@ PWM speed control and temperature probe is supported on optional [MCU daughterbo
 
 USB-C connectors are available for powering external devices.
 
-The port on ATX4VC itself is on regular 5V rail and can provide full current.
+The port on ATX4VC itself is on regular 5V rail.
 
-The port on MCU daughterboard provides 5V standby, lower current but always available.
+The port on MCU daughterboard is on 5V standby. Lower current but always available.
 
-Those ports are **output only**, don't try to backfeed them with another powered device.
+Those ports are **output only**, don't try to backfeed with another powered device.
 
 ![Alt text](photos/usb2.jpeg)
 
 ## MCU Daughterboard
 
-The optional MCU daughterboard adds the following new features:
+The optional MCU daughterboard adds many new features:
 
 * **Soft power** with momentary buttons
 
@@ -212,7 +214,7 @@ The optional MCU daughterboard adds the following new features:
 
 * DS18B20 **Temperature Probe** support
 
-* PWM **fan speed control**, manual & automatic
+* PWM **fan speed control**
 
 * 5V Standby USB-C power output
 
