@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.1">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -926,6 +926,29 @@ MAX3223-MAX3243.pdf</description>
 <package name="EDGEPAD_20MM">
 <smd name="P$1" x="0" y="0" dx="3" dy="20" layer="1" thermals="no" cream="no"/>
 </package>
+<package name="DG2204R-8">
+<pad name="P$1" x="-15" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$2" x="-15" y="-4.1" drill="1.6" thermals="no"/>
+<wire x1="-18.8" y1="-7" x2="23.8" y2="-7" width="0.1524" layer="21"/>
+<wire x1="-18.8" y1="9.3" x2="23.8" y2="9.3" width="0.1524" layer="21"/>
+<pad name="P$3" x="-10" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$4" x="-10" y="-4.1" drill="1.6" thermals="no"/>
+<pad name="P$5" x="-5" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$6" x="-5" y="-4.1" drill="1.6" thermals="no"/>
+<pad name="P$7" x="0" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$8" x="0" y="-4.1" drill="1.6" thermals="no"/>
+<pad name="P$9" x="5" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$10" x="5" y="-4.1" drill="1.6" thermals="no"/>
+<pad name="P$11" x="10" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$12" x="10" y="-4.1" drill="1.6" thermals="no"/>
+<pad name="P$13" x="15" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$14" x="15" y="-4.1" drill="1.6" thermals="no"/>
+<wire x1="-18.8" y1="9.3" x2="-18.8" y2="-7" width="0.1524" layer="21"/>
+<wire x1="23.8" y1="9.3" x2="23.8" y2="-7" width="0.1524" layer="21"/>
+<text x="0" y="7.5" size="1.778" layer="51" rot="R180" align="center">OPENING</text>
+<pad name="P$15" x="20" y="4.1" drill="1.6" thermals="no"/>
+<pad name="P$16" x="20" y="-4.1" drill="1.6" thermals="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="342_SWITCH_SYM">
@@ -1341,6 +1364,20 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="0" y1="-2.54" x2="7.62" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.1524" layer="94"/>
 <wire x1="7.62" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+</symbol>
+<symbol name="WAGO257-8">
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-38.1" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-38.1" x2="5.08" y2="-38.1" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="-38.1" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="-5.08" y2="2.54" width="0.1524" layer="94"/>
+<pin name="P$1" x="-10.16" y="0" length="middle"/>
+<pin name="P$2" x="-10.16" y="-5.08" length="middle"/>
+<pin name="P$3" x="-10.16" y="-10.16" length="middle"/>
+<pin name="P$4" x="-10.16" y="-15.24" length="middle"/>
+<pin name="P$5" x="-10.16" y="-20.32" length="middle"/>
+<pin name="P$6" x="-10.16" y="-25.4" length="middle"/>
+<pin name="P$7" x="-10.16" y="-30.48" length="middle"/>
+<pin name="P$8" x="-10.16" y="-35.56" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2172,6 +2209,28 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <device name="EDGEPAD_20MM" package="EDGEPAD_20MM">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DG2204R-5.0-8">
+<gates>
+<gate name="G$1" symbol="WAGO257-8" x="0" y="17.78"/>
+</gates>
+<devices>
+<device name="DG2204-8" package="DG2204R-8">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
+<connect gate="G$1" pin="P$2" pad="P$3 P$4"/>
+<connect gate="G$1" pin="P$3" pad="P$5 P$6"/>
+<connect gate="G$1" pin="P$4" pad="P$7 P$8"/>
+<connect gate="G$1" pin="P$5" pad="P$9 P$10"/>
+<connect gate="G$1" pin="P$6" pad="P$11 P$12"/>
+<connect gate="G$1" pin="P$7" pad="P$13 P$14"/>
+<connect gate="G$1" pin="P$8" pad="P$15 P$16"/>
 </connects>
 <technologies>
 <technology name=""/>

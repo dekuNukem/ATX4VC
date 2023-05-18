@@ -75,3 +75,10 @@ moved MCU to its own daughterboard
 reduced PCB size
 new lever terminal block
 added 5VSB to terminal block
+
+PT7 upcoming
+
+Power Good in its own terminal block?
+use 8 position terminal block and aux connector?
+
+
