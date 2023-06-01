@@ -15163,6 +15163,8 @@ chip</description>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
+<part name="C11" library="clock" deviceset="C-US" device="C1210" value="47uF"/>
+<part name="GND23" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15419,6 +15421,13 @@ chip</description>
 <instance part="GND22" gate="1" x="304.8" y="12.7" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="307.34" y="10.16" size="1.778" layer="96" rot="MR0"/>
 </instance>
+<instance part="C11" gate="G$1" x="406.4" y="10.16" smashed="yes">
+<attribute name="NAME" x="407.416" y="10.795" size="1.778" layer="95"/>
+<attribute name="VALUE" x="407.416" y="5.969" size="1.778" layer="96"/>
+</instance>
+<instance part="GND23" gate="1" x="406.4" y="2.54" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="408.94" y="0" size="1.778" layer="96" rot="MR0"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -15586,6 +15595,10 @@ chip</description>
 <segment>
 <pinref part="C9" gate="G$1" pin="1"/>
 <pinref part="GND22" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C11" gate="G$1" pin="2"/>
+<pinref part="GND23" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -15841,7 +15854,8 @@ chip</description>
 <wire x1="353.06" y1="12.7" x2="363.22" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="363.22" y1="12.7" x2="375.92" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="375.92" y1="12.7" x2="383.54" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="383.54" y1="12.7" x2="421.64" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="383.54" y1="12.7" x2="406.4" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="406.4" y1="12.7" x2="421.64" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="304.8" y1="5.08" x2="304.8" y2="-96.52" width="0.1524" layer="91"/>
 <junction x="304.8" y="5.08"/>
 <pinref part="U$11" gate="G$1" pin="B0"/>
@@ -15866,6 +15880,8 @@ chip</description>
 <junction x="353.06" y="12.7"/>
 <pinref part="C7" gate="G$1" pin="2"/>
 <junction x="375.92" y="12.7"/>
+<pinref part="C11" gate="G$1" pin="1"/>
+<junction x="406.4" y="12.7"/>
 </segment>
 </net>
 <net name="F3V3" class="0">
