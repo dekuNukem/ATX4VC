@@ -197,7 +197,7 @@
 <circle x="65.153" y="4.191" radius="4" width="0" layer="42"/>
 <circle x="4.318" y="65.786" radius="4" width="0" layer="42"/>
 <circle x="65.153" y="65.913" radius="4" width="0" layer="42"/>
-<text x="24.638" y="17.399" size="2.1844" layer="25" rot="R90" align="center">ATX4VC.com
+<text x="24.13" y="17.399" size="2.1844" layer="25" rot="R90" align="center">ATX4VC.com
 dekuNukem
 MAY23</text>
 <wire x1="10.397" y1="61.254" x2="59.111" y2="61.254" width="0.0762" layer="20"/>
@@ -316,7 +316,7 @@ MAY23</text>
 <text x="93.091" y="36.703" size="1.6764" layer="25" align="center">MAKE SURE TO USE
 12V RATED CAPS ON 12V LINES</text>
 <text x="66.04" y="45.339" size="2.54" layer="26" rot="MR270" align="center">+</text>
-<text x="40.64" y="52.324" size="2.1844" layer="26" rot="MR0">+</text>
+<text x="42.164" y="49.53" size="2.1844" layer="26" rot="MR0">+</text>
 <text x="28.575" y="48.26" size="2.1844" layer="26" rot="MR0">+</text>
 </plain>
 <libraries>
@@ -2282,8 +2282,8 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="C10" library="atx_power_control" package="0805$1" value="2.2uF" x="32.639" y="34.925" smashed="yes" rot="MR180">
 <attribute name="NAME" x="28.956" y="35.4965" size="0.8128" layer="26" rot="MR180"/>
 </element>
-<element name="C11" library="clock" package="C1210" value="47uF" x="41.148" y="55.626" smashed="yes" rot="MR180">
-<attribute name="NAME" x="42.037" y="53.848" size="0.8128" layer="26" rot="MR180"/>
+<element name="C11" library="clock" package="C1210" value="47uF" x="41.402" y="54.229" smashed="yes" rot="MR90">
+<attribute name="NAME" x="43.307" y="57.023" size="0.8128" layer="26" rot="MR0"/>
 </element>
 </elements>
 <signals>
@@ -2406,10 +2406,10 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <vertex x="53.213" y="30.861"/>
 </polygon>
 <polygon width="0.1524" layer="1" thermals="no">
-<vertex x="29.972" y="30.099"/>
-<vertex x="27.813" y="30.099"/>
-<vertex x="27.813" y="32.512"/>
-<vertex x="29.972" y="32.512"/>
+<vertex x="29.972" y="30.353"/>
+<vertex x="27.813" y="30.353"/>
+<vertex x="27.813" y="32.131"/>
+<vertex x="29.972" y="32.131"/>
 </polygon>
 <contactref element="C2" pad="-"/>
 <wire x1="59.146" y1="52.545" x2="62.603" y2="52.545" width="2.54" layer="16"/>
@@ -2448,11 +2448,10 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <vertex x="32.639" y="46.228"/>
 </polygon>
 <contactref element="C11" pad="2"/>
-<wire x1="40.386" y1="59.182" x2="40.64" y2="59.182" width="1.27" layer="16"/>
-<wire x1="42.548" y1="57.274" x2="42.548" y2="55.626" width="1.27" layer="16"/>
-<wire x1="40.64" y1="59.182" x2="42.548" y2="57.274" width="1.27" layer="16"/>
-<wire x1="42.548" y1="55.626" x2="46.147" y2="55.626" width="1.27" layer="16"/>
-<wire x1="46.147" y1="55.626" x2="46.355" y2="55.418" width="1.27" layer="16"/>
+<wire x1="40.386" y1="59.182" x2="40.386" y2="56.645" width="1.524" layer="16"/>
+<wire x1="40.386" y1="56.645" x2="41.402" y2="55.629" width="1.524" layer="16"/>
+<wire x1="46.355" y1="55.418" x2="46.144" y2="55.629" width="1.524" layer="16"/>
+<wire x1="46.144" y1="55.629" x2="41.402" y2="55.629" width="1.524" layer="16"/>
 </signal>
 <signal name="N$5">
 <contactref element="LED6" pad="C"/>
@@ -2581,11 +2580,11 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="14.129" y1="33.999" x2="13.03" y2="32.9" width="1.27" layer="16"/>
 <wire x1="13.03" y1="32.9" x2="11.379" y2="32.9" width="1.27" layer="16"/>
 <wire x1="14.129" y1="42.75" x2="14.129" y2="33.999" width="1.27" layer="16"/>
-<wire x1="11.379" y1="32.9" x2="10.707" y2="32.9" width="1.778" layer="16"/>
-<wire x1="10.707" y1="32.9" x2="8.668" y2="30.861" width="1.778" layer="16"/>
-<wire x1="8.668" y1="30.861" x2="8.668" y2="26.543" width="1.778" layer="16"/>
-<wire x1="10.711" y1="24.5" x2="11.379" y2="24.5" width="1.778" layer="16"/>
-<wire x1="8.668" y1="26.543" x2="10.711" y2="24.5" width="1.778" layer="16"/>
+<wire x1="11.379" y1="32.9" x2="9.437" y2="32.9" width="1.778" layer="16"/>
+<wire x1="9.437" y1="32.9" x2="8.033" y2="31.496" width="1.778" layer="16"/>
+<wire x1="8.033" y1="31.496" x2="8.033" y2="25.908" width="1.778" layer="16"/>
+<wire x1="9.441" y1="24.5" x2="11.379" y2="24.5" width="1.778" layer="16"/>
+<wire x1="8.033" y1="25.908" x2="9.441" y2="24.5" width="1.778" layer="16"/>
 <wire x1="16.879" y1="53.9" x2="16.879" y2="49.7" width="2.54" layer="1"/>
 <wire x1="16.879" y1="49.7" x2="16.879" y2="45.5" width="2.54" layer="1"/>
 </signal>
@@ -2686,8 +2685,8 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="30.226" y1="49.251" x2="33.844" y2="49.251" width="1.524" layer="16"/>
 <polygon width="0.1524" layer="16" thermals="no">
 <vertex x="34.544" y="47.752"/>
-<vertex x="34.544" y="44.069"/>
-<vertex x="37.338" y="44.069"/>
+<vertex x="34.544" y="43.434"/>
+<vertex x="37.338" y="43.434"/>
 <vertex x="37.338" y="47.752"/>
 </polygon>
 </signal>
@@ -2697,7 +2696,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="U$11" pad="B1"/>
 <contactref element="JP5" pad="2"/>
 <wire x1="37.149" y1="53.947" x2="37.149" y2="50.447" width="2.54" layer="16"/>
-<wire x1="37.149" y1="50.447" x2="38.16" y2="51.458" width="2.54" layer="16"/>
 <contactref element="U$12" pad="P$6"/>
 <contactref element="U$12" pad="P$5"/>
 <wire x1="57.484" y1="47.545" x2="59.146" y2="47.545" width="2.54" layer="16"/>
@@ -2705,8 +2703,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="59.146" y1="47.545" x2="54.816" y2="47.545" width="0.2032" layer="1"/>
 <wire x1="54.608" y1="47.337" x2="54.816" y2="47.545" width="0.2032" layer="1"/>
 <contactref element="U$7" pad="P$6"/>
-<wire x1="38.16" y1="51.458" x2="39.751" y2="51.458" width="2.54" layer="16"/>
-<wire x1="39.751" y1="51.458" x2="46.355" y2="51.458" width="2.54" layer="16"/>
 <wire x1="46.355" y1="51.458" x2="53.571" y2="51.458" width="2.54" layer="16"/>
 <contactref element="C2" pad="+"/>
 <wire x1="59.146" y1="47.545" x2="62.335" y2="47.545" width="2.54" layer="16"/>
@@ -2719,10 +2715,18 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="51.181" y1="52.059" x2="50.58" y2="51.458" width="0.2032" layer="16"/>
 <wire x1="50.58" y1="51.458" x2="46.355" y2="51.458" width="0.2032" layer="16"/>
 <contactref element="C11" pad="1"/>
-<wire x1="39.748" y1="55.626" x2="39.748" y2="51.461" width="1.27" layer="16"/>
-<wire x1="39.748" y1="51.461" x2="39.751" y2="51.458" width="1.27" layer="16"/>
-<wire x1="39.748" y1="55.626" x2="37.846" y2="57.528" width="1.27" layer="16"/>
-<wire x1="37.846" y1="57.528" x2="37.846" y2="59.182" width="1.27" layer="16"/>
+<wire x1="37.846" y1="59.182" x2="37.846" y2="54.644" width="1.524" layer="16"/>
+<wire x1="37.846" y1="54.644" x2="37.149" y2="53.947" width="1.524" layer="16"/>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="42.799" y="53.594"/>
+<vertex x="43.688" y="52.705"/>
+<vertex x="47.752" y="52.705"/>
+<vertex x="47.752" y="50.292"/>
+<vertex x="41.91" y="50.292"/>
+<vertex x="41.275" y="50.927"/>
+<vertex x="35.941" y="50.927"/>
+<vertex x="35.941" y="53.594"/>
+</polygon>
 </signal>
 <signal name="F3V3">
 <contactref element="LED3" pad="A"/>
