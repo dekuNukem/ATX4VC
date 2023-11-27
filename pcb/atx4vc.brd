@@ -874,6 +874,14 @@ by exp-lbrs.ulp</description>
 <rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
 <rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
 </package>
+<package name="1X02">
+<pad name="1" x="-1.27" y="0" drill="1.016" diameter="1.6764" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="1.016" diameter="1.6764" rot="R90"/>
+<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.81" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+</package>
 </packages>
 </library>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
@@ -2289,6 +2297,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="C11" library="clock" package="C1210" value="47uF" x="41.402" y="54.229" smashed="yes" rot="MR90">
 <attribute name="NAME" x="43.307" y="57.023" size="0.8128" layer="26" rot="MR0"/>
 </element>
+<element name="U$13" library="adafruit_changed" package="1X02" value="PINHD1X2" x="42" y="11.1" smashed="yes" rot="R270"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2696,6 +2705,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <vertex x="37.338" y="43.434"/>
 <vertex x="37.338" y="47.752"/>
 </polygon>
+<contactref element="U$13" pad="2"/>
+<wire x1="44.259" y1="11.165" x2="43.335" y2="11.165" width="0.3048" layer="1"/>
+<wire x1="43.335" y1="11.165" x2="42" y2="9.83" width="0.3048" layer="1"/>
 </signal>
 <signal name="F12V">
 <contactref element="LED4" pad="A"/>
@@ -2775,6 +2787,9 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="48.069" y1="12.965" x2="57.161" y2="12.965" width="0.3048" layer="1"/>
 <wire x1="59.055" y1="14.859" x2="59.055" y2="16.51" width="0.3048" layer="1"/>
 <wire x1="57.161" y1="12.965" x2="59.055" y2="14.859" width="0.3048" layer="1"/>
+<contactref element="U$13" pad="1"/>
+<wire x1="44.259" y1="12.965" x2="42.595" y2="12.965" width="0.3048" layer="1"/>
+<wire x1="42.595" y1="12.965" x2="42" y2="12.37" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$11">
 <contactref element="J2" pad="8"/>

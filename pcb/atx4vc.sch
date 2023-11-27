@@ -2997,6 +2997,14 @@ by exp-lbrs.ulp</description>
 <rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
 <rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
 </package>
+<package name="1X02">
+<pad name="1" x="-1.27" y="0" drill="1.016" diameter="1.6764" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="1.016" diameter="1.6764" rot="R90"/>
+<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.81" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="1X4">
@@ -3011,6 +3019,16 @@ by exp-lbrs.ulp</description>
 <pin name="3" x="-5.08" y="-2.54" length="middle"/>
 <pin name="4" x="-5.08" y="-5.08" length="middle"/>
 </symbol>
+<symbol name="PINHD2">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
+<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="PINHD1X4">
@@ -3024,6 +3042,22 @@ by exp-lbrs.ulp</description>
 <connect gate="1" pin="2" pad="2"/>
 <connect gate="1" pin="3" pad="3"/>
 <connect gate="1" pin="4" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PINHD1X2">
+<gates>
+<gate name="1" symbol="PINHD2" x="5.08" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X02">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -15165,6 +15199,7 @@ chip</description>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
 <part name="C11" library="clock" deviceset="C-US" device="C1210" value="47uF"/>
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
+<part name="U$13" library="adafruit_changed" deviceset="PINHD1X2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15427,6 +15462,10 @@ chip</description>
 </instance>
 <instance part="GND23" gate="1" x="406.4" y="2.54" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="408.94" y="0" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="U$13" gate="1" x="325.12" y="73.66" smashed="yes">
+<attribute name="NAME" x="318.77" y="79.375" size="1.778" layer="95"/>
+<attribute name="VALUE" x="318.77" y="68.58" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -15842,6 +15881,11 @@ chip</description>
 <junction x="375.92" y="40.64"/>
 <pinref part="C5" gate="G$1" pin="2"/>
 <junction x="383.54" y="40.64"/>
+<pinref part="U$13" gate="1" pin="2"/>
+<wire x1="322.58" y1="73.66" x2="320.04" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="73.66" x2="320.04" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="68.58" x2="317.5" y2="68.58" width="0.1524" layer="91"/>
+<junction x="317.5" y="68.58"/>
 </segment>
 </net>
 <net name="F12V" class="0">
@@ -15926,6 +15970,10 @@ chip</description>
 <junction x="314.96" y="78.74"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="314.96" y1="78.74" x2="312.42" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="U$13" gate="1" pin="1"/>
+<wire x1="322.58" y1="76.2" x2="322.58" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="322.58" y1="78.74" x2="317.5" y2="78.74" width="0.1524" layer="91"/>
+<junction x="317.5" y="78.74"/>
 </segment>
 </net>
 <net name="N$11" class="0">
