@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -23,19 +23,19 @@
 <layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
 <layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
 <layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -47,19 +47,19 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -239,66 +239,62 @@ JAN24</text>
 <text x="20.5505" y="56.777" size="1.4224" layer="25" rot="R180" align="center">G</text>
 <text x="25.5985" y="56.777" size="1.4224" layer="25" rot="R180" align="center">D</text>
 <text x="28.2655" y="56.65" size="1.4224" layer="25" rot="R180" align="center">5</text>
-<hole x="0.127" y="61.595" drill="0.381"/>
-<hole x="0.762" y="61.595" drill="0.381"/>
-<hole x="1.397" y="61.595" drill="0.381"/>
-<hole x="2.032" y="61.595" drill="0.381"/>
-<hole x="2.667" y="61.595" drill="0.381"/>
-<hole x="3.302" y="61.595" drill="0.381"/>
-<hole x="3.937" y="61.595" drill="0.381"/>
-<hole x="4.572" y="61.595" drill="0.381"/>
-<hole x="5.207" y="61.595" drill="0.381"/>
-<hole x="5.842" y="61.595" drill="0.381"/>
-<hole x="6.477" y="61.595" drill="0.381"/>
-<hole x="7.112" y="61.595" drill="0.381"/>
-<hole x="7.747" y="61.595" drill="0.381"/>
-<hole x="8.382" y="61.595" drill="0.381"/>
-<hole x="0.254" y="8.255" drill="0.381"/>
-<hole x="0.889" y="8.255" drill="0.381"/>
-<hole x="1.524" y="8.255" drill="0.381"/>
-<hole x="2.159" y="8.255" drill="0.381"/>
-<hole x="2.794" y="8.255" drill="0.381"/>
-<hole x="3.429" y="8.255" drill="0.381"/>
-<hole x="4.064" y="8.255" drill="0.381"/>
-<hole x="4.699" y="8.255" drill="0.381"/>
-<hole x="5.334" y="8.255" drill="0.381"/>
-<hole x="5.969" y="8.255" drill="0.381"/>
-<hole x="6.604" y="8.255" drill="0.381"/>
-<hole x="7.239" y="8.255" drill="0.381"/>
-<hole x="7.874" y="8.255" drill="0.381"/>
-<hole x="8.509" y="8.255" drill="0.381"/>
-<hole x="60.325" y="8.255" drill="0.381"/>
-<hole x="60.96" y="8.255" drill="0.381"/>
-<hole x="61.595" y="8.255" drill="0.381"/>
-<hole x="62.23" y="8.255" drill="0.381"/>
-<hole x="62.865" y="8.255" drill="0.381"/>
-<hole x="63.5" y="8.255" drill="0.381"/>
-<hole x="64.135" y="8.255" drill="0.381"/>
-<hole x="64.77" y="8.255" drill="0.381"/>
-<hole x="65.405" y="8.255" drill="0.381"/>
-<hole x="66.04" y="8.255" drill="0.381"/>
-<hole x="66.675" y="8.255" drill="0.381"/>
-<hole x="67.31" y="8.255" drill="0.381"/>
-<hole x="67.945" y="8.255" drill="0.381"/>
-<hole x="68.58" y="8.255" drill="0.381"/>
-<hole x="60.325" y="61.595" drill="0.381"/>
-<hole x="60.96" y="61.595" drill="0.381"/>
-<hole x="61.595" y="61.595" drill="0.381"/>
-<hole x="62.23" y="61.595" drill="0.381"/>
-<hole x="62.865" y="61.595" drill="0.381"/>
-<hole x="63.5" y="61.595" drill="0.381"/>
-<hole x="64.135" y="61.595" drill="0.381"/>
-<hole x="64.77" y="61.595" drill="0.381"/>
-<hole x="65.405" y="61.595" drill="0.381"/>
-<hole x="66.04" y="61.595" drill="0.381"/>
-<hole x="66.675" y="61.595" drill="0.381"/>
-<hole x="67.31" y="61.595" drill="0.381"/>
-<hole x="67.945" y="61.595" drill="0.381"/>
-<hole x="68.58" y="61.595" drill="0.381"/>
-<hole x="9.144" y="8.255" drill="0.381"/>
-<hole x="69.215" y="8.255" drill="0.381"/>
-<hole x="69.215" y="61.595" drill="0.381"/>
-<hole x="9.017" y="61.595" drill="0.381"/>
+<hole x="0.1778" y="61.087" drill="0.381"/>
+<hole x="0.762" y="61.087" drill="0.381"/>
+<hole x="1.397" y="61.087" drill="0.381"/>
+<hole x="2.032" y="61.087" drill="0.381"/>
+<hole x="2.667" y="61.087" drill="0.381"/>
+<hole x="3.302" y="61.087" drill="0.381"/>
+<hole x="3.937" y="61.087" drill="0.381"/>
+<hole x="4.572" y="61.087" drill="0.381"/>
+<hole x="5.207" y="61.087" drill="0.381"/>
+<hole x="5.842" y="61.087" drill="0.381"/>
+<hole x="6.477" y="61.087" drill="0.381"/>
+<hole x="7.112" y="61.087" drill="0.381"/>
+<hole x="7.747" y="61.087" drill="0.381"/>
+<hole x="8.382" y="61.087" drill="0.381"/>
+<hole x="0.254" y="7.747" drill="0.381"/>
+<hole x="0.889" y="7.747" drill="0.381"/>
+<hole x="1.524" y="7.747" drill="0.381"/>
+<hole x="2.159" y="7.747" drill="0.381"/>
+<hole x="2.794" y="7.747" drill="0.381"/>
+<hole x="3.429" y="7.747" drill="0.381"/>
+<hole x="4.064" y="7.747" drill="0.381"/>
+<hole x="4.699" y="7.747" drill="0.381"/>
+<hole x="5.334" y="7.747" drill="0.381"/>
+<hole x="5.969" y="7.747" drill="0.381"/>
+<hole x="6.604" y="7.747" drill="0.381"/>
+<hole x="7.239" y="7.747" drill="0.381"/>
+<hole x="7.874" y="7.747" drill="0.381"/>
+<hole x="8.509" y="7.747" drill="0.381"/>
+<hole x="60.325" y="7.747" drill="0.381"/>
+<hole x="60.96" y="7.747" drill="0.381"/>
+<hole x="61.595" y="7.747" drill="0.381"/>
+<hole x="62.23" y="7.747" drill="0.381"/>
+<hole x="62.865" y="7.747" drill="0.381"/>
+<hole x="63.5" y="7.747" drill="0.381"/>
+<hole x="64.135" y="7.747" drill="0.381"/>
+<hole x="64.77" y="7.747" drill="0.381"/>
+<hole x="65.405" y="7.747" drill="0.381"/>
+<hole x="66.04" y="7.747" drill="0.381"/>
+<hole x="66.675" y="7.747" drill="0.381"/>
+<hole x="67.31" y="7.747" drill="0.381"/>
+<hole x="67.945" y="7.747" drill="0.381"/>
+<hole x="68.58" y="7.747" drill="0.381"/>
+<hole x="60.96" y="61.087" drill="0.381"/>
+<hole x="61.595" y="61.087" drill="0.381"/>
+<hole x="62.23" y="61.087" drill="0.381"/>
+<hole x="62.865" y="61.087" drill="0.381"/>
+<hole x="63.5" y="61.087" drill="0.381"/>
+<hole x="64.135" y="61.087" drill="0.381"/>
+<hole x="64.77" y="61.087" drill="0.381"/>
+<hole x="65.405" y="61.087" drill="0.381"/>
+<hole x="66.04" y="61.087" drill="0.381"/>
+<hole x="66.675" y="61.087" drill="0.381"/>
+<hole x="67.31" y="61.087" drill="0.381"/>
+<hole x="67.945" y="61.087" drill="0.381"/>
+<hole x="68.58" y="61.087" drill="0.381"/>
+<hole x="9.144" y="7.747" drill="0.381"/>
 <text x="63.0635" y="57.031" size="1.524" layer="25" rot="R180" align="center">5VSB</text>
 <text x="63.0635" y="52.078" size="1.9304" layer="25" rot="R180" align="center">GND</text>
 <text x="63.1905" y="46.998" size="1.9304" layer="25" rot="R180" align="center">12V</text>
@@ -327,6 +323,8 @@ JAN24</text>
 <text x="62.9175" y="49" size="1.6764" layer="26" rot="MR0" align="center">12V</text>
 <text x="30.0175" y="46.4" size="1.6764" layer="26" rot="MR0" align="center">5V</text>
 <text x="35.5185" y="21.23" size="3.175" layer="26" ratio="10" rot="MR0" align="center">ATX4VC.com</text>
+<hole x="9.017" y="61.087" drill="0.381"/>
+<hole x="60.325" y="61.087" drill="0.381"/>
 </plain>
 <libraries>
 <library name="adafruit">
@@ -2585,7 +2583,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="46.1725" y1="35.118" x2="48.7815" y2="35.118" width="0.6096" layer="16"/>
 <wire x1="56.8545" y1="27.045" x2="58.9635" y2="27.045" width="0.6096" layer="16"/>
 <wire x1="48.7815" y1="35.118" x2="56.8545" y2="27.045" width="0.6096" layer="16"/>
-<wire x1="34.7425" y1="17.788" x2="34.1475" y2="17.788" width="0.6096" layer="1"/>
 <contactref element="C8" pad="2"/>
 <wire x1="16.6965" y1="15.6" x2="29.4955" y2="15.6" width="0.6096" layer="1"/>
 <wire x1="29.4955" y1="15.6" x2="29.5355" y2="15.64" width="0.6096" layer="1"/>
@@ -2751,7 +2748,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="C5" pad="2"/>
 <wire x1="28.1385" y1="50.656" x2="30.0435" y2="48.751" width="1.524" layer="16"/>
 <wire x1="28.1385" y1="58.936" x2="28.1385" y2="50.656" width="1.524" layer="16"/>
-<wire x1="36.3765" y1="42.454" x2="36.9665" y2="42.454" width="0.6096" layer="16"/>
 <wire x1="36.4585" y1="45.954" x2="33.6615" y2="48.751" width="1.524" layer="16"/>
 <wire x1="36.4585" y1="45.954" x2="36.9665" y2="45.954" width="1.524" layer="16"/>
 <wire x1="30.0435" y1="48.751" x2="33.6615" y2="48.751" width="1.524" layer="16"/>
@@ -2956,6 +2952,22 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
+<errors>
+<approved hash="4,1,0028e8721fb83fab"/>
+<approved hash="4,1,e366cfb486708f07"/>
+<approved hash="4,1,72ed3050c4f1cd17"/>
+<approved hash="4,1,03a2c86c19a90f8a"/>
+<approved hash="4,1,0d6b775a19233ccc"/>
+<approved hash="4,16,2c8e415c1f55ddfd"/>
+<approved hash="4,16,590c86ddf496d8bf"/>
+<approved hash="4,16,1e6e55e0b1066ba8"/>
+<approved hash="4,16,1e6e55e0b1066ba8"/>
+<approved hash="4,16,7f0534896bff527a"/>
+<approved hash="4,16,588e872e74265afd"/>
+<approved hash="4,16,4b0ca6ab6de171bf"/>
+<approved hash="4,16,438ea925c3af907d"/>
+<approved hash="4,16,6308a5a7196e8f3b"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
