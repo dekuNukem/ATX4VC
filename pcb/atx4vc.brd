@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -730,49 +730,41 @@ TS-003</description>
 by exp-lbrs.ulp</description>
 <packages>
 <package name="DG2204R-8">
-<pad name="P$1" x="-15" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$2" x="-15" y="-4.1" drill="1.6" thermals="no"/>
 <wire x1="-18.8" y1="-7" x2="23.8" y2="-7" width="0.1524" layer="21"/>
 <wire x1="-18.8" y1="9.3" x2="23.8" y2="9.3" width="0.1524" layer="21"/>
-<pad name="P$3" x="-10" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$4" x="-10" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$5" x="-5" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$6" x="-5" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$7" x="0" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$8" x="0" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$9" x="5" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$10" x="5" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$11" x="10" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$12" x="10" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$13" x="15" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$14" x="15" y="-4.1" drill="1.6" thermals="no"/>
 <wire x1="-18.8" y1="9.3" x2="-18.8" y2="-7" width="0.1524" layer="21"/>
 <wire x1="23.8" y1="9.3" x2="23.8" y2="-7" width="0.1524" layer="21"/>
+<pad name="P$1" x="-15" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$2" x="-15" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$3" x="-10" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$4" x="-10" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$5" x="-5" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$6" x="-5" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$7" x="0" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$8" x="0" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$9" x="5" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$10" x="5" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$11" x="10" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$12" x="10" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$13" x="15" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$14" x="15" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$15" x="20" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$16" x="20" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
 <text x="0" y="7.5" size="1.778" layer="51" rot="R180" align="center">OPENING</text>
-<pad name="P$15" x="20" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$16" x="20" y="-4.1" drill="1.6" thermals="no"/>
 </package>
-</packages>
-</library>
-<library name="396_conn">
-<description>Generated from &lt;b&gt;pmm.sch&lt;/b&gt;&lt;p&gt;
-by exp-lbrs.ulp</description>
-<packages>
-<package name="396_8P">
-<pad name="P$1" x="-11.88" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$2" x="-7.92" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$3" x="-3.96" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$4" x="0" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$5" x="3.96" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$6" x="7.92" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$7" x="11.88" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
+<package name="396_CONN_396_8P">
 <wire x1="-13.88" y1="-4.4" x2="-13.88" y2="3.3" width="0.1524" layer="21"/>
 <wire x1="-13.88" y1="3.3" x2="17.8" y2="3.3" width="0.508" layer="21"/>
-<wire x1="17.8" y1="3.3" x2="13.88" y2="3.3" width="0.1524" layer="21"/>
-<wire x1="-13.88" y1="-4.4" x2="13.88" y2="-4.4" width="0.1524" layer="21"/>
-<wire x1="17.8" y1="-4.4" x2="13.88" y2="-4.4" width="0.1524" layer="21"/>
+<wire x1="-13.88" y1="-4.4" x2="17.8" y2="-4.4" width="0.1524" layer="21"/>
 <wire x1="17.8" y1="-4.4" x2="17.8" y2="3.3" width="0.1524" layer="21"/>
-<pad name="P$8" x="15.84" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
+<pad name="P$1" x="-11.88" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$2" x="-7.92" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$3" x="-3.96" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$4" x="0" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$5" x="3.96" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$6" x="7.92" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$7" x="11.88" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$8" x="15.84" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
 </package>
 </packages>
 </library>
@@ -2289,7 +2281,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="U$11" library="atx_power_control" package="FUSE_HOLDER_3IN1" value="CAR_FUSE_HOLDER3IN1" x="29.9165" y="51.697" smashed="yes"/>
 <element name="U$10" library="atx_power_control" package="FUSE_HOLDER_3IN1" value="CAR_FUSE_HOLDER3IN1" x="29.9165" y="36.711" smashed="yes"/>
 <element name="U$9" library="atx_power_control" package="FUSE_HOLDER_3IN1" value="CAR_FUSE_HOLDER3IN1" x="29.9165" y="44.204" smashed="yes"/>
-<element name="U$7" library="396_conn" package="396_8P" value="VH396_8P" x="46.1725" y="43.038" smashed="yes" rot="R90"/>
+<element name="U$7" library="atx4vc" package="396_CONN_396_8P" value="396_CONN_VH396_8P" x="46.1725" y="43.038" smashed="yes" rot="R90"/>
 <element name="R2" library="atx_power_control" package="0805" value="5K1" x="44.0765" y="11.565" smashed="yes" rot="R270">
 <attribute name="NAME" x="43.632" y="9.787" size="0.8128" layer="25" rot="R270"/>
 </element>
@@ -2614,11 +2606,11 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="41.4845" y1="22.485" x2="41.4845" y2="20.105" width="0.6096" layer="1"/>
 <wire x1="41.4845" y1="20.105" x2="41.4475" y2="20.068" width="0.6096" layer="1"/>
 <wire x1="46.1725" y1="39.078" x2="48.1395" y2="39.078" width="0.3048" layer="1"/>
-<wire x1="48.1395" y1="39.078" x2="49.2175" y2="38" width="0.3048" layer="1"/>
-<wire x1="49.2175" y1="38" x2="49.2175" y2="29.9" width="0.3048" layer="1"/>
-<wire x1="49.2175" y1="29.9" x2="48.5175" y2="29.2" width="0.3048" layer="1"/>
-<wire x1="48.5175" y1="29.2" x2="44.4175" y2="29.2" width="0.3048" layer="1"/>
-<wire x1="44.4175" y1="29.2" x2="41.4845" y2="26.267" width="0.3048" layer="1"/>
+<wire x1="48.1395" y1="39.078" x2="49.3445" y2="37.873" width="0.3048" layer="1"/>
+<wire x1="49.3445" y1="37.873" x2="49.3445" y2="29.265" width="0.3048" layer="1"/>
+<wire x1="49.3445" y1="29.265" x2="48.8985" y2="28.819" width="0.3048" layer="1"/>
+<wire x1="48.8985" y1="28.819" x2="44.0365" y2="28.819" width="0.3048" layer="1"/>
+<wire x1="44.0365" y1="28.819" x2="41.4845" y2="26.267" width="0.3048" layer="1"/>
 <wire x1="41.4845" y1="26.267" x2="41.4845" y2="22.485" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$8">

@@ -2662,27 +2662,41 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 by exp-lbrs.ulp</description>
 <packages>
 <package name="DG2204R-8">
-<pad name="P$1" x="-15" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$2" x="-15" y="-4.1" drill="1.6" thermals="no"/>
 <wire x1="-18.8" y1="-7" x2="23.8" y2="-7" width="0.1524" layer="21"/>
 <wire x1="-18.8" y1="9.3" x2="23.8" y2="9.3" width="0.1524" layer="21"/>
-<pad name="P$3" x="-10" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$4" x="-10" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$5" x="-5" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$6" x="-5" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$7" x="0" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$8" x="0" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$9" x="5" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$10" x="5" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$11" x="10" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$12" x="10" y="-4.1" drill="1.6" thermals="no"/>
-<pad name="P$13" x="15" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$14" x="15" y="-4.1" drill="1.6" thermals="no"/>
 <wire x1="-18.8" y1="9.3" x2="-18.8" y2="-7" width="0.1524" layer="21"/>
 <wire x1="23.8" y1="9.3" x2="23.8" y2="-7" width="0.1524" layer="21"/>
+<pad name="P$1" x="-15" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$2" x="-15" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$3" x="-10" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$4" x="-10" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$5" x="-5" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$6" x="-5" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$7" x="0" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$8" x="0" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$9" x="5" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$10" x="5" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$11" x="10" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$12" x="10" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$13" x="15" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$14" x="15" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$15" x="20" y="4.1" drill="1.4" diameter="2.54" thermals="no"/>
+<pad name="P$16" x="20" y="-4.1" drill="1.4" diameter="2.54" thermals="no"/>
 <text x="0" y="7.5" size="1.778" layer="51" rot="R180" align="center">OPENING</text>
-<pad name="P$15" x="20" y="4.1" drill="1.6" thermals="no"/>
-<pad name="P$16" x="20" y="-4.1" drill="1.6" thermals="no"/>
+</package>
+<package name="396_CONN_396_8P">
+<wire x1="-13.88" y1="-4.4" x2="-13.88" y2="3.3" width="0.1524" layer="21"/>
+<wire x1="-13.88" y1="3.3" x2="17.8" y2="3.3" width="0.508" layer="21"/>
+<wire x1="-13.88" y1="-4.4" x2="17.8" y2="-4.4" width="0.1524" layer="21"/>
+<wire x1="17.8" y1="-4.4" x2="17.8" y2="3.3" width="0.1524" layer="21"/>
+<pad name="P$1" x="-11.88" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$2" x="-7.92" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$3" x="-3.96" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$4" x="0" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$5" x="3.96" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$6" x="7.92" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$7" x="11.88" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
+<pad name="P$8" x="15.84" y="0" drill="1.65" shape="long" rot="R90" thermals="no"/>
 </package>
 </packages>
 <symbols>
@@ -2699,6 +2713,20 @@ by exp-lbrs.ulp</description>
 <pin name="P$6" x="-10.16" y="-25.4" length="middle"/>
 <pin name="P$7" x="-10.16" y="-30.48" length="middle"/>
 <pin name="P$8" x="-10.16" y="-35.56" length="middle"/>
+</symbol>
+<symbol name="396_CONN_VH396-8">
+<wire x1="0" y1="10.16" x2="0" y2="-12.7" width="0.1524" layer="94"/>
+<wire x1="0" y1="-12.7" x2="7.62" y2="-12.7" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-12.7" x2="7.62" y2="10.16" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="0" y2="10.16" width="0.1524" layer="94"/>
+<pin name="P$1" x="-5.08" y="7.62" length="middle"/>
+<pin name="P$2" x="-5.08" y="5.08" length="middle"/>
+<pin name="P$3" x="-5.08" y="2.54" length="middle"/>
+<pin name="P$4" x="-5.08" y="0" length="middle"/>
+<pin name="P$5" x="-5.08" y="-2.54" length="middle"/>
+<pin name="P$6" x="-5.08" y="-5.08" length="middle"/>
+<pin name="P$7" x="-5.08" y="-7.62" length="middle"/>
+<pin name="P$8" x="-5.08" y="-10.16" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2724,52 +2752,12 @@ by exp-lbrs.ulp</description>
 </device>
 </devices>
 </deviceset>
-</devicesets>
-</library>
-<library name="396_conn">
-<description>Generated from &lt;b&gt;pmm.sch&lt;/b&gt;&lt;p&gt;
-by exp-lbrs.ulp</description>
-<packages>
-<package name="396_8P">
-<pad name="P$1" x="-11.88" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$2" x="-7.92" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$3" x="-3.96" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$4" x="0" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$5" x="3.96" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$6" x="7.92" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<pad name="P$7" x="11.88" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-<wire x1="-13.88" y1="-4.4" x2="-13.88" y2="3.3" width="0.1524" layer="21"/>
-<wire x1="-13.88" y1="3.3" x2="17.8" y2="3.3" width="0.508" layer="21"/>
-<wire x1="17.8" y1="3.3" x2="13.88" y2="3.3" width="0.1524" layer="21"/>
-<wire x1="-13.88" y1="-4.4" x2="13.88" y2="-4.4" width="0.1524" layer="21"/>
-<wire x1="17.8" y1="-4.4" x2="13.88" y2="-4.4" width="0.1524" layer="21"/>
-<wire x1="17.8" y1="-4.4" x2="17.8" y2="3.3" width="0.1524" layer="21"/>
-<pad name="P$8" x="15.84" y="0" drill="1.5" shape="long" rot="R90" thermals="no"/>
-</package>
-</packages>
-<symbols>
-<symbol name="VH396-8">
-<pin name="P$1" x="-5.08" y="7.62" length="middle"/>
-<pin name="P$2" x="-5.08" y="5.08" length="middle"/>
-<pin name="P$3" x="-5.08" y="2.54" length="middle"/>
-<pin name="P$4" x="-5.08" y="0" length="middle"/>
-<pin name="P$5" x="-5.08" y="-2.54" length="middle"/>
-<pin name="P$6" x="-5.08" y="-5.08" length="middle"/>
-<pin name="P$7" x="-5.08" y="-7.62" length="middle"/>
-<wire x1="0" y1="10.16" x2="0" y2="-12.7" width="0.1524" layer="94"/>
-<wire x1="0" y1="-12.7" x2="7.62" y2="-12.7" width="0.1524" layer="94"/>
-<wire x1="7.62" y1="-12.7" x2="7.62" y2="10.16" width="0.1524" layer="94"/>
-<wire x1="7.62" y1="10.16" x2="0" y2="10.16" width="0.1524" layer="94"/>
-<pin name="P$8" x="-5.08" y="-10.16" length="middle"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="VH396_8P">
+<deviceset name="396_CONN_VH396_8P">
 <gates>
-<gate name="G$1" symbol="VH396-8" x="-2.54" y="0"/>
+<gate name="G$1" symbol="396_CONN_VH396-8" x="-2.54" y="0"/>
 </gates>
 <devices>
-<device name="" package="396_8P">
+<device name="" package="396_CONN_396_8P">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
@@ -16379,7 +16367,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="U$11" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
 <part name="U$10" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
 <part name="U$9" library="atx_power_control" deviceset="CAR_FUSE_HOLDER" device="3IN1"/>
-<part name="U$7" library="396_conn" deviceset="VH396_8P" device=""/>
+<part name="U$7" library="atx4vc" deviceset="396_CONN_VH396_8P" device=""/>
 <part name="GND37" library="backplane" deviceset="GND" device=""/>
 <part name="R2" library="atx_power_control" deviceset="RESISTOR" device="0805-RES" value="5K1"/>
 <part name="U$12" library="atx4vc" deviceset="DG2204R-5.0-8" device="DG2204-8"/>
