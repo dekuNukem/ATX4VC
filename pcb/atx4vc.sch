@@ -16411,6 +16411,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="JP1" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NO" device="_NO-SILK"/>
 <part name="JP6" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NO" device="_NO-SILK"/>
 <part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP12R" package3d_urn="urn:adsk.eagle:package:27963/1"/>
+<part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP12R" package3d_urn="urn:adsk.eagle:package:27963/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -16689,6 +16690,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="TP1" gate="G$1" x="241.3" y="124.46" smashed="yes" rot="R180">
 <attribute name="NAME" x="242.57" y="123.19" size="1.778" layer="95" rot="R180"/>
 <attribute name="TP_SIGNAL_NAME" x="240.03" y="125.73" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="TP2" gate="G$1" x="241.3" y="132.08" smashed="yes">
+<attribute name="NAME" x="240.03" y="133.35" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="242.57" y="130.81" size="1.778" layer="97"/>
 </instance>
 </instances>
 <busses>
@@ -17265,8 +17270,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <net name="N$2" class="0">
 <segment>
 <pinref part="J1" gate="J1" pin="D+"/>
-<wire x1="294.64" y1="129.54" x2="210.82" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="294.64" y1="129.54" x2="241.3" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="JP1" gate="G$1" pin="1"/>
+<pinref part="TP2" gate="G$1" pin="TP"/>
+<wire x1="241.3" y1="129.54" x2="210.82" y2="129.54" width="0.1524" layer="91"/>
+<junction x="241.3" y="129.54"/>
 </segment>
 </net>
 <net name="N$4" class="0">
