@@ -124,7 +124,7 @@ If you **do** want to use a momentary button with soft power, use the optional [
 
 * Pinout is the same on terminal block and auxiliary connector.
 
-* Use **7P VH 3.96** female connector for aux power out.
+* Use **8P VH 3.96** female connector for aux power out.
 
 * 5VSB = 5V Standby. Available even when PSU is off.
 
