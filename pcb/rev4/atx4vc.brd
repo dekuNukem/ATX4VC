@@ -2289,7 +2289,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="U$12" pad="P$3"/>
 <contactref element="U$12" pad="P$4"/>
 <contactref element="JP4" pad="1"/>
-<polygon width="0.1524" layer="1">
+<polygon width="0.1524" layer="1" isolate="0.4064">
 <vertex x="15.0895" y="38.235"/>
 <vertex x="15.0895" y="26.297"/>
 <vertex x="19.1215" y="26.297"/>
@@ -2299,7 +2299,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <wire x1="9.8985" y1="36.6" x2="7.5965" y2="34.298" width="1.778" layer="1"/>
 <wire x1="10.1565" y1="19.8" x2="11.1965" y2="19.8" width="1.778" layer="1"/>
 <wire x1="11.1965" y1="19.8" x2="16.6965" y2="19.8" width="1.778" layer="1"/>
-<wire x1="16.6965" y1="57.6" x2="18.0325" y2="58.936" width="1.778" layer="16"/>
 <wire x1="7.5965" y1="34.298" x2="7.5965" y2="28.202" width="1.778" layer="1"/>
 <wire x1="7.5965" y1="28.202" x2="7.5965" y2="22.36" width="1.778" layer="1"/>
 <wire x1="7.5965" y1="22.36" x2="10.1565" y2="19.8" width="1.778" layer="1"/>
@@ -2333,7 +2332,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <vertex x="59.6345" y="10.041"/>
 <vertex x="67.6355" y="10.041"/>
 </polygon>
-<polygon width="0.1524" layer="1" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.4064" thermals="no">
 <vertex x="21.5345" y="56.269"/>
 <vertex x="15.1845" y="56.269"/>
 <vertex x="15.1845" y="60.333"/>
@@ -2353,7 +2352,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <vertex x="57.4755" y="18.296"/>
 <vertex x="57.4755" y="14.105"/>
 </polygon>
-<polygon width="0.1524" layer="1" thermals="no">
+<polygon width="0.1524" layer="1" isolate="0.4064" thermals="no">
 <vertex x="23.3125" y="18.423"/>
 <vertex x="14.9305" y="18.423"/>
 <vertex x="14.9305" y="21.09"/>
