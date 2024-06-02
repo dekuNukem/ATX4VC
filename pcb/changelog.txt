@@ -82,3 +82,7 @@ Power Good in its own terminal block?
 use 8 position terminal block and aux connector?
 
 
+2024 revision
+removed daughterboard
+on-board soft power IC
+voltage rail marking on bottom silkscreen
