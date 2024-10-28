@@ -8,7 +8,7 @@
 </settings>
 <grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
@@ -28,14 +28,14 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -46,9 +46,9 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
@@ -58,7 +58,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="no"/>
@@ -204,9 +204,9 @@
 <circle x="65.0705" y="4.046" radius="4" width="0" layer="42"/>
 <circle x="4.0355" y="64.931" radius="4" width="0" layer="42"/>
 <circle x="65.0705" y="65.058" radius="4" width="0" layer="42"/>
-<text x="83.3375" y="40.886" size="2.1844" layer="25" rot="R90" align="center">ATX4VC REV4
+<text x="32.901" y="24.4095" size="2.1844" layer="26" rot="MR0" align="center">ATX4VC REV4
 dekuNukem
-MAY24</text>
+NOV24</text>
 <wire x1="10.2145" y1="60.754" x2="58.9285" y2="60.754" width="0.0762" layer="20"/>
 <wire x1="58.9285" y1="60.754" x2="60.8335" y2="62.659" width="0.0762" layer="20" curve="90"/>
 <wire x1="60.8335" y1="62.659" x2="60.8335" y2="67.095" width="0.0762" layer="20"/>
@@ -316,7 +316,7 @@ MAY24</text>
 <dimension x1="4.0655" y1="65" x2="4.0655" y2="4" x3="-12.0825" y3="34.5" textsize="1.778" layer="51" dtype="vertical"/>
 <dimension x1="65.0655" y1="65" x2="65.0655" y2="4" x3="94.5175" y3="34.5" textsize="1.778" layer="51" dtype="vertical"/>
 <text x="30.0175" y="46.4" size="1.6764" layer="26" rot="MR0" align="center">5V</text>
-<text x="35.5185" y="21.23" size="3.175" layer="26" ratio="10" rot="MR0" align="center">ATX4VC.com</text>
+<text x="37.0425" y="23.008" size="3.175" layer="25" ratio="10" align="center">ATX4VC.com</text>
 <hole x="9.017" y="61.087" drill="0.381"/>
 <hole x="60.325" y="61.087" drill="0.381"/>
 <text x="63.0635" y="57.031" size="1.524" layer="25" rot="R180" align="center">5VSB</text>
@@ -2730,7 +2730,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <vertex x="37.1555" y="47.252"/>
 </polygon>
 <contactref element="U$13" pad="2"/>
-<wire x1="46.6165" y1="11.3" x2="46.5515" y2="11.235" width="0.3048" layer="1"/>
 <wire x1="49.051" y1="10.639" x2="48.641" y2="11.049" width="0.3048" layer="1"/>
 <wire x1="61.3485" y1="10.639" x2="49.051" y2="10.639" width="0.3048" layer="1"/>
 <wire x1="48.641" y1="11.049" x2="48.39" y2="11.3" width="0.3048" layer="1"/>
@@ -2811,7 +2810,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <contactref element="JP2" pad="1"/>
 <contactref element="R3" pad="1"/>
 <contactref element="U$13" pad="1"/>
-<wire x1="58.8725" y1="14.942" x2="58.8725" y2="16.01" width="0.3048" layer="1"/>
 <wire x1="58.8725" y1="16.01" x2="58.8725" y2="14.4225" width="0.3048" layer="1"/>
 <wire x1="58.8725" y1="14.4225" x2="58.039" y2="13.589" width="0.3048" layer="1"/>
 <wire x1="58.039" y1="13.589" x2="48.641" y2="13.589" width="0.3048" layer="1"/>
@@ -2821,7 +2819,6 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <signal name="N$11">
 <contactref element="J2" pad="8"/>
 <contactref element="LED7" pad="A"/>
-<wire x1="11.1965" y1="40.8" x2="10.8155" y2="40.8" width="0.3048" layer="1"/>
 <contactref element="U$12" pad="P$16"/>
 <contactref element="U$12" pad="P$15"/>
 <contactref element="U$7" pad="P$1"/>
