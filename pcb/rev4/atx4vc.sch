@@ -15178,7 +15178,7 @@ by exp-lbrs.ulp</description>
 <part name="GND21" library="backplane" deviceset="GND" device=""/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="GND32" library="supply1" deviceset="GND" device=""/>
-<part name="R3" library="atx_power_control" deviceset="RESISTOR" device="0805-RES" value="470"/>
+<part name="R3" library="atx_power_control" deviceset="RESISTOR" device="0805-RES" value="330"/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
 <part name="GND33" library="backplane" deviceset="GND" device=""/>
