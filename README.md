@@ -5,7 +5,7 @@
 ATX4VC lets you **use ATX power supply on vintage computers**.
 
 * Plug in ATX PSU on one end
-* Get 12V, 5V, -12V, -5V out the other!
+* Get 12V, 5V, 3.3V, -12V, -5V out the other!
 
 ![Alt text](photos/title2.jpeg)
 
@@ -14,9 +14,8 @@ Features:
 * All common voltage rails: +12V, +5V, +3.3V, -5V, -12V.
 	* Also `5V Standby` and `Power-Good`
 * Tool-less Lever-Actuated Terminal Block
-* PC Fan Header
 * USB-C and Auxiliary Power Output
-* Fan speed, soft power, ARGB animation with optional MCU daughterboard.
+* PC Fan Header
 
 You can use ATX4VC to:
 
@@ -68,9 +67,11 @@ ATX4VC is designed to replace them with much more reliable modern ATX PSUs, and 
 
 ## User Manual
 
-### Get a Pico PSU
+### ATX vs Pico PSU
 
-ATX4VC works with **any ATX PSU**, but for **permanent retrofitting**, a **PicoPSU** is recommended due to its compact size.
+ATX4VC works with **any ATX PSU**.
+
+Although for **permanent retrofitting**, a **PicoPSU** is recommended due to its compact size.
 
 ![Alt text](photos/pico.jpg)
 
@@ -90,9 +91,9 @@ ATX4VC works with **any ATX PSU**, but for **permanent retrofitting**, a **PicoP
 
 ![Alt text](photos/start2.jpeg)
 
-Press the button. PSU should turn on, all voltage rail LEDs should light up. 
+Press the button. PSU should turn on, voltage rail LEDs should light up. 
 
-That's the gist of it! But **please do keep reading** for the complete info.
+That's the gist of it! **Please do keep reading** for more info.
 
 ### Power Button and LED
 
@@ -100,16 +101,17 @@ The power button should be latching type (aka NOT momentary).
 
 You can also hook up a Power LED (right two pins, note polarity, resistor NOT needed).
 
-If you **do** want to use a momentary button with soft power, use the optional [MCU daughterboard](#mcu-daughterboard).
-
 ### Power Connection
 
 ![Alt text](photos/rails2.jpeg)
 
 * Pinout is the same on terminal block and auxiliary connector.
-* Use **8P VH 3.96** female connector for aux power out.
-* 5VSB = 5V Standby. Available even when PSU is off.
-* Power Good: 5V when all voltages are stable and correct, 0V otherwise.
+    * For aux output harness, use **8P VH 3.96** female connector.
+* 5VSB = 5V Standby
+    * Available even when PSU is off
+* Power Good Signal
+    * 5V when all rails are stable
+    * 0V otherwise
 
 To connect a wire:
 
@@ -122,7 +124,7 @@ Also, make sure the conductor is thick enough!
 
 ![Alt text](photos/thin.png)
 
-Label the rails, vinyl stickers are available in the [product page](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/):
+Label the rails, vinyl stickers are available on the [product page](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/):
 
 ![Alt text](photos/label.png)
 
@@ -137,7 +139,7 @@ Once powered up:
 
 * Check voltage readings on each rail
 
-Remember that ATX4VC **DOES NOT** monitor or condition PSU voltage outputs, so make sure the PSU itself is of good quality and trustworthy!
+Remember that ATX4VC **DOES NOT** monitor or condition PSU voltage outputs, ensure the PSU itself is of good quality and trustworthy!
 
 ### Current Limit
 
@@ -155,7 +157,11 @@ See your PSU label or datasheet to see how much current it can provide:
 * USE FUSES RATED **5A OR LESS**
 * **DO NOT BYPASS FUSES**
 
-ATX4VC uses common car fuses. Regular, Mini, and low-profile Mini all will work. Simply push into the holder.
+ATX4VC uses common **automotive fuses**.
+
+Regular, Mini, and Low-profile Mini all work.
+
+Simply push into the holder.
 
 ![Alt text](photos/fuses.png)
 
