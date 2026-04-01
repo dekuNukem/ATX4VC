@@ -5,40 +5,32 @@
 ATX4VC lets you **use ATX power supply on vintage computers**.
 
 * Plug in ATX PSU on one end
-
 * Get 12V, 5V, -12V, -5V out the other!
 
 ![Alt text](photos/title2.jpeg)
 
 Features:
 
-* All common voltages: +12V, +5V, +3.3V, -5V, -12V.
-
-* Toolless Lever-Actuated Terminal Block
-
+* All common voltage rails: +12V, +5V, +3.3V, -5V, -12V.
+	* Also `5V Standby` and `Power-Good`
+* Tool-less Lever-Actuated Terminal Block
 * PC Fan Header
-
 * USB-C and Auxiliary Power Output
-
 * Fan speed, soft power, ARGB animation with optional MCU daughterboard.
 
 You can use ATX4VC to:
 
 * Replace retro computer PSUs
-
 * Test and diagnose vintage hardware
-
 * As general-purpose multi-voltage bench PSU
 
 ## Get ATX4VC
 
-[Click me to get one on Tindie!](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/)
+[Click me to get one!](https://www.tindie.com/products/dekuNukem/atx4vc-atx-power-on-retro-computers/)
 
 ## PicoRC
 
 Also [Check out PicoRC](https://github.com/dekuNukem/PicoRC) for **device-specific** and **lower-cost** PicoPSU adaptors.
-
-Available for Apple II, Macintosh 128K/Plus, Macintosh SE SE/30, and more.
 
 ## Showcase
 
@@ -56,52 +48,44 @@ Here it powers a Macintosh Plus motherboard with +12, +5, and -12V.
 
 ## Why / Project Goals
 
-Power supplies are a major failure point of old computers today. Those early PSUs are heavy, inefficient, hot, and (slightly) explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
+Power supplies are a major failure point of old computers today.
+
+Those early PSUs are heavy, inefficient, hot, and (slightly) explosive! After 40 odd years, many are not working, or worse might cause damage with out-of-spec voltages.
 
 ATX4VC is designed to replace them with much more reliable modern ATX PSUs, and help test and diagnose vintage computers.
 
 ## Table of Contents
 
 - [Pico PSU](#get-a-pico-psu)
-
 - [Quick Start](#quick-start)
-
 - [Power Button](#power-button)
-
 - [Power Connection](#power-connection)
-
 - [Pre-flight Checks](#pre-flight-checks)
-
 - [Current Limit](#current-limit)
-
 - [Fuses](#fuses)
-
 - [Fan Headers](#fan-headers)
-
 - [USB-C Power Output](#usb-c-power-output)
 
 ## User Manual
 
 ### Get a Pico PSU
 
-ATX4VC works with **any ATX PSU**, but a PicoPSU is recommended due to its compact size.
+ATX4VC works with **any ATX PSU**, but for **permanent retrofitting**, a **PicoPSU** is recommended due to its compact size.
 
 ![Alt text](photos/pico.jpg)
 
-* [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html). Even the cheapest 80W one should be plenty.
-
-* You can also find generic clones on eBay/Amazon/Aliexpress. They are pretty poor quality and *not that* cheap, so I strongly suggest supporting the official product.
-
-* A power brick with **12V DC** and **center positive** 5.5x2.5mm barrel jack is needed.
-
-* They are very popular and you might already have one. Make sure it has enough wattage.
-
-Remember that this solution is **only as good as your PicoPSU and 12V Brick**, so don't skimp on them!
+* [Official website](https://www.mini-box.com/DC-DC) and [distributors](https://www.mini-box.com/site/resellers.html)
+    * The cheapest **80W** one should be plenty for most
+    * The **160W** variant is recommended if using many expansion cards and/or **spinning hard drive**
+* Avoid **generic clones**
+    * They over-rate and are of low quality
+* A power brick with **12V DC** and **center positive** 5.5x2.5mm barrel jack is also needed.
+    * They are very popular and you might already have one
+    * Make sure it has enough wattage
 
 ### Quick Start
 
 * Plug in ATX connector
-
 * Plug in Power Button (left two pins)
 
 ![Alt text](photos/start2.jpeg)
@@ -123,17 +107,13 @@ If you **do** want to use a momentary button with soft power, use the optional [
 ![Alt text](photos/rails2.jpeg)
 
 * Pinout is the same on terminal block and auxiliary connector.
-
 * Use **8P VH 3.96** female connector for aux power out.
-
 * 5VSB = 5V Standby. Available even when PSU is off.
-
 * Power Good: 5V when all voltages are stable and correct, 0V otherwise.
 
 To connect a wire:
 
 * Strip the insulation about 12mm / 0.5in.
-
 * Lift handle, insert, push back down.
 
 ![Alt text](photos/block.jpeg)
@@ -151,7 +131,6 @@ Label the rails, vinyl stickers are available in the [product page](https://www.
 Before powering up:
 
 * Double check the **correct voltage terminal** is used
-
 * Check for **dead shorts** between each voltage rail and GND, and between themselves!
 
 Once powered up:
@@ -163,7 +142,6 @@ Remember that ATX4VC **DOES NOT** monitor or condition PSU voltage outputs, so m
 ### Current Limit
 
 * **`5 AMPS MAX`** OVER **ANY SINGLE RAIL**
-
 * **`7 AMPS MAX`** **TOTAL CURRENT** OVER ALL RAILS
 
 If more is needed, **tap the power directly** from a Molex connector.
@@ -175,7 +153,6 @@ See your PSU label or datasheet to see how much current it can provide:
 ### Fuses
 
 * USE FUSES RATED **5A OR LESS**
-
 * **DO NOT BYPASS FUSES**
 
 ATX4VC uses common car fuses. Regular, Mini, and low-profile Mini all will work. Simply push into the holder.
@@ -209,13 +186,9 @@ Those ports are **output only**, don't try to backfeed with another powered devi
 The optional MCU daughterboard adds many new features:
 
 * **Soft power** with momentary buttons
-
 * Addressable RGB (**ARGB**) lighting. Adjustable brightness, animation, and color.
-
 * DS18B20 **Temperature Probe** support
-
 * PWM **fan speed control**
-
 * 5V Standby USB-C power output
 
 ### Installation
@@ -225,11 +198,8 @@ The MCU board should come with two screws and a standoff:
 ![Alt text](photos/mcusmall.jpeg)
 
 * Put one screw from bottom side
-
 * Install and tighten the standoff
-
 * Plug in the MCU board
-
 * Secure it in place with the other screw
 
 ![Alt text](photos/mcuinstall.png)
@@ -275,30 +245,6 @@ Press **FAN SPD** button until the user LED `slowly blinks 5 times`. Now fan spe
 The fan starts to speed up at 25°C, and reaches full speed at 50°C. If probe is not detected, it will run at full speed.
 
 You can use a heat gun and air duster to test it.
-
-## USB Firmware Update
-
-Under construction ...
-
-## Table of Contents (again)
-
-- [Pico PSU](#get-a-pico-psu)
-
-- [Quick Start](#quick-start)
-
-- [Power Button](#power-button)
-
-- [Power Connection](#power-connection)
-
-- [Pre-flight Checks](#pre-flight-checks)
-
-- [Current Limit](#current-limit)
-
-- [Fuses](#fuses)
-
-- [Fan Headers](#fan-headers)
-
-- [USB-C Power Output](#usb-c-power-output)
 
 ## Questions or Comments?
 
