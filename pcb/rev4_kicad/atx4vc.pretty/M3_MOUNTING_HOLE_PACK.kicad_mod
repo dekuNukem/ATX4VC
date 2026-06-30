@@ -1,0 +1,140 @@
+(footprint "M3_MOUNTING_HOLE_PACK"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "43f88855-aa04-446a-9f8a-fb0f3a5df95e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "b39323f8-a2ea-477b-bf33-81d2d86f0530")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1872788e-b1e9-4cf6-9888-fdaa80b4a971")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f68334c3-d05a-4f41-8f25-dcbe8112bb75")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 3.2 3.2)
+		(drill 3.2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "5346be72-17a6-467b-8384-5921a4292e08")
+	)
+	(zone
+		(net 0)
+		(net_name "")
+		(layer "F.Cu")
+		(uuid "0c11c997-8935-4c58-a527-b7f463487f70")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads not_allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy 2 0) (xy 1.979643 -0.28463) (xy 1.918986 -0.563465) (xy 1.819264 -0.83083) (xy 1.682507 -1.081282)
+				(xy 1.511499 -1.309721) (xy 1.309721 -1.511499) (xy 1.081282 -1.682507) (xy 0.83083 -1.819264) (xy 0.563465 -1.918986)
+				(xy 0.28463 -1.979643) (xy 0 -2) (xy -0.28463 -1.979643) (xy -0.563465 -1.918986) (xy -0.83083 -1.819264)
+				(xy -1.081282 -1.682507) (xy -1.309721 -1.511499) (xy -1.511499 -1.309721) (xy -1.682507 -1.081282)
+				(xy -1.819264 -0.83083) (xy -1.918986 -0.563465) (xy -1.979643 -0.28463) (xy -2 0) (xy -1.979643 0.28463)
+				(xy -1.918986 0.563465) (xy -1.819264 0.83083) (xy -1.682507 1.081282) (xy -1.511499 1.309721) (xy -1.309721 1.511499)
+				(xy -1.081282 1.682507) (xy -0.83083 1.819264) (xy -0.563465 1.918986) (xy -0.28463 1.979643) (xy 0 2)
+				(xy 0.28463 1.979643) (xy 0.563465 1.918986) (xy 0.83083 1.819264) (xy 1.081282 1.682507) (xy 1.309721 1.511499)
+				(xy 1.511499 1.309721) (xy 1.682507 1.081282) (xy 1.819264 0.83083) (xy 1.918986 0.563465) (xy 1.979643 0.28463)
+			)
+		)
+	)
+	(zone
+		(net 0)
+		(net_name "")
+		(layer "B.Cu")
+		(uuid "89928391-ce29-482f-aad8-f4ef7acbc304")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads not_allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy 2 0) (xy 1.979643 -0.28463) (xy 1.918986 -0.563465) (xy 1.819264 -0.83083) (xy 1.682507 -1.081282)
+				(xy 1.511499 -1.309721) (xy 1.309721 -1.511499) (xy 1.081282 -1.682507) (xy 0.83083 -1.819264) (xy 0.563465 -1.918986)
+				(xy 0.28463 -1.979643) (xy 0 -2) (xy -0.28463 -1.979643) (xy -0.563465 -1.918986) (xy -0.83083 -1.819264)
+				(xy -1.081282 -1.682507) (xy -1.309721 -1.511499) (xy -1.511499 -1.309721) (xy -1.682507 -1.081282)
+				(xy -1.819264 -0.83083) (xy -1.918986 -0.563465) (xy -1.979643 -0.28463) (xy -2 0) (xy -1.979643 0.28463)
+				(xy -1.918986 0.563465) (xy -1.819264 0.83083) (xy -1.682507 1.081282) (xy -1.511499 1.309721) (xy -1.309721 1.511499)
+				(xy -1.081282 1.682507) (xy -0.83083 1.819264) (xy -0.563465 1.918986) (xy -0.28463 1.979643) (xy 0 2)
+				(xy 0.28463 1.979643) (xy 0.563465 1.918986) (xy 0.83083 1.819264) (xy 1.081282 1.682507) (xy 1.309721 1.511499)
+				(xy 1.511499 1.309721) (xy 1.682507 1.081282) (xy 1.819264 0.83083) (xy 1.918986 0.563465) (xy 1.979643 0.28463)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

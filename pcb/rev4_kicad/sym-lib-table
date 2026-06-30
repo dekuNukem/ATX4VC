@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "atx4vc-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/atx4vc-eagle-import.kicad_sym")(options "")(descr ""))
+)
