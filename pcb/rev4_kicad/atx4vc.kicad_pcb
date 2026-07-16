@@ -5029,7 +5029,7 @@
 			(at -1.7145 0.5841 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "4004f859-477c-4acb-b8af-fbccb2934148")
+			(uuid "920c21be-4c7e-44a8-a7a5-068d82a57ee5")
 			(effects
 				(font
 					(size 0.782889 0.782889)
@@ -5043,7 +5043,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "33736ee4-f722-4cbf-8c0d-892ad7b7dbf5")
+			(uuid "11cd9247-3d97-4c89-95e4-515ca057b0d7")
 			(effects
 				(font
 					(size 0.373888 0.373888)
@@ -5056,7 +5056,7 @@
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8b24d2d2-f0cb-4228-8862-5902244b8253")
+			(uuid "4b60cc9f-0613-439f-8d6c-3e39990ff9c6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5068,7 +5068,7 @@
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6698b7ed-5bda-4e5d-b0e0-a062472515e0")
+			(uuid "14223f2e-f65b-4326-b700-c526f96c07e8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7117,7 +7117,7 @@
 			(at 1.016 1.016 90)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "31a433ac-adeb-4321-a298-366d0f96dada")
+			(uuid "cdafa6de-4335-485e-b24b-69e3801dfe28")
 			(effects
 				(font
 					(size 0.752978 0.752978)
@@ -7130,7 +7130,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "23d5e335-f423-48c7-a4fc-fd5e15e8ffec")
+			(uuid "f047c9dd-43cf-4359-9875-b061483fbead")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7143,7 +7143,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "84082ebe-2582-4631-a746-8ace1fbf8892")
+			(uuid "d7706e51-9a73-47cf-9fdc-2a49b674b724")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7155,7 +7155,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1f9e091f-1257-457d-b94e-d512f092c052")
+			(uuid "661c3c8e-259c-4bd2-9578-04ee2a1b3310")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9763,8 +9763,8 @@
 			)
 		)
 	)
-	(gr_text "SOFT\nPWR"
-		(at 136.25 129.5 0)
+	(gr_text "SOFT"
+		(at 136.25 130.5 0)
 		(layer "F.SilkS")
 		(uuid "2164c76b-2109-489a-a88f-27ed2051c431")
 		(effects
@@ -9818,8 +9818,20 @@
 			)
 		)
 	)
-	(gr_text "HARD\nPWR"
-		(at 143.25 129.5 0)
+	(gr_text "PWR\nMODE"
+		(at 132.5 123 0)
+		(layer "F.SilkS")
+		(uuid "49689cdc-2755-4cf8-b010-d07eada4bd18")
+		(effects
+			(font
+				(size 1.25 1.25)
+				(thickness 0.1875)
+			)
+			(justify left)
+		)
+	)
+	(gr_text "HARD"
+		(at 143.25 130.5 0)
 		(layer "F.SilkS")
 		(uuid "5499a408-617b-4e91-b016-85062ff2455c")
 		(effects
