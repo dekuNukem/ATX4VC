@@ -1,0 +1,129 @@
+[Discord](https://discord.gg/T9uuFudg7j) | [User Manual](https://dekunukem.github.io/ATX4VC/#user-manual)
+
+ATX4VC lets you **use ATX power supply on vintage computers**.
+
+* Plug in ATX PSU on one end
+
+* Get +12V, +5V, +3.3V, -5V, -12V out the other!
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/title2.jpeg "enter image title here")
+
+* Universal Voltage with Fused Rails
+
+* Toolless Terminal Block
+
+* PC Fan Header
+
+* Fan speed, soft power, ARGB animation, temperature sensor with optional MCU board.
+
+You can use ATX4VC to:
+
+* Replace retro computer PSUs
+
+* Test and diagnose vintage hardware
+
+* As a general-purpose multi-voltage PSU
+
+## PicoRC 
+
+Also [check out PicoRC](https://www.tindie.com/stores/dekunukem/) for **device-specific** and **lower-cost** PicoPSU adaptors!
+
+Available for:
+ 
+* [Apple II](https://www.tindie.com/products/29185/) / [IIGS](https://www.tindie.com/products/30055/)
+
+* [Macintosh 128K/Plus](https://www.tindie.com/products/28754/)
+
+* [Macintosh SE SE/30](https://www.tindie.com/products/29184/)
+
+* [Osborne 1](https://www.tindie.com/products/30087/)
+
+## Showcase
+
+Here it replaces the dead PSU in my IBM 5155 Portable PC, providing +12, +5, -12, and -5V.
+
+Note the significant simplification and space/weight saving!
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/5155psu.png "enter image title here")
+
+It also works as a multi-voltage bench PSU for testing and diagnostics.
+
+Here it powers a Macintosh Plus motherboard with +12, +5, and -12V.
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/mac.jpeg "enter image title here")
+
+## Quick Start
+
+* Plug in ATX connector
+
+* Plug in power button
+
+![enter link description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/start2.jpeg)
+
+Push the button, PSU should turn on, powering all voltage rails. Hook it up to whatever you want!
+
+## User Manual
+
+Do please read the [full user manual here](https://github.com/dekuNukem/ATX4VC/blob/master/README.md) for the complete guide!
+
+## Accessories
+
+### MCU Daughterboard
+
+Plugs into ATX4VC, adds following features:
+
+* **Soft power** with momentary buttons
+
+* Addressable RGB (**ARGB**) lighting. Adjustable brightness, animation, and color.
+
+* DS18B20 **Temperature Probe** support
+
+* PWM **fan speed control**, manual & automatic
+
+* 5V Standby USB-C power output
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/mcu.jpeg)
+
+### Tooless Terminal Block
+
+Installed by default.
+
+Can be unpopulated for a thinner profile.
+
+![enter image description here](https://github.com/dekuNukem/ATX4VC/blob/master/photos/noblock.jpeg?raw=true)
+
+### Auxiliary Wiring Harness
+
+Plugs into the connector and brings out all the voltages. Ideal for permanent installation.
+
+18AWG, 40cm / 15.7 inches.
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/harness.jpeg)
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/plug.jpeg)
+
+### Vinyl Stickers
+
+24 stickers for labelling power rails.
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/stickers.jpeg "enter image title here")
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/label.png)
+
+### Metal Power Button
+
+Stainless Steel latching push button.
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/lock.jpeg "enter image title here")
+
+### Alligator Clips
+
+Six alligator clips with multicolour sleeves, solder or crimp on your own cable.
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/clips.jpeg "enter image title here")
+
+### Extra Fuses
+
+Ten extra 5A low-profile automotive fuses.
+
+![enter image description here](https://raw.githubusercontent.com/dekuNukem/ATX4VC/master/photos/fuses.jpeg "enter image title here")

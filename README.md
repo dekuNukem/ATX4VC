@@ -74,7 +74,8 @@ Although for **permanent retrofitting**, a **PicoPSU** is recommended due to its
 
 ### Quick Start
 
-0. Don't connect any load yet!
+* Don't connect any load yet!
+
 1. Plug in ATX connector
 2. On **Power Mode** switch, select **Soft Power** (left position).
 3. Press the button
